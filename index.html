@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>👑 ATLAS DEL IMPERIO / 帝国の地図</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-base: #0a0a0f;
+            --bg-card: #14141d;
+            --bg-card-hover: #1c1c28;
+            --gold: #d4a853;
+            --amber: #ffbf00;
+            --text-main: #e0e0e0;
+            --text-muted: #888899;
+            --border: #2a2a35;
+            --font-body: 'Inter', sans-serif;
+            --font-head: 'Orbitron', sans-serif;
+            --accent-gradient: linear-gradient(135deg, var(--gold), var(--amber));
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            overflow-x: hidden;
+        }
+
+        /* Scroll Progress Bar */
+        #progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: var(--accent-gradient);
+            z-index: 9999;
+            width: 0%;
+            transition: width 0.1s;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            width: 260px;
+            background-color: var(--bg-card);
+            height: 100vh;
+            position: fixed;
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar-header {
+            padding: 2rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .sidebar-header h1 {
+            font-family: var(--font-head);
+            font-size: 1.1rem;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 1rem 0;
+            overflow-y: auto;
+            flex-grow: 1;
+        }
+
+        .nav-links li a {
+            display: block;
+            padding: 0.8rem 1.5rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+            border-left: 3px solid transparent;
+        }
+
+        .nav-links li a:hover, .nav-links li a.active {
+            color: var(--gold);
+            background-color: rgba(212, 168, 83, 0.05);
+            border-left-color: var(--gold);
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 260px;
+            padding: 3rem 4rem;
+            width: calc(100% - 260px);
+        }
+
+        h2.section-title {
+            font-family: var(--font-head);
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+            text-transform: uppercase;
+        }
+
+        h3 {
+            font-family: var(--font-head);
+            color: var(--text-main);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Hero Section */
+        .hero-subtitle {
+            text-align: center;
+            color: var(--gold);
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            letter-spacing: 3px;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            border-color: var(--gold);
+        }
+
+        .stat-value {
+            font-family: var(--font-head);
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Floor Plan */
+        .floor-plan-img {
+            max-height: 80vh;
+            width: auto;
+            max-width: 100%;
+            border-radius: 8px;
+            border: 2px solid var(--border);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+            display: block;
+            margin: 0 auto 3rem auto;
+            transition: transform 0.3s;
+        }
+        .floor-plan-img:hover {
+            transform: scale(1.02);
+            border-color: var(--gold);
+        }
+
+        /* Cards/Accordions for CAPEX */
+        .room-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+
+        .room-header {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255,255,255,0.02);
+            transition: background 0.3s;
+        }
+
+        .room-header:hover {
+            background: rgba(255,255,255,0.05);
+        }
+
+        .room-title {
+            font-family: var(--font-head);
+            font-size: 1.1rem;
+            color: var(--amber);
+        }
+
+        .room-subtotal {
+            font-weight: bold;
+            color: var(--text-main);
+        }
+
+        .room-content {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.4s ease;
+        }
+
+        .room-content.open {
+            padding: 1.5rem;
+            max-height: 5000px; /* Big enough to fit large tables */
+            overflow: auto;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.5rem;
+            font-size: 0.85rem;
+        }
+
+        th, td {
+            padding: 0.8rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            font-family: var(--font-head);
+            color: var(--gold);
+            font-weight: normal;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+        }
+
+        tr:hover td {
+            background: rgba(255,255,255,0.02);
+        }
+
+        a {
+            color: var(--gold);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--amber);
+            text-decoration: underline;
+        }
+
+        .btn-link {
+            display: inline-block;
+            background: rgba(212, 168, 83, 0.15);
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        .btn-link:hover {
+            background: var(--gold);
+            color: var(--bg-base);
+            text-decoration: none;
+        }
+
+        /* Grids */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .item-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s, border-color 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .item-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+        }
+
+        .item-card h4 {
+            font-family: var(--font-head);
+            color: var(--amber);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        /* Timeline / Matrix Tabs */
+        .tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            overflow-x: auto;
+            padding-bottom: 0.5rem;
+        }
+
+        .tab-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: var(--font-head);
+            transition: all 0.3s;
+            white-space: nowrap;
+            font-size: 0.9rem;
+        }
+
+        .tab-btn:hover, .tab-btn.active {
+            background: var(--gold);
+            color: var(--bg-base);
+            border-color: var(--gold);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* OPEX Chart */
+        .chart-container {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .donut-chart {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: conic-gradient(
+                #d4a853 0% 21%, 
+                #ffbf00 21% 33%, 
+                #c18b33 33% 57%, 
+                #e5cd85 57% 71%, 
+                #3a3a4a 71% 100%
+            );
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .donut-inner {
+            width: 140px;
+            height: 140px;
+            background: var(--bg-card);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .donut-inner span {
+            font-family: var(--font-head);
+            font-size: 1.2rem;
+            color: var(--text-main);
+        }
+
+        .chart-legend {
+            list-style: none;
+        }
+
+        .chart-legend li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 2px;
+        }
+
+        /* Floating Back to Top */
+        #back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--gold);
+            color: var(--bg-base);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            font-size: 1.5rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        #back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(212, 168, 83, 0.4);
+        }
+
+        /* Mobile Toggle */
+        .mobile-toggle {
+            display: none;
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 2000;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--gold);
+            padding: 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 1024px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+            .sidebar.open {
+                transform: translateX(0);
+            }
+            .main-content {
+                margin-left: 0;
+                width: 100%;
+                padding: 2rem;
+            }
+            .mobile-toggle {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="progress-bar"></div>
+
+    <button class="mobile-toggle" onclick="toggleSidebar()">☰ MENU</button>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h1>👑 ATLAS DEL IMPERIO<br><small style="font-size: 0.75rem;">帝国の地図</small></h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#hero">Inicio / ホーム</a></li>
+            <li><a href="#floor-plan">Mapa Base / 間取り</a></li>
+            <li><a href="#capex">CAPEX por Zona / ゾーン別設備</a></li>
+            <li><a href="#motorcycle">Movilidad / 移動手段</a></li>
+            <li><a href="#dojos">Dojos / 道場</a></li>
+            <li><a href="#combat">Equipo / 装備</a></li>
+            <li><a href="#supplements">Suplementos / サプリメント</a></li>
+            <li><a href="#japanese">Clases Japonés / 日本語クラス</a></li>
+            <li><a href="#extremis">Proyecto Extremis / エクストリミス計画</a></li>
+            <li><a href="#opex">Dashboard OPEX / 運用費用</a></li>
+            <li><a href="#matrix">Matriz 168H / 168時間マトリックス</a></li>
+            <li><a href="#restaurants">Restaurantes / レストランマップ</a></li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+
+        <!-- 1. HERO -->
+        <section id="hero">
+            <h2 class="section-title">Evolución Suprema / 究極の進化</h2>
+            <p class="hero-subtitle">「絶対的な帝国を築く」</p>
+            <div class="hero">
+                <div class="stat-card">
+                    <div class="stat-value">¥27.2M</div>
+                    <div class="stat-label">CAPEX Total<br>総設備投資</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">¥1.62M</div>
+                    <div class="stat-label">OPEX Mensual<br>月間運用費</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">113+</div>
+                    <div class="stat-label">Ítems Verificados<br>確認済アイテム</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">4</div>
+                    <div class="stat-label">Dojos de Élite<br>エリート道場</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">10</div>
+                    <div class="stat-label">Suplementos<br>サプリメント</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">35</div>
+                    <div class="stat-label">Comidas Semanales<br>週間の食事</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. FLOOR PLAN -->
+        <section id="floor-plan">
+            <h2 class="section-title">Mapa del Apartamento / 間取り図</h2>
+            <p style="margin-bottom: 1rem; color: var(--text-muted);">Unidad 1301, Piso 13 (50.18m²) - Totalmente Amueblado<br>
+Renta: ¥330,000 (base ¥310,000 + ¥20,000 管理費) | Depósito 0 · Llave 0 · 仲介 0 · Free Rent 2 meses<br>
+<a href="https://rf12.jp/building/7706/211400/" target="_blank" style="color:var(--amber);">Ver Listing Oficial 🔗</a></p>
+            <div style="display: flex; justify-content: center; width: 100%;">
+                <img src="file:///assets/floorplan.jpg" alt="Floor Plan" class="floor-plan-img">
+            </div>
+        </section>
+
+        <!-- 3. CAPEX BY ROOM -->
+        <section id="capex">
+            <h2 class="section-title">Desglose CAPEX por Habitación / ゾーン別設備</h2>
+
+            <!-- AYAME -->
+            <div class="room-card">
+                <div class="room-header" onclick="toggleRoom(this)">
+                    <div class="room-title">🌸 Habitación Ayame / あやめの部屋</div>
+                    <div class="room-subtotal">¥84,240</div>
+                </div>
+                <div class="room-content">
+                    <table>
+                        <tr><th>Categoría / カテゴリー</th><th>Producto / 製品</th><th>Precio / 価格</th><th>Link / リンク</th></tr>
+                        <tr><td>Cama (Frame)</td><td>RASIK セレスト Semi-Double</td><td>¥29,800</td><td><a href="https://www.amazon.co.jp/s?k=%E3%82%BB%E3%83%9F%E3%83%80%E3%83%96%E3%83%AB+%E3%83%99%E3%83%83%E3%83%89%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0+%E5%8F%8E%E7%B4%8D+%E3%83%9B%E3%83%AF%E3%82%A4%E3%83%88" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Sábanas</td><td>Bedsure 3pz Semi-Double</td><td>¥3,280</td><td><a href="https://www.amazon.co.jp/s?k=%E3%82%BB%E3%83%9F%E3%83%80%E3%83%96%E3%83%AB+%E3%82%B7%E3%83%BC%E3%83%84%E3%82%BB%E3%83%83%E3%83%88" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Edredón</td><td>タンスのゲン All-Season SD</td><td>¥4,980</td><td><a href="https://www.amazon.co.jp/s?k=%E6%8E%9B%E3%81%91%E5%B8%83%E5%9B%A3+%E3%82%BB%E3%83%9F%E3%83%80%E3%83%96%E3%83%AB" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Almohadas</td><td>Bedsure Memory Foam (x2)</td><td>¥3,480</td><td><a href="https://www.amazon.co.jp/s?k=%E6%9E%95+%E3%83%9B%E3%83%86%E3%83%AB%E4%BB%95%E6%87%98" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Vanity/Tocador</td><td>女優ミラー ドレッサー LED</td><td>¥15,800</td><td><a href="https://www.amazon.co.jp/s?k=%E5%A5%B3%E5%84%AA%E3%83%9F%E3%83%A9%E3%83%BC+%E3%83%89%E3%83%AC%E3%83%83%E3%82%B5%E3%83%BC" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Espejo Cuerpo</td><td>全身鏡 スタンドミラー</td><td>¥5,980</td><td><a href="https://www.amazon.co.jp/s?k=%E5%85%A8%E8%BA%AB%E9%8F%A1+%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%89%E3%83%9F%E3%83%A9%E3%83%BC" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Perchero</td><td>ハンガーラック Gold/White</td><td>¥6,980</td><td><a href="https://www.amazon.co.jp/s?k=%E3%83%8F%E3%83%B3%E3%82%AC%E3%83%BC%E3%83%A9%E3%83%83%E3%82%AF+%E3%81%8A%E3%81%97%E3%82%83%E3%82%8C" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Cortinas</td><td>遮光カーテン 1級</td><td>¥4,980</td><td><a href="https://www.amazon.co.jp/s?k=%E9%81%AE%E5%85%89%E3%82%AB%E3%83%BC%E3%83%86%E3%83%B3+1%E7%B4%9A" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Ring Light</td><td>リングライト 三脚付き</td><td>¥3,980</td><td><a href="https://www.amazon.co.jp/s?k=%E3%83%AA%E3%83%B3%E3%82%B0%E3%83%A9%E3%82%A4%E3%83%88+%E4%B8%89%E8%84%9A" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Mesa Noche</td><td>ナイトテーブル</td><td>¥4,980</td><td><a href="https://www.amazon.co.jp/s?k=%E3%83%8A%E3%82%A4%E3%83%88%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- DENKOBOY -->
+            <div class="room-card">
+                <div class="room-header" onclick="toggleRoom(this)">
+                    <div class="room-title">💻 DenkoBoy Command Center / デンコボーイ司令室</div>
+                    <div class="room-subtotal">¥200,519</div>
+                </div>
+                <div class="room-content">
+                    <table>
+                        <tr><th>Categoría / カテゴリー</th><th>Producto / 製品</th><th>Precio / 価格</th><th>Link / リンク</th></tr>
+                        <tr><td>Cama (Frame)</td><td>タンスのゲン Double</td><td>¥26,999</td><td><a href="https://www.amazon.co.jp/s?k=%E3%83%80%E3%83%96%E3%83%AB+%E3%83%99%E3%83%83%E3%83%89%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0+USB" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Sábanas</td><td>Kumori 4pz Double</td><td>¥3,880</td><td><a href="https://www.amazon.co.jp/s?k=%E3%83%80%E3%83%96%E3%83%AB+%E3%82%B7%E3%83%BC%E3%83%84%E3%82%BB%E3%83%83%E3%83%88" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Edredón</td><td>タンスのゲン All-Season D</td><td>¥5,980</td><td><a href="https://www.amazon.co.jp/s?k=%E6%8E%9B%E3%81%91%E5%B8%83%E5%9B%A3+%E3%83%80%E3%83%96%E3%83%AB" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Almohadas</td><td>Bedsure Memory Foam (x2)</td><td>¥3,480</td><td><a href="https://www.amazon.co.jp/s?k=%E6%9E%95+%E3%83%9B%E3%83%86%E3%83%AB%E4%BB%95%E6%87%98" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Escritorio</td><td>パソコンデスク 140cm</td><td>¥19,800</td><td><a href="https://www.amazon.co.jp/s?k=%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3%E3%83%87%E3%82%B9%E3%82%AF+140cm" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Silla</td><td>Okamura Sylphy / ErgoHuman</td><td>¥89,800</td><td><a href="https://www.amazon.co.jp/s?k=%E3%82%AA%E3%82%AB%E3%83%A0%E3%83%A9+%E3%82%B7%E3%83%AB%E3%83%95%E3%82%A3%E3%83%BC" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Brazo Monitor</td><td>エルゴトロン LX Dual</td><td>¥29,800</td><td><a href="https://www.amazon.co.jp/s?k=%E3%82%A8%E3%83%AB%E3%82%B4%E3%83%88%E3%83%AD%E3%83%B3+LX+%E3%83%87%E3%83%A5%E3%82%A2%E3%83%AB" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Luz Monitor</td><td>BenQ ScreenBar Halo</td><td>¥15,800</td><td><a href="https://www.amazon.co.jp/s?k=BenQ+ScreenBar+Halo" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Cortinas</td><td>遮光カーテン 1級</td><td>¥4,980</td><td><a href="https://www.amazon.co.jp/s?k=%E9%81%AE%E5%85%89%E3%82%AB%E3%83%BC%E3%83%86%E3%83%B3+1%E7%B4%9A" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- TECH -->
+            <div class="room-card">
+                <div class="room-header" onclick="toggleRoom(this)">
+                    <div class="room-title">🖥️ Setup ASUS ROG / PC環境</div>
+                    <div class="room-subtotal">¥2,012,160</div>
+                </div>
+                <div class="room-content">
+                    <table>
+                        <tr><th>Componente / コンポーネント</th><th>Producto / 製品</th><th>Precio / 価格</th><th>Link / リンク</th></tr>
+                        <tr><td>PC Desktop</td><td>ROG G1000 EDITION 20</td><td>~¥1,500,000</td><td><a href="https://rog.asus.com/desktops/full-tower/rog-g1000-edition-20-model/" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Monitor 1</td><td>ROG Swift OLED PG32UCDP</td><td>¥179,820</td><td><a href="https://rog.asus.com/jp/monitors/32-to-34-inches/rog-swift-oled-pg32ucdp/" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Monitor 2</td><td>ROG Swift OLED PG32UCDP</td><td>¥179,820</td><td><a href="https://rog.asus.com/jp/monitors/32-to-34-inches/rog-swift-oled-pg32ucdp/" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Teclado</td><td>ROG Azoth Extreme</td><td>¥89,800</td><td><a href="https://rog.asus.com/jp/keyboards/keyboards/aura-rgb/rog-azoth-extreme/" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Mouse</td><td>ROG Harpe Ace Extreme</td><td>¥45,800</td><td><a href="https://rog.asus.com/jp/mice-mouse-pads/mice/ambidextrous/rog-harpe-ace-extreme/" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Mousepad</td><td>ROG Moonstone Ace L</td><td>¥16,920</td><td><a href="https://rog.asus.com/jp/mice-mouse-pads/mouse-pads/rog-moonstone-ace-l/" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- GAMING -->
+            <div class="room-card">
+                <div class="room-header" onclick="toggleRoom(this)">
+                    <div class="room-title">🎮 Setup Gaming Ayame / ゲーミング</div>
+                    <div class="room-subtotal">¥1,735,240</div>
+                </div>
+                <div class="room-content">
+                    <table>
+                        <tr><th>Producto / 製品</th><th>Precio / 価格</th><th>Link / リンク</th></tr>
+                        <tr><td>ROG Zephyrus Duo (2026) GX651</td><td>¥1,498,800</td><td><a href="https://rog.asus.com/us/laptops/rog-zephyrus/rog-zephyrus-duo-2026-gx651/" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Nintendo Switch 2 (2026)</td><td>¥59,980</td><td><a href="https://www.amazon.co.jp/s?k=Nintendo+Switch+2+%E6%9C%AC%E4%BD%93" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>PlayStation 5 Pro</td><td>¥137,980</td><td><a href="https://www.amazon.co.jp/s?k=PlayStation+5+Pro+%E6%9C%AC%E4%BD%93" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Headset Logicool G735</td><td>¥27,000</td><td><a href="https://www.amazon.co.jp/dp/B0B6Z4S138" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Mando DualSense Nova Pink</td><td>¥11,480</td><td><a href="https://www.amazon.co.jp/dp/B09N12J1CS" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- CHINCHILLAS -->
+            <div class="room-card">
+                <div class="room-header" onclick="toggleRoom(this)">
+                    <div class="room-title">🐹 Chinchillas / チンチラの部屋</div>
+                    <div class="room-subtotal">¥66,420</div>
+                </div>
+                <div class="room-content">
+                    <table>
+                        <tr><th>Producto / 製品</th><th>Precio / 価格</th><th>Link / リンク</th></tr>
+                        <tr><td>Jaula SANKO Easy Home 60 High Mesh</td><td>¥18,500</td><td><a href="https://www.amazon.co.jp/dp/B004FPWH3M" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Recipiente Baño SANKO Play Bath</td><td>¥2,200</td><td><a href="https://www.amazon.co.jp/s?k=%E4%B8%89%E6%99%83%E5%95%86%E4%BC%9A+%E3%83%97%E3%83%AC%E3%82%A4%E3%83%90%E3%82%B9" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Arena Chinchilla Sand 1.5kg (x3)</td><td>¥2,100</td><td><a href="https://www.amazon.co.jp/s?k=%E3%83%81%E3%83%B3%E3%83%81%E3%83%A9%E3%82%B5%E3%83%B3%E3%83%89" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Casitas Madera SANKO (x2)</td><td>¥5,500</td><td><a href="https://www.amazon.co.jp/s?k=SANKO+%E3%83%81%E3%83%B3%E3%83%81%E3%83%A9+%E3%83%8F%E3%82%A6%E3%82%B9" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Rueda SANKO 38cm Metal Silent</td><td>¥7,980</td><td><a href="https://www.amazon.co.jp/s?k=SANKO+%E3%83%A1%E3%82%BF%E3%83%AB%E3%82%B5%E3%82%A4%E3%83%AC%E3%83%B3%E3%83%88" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Estantes Madera (Set)</td><td>¥3,200</td><td><a href="https://www.amazon.co.jp/s?k=%E3%83%81%E3%83%B3%E3%83%81%E3%83%A9+%E3%82%B9%E3%83%86%E3%83%83%E3%83%97" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Bebedero Vidrio</td><td>¥1,480</td><td><a href="https://www.amazon.co.jp/s?k=%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%BF%E3%83%BC%E3%83%9C%E3%83%88%E3%83%AB+%E5%B0%8F%E5%8B%95%E7%89%A9" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Heno Timothy 3kg</td><td>¥3,980</td><td><a href="https://www.amazon.co.jp/s?k=%E3%83%81%E3%83%A2%E3%82%B7%E3%83%BC" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Pellets Oxbow Essentials</td><td>¥2,500</td><td><a href="https://www.amazon.co.jp/s?k=Oxbow+%E3%83%81%E3%83%B3%E3%83%81%E3%83%A9" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Piedra Calcio/Mineral</td><td>¥980</td><td><a href="https://www.amazon.co.jp/s?k=%E3%81%8B%E3%81%98%E3%82%8A%E6%9C%A8" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>SwitchBot Termómetro</td><td>¥2,200</td><td><a href="https://www.amazon.co.jp/s?k=SwitchBot+%E6%B8%A9%E6%B9%BF%E5%BA%A6%E8%A8%88" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Deshumidificador Sharp</td><td>¥15,800</td><td><a href="https://www.amazon.co.jp/s?k=%E9%99%A4%E6%B9%BF%E6%A9%9F+%E3%82%B3%E3%83%B3%E3%83%91%E3%82%AF%E3%83%88" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- GATOS -->
+            <div class="room-card">
+                <div class="room-header" onclick="toggleRoom(this)">
+                    <div class="room-title">🐱🐱 Setup Gatuno Mega Luxury / 猫の楽園</div>
+                    <div class="room-subtotal">¥515,220</div>
+                </div>
+                <div class="room-content">
+                    <table>
+                        <tr><th>Producto / 製品</th><th>Precio / 価格</th><th>Link / リンク</th></tr>
+                        <tr><td>Torre OPPO Cat Forest-2</td><td>¥41,800</td><td><a href="https://www.amazon.co.jp/s?k=OPPO+%E3%82%AD%E3%83%A3%E3%83%83%E3%83%88%E3%83%95%E3%82%A9%E3%83%AC%E3%82%B9%E3%83%882" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Camas MYZOO 宇宙船 Gamma</td><td>¥37,400</td><td><a href="https://www.amazon.co.jp/dp/B07FMHHNR3" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Escaleras MYZOO Luna</td><td>¥22,000</td><td><a href="https://www.amazon.co.jp/s?k=MYZOO+%E3%83%AB%E3%83%8A" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Rascador MYZOO</td><td>¥13,200</td><td><a href="https://www.amazon.co.jp/s?k=MYZOO+%E7%88%AA%E3%81%A8%E3%81%8E" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Sofá Rascador pidan</td><td>¥4,980</td><td><a href="https://www.amazon.co.jp/s?k=pidan+%E7%88%AA%E3%81%A8%E3%81%8E+%E3%82%BD%E3%83%95%E3%82%A1" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Arenero PETKIT PURA MAX #1</td><td>¥69,800</td><td><a href="https://www.amazon.co.jp/dp/B0B5ZMXP1K" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Arenero PETKIT PURA MAX #2</td><td>¥69,800</td><td><a href="https://www.amazon.co.jp/dp/B0B5ZMXP1K" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Comedero PETKIT YUMSHARE Dual</td><td>¥39,600</td><td><a href="https://www.amazon.co.jp/s?k=PETKIT+%E8%87%AA%E5%8B%95%E7%B5%A6%E9%A4%8C" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Fuente PETKIT EVERSWEET 3 Pro</td><td>¥19,960</td><td><a href="https://www.amazon.co.jp/s?k=PETKIT+%E6%B0%B4%E9%A3%B2%E3%81%BF" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Cámara Furbo 360° Cat</td><td>¥29,980</td><td><a href="https://www.amazon.co.jp/dp/B09XV12XY1" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Cabina Secado Homerunpet Drybo Plus</td><td>¥66,000</td><td><a href="https://www.amazon.co.jp/dp/B09B299G11" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Aspiradora Neakasa P1 Pro</td><td>¥19,800</td><td><a href="https://www.amazon.co.jp/dp/B09M2SYV3M" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Difusor Feromonas Feliway Optimum</td><td>¥6,980</td><td><a href="https://www.amazon.co.jp/s?k=Feliway+Optimum" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Cortaúñas LED pidan</td><td>¥2,480</td><td><a href="https://www.amazon.co.jp/s?k=pidan+%E7%88%AA%E5%88%87%E3%82%8A" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Arena PETKIT Tofu+Bentonita</td><td>¥7,980</td><td><a href="https://www.amazon.co.jp/s?k=PETKIT+%E7%8C%AB%E7%A0%82" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>のぼれんニャン バリアフリー3</td><td>¥19,800</td><td><a href="https://www.amazon.co.jp/s?k=%E3%81%AE%E3%81%BC%E3%82%8C%E3%82%93%E3%83%8B%E3%83%A3%E3%83%B3" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Mochila Transportín pidan</td><td>¥12,800</td><td><a href="https://www.amazon.co.jp/s?k=PETKIT+%E3%82%AD%E3%83%A3%E3%83%AA%E3%83%BC" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Pelota Cheerble Wicked Ball</td><td>¥5,980</td><td><a href="https://www.amazon.co.jp/dp/B08CZG35Z5" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Láser Petcube Play 2</td><td>¥22,900</td><td><a href="https://www.amazon.co.jp/s?k=Petcube+Play+2" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Hierba Gatera Orgánica</td><td>¥1,980</td><td><a href="https://www.amazon.co.jp/s?k=%E7%8C%AB%E8%8D%89" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- LDK -->
+            <div class="room-card">
+                <div class="room-header" onclick="toggleRoom(this)">
+                    <div class="room-title">🛋️ LDK Compartido / 共有LDK</div>
+                    <div class="room-subtotal">¥406,850</div>
+                </div>
+                <div class="room-content">
+                    <table>
+                        <tr><th>Producto / 製品</th><th>Precio / 価格</th><th>Link / リンク</th></tr>
+                        <tr><td>Sofá Nitori L-Shape N-Shield</td><td>¥89,900</td><td><a href="https://www.nitori-net.jp/ec/cat/Sofa/SofaL/1/" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Mesa Comedor Nitori Round Table</td><td>¥19,900</td><td><a href="https://www.nitori-net.jp/ec/cat/Table/DiningTable/1/" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Sillas (x2)</td><td>¥14,800</td><td><a href="https://www.amazon.co.jp/s?k=%E3%83%80%E3%82%A4%E3%83%8B%E3%83%B3%E3%82%B0%E3%83%81%E3%82%A7%E3%82%A2" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>TV LG OLED 55" C4</td><td>¥139,800</td><td><a href="https://www.amazon.co.jp/s?k=LG+OLED+55" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Soporte Pared TV</td><td>¥4,980</td><td><a href="https://www.amazon.co.jp/s?k=%E3%83%86%E3%83%AC%E3%83%93%E5%A3%81%E6%8E%9B%E3%81%91" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Alfombra</td><td>¥6,980</td><td><a href="https://www.amazon.co.jp/s?k=%E3%83%A9%E3%82%B0+%E6%B4%97%E3%81%88%E3%82%8B" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Robot Aspirador Roborock Q8 Max+</td><td>¥69,800</td><td><a href="https://www.amazon.co.jp/s?k=Roborock+Q8+Max" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Purificador Aire Daikin Pet Mode</td><td>¥34,800</td><td><a href="https://www.amazon.co.jp/s?k=%E7%A9%BA%E6%B0%97%E6%B8%85%E6%B5%84%E6%A9%9F+%E3%83%9A%E3%83%83%E3%83%88" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Luces Smart Philips Hue Starter Kit</td><td>¥18,900</td><td><a href="https://www.amazon.co.jp/s?k=Philips+Hue+%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%BF%E3%83%BC" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Difusor Aroma Muji</td><td>¥6,990</td><td><a href="https://www.amazon.co.jp/s?k=MUJI+%E3%82%A2%E3%83%AD%E3%83%9E" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- COCINA -->
+            <div class="room-card">
+                <div class="room-header" onclick="toggleRoom(this)">
+                    <div class="room-title">🍳 Cocina Premium / キッチン</div>
+                    <div class="room-subtotal">¥170,050</div>
+                </div>
+                <div class="room-content">
+                    <table>
+                        <tr><th>Producto / 製品</th><th>Precio / 価格</th><th>Link / リンク</th></tr>
+                        <tr><td>Sartenes T-fal IH Set 9</td><td>¥14,800</td><td><a href="https://www.amazon.co.jp/s?k=%E3%82%A4%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%AA+IH" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Ollas Geo Product 7 capas</td><td>¥14,000</td><td><a href="https://www.amazon.co.jp/s?k=%E3%82%B8%E3%82%AA%E3%83%97%E3%83%AD%E3%83%80%E3%82%AF%E3%83%88" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Arrocera Zojirushi 圧力IH 3合</td><td>¥19,800</td><td><a href="https://www.amazon.co.jp/s?k=%E8%B1%A1%E5%8D%B0+3%E5%90%88+%E5%9C%A7%E5%8A%9BIH" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Hervidor BALMUDA The Pot</td><td>¥13,200</td><td><a href="https://www.amazon.co.jp/s?k=%E3%83%90%E3%83%AB%E3%83%9F%E3%83%BC%E3%83%80+%E3%83%9D%E3%83%83%E3%83%88" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Cuchillos 関孫六 Set</td><td>¥9,800</td><td><a href="https://www.amazon.co.jp/s?k=%E9%96%A2%E5%AD%AB%E5%85%AD" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Tablas Joseph Joseph Nest</td><td>¥5,500</td><td><a href="https://www.amazon.co.jp/s?k=Joseph+Joseph+%E3%83%8D%E3%82%B9%E3%83%88" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Vajilla TAMAKI Edge Line 10pz</td><td>¥5,800</td><td><a href="https://www.amazon.co.jp/s?k=TAMAKI+%E3%82%A8%E3%83%83%E3%82%B8%E3%83%A9%E3%82%A4%E3%83%B3" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Utensilios Yamazaki Tower</td><td>¥4,400</td><td><a href="https://www.amazon.co.jp/s?k=tower+%E3%82%B7%E3%83%AA%E3%82%B3%E3%83%BC%E3%83%B3" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Microondas SHARP 18L Flat</td><td>¥29,800</td><td><a href="https://www.amazon.co.jp/s?k=%E3%82%B7%E3%83%A3%E3%83%BC%E3%83%97+18L" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Tostador Aladdin Graphite</td><td>¥12,800</td><td><a href="https://www.amazon.co.jp/s?k=%E3%82%A2%E3%83%A9%E3%82%B8%E3%83%B3+%E3%83%88%E3%83%BC%E3%82%B9%E3%82%BF%E3%83%BC" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Escurridor Yamazaki Tower</td><td>¥4,700</td><td><a href="https://www.amazon.co.jp/s?k=tower+%E6%B0%B4%E5%88%87%E3%82%8A" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Rack Cocina Tower 3 Niveles</td><td>¥5,800</td><td><a href="https://www.amazon.co.jp/s?k=tower+%E3%82%B3%E3%83%B3%E3%83%AD%E5%A5%A5" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Basurero 3 Divisiones Tower</td><td>¥14,850</td><td><a href="https://www.amazon.co.jp/s?k=tower+%E5%88%86%E5%88%A5" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Cafetera siroca Cafe Baco</td><td>¥14,800</td><td><a href="https://www.amazon.co.jp/s?k=%E3%82%B7%E3%83%AD%E3%82%AB+%E3%82%B3%E3%83%BC%E3%83%92%E3%83%BC" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. MOTORCYCLE -->
+        <section id="motorcycle">
+            <h2 class="section-title">🏍️ Movilidad CB650R / 移動手段</h2>
+            <div class="grid-cards" style="grid-template-columns: 1fr 1fr;">
+                <div class="item-card">
+                    <h4>Honda CB650R E-Clutch</h4>
+                    <p><strong>Motor:</strong> 648cc 4-cilindros</p>
+                    <p><strong>Potencia:</strong> 95 PS @ 12k rpm</p>
+                    <p><strong>Precio:</strong> ¥1,089,000</p>
+                    <div style="margin-top: 1rem;">
+                        <a href="https://www.honda.co.jp/CB650R/" class="btn-link" target="_blank">公式サイト 🔗</a>
+                    </div>
+                    <hr style="border:0;border-top:1px solid var(--border);margin:1rem 0;">
+                    <h4>Presupuesto Mensual / 月額</h4>
+                    <p>Gasolina / ガソリン: ¥4,700</p>
+                    <p>Seguro / 保険: ¥4,000</p>
+                    <p>Parking / 駐車場: ¥12,000</p>
+                    <p>Mantenimiento & Impuestos: ¥6,300</p>
+                    <h3 style="color:var(--gold)">Total: ¥27,000 / mes</h3>
+                </div>
+                <div class="item-card" style="overflow-x:auto;">
+                    <h4>Tiempos de Viaje / 移動時間</h4>
+                    <table>
+                        <tr><th>Destino / 目的地</th><th>Tiempo / 時間</th></tr>
+                        <tr><td>Akihabara / 秋葉原</td><td>5-8 min</td></tr>
+                        <tr><td>Tokyo Station / 東京駅</td><td>10-14 min</td></tr>
+                        <tr><td>Shinjuku / 新宿</td><td>25-35 min</td></tr>
+                        <tr><td>Krazy Bee / Ota-ku</td><td>40-50 min</td></tr>
+                        <tr><td>Haneda / 羽田空港</td><td>45-60 min</td></tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. DOJOS -->
+        <section id="dojos">
+            <h2 class="section-title">🥋 Dojos de Élite / エリート道場</h2>
+            <div class="grid-cards">
+                <div class="item-card">
+                    <h4>🥊 Kudo - Daido Juku HQ</h4>
+                    <p><strong>Distancia:</strong> 7.5 km (~20m moto)</p>
+                    <p><strong>Inscripción / 入会金:</strong> ¥11,000</p>
+                    <p><strong>Mensualidad / 月額:</strong> ¥10,000</p>
+                    <p>Striking híbrido, derribos, headbutts.</p>
+                    <div style="margin-top: 1rem;">
+                        <a href="https://daidojuku.tokyo/" class="btn-link" target="_blank">公式サイト 🔗</a>
+                    </div>
+                </div>
+                <div class="item-card">
+                    <h4>🥋 Judo - Kodokan</h4>
+                    <p><strong>Distancia:</strong> 3.9 km (JR directo 14m)</p>
+                    <p><strong>Inscripción / 入会金:</strong> ¥8,000</p>
+                    <p><strong>Mensualidad / 月額:</strong> ¥5,500</p>
+                    <p>Randori diario con élite mundial.</p>
+                    <div style="margin-top: 1rem;">
+                        <a href="https://kodokanjudo.org/" class="btn-link" target="_blank">公式サイト 🔗</a>
+                    </div>
+                </div>
+                <div class="item-card">
+                    <h4>🤼 BJJ - Tri-Force</h4>
+                    <p><strong>Distancia:</strong> 0.45 km (5m a pie)</p>
+                    <p><strong>Inscripción / 入会金:</strong> ¥11,000</p>
+                    <p><strong>Mensualidad / 月額:</strong> ¥14,300</p>
+                    <p>Academia ultra técnica al lado de la base.</p>
+                    <div style="margin-top: 1rem;">
+                        <a href="https://www.tf-asakusabashi.com/" class="btn-link" target="_blank">公式サイト 🔗</a>
+                    </div>
+                </div>
+                <div class="item-card">
+                    <h4>🐝 MMA - Krazy Bee</h4>
+                    <p><strong>Distancia:</strong> ~40m moto</p>
+                    <p><strong>Inscripción / 入会金:</strong> ¥11,000</p>
+                    <p><strong>Mensualidad / 月額:</strong> ¥12,100</p>
+                    <p>Legado de KID Yamamoto. 24H access.</p>
+                    <div style="margin-top: 1rem;">
+                        <a href="https://krazybee-fit.net/" class="btn-link" target="_blank">公式サイト 🔗</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. COMBAT GEAR -->
+        <section id="combat">
+            <h2 class="section-title">⚔️ Arsenal de Combate / 戦闘装備</h2>
+            <div class="grid-cards" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));">
+                <div class="item-card">
+                    <h4>Dōgi Kudo</h4><p>Martial World KU5</p>
+                    <a href="https://www.amazon.co.jp/s?k=%E3%83%9E%E3%83%BC%E3%82%B7%E3%83%A3%E3%83%AB%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89+%E7%A9%BA%E6%89%8B%E7%9D%80+5%E5%8F%B7" class="btn-link" target="_blank" style="margin-top:0.5rem">購入 🔗</a>
+                </div>
+                <div class="item-card">
+                    <h4>Casco SuperSafe</h4><p>ISAMI ネオヘッドガード</p>
+                    <a href="https://www.amazon.co.jp/s?k=%E3%82%B9%E3%83%BC%E3%83%91%E3%83%BC%E3%82%BB%E3%83%BC%E3%83%95%E9%9D%A2+%E3%83%98%E3%83%83%E3%83%89%E3%82%AC%E3%83%BC%E3%83%89" class="btn-link" target="_blank" style="margin-top:0.5rem">購入 🔗</a>
+                </div>
+                <div class="item-card">
+                    <h4>Protector Torso</h4><p>Martial World BP46</p>
+                    <a href="https://www.amazon.co.jp/s?k=%E3%83%9E%E3%83%BC%E3%82%B7%E3%83%A3%E3%83%AB%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89+%E3%83%9C%E3%83%87%E3%82%A3%E3%83%97%E3%83%AD%E3%83%86%E3%82%AF%E3%82%BF%E3%83%BC" class="btn-link" target="_blank" style="margin-top:0.5rem">購入 🔗</a>
+                </div>
+                <div class="item-card">
+                    <h4>Guantes MMA</h4><p>ISAMI IS-756</p>
+                    <a href="https://www.amazon.co.jp/s?k=ISAMI+%E3%83%91%E3%82%A6%E3%83%B3%E3%83%89%E3%82%B0%E3%83%AD%E3%83%BC%E3%83%96" class="btn-link" target="_blank" style="margin-top:0.5rem">購入 🔗</a>
+                </div>
+                <div class="item-card">
+                    <h4>Espinilleras</h4><p>VENUM Challenger</p>
+                    <a href="https://www.amazon.co.jp/s?k=VENUM+Challenger+%E3%82%B7%E3%83%B3%E3%82%AC%E3%83%BC%E3%83%89+XL" class="btn-link" target="_blank" style="margin-top:0.5rem">購入 🔗</a>
+                </div>
+                <div class="item-card">
+                    <h4>Copa</h4><p>Shock Doctor BioFlex</p>
+                    <a href="https://www.amazon.co.jp/s?k=%E3%82%B7%E3%83%A7%E3%83%83%E3%82%AF%E3%83%89%E3%82%AF%E3%82%BF%E3%83%BC+%E3%82%AB%E3%83%83%E3%83%97" class="btn-link" target="_blank" style="margin-top:0.5rem">購入 🔗</a>
+                </div>
+                <div class="item-card">
+                    <h4>Judogi</h4><p>Mizuno IJF</p>
+                    <a href="https://www.amazon.co.jp/s?k=%E3%83%9F%E3%82%BA%E3%83%8E+%E6%9F%94%E9%81%93%E7%9D%80+%E5%84%AA%E5%8B%9D+IJF" class="btn-link" target="_blank" style="margin-top:0.5rem">購入 🔗</a>
+                </div>
+                <div class="item-card">
+                    <h4>BJJ Gi</h4><p>VENUM Contender Evo</p>
+                    <a href="https://www.amazon.co.jp/s?k=VENUM+Contender+Evo+%E6%9F%94%E8%A1%93%E7%9D%80" class="btn-link" target="_blank" style="margin-top:0.5rem">購入 🔗</a>
+                </div>
+                <div class="item-card">
+                    <h4>Rashguards</h4><p>TESLA Compresión</p>
+                    <a href="https://www.amazon.co.jp/s?k=TESLA+%E3%82%B3%E3%83%B3%E3%83%97%E3%83%AC%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3+%E9%95%B7%E8%A2%96+2%E6%9E%9A" class="btn-link" target="_blank" style="margin-top:0.5rem">購入 🔗</a>
+                </div>
+                <div class="item-card">
+                    <h4>Fight Shorts</h4><p>VENUM Light 3.0</p>
+                    <a href="https://www.amazon.co.jp/s?k=VENUM+%E3%83%95%E3%82%A1%E3%82%A4%E3%83%88%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%84+XL" class="btn-link" target="_blank" style="margin-top:0.5rem">購入 🔗</a>
+                </div>
+                <div class="item-card">
+                    <h4>Vendas</h4><p>Winning VL-B</p>
+                    <a href="https://www.amazon.co.jp/s?k=%E3%82%A6%E3%82%A4%E3%83%8B%E3%83%B3%E3%82%B0+%E3%83%90%E3%83%B3%E3%83%86%E3%83%BC%E3%82%B8+VL-B" class="btn-link" target="_blank" style="margin-top:0.5rem">購入 🔗</a>
+                </div>
+                <div class="item-card">
+                    <h4>Bucal</h4><p>SISU Aero</p>
+                    <a href="https://www.amazon.co.jp/s?k=SISU+Aero+%E3%83%9E%E3%82%A6%E3%82%B9%E3%83%94%E3%83%BC%E3%82%B9" class="btn-link" target="_blank" style="margin-top:0.5rem">購入 🔗</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. SUPPLEMENTS -->
+        <section id="supplements">
+            <h2 class="section-title">🧬 Suplementos / サプリメント</h2>
+            <p style="color:var(--text-muted); margin-bottom:1.5rem;">Costo Mensual: ¥20,200 | 100% Legal en Japón</p>
+            
+            <div class="room-card" style="margin-bottom:2rem;">
+                <div class="room-content open">
+                    <table>
+                        <tr><th>Producto / 製品</th><th>Dosis Diaria / 用量</th><th>Precio / 価格</th><th>Link / リンク</th></tr>
+                        <tr><td>Creatina VALX 1kg</td><td>5g con comida</td><td>¥4,980</td><td><a href="https://www.amazon.co.jp/s?k=VALX+%E3%82%AF%E3%83%AC%E3%82%A2%E3%83%81%E3%83%B3+1kg" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>L-Citrulina Bulk Sports 500g</td><td>6-8g pre-entreno</td><td>¥5,122</td><td><a href="https://www.amazon.co.jp/s?k=%E3%83%90%E3%83%AB%E3%82%AF%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84+%E3%82%B7%E3%83%88%E3%83%AB%E3%83%AA%E3%83%B3" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Beta-Alanina GronG 500g</td><td>3.2g pre-entreno</td><td>¥3,480</td><td><a href="https://www.amazon.co.jp/s?k=GronG+%E3%83%99%E3%83%BC%E3%82%BF%E3%82%A2%E3%83%A9%E3%83%8B%E3%83%B3" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>EAA VALX 750g</td><td>15g intra-entreno</td><td>¥8,480</td><td><a href="https://www.amazon.co.jp/s?k=VALX+EAA9+750g" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Maltodextrina GronG 1kg</td><td>30-40g intra-entreno</td><td>¥1,680</td><td><a href="https://www.amazon.co.jp/s?k=GronG+%E3%83%9E%E3%83%AB%E3%83%88%E3%83%87%E3%82%AD%E3%82%B9%E3%83%88%E3%83%AA%E3%83%B3" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>ZMA Optimum Nutrition</td><td>3 caps 22:30</td><td>¥3,680</td><td><a href="https://www.amazon.co.jp/s?k=Optimum+Nutrition+ZMA" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Magnesio Doctor's Best</td><td>200-400mg con cena</td><td>¥3,480</td><td><a href="https://www.amazon.co.jp/s?k=Doctors+Best+%E3%83%9E%E3%82%B0%E3%83%8D%E3%82%B7%E3%82%A6%E3%83%A0" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Omega-3 NOW Foods</td><td>2 caps con comida</td><td>¥4,890</td><td><a href="https://www.amazon.co.jp/s?k=NOW+Foods+%E3%82%A6%E3%83%AB%E3%83%88%E3%83%A9%E3%82%AA%E3%83%A1%E3%82%AC3" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Vitamina D3 NOW Foods</td><td>1 cap con desayuno</td><td>¥2,180</td><td><a href="https://www.amazon.co.jp/s?k=NOW+Foods+%E3%83%93%E3%82%BF%E3%83%9F%E3%83%B3D3+5000IU" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                        <tr><td>Electrolitos Pocari Sweat</td><td>1 paq intra-entreno</td><td>¥2,680</td><td><a href="https://www.amazon.co.jp/s?k=%E3%83%9D%E3%82%AB%E3%83%AA%E3%82%B9%E3%82%A8%E3%83%83%E3%83%88+%E3%83%91%E3%82%A6%E3%83%80%E3%83%BC+25%E8%A2%8B" class="btn-link" target="_blank">購入 🔗</a></td></tr>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="room-card" style="margin-bottom:2rem;">
+                <div class="room-header" style="cursor:default;">
+                    <div class="room-title">⏰ Timeline Diario / スケジュール</div>
+                </div>
+                <div class="room-content open" style="padding:1.5rem;">
+                    <ul style="list-style:none;">
+                        <li style="margin-bottom:1rem;"><strong>07:30 (Desayuno):</strong> Vitamina D3 (5000IU) + Omega-3</li>
+                        <li style="margin-bottom:1rem;"><strong>15:00 (Pre-Dojo):</strong> L-Citrulina (6-8g) + Beta-Alanina (3.2g)</li>
+                        <li style="margin-bottom:1rem;"><strong>16:00 (Intra-Entreno):</strong> EAA (15g) + Maltodextrina (30-40g) + Pocari</li>
+                        <li style="margin-bottom:1rem;"><strong>18:30 (Post-Entreno):</strong> Creatina (5g) + Omega-3</li>
+                        <li><strong>22:30 (Pre-Sueño):</strong> ZMA (3 caps) + Magnesio (200mg)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. JAPANESE -->
+        <section id="japanese">
+            <h2 class="section-title">🗾 Clases Japonés / 日本語クラス</h2>
+            <div class="grid-cards">
+                <div class="item-card">
+                    <h4>italki / Cafetalk</h4>
+                    <p><strong>Formato:</strong> 1-a-1 virtual (25-30 min)</p>
+                    <p><strong>Frecuencia:</strong> 3 sesiones/semana</p>
+                    <p><strong>Costo Mensual / 月額:</strong> ~¥25,000</p>
+                    <p><strong>Objetivo / 目標:</strong> JLPT N3 en 12 meses</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. EXTREMIS -->
+        <section id="extremis">
+            <h2 class="section-title">🩺 Proyecto Extremis / エクストリミス計画</h2>
+            <div class="item-card" style="border-color: var(--amber);">
+                <p><strong>Fase Médica / Clínicas de Seúl</strong></p>
+                <p style="color:var(--text-muted); margin-top:0.5rem;">Reserva de capital (máximo verificado) / 予約金:</p>
+                <h3 style="color:var(--amber); font-size:2rem; margin-top:0.5rem;">¥20,712,000</h3>
+            </div>
+        </section>
+
+        <!-- 10. OPEX -->
+        <section id="opex">
+            <h2 class="section-title">📊 Dashboard OPEX / 運用費用</h2>
+            
+            <div class="chart-container">
+                <div class="donut-chart">
+                    <div class="donut-inner">
+                        <span>¥1.62M<br><small style="font-size:0.7rem;color:var(--text-muted)">MENSUAL / 月額</small><br><small style="font-size:0.6rem;color:var(--text-muted)">~$10,781 USD</small></span>
+                    </div>
+                </div>
+                <ul class="chart-legend">
+                    <li><div class="legend-color" style="background:#d4a853;"></div> Renta & Fortaleza (21%)</li>
+                    <li><div class="legend-color" style="background:#ffbf00;"></div> Diamante Ayame (24%)</li>
+                    <li><div class="legend-color" style="background:#c18b33;"></div> Dieta 5 Comidas (14%)</li>
+                    <li><div class="legend-color" style="background:#e5cd85;"></div> Sanación Ayame (12%)</li>
+                    <li><div class="legend-color" style="background:#3a3a4a;"></div> Otros/Logística (29%)</li>
+                </ul>
+            </div>
+
+            <h4>Comparación OPEX V4.0 vs V5.1</h4>
+            <table>
+                <tr><th>Concepto / 項目</th><th>V4.0</th><th>V5.1</th><th>Δ</th></tr>
+                <tr><td>Dojos / 道場</td><td>¥15,000</td><td>¥41,900</td><td>+¥26,900</td></tr>
+                <tr><td>Fisioterapia / 理学療法</td><td>-</td><td>¥85,000</td><td>Reclasificado</td></tr>
+                <tr><td>Suplementos / サプリ</td><td>¥0</td><td>¥20,200</td><td>+¥20,200</td></tr>
+                <tr><td>Japonés / 日本語</td><td>¥0</td><td>¥25,000</td><td>+¥25,000</td></tr>
+                <tr style="font-weight:bold; color:var(--amber);"><td>TOTAL / 合計</td><td>¥1,565,000</td><td>¥1,617,100</td><td>+¥52,100</td></tr>
+            </table>
+        </section>
+
+        <!-- 11. MATRIX 168H -->
+        <section id="matrix">
+            <h2 class="section-title">⏱️ Matriz 168H / 168時間マトリックス</h2>
+            
+            <div class="tabs">
+                <button class="tab-btn active" onclick="openTab(event, 'mon')">月曜日 Lunes</button>
+                <button class="tab-btn" onclick="openTab(event, 'tue')">火曜日 Martes</button>
+                <button class="tab-btn" onclick="openTab(event, 'wed')">水曜日 Miércoles</button>
+                <button class="tab-btn" onclick="openTab(event, 'thu')">木曜日 Jueves</button>
+                <button class="tab-btn" onclick="openTab(event, 'fri')">金曜日 Viernes</button>
+                <button class="tab-btn" onclick="openTab(event, 'sat')">土曜日 Sábado</button>
+                <button class="tab-btn" onclick="openTab(event, 'sun')">日曜日 Domingo</button>
+            </div>
+
+            <!-- Mon -->
+            <div id="mon" class="tab-content active">
+                <div class="item-card">
+                    <h4>🔴 Lunes / 月曜日: Fuerza Bruta & Kudo</h4>
+                    <p><strong>Proteína:</strong> ~185g | <strong>Zinc:</strong> ~38mg</p>
+                    <table style="margin-top:1rem;">
+                        <tr><th>Hora / 時間</th><th>Actividad / 活動</th><th>Detalle / 詳細</th></tr>
+                        <tr><td>07:30</td><td>Desayuno / 朝食</td><td>Sukiya すき家 R7 - Gyudon + Natto</td></tr>
+                        <tr><td>08:00</td><td>Stream / 配信</td><td>Prime Time América</td></tr>
+                        <tr><td>12:00</td><td>Almuerzo / 昼食</td><td>Ikinari Steak いきなりステーキ EX1 (400g)</td></tr>
+                        <tr><td>13:30</td><td>Japonés / 日本語</td><td>Clase virtual</td></tr>
+                        <tr><td>15:00</td><td>Pre-Dojo / 軽食</td><td>Matsuya 松屋 R4</td></tr>
+                        <tr><td>16:00</td><td>Dojo / 道場</td><td>Daido Juku HQ 大道塾 (Kudo)</td></tr>
+                        <tr><td>18:00</td><td>Cena / 夕食</td><td>Ninja Yakiniku 忍者焼肉 EX5 con Ayame</td></tr>
+                        <tr><td>19:30</td><td>Ingeniería / 開発</td><td>Backend / BBDD</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Tue -->
+            <div id="tue" class="tab-content">
+                <div class="item-card">
+                    <h4>🟠 Martes / 火曜日: Grappling & Frontend</h4>
+                    <p><strong>Proteína:</strong> ~170g | <strong>Zinc:</strong> ~32mg</p>
+                    <table style="margin-top:1rem;">
+                        <tr><th>Hora / 時間</th><th>Actividad / 活動</th><th>Detalle / 詳細</th></tr>
+                        <tr><td>07:30</td><td>Desayuno / 朝食</td><td>Yoshinoya 吉野家 R5 - Salmón</td></tr>
+                        <tr><td>08:00</td><td>Stream / 配信</td><td>Debate / Just Chatting</td></tr>
+                        <tr><td>12:00</td><td>Almuerzo / 昼食</td><td>Hinochen 炙処 火ノ膳 R16 - Caballa</td></tr>
+                        <tr><td>16:00</td><td>Dojo / 道場</td><td>Tri-Force トライフォース BJJ (A pie)</td></tr>
+                        <tr><td>18:00</td><td>Cena / 夕食</td><td>Nishiguchi Yakiton 西口やきとん R20</td></tr>
+                        <tr><td>19:30</td><td>Ingeniería / 開発</td><td>Frontend React/Vue</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Wed -->
+            <div id="wed" class="tab-content">
+                <div class="item-card">
+                    <h4>🟡 Miércoles / 水曜日: MMA & Carga Zinc</h4>
+                    <p><strong>Proteína:</strong> ~220g | <strong>Zinc:</strong> ~52mg 🏆</p>
+                    <table style="margin-top:1rem;">
+                        <tr><th>Hora / 時間</th><th>Actividad / 活動</th><th>Detalle / 詳細</th></tr>
+                        <tr><td>07:30</td><td>Desayuno / 朝食</td><td>Ootoya 大戸屋 R6</td></tr>
+                        <tr><td>12:00</td><td>Almuerzo / 昼食</td><td>Nihon Yakiniku Toh 日本焼肉党 R17</td></tr>
+                        <tr><td>16:00</td><td>Dojo / 道場</td><td>Kodokan 講道館 Judo</td></tr>
+                        <tr><td>18:00</td><td>Cena / 夕食</td><td>Kakigoya かき小屋 EX4 (Ostras = Bomba Zinc)</td></tr>
+                        <tr><td>19:30</td><td>Ingeniería / 開発</td><td>Lógica API / Pasarelas</td></tr>
+                        <tr><td>22:30</td><td>Cierre / 夜食</td><td>Fukurou らーめん 福籠 R1 - Miso Ramen</td></tr>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Thu -->
+            <div id="thu" class="tab-content">
+                <div class="item-card">
+                    <h4>🟢 Jueves / 木曜日: Krazy Bee MMA</h4>
+                    <table style="margin-top:1rem;">
+                        <tr><th>Hora / 時間</th><th>Actividad / 活動</th><th>Detalle / 詳細</th></tr>
+                        <tr><td>12:00</td><td>Almuerzo / 昼食</td><td>Ikinari Steak いきなりステーキ EX1 (300g)</td></tr>
+                        <tr><td>16:00</td><td>Dojo / 道場</td><td>Krazy Bee Koshigaya</td></tr>
+                        <tr><td>18:00</td><td>Cena / 夕食</td><td>Yakiniku Juraku 焼肉じゅらく R11</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Fri -->
+            <div id="fri" class="tab-content">
+                <div class="item-card">
+                    <h4>🔵 Viernes / 金曜日: Date Night & HIIT</h4>
+                    <table style="margin-top:1rem;">
+                        <tr><th>Hora / 時間</th><th>Actividad / 活動</th><th>Detalle / 詳細</th></tr>
+                        <tr><td>12:00</td><td>Almuerzo / 昼食</td><td>Sushi Zanmai すし三昧 EX3</td></tr>
+                        <tr><td>16:00</td><td>Dojo / 道場</td><td>Krazy Bee (Acondicionamiento)</td></tr>
+                        <tr><td>18:00</td><td>Cena / 夕食</td><td>Ninja Yakiniku 忍者焼肉 EX5 (Cita Especial)</td></tr>
+                        <tr><td>21:30</td><td>Pareja / カップル</td><td>PS5/Switch juntos</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Sat -->
+            <div id="sat" class="tab-content">
+                <div class="item-card">
+                    <h4>🟣 Sábado / 土曜日: Offline & Creación</h4>
+                    <table style="margin-top:1rem;">
+                        <tr><th>Hora / 時間</th><th>Actividad / 活動</th><th>Detalle / 詳細</th></tr>
+                        <tr><td>08:00</td><td>Trabajo / 仕事</td><td>Grabar VODs (Off-stream)</td></tr>
+                        <tr><td>12:00</td><td>Almuerzo / 昼食</td><td>Little Butcher リトルブッチャー R3 (Torre 300g)</td></tr>
+                        <tr><td>17:00</td><td>Pareja / カップル</td><td>Explorar Akihabara/Asakusa</td></tr>
+                        <tr><td>19:30</td><td>Cena / 夕食</td><td>Torikizoku 鳥貴族 EX6</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Sun -->
+            <div id="sun" class="tab-content">
+                <div class="item-card">
+                    <h4>⚪ Domingo / 日曜日: Reset & Planeación</h4>
+                    <table style="margin-top:1rem;">
+                        <tr><th>Hora / 時間</th><th>Actividad / 活動</th><th>Detalle / 詳細</th></tr>
+                        <tr><td>08:00</td><td>Stream / 配信</td><td>Chill Sunday Q&A</td></tr>
+                        <tr><td>16:00</td><td>Dojo / 道場</td><td>Tri-Force トライフォース (Recuperación activa)</td></tr>
+                        <tr><td>18:00</td><td>Cena / 夕食</td><td>Yakiniku PANGA 焼肉PANGA EX2 (Mejor cena)</td></tr>
+                        <tr><td>19:30</td><td>Admin / 管理</td><td>Analíticas, finanzas semanales</td></tr>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- 12. RESTAURANTS -->
+        <section id="restaurants">
+            <h2 class="section-title">🗺️ Mapa Restaurantes / レストランマップ</h2>
+            <div class="room-card">
+                <div class="room-content open">
+                    <table>
+                        <tr><th>Cod</th><th>Restaurante / レストラン</th><th>Distancia / 距離</th><th>Tipo / 種類</th></tr>
+                        <tr><td>R1</td><td>らーめん 福籠 (Ramen Fukurou)</td><td>20m (15s)</td><td>Ramen</td></tr>
+                        <tr><td>R2</td><td>魚がし日本一 (Uogashi Nihon-Ichi)</td><td>30m (30s)</td><td>Sushi Rápido</td></tr>
+                        <tr><td>R3</td><td>リトルブッチャー (Little Butcher)</td><td>50m</td><td>Carnes</td></tr>
+                        <tr><td>R4</td><td>松屋 浅草橋店 (Matsuya)</td><td>150m</td><td>Gyudon (24H)</td></tr>
+                        <tr><td>R5</td><td>吉野家 (Yoshinoya)</td><td>150m</td><td>Gyudon</td></tr>
+                        <tr><td>R6</td><td>大戸屋 (Ootoya)</td><td>150m</td><td>Set Meals JP</td></tr>
+                        <tr><td>R7</td><td>すき家 (Sukiya)</td><td>180m</td><td>Gyudon (24H)</td></tr>
+                        <tr><td>EX1</td><td>いきなりステーキ (Ikinari Steak)</td><td>1 est. JR</td><td>Steak 400g</td></tr>
+                        <tr><td>EX2</td><td>焼肉PANGA (Yakiniku PANGA)</td><td>2 est. JR</td><td>Wagyu Halal</td></tr>
+                        <tr><td>EX4</td><td>かき小屋 (Kakigoya)</td><td>3 est. JR</td><td>Bomba Zinc</td></tr>
+                        <tr><td>EX5</td><td>Ninja Yakiniku (忍者焼肉)</td><td>2 est. Toei</td><td>Cena Premium</td></tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <a href="#" id="back-to-top">↑</a>
+
+    <script>
+        // Progress bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progress-bar').style.width = scrolled + '%';
+
+            // Back to top button visibility
+            const btt = document.getElementById('back-to-top');
+            if (winScroll > 500) {
+                btt.classList.add('visible');
+            } else {
+                btt.classList.remove('visible');
+            }
+
+            // Highlight nav
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links li a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Mobile sidebar toggle
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+        }
+
+        // Room Accordion
+        function toggleRoom(element) {
+            const content = element.nextElementSibling;
+            if (content.classList.contains('open')) {
+                content.classList.remove('open');
+                content.style.maxHeight = '0';
+            } else {
+                content.classList.add('open');
+                content.style.maxHeight = content.scrollHeight + 'px';
+            }
+        }
+
+        // Tabs Matrix
+        function openTab(evt, tabName) {
+            const tabcontent = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            const tablinks = document.getElementsByClassName("tab-btn");
+            for (let i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>
