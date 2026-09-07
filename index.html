@@ -555,7 +555,7 @@
                     <div class="stat-label">CAPEX Total<br>総設備投資</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">¥1.56M</div>
+                    <div class="stat-value">¥1.18M</div>
                     <div class="stat-label">OPEX Mensual<br>月間運用費</div>
                 </div>
                 <div class="stat-card">
@@ -1005,32 +1005,58 @@ Renta: ¥268,000 (base ¥250,000 + ¥18,000 管理費) | Depósito 1 mes · 礼�
 
         <!-- 10. OPEX -->
         <section id="opex">
-            <h2 class="section-title">📊 Dashboard OPEX / 運用費用</h2>
+            <h2 class="section-title">📊 Dashboard OPEX V6.0 / 運用費用</h2>
             
             <div class="chart-container">
-                <div class="donut-chart">
+                <div class="donut-chart" style="background: conic-gradient(
+                    #d4a853 0% 25%, 
+                    #ff6b6b 25% 56%, 
+                    #ffbf00 56% 73%, 
+                    #c18b33 73% 83%, 
+                    #3a3a4a 83% 100%
+                );">
                     <div class="donut-inner">
-                        <span>¥1.56M<br><small style="font-size:0.7rem;color:var(--text-muted)">MENSUAL / 月額</small><br><small style="font-size:0.6rem;color:var(--text-muted)">~$10,612 USD</small></span>
+                        <span>¥1.18M<br><small style="font-size:0.7rem;color:var(--text-muted)">FASE 1 / 月額</small><br><small style="font-size:0.6rem;color:var(--text-muted)">~$8,006 USD</small></span>
                     </div>
                 </div>
                 <ul class="chart-legend">
-                    <li><div class="legend-color" style="background:#d4a853;"></div> Renta & Fortaleza (21%)</li>
-                    <li><div class="legend-color" style="background:#ffbf00;"></div> Diamante Ayame (24%)</li>
-                    <li><div class="legend-color" style="background:#c18b33;"></div> Dieta 5 Comidas (14%)</li>
-                    <li><div class="legend-color" style="background:#e5cd85;"></div> Sanación Ayame (12%)</li>
-                    <li><div class="legend-color" style="background:#3a3a4a;"></div> Otros/Logística (29%)</li>
+                    <li><div class="legend-color" style="background:#d4a853;"></div> Renta & Base (25%)</li>
+                    <li><div class="legend-color" style="background:#ff6b6b;"></div> Sanación / Terapia (31%) 🧠</li>
+                    <li><div class="legend-color" style="background:#ffbf00;"></div> Diamante Ayame (17%) 💜</li>
+                    <li><div class="legend-color" style="background:#c18b33;"></div> Dieta Goku / Costco (10%) 🥩</li>
+                    <li><div class="legend-color" style="background:#3a3a4a;"></div> Otros (Supps+Dojos+Subs+Logistics) (17%)</li>
                 </ul>
             </div>
 
-            <h4>Comparación OPEX V4.0 vs V5.1</h4>
+            <h4>Desglose V6.0 — Fase 1 (Recuperación, Meses 1-6)</h4>
             <table>
-                <tr><th>Concepto / 項目</th><th>V4.0</th><th>V5.1</th><th>Δ</th></tr>
-                <tr><td>Dojos / 道場</td><td>¥15,000</td><td>¥41,900</td><td>+¥26,900</td></tr>
-                <tr><td>Fisioterapia / 理学療法</td><td>-</td><td>¥85,000</td><td>Reclasificado</td></tr>
-                <tr><td>Suplementos / サプリ</td><td>¥0</td><td>¥20,200</td><td>+¥20,200</td></tr>
-                <tr><td>Japonés / 日本語</td><td>¥0</td><td>¥25,000</td><td>+¥25,000</td></tr>
-                <tr style="font-weight:bold; color:var(--amber);"><td>TOTAL / 合計</td><td>¥1,565,000</td><td>¥1,555,100</td><td>-¥9,900</td></tr>
+                <tr><th>Concepto / 項目</th><th>V5.1 (Anterior)</th><th>V6.0 (Nuevo)</th><th>Δ</th></tr>
+                <tr><td>🏠 Renta & Base (incl. moto)</td><td>¥357,000</td><td>¥295,000</td><td style="color:#4CAF50;">-¥62,000</td></tr>
+                <tr><td>🥩 Dieta (5 restaurantes → Costco)</td><td>¥218,000</td><td>¥119,000</td><td style="color:#4CAF50;">-¥99,000</td></tr>
+                <tr><td>💜 Diamante Ayame</td><td>¥374,000</td><td>¥200,000</td><td style="color:#4CAF50;">-¥174,000</td></tr>
+                <tr><td>🧠 Sanación (Terapia 20 sesiones)</td><td>¥187,000</td><td>¥368,000</td><td style="color:#ff6b6b;">+¥181,000 (ahora realista)</td></tr>
+                <tr><td>🏥 Fisioterapia (con NHI 30%)</td><td>¥85,000</td><td>¥60,000</td><td style="color:#4CAF50;">-¥25,000</td></tr>
+                <tr><td>🥋 Dojos / 道場</td><td>¥41,900</td><td>¥0</td><td style="color:#4CAF50;">-¥41,900 (pausados)</td></tr>
+                <tr><td>🧬 Suplementos / サプリ</td><td>¥20,200</td><td>¥20,200</td><td>—</td></tr>
+                <tr><td>🇯🇵 Japonés / 日本語</td><td>¥25,000</td><td>¥25,000</td><td>—</td></tr>
+                <tr><td>📱 Suscripciones (Gemini $200 + streaming)</td><td>—</td><td>¥37,780</td><td>Nuevo</td></tr>
+                <tr><td>⚡ Logística & Utilities</td><td>~¥246,000</td><td>¥52,000</td><td style="color:#4CAF50;">Desglosado</td></tr>
+                <tr style="font-weight:bold; color:var(--amber);"><td>TOTAL FASE 1 / 合計</td><td>¥1,555,100</td><td>¥1,176,980</td><td style="color:#4CAF50;">-¥378,120</td></tr>
             </table>
+
+            <h4 style="margin-top:2rem;">Fase 2 — Imperio Completo (Meses 7-24)</h4>
+            <table>
+                <tr><th>Cambio vs Fase 1</th><th>Efecto</th></tr>
+                <tr><td>🏥 Fisioterapia → ¥0 (recuperado)</td><td style="color:#4CAF50;">-¥60,000</td></tr>
+                <tr><td>🥋 Dojos activados (4 activos)</td><td style="color:#ff6b6b;">+¥41,900</td></tr>
+                <tr style="font-weight:bold; color:var(--amber);"><td>TOTAL FASE 2 / 合計</td><td>¥1,158,880 (~$7,883 USD)</td></tr>
+            </table>
+
+            <div class="item-card" style="margin-top:1.5rem; border-color:#4CAF50;">
+                <p><strong>💰 Ahorro V6.0 vs V5.1</strong></p>
+                <p style="color:var(--text-muted); margin-top:0.5rem;">Ahorro mensual: <strong style="color:#4CAF50;">¥378,120/mes</strong> · Ahorro anual: <strong style="color:#4CAF50;">~¥4.5M (~$31,000 USD)</strong></p>
+                <p style="color:var(--text-muted); margin-top:0.5rem;">Fuente principal: Costco meal prep (-¥99K) + Ayame optimizado (-¥174K) + Renta Akihabara (-¥62K)</p>
+            </div>
         </section>
 
         <!-- 11. MATRIX 168H -->
