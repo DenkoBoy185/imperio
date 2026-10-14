@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guardarropa — Imperio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{--background:#0b0b10;--foreground:#e5e7eb;--card:#15151d;--border:#2a2a36;--muted-foreground:#9ca3af;--primary:#ef4444}
+    body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans JP","Noto Sans KR",sans-serif}
+    .back-link{display:inline-block;margin-bottom:12px;font-size:12px;color:#9ca3af;text-decoration:none}
+    .back-link:hover{color:#e5e7eb}
+  </style>
+  <style>
+    .tab-btn.active{border-color:var(--primary);color:var(--primary);background:var(--card)}
+    .tab-content{display:none}.tab-content.active{display:block}
+    .buy-btn{text-decoration:none!important;display:inline-block}
+    .pc:hover{transform:translateY(-2px)}.pc{transition:transform .15s}
+    .oc{border-left:4px solid var(--primary)}
+  </style>
+</head>
+<body class="bg-[var(--background)] text-[var(--foreground)] antialiased p-4">
+<a class="back-link" href="../">← Volver al Atlas del Imperio</a>
+
+<div class="text-center mb-6">
+  <h1 class="text-3xl font-bold mb-1">👟 GUARDARROPA IMPERIO V8</h1>
+  <p class="text-[var(--muted-foreground)] text-sm">Supreme × Jordan × Levi's × Wolverine × Accesorios</p>
+  <p class="text-xs text-[var(--muted-foreground)] mt-1">Zapatos <strong>US 14</strong> · Jeans <strong>36×32</strong> · Ropa <strong>XL</strong></p>
+  <div class="mt-3 inline-block bg-[var(--card)] border border-[var(--border)] rounded-lg px-4 py-2">
+    <span class="text-lg font-bold text-red-500">💰 ~$18,386 USD</span>
+    <span class="text-[var(--muted-foreground)] text-xs ml-1">(~¥2.70M · ₩25.5M)</span>
+  </div>
+</div>
+
+<div class="flex flex-wrap gap-1.5 mb-4 border-b border-[var(--border)] pb-2">
+  <button onclick="showTab('kicks')" class="tab-btn active px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-kicks">👟 Sneakers (13)</button>
+  <button onclick="showTab('levis')" class="tab-btn px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-levis">👖 Levi's (8)</button>
+  <button onclick="showTab('hoodies')" class="tab-btn px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-hoodies">🧥 Supreme Hoodies (12)</button>
+  <button onclick="showTab('tees')" class="tab-btn px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-tees">👕 Tees (15)</button>
+  <button onclick="showTab('acc')" class="tab-btn px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-acc">🎒 Accesorios</button>
+  <button onclick="showTab('wolf')" class="tab-btn px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-wolf">🐺 Wolverine</button>
+  <button onclick="showTab('fits')" class="tab-btn px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-fits">🔥 Outfits (35)</button>
+  <button onclick="showTab('deals')" class="tab-btn px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-deals">🏷️ Resumen</button>
+</div>
+
+<!-- ========== SNEAKERS ========== -->
+<div id="tab-kicks" class="tab-content active">
+<div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 mb-4">
+  <h2 class="text-lg font-bold">👟 13 Pares — Size US 14 — GOAT</h2>
+  <p class="font-bold mt-1">💰 ~$3,195</p>
+</div>
+
+<h3 class="font-bold text-sm mb-2">AIR JORDAN 1 HIGH — 6 Pares</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-2 mb-3">
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+    <div class="flex items-center gap-2 mb-1"><span>🔴⚪</span><div class="flex-1"><p class="font-bold text-sm">1. "Chicago Lost & Found"</p></div><span class="font-bold">$340</span></div>
+    <a href="https://www.goat.com/sneakers/air-jordan-1-retro-high-og-dz5485-612" target="_blank" class="buy-btn bg-green-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-green-700">🛒 GOAT</a>
+  </div>
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+    <div class="flex items-center gap-2 mb-1"><span>⚫⚪</span><div class="flex-1"><p class="font-bold text-sm">2. "Black Toe Reimagined"</p></div><span class="font-bold text-green-500">$148</span></div>
+    <a href="https://www.goat.com/sneakers/air-jordan-1-retro-high-og-black-toe-reimagined-dz5485-061" target="_blank" class="buy-btn bg-green-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-green-700">🛒 GOAT</a>
+  </div>
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+    <div class="flex items-center gap-2 mb-1"><span>🩶⚫</span><div class="flex-1"><p class="font-bold text-sm">3. "Shadow 2.0"</p></div><span class="font-bold">~$165</span></div>
+    <a href="https://www.goat.com/sneakers/air-jordan-1-retro-high-og-shadow-2-0-555088-035" target="_blank" class="buy-btn bg-green-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-green-700">🛒 GOAT</a>
+  </div>
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+    <div class="flex items-center gap-2 mb-1"><span>⚪🩶</span><div class="flex-1"><p class="font-bold text-sm">4. '85 "Neutral Grey"</p></div><span class="font-bold">~$140</span></div>
+    <a href="https://www.goat.com/sneakers/air-jordan-1-retro-high-85-og-neutral-grey-bq4422-100" target="_blank" class="buy-btn bg-green-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-green-700">🛒 GOAT</a>
+  </div>
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+    <div class="flex items-center gap-2 mb-1"><span>🕷️🔴</span><div class="flex-1"><p class="font-bold text-sm">5. Marvel × "Spider-Verse"</p></div><span class="font-bold">$212</span></div>
+    <a href="https://www.goat.com/sneakers/marvel-x-air-jordan-1-retro-high-og-spider-man-across-the-spider-verse-dv1748-601" target="_blank" class="buy-btn bg-green-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-green-700">🛒 GOAT</a>
+  </div>
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+    <div class="flex items-center gap-2 mb-1"><span>🟢⚪</span><div class="flex-1"><p class="font-bold text-sm">6. "Turbo Green"</p></div><span class="font-bold">~$220</span></div>
+    <a href="https://www.goat.com/sneakers/air-jordan-1-retro-high-og-turbo-green-555088-311" target="_blank" class="buy-btn bg-green-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-green-700">🛒 GOAT</a>
+  </div>
+</div>
+
+<h3 class="font-bold text-sm mb-2">AIR JORDAN 4 — 3 Pares</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-2 mb-3">
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+    <div class="flex items-center gap-2 mb-1"><span>🔵⚪</span><div class="flex-1"><p class="font-bold text-sm">7. AJ4 "Military Blue"</p></div><span class="font-bold">~$220</span></div>
+    <a href="https://www.goat.com/sneakers/air-jordan-4-retro-military-blue-2024-fv5029-141" target="_blank" class="buy-btn bg-green-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-green-700">🛒 GOAT</a>
+  </div>
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+    <div class="flex items-center gap-2 mb-1"><span>⚫🔴</span><div class="flex-1"><p class="font-bold text-sm">8. AJ4 "Bred Reimagined"</p></div><span class="font-bold">~$280</span></div>
+    <a href="https://www.goat.com/sneakers/air-jordan-4-retro-bred-reimagined-fv5029-006" target="_blank" class="buy-btn bg-green-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-green-700">🛒 GOAT</a>
+  </div>
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+    <div class="flex items-center gap-2 mb-1"><span>⚪🩶</span><div class="flex-1"><p class="font-bold text-sm">9. AJ4 "White Cement" 2025</p></div><span class="font-bold">~$270</span></div>
+    <a href="https://www.goat.com/sneakers/air-jordan-4-retro-og-white-cement-2025-fv5029-100" target="_blank" class="buy-btn bg-green-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-green-700">🛒 GOAT</a>
+  </div>
+</div>
+
+<h3 class="font-bold text-sm mb-2">AJ7 + SPECIALS — 4 Pares</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+    <div class="flex items-center gap-2 mb-1"><span>🔴⚪</span><div class="flex-1"><p class="font-bold text-sm">10. AJ7 "Cardinal"</p></div><span class="font-bold">~$140</span></div>
+    <a href="https://www.goat.com/sneakers/air-jordan-7-retro-cardinal-2022-cu9307-106" target="_blank" class="buy-btn bg-green-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-green-700">🛒 GOAT</a>
+  </div>
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+    <div class="flex items-center gap-2 mb-1"><span>🏆🔵</span><div class="flex-1"><p class="font-bold text-sm">11. Trophy Room × AJ7</p></div><span class="font-bold">~$290</span></div>
+    <a href="https://www.goat.com/sneakers/trophy-room-x-air-jordan-7-retro-olympic-dm1195-474" target="_blank" class="buy-btn bg-green-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-green-700">🛒 GOAT</a>
+  </div>
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+    <div class="flex items-center gap-2 mb-1"><span>🕷️🔵</span><div class="flex-1"><p class="font-bold text-sm">12. AJ1 "Origin Story" GRAIL</p></div><span class="font-bold">~$650</span></div>
+    <a href="https://www.goat.com/sneakers/spider-verse-x-air-jordan-1-retro-high-og-origin-story" target="_blank" class="buy-btn bg-green-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-green-700">🛒 GOAT</a>
+  </div>
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 border-2 border-blue-500">
+    <div class="flex items-center gap-2 mb-1"><span>🇺🇸</span><div class="flex-1"><p class="font-bold text-sm">13. AJ13 "French Blue"</p></div><span class="font-bold">~$170</span></div>
+    <a href="https://www.goat.com/sneakers/air-jordan-13-retro-french-blue-414571-164" target="_blank" class="buy-btn bg-green-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-green-700">🛒 GOAT</a>
+  </div>
+</div>
+</div>
+
+<!-- ========== LEVI'S ========== -->
+<div id="tab-levis" class="tab-content">
+<div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 mb-4">
+  <h2 class="text-lg font-bold">👖 8 Levi's — 36W × 32L — Todos azules</h2>
+  <p class="text-xs text-green-500 font-bold mt-1">⚡ $75 OFF en $200+ (hasta Sep 27) · Newsletter = 15% OFF</p>
+  <p class="font-bold mt-1">💰 ~$616 → ~$466 con promos</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3"><p class="font-bold text-sm">L1 · 501 Medium Indigo · $79.50</p><a href="https://www.levi.com/US/en_US/clothing/men/jeans/straight/501-original-fit-mens-jeans/p/005013367" target="_blank" class="buy-btn bg-blue-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-blue-700 mt-1">🛒 Levi.com</a></div>
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3"><p class="font-bold text-sm">L2 · 501 Dark Rigid (STF) · $79.50</p><a href="https://www.levi.com/US/en_US/clothing/men/jeans/straight/501-original-fit-mens-jeans/p/005010000" target="_blank" class="buy-btn bg-blue-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-blue-700 mt-1">🛒 Levi.com</a></div>
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3"><p class="font-bold text-sm">L3 · 501 Light Stonewash · $79.50</p><a href="https://www.levi.com/US/en_US/clothing/men/jeans/straight/501-original-fit-mens-jeans/p/005010134" target="_blank" class="buy-btn bg-blue-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-blue-700 mt-1">🛒 Levi.com</a></div>
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3"><p class="font-bold text-sm">L4 · 501 Vintage "The Concourse" · $79.50</p><a href="https://www.levi.com/US/en_US/clothing/men/jeans/straight/501-original-fit-mens-jeans/p/005013715" target="_blank" class="buy-btn bg-blue-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-blue-700 mt-1">🛒 Levi.com</a></div>
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3"><p class="font-bold text-sm">L5 · 511 Slim "Yokohama Nights" · $69.50</p><a href="https://www.levi.com/US/en_US/clothing/men/jeans/slim/511-slim-fit-mens-jeans/p/045111150" target="_blank" class="buy-btn bg-blue-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-blue-700 mt-1">🛒 Levi.com</a></div>
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3"><p class="font-bold text-sm">L6 · 511 Slim "The Banks" · $69.50</p><a href="https://www.levi.com/US/en_US/clothing/men/jeans/slim/511-slim-fit-mens-jeans/p/045113621" target="_blank" class="buy-btn bg-blue-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-blue-700 mt-1">🛒 Levi.com</a></div>
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3"><p class="font-bold text-sm">L7 · 512 Taper Dark Indigo · $79.50</p><a href="https://www.levi.com/US/en_US/clothing/men/jeans/slim/512-slim-taper-fit-mens-jeans/p/288331186" target="_blank" class="buy-btn bg-blue-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-blue-700 mt-1">🛒 Levi.com</a></div>
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3"><p class="font-bold text-sm">L8 · 512 Taper "Keepin' It Clean" · $79.50</p><a href="https://www.levi.com/US/en_US/clothing/men/jeans/slim/512-slim-taper-fit-mens-jeans/p/288331201" target="_blank" class="buy-btn bg-blue-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-blue-700 mt-1">🛒 Levi.com</a></div>
+</div>
+</div>
+
+<!-- ========== SUPREME HOODIES ========== -->
+<div id="tab-hoodies" class="tab-content">
+<div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 mb-4">
+  <h2 class="text-lg font-bold">🧥 12 Supreme Hoodies — XL — 70/30 Pull/Zip</h2>
+  <p class="text-[var(--muted-foreground)] text-xs">De tu wishlist de GOAT + piezas que combinan. Small Box logo = discreto.</p>
+  <p class="font-bold mt-1 text-red-500">💰 ~$3,200 - $3,800</p>
+</div>
+
+<h3 class="font-bold text-sm mb-2">PULLOVER — 8 unidades</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-2 mb-3">
+
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 border-l-4 border-l-red-600">
+    <p class="font-bold text-sm">H1 · Supreme Box Logo Hoodie — Navy</p>
+    <p class="text-[var(--muted-foreground)] text-xs">FW24 · Logo bordado clásico · Azul marino</p>
+    <p class="font-bold text-sm mt-1">~$330</p>
+    <a href="https://www.goat.com/apparel/supreme-box-logo-hooded-sweatshirt-navy-fw24sw11-navy" target="_blank" class="buy-btn bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-red-700 mt-1">🛒 GOAT XL</a>
+  </div>
+
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 border-l-4 border-l-red-600">
+    <p class="font-bold text-sm">H2 · Supreme Box Logo Hoodie — Ash Grey</p>
+    <p class="text-[var(--muted-foreground)] text-xs">FW23 · Logo bordado · Gris ceniza</p>
+    <p class="font-bold text-sm mt-1">~$370</p>
+    <a href="https://www.goat.com/apparel/supreme-box-logo-hooded-sweatshirt-ash-grey-fw23sw56-ash-grey" target="_blank" class="buy-btn bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-red-700 mt-1">🛒 GOAT XL</a>
+  </div>
+
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 border-l-4 border-l-red-600">
+    <p class="font-bold text-sm">H3 · Supreme Swarovski Motion Logo — Navy</p>
+    <p class="text-[var(--muted-foreground)] text-xs">FW25 · Cristales Swarovski · Azul marino</p>
+    <p class="font-bold text-sm mt-1">~$350</p>
+    <a href="https://www.goat.com/apparel/supreme-swarovski-motion-logo-hooded-sweatshirt-navy-fw25sw62-navy" target="_blank" class="buy-btn bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-red-700 mt-1">🛒 GOAT XL</a>
+  </div>
+
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 border-l-4 border-l-red-600">
+    <p class="font-bold text-sm">H4 · Supreme Small Box Hoodie — Black</p>
+    <p class="text-[var(--muted-foreground)] text-xs">Logo pequeño bordado · Negro · El daily driver</p>
+    <p class="font-bold text-sm mt-1">~$250</p>
+    <a href="https://www.goat.com/search?query=supreme+small+box+hooded+sweatshirt+black+xl" target="_blank" class="buy-btn bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-red-700 mt-1">🛒 GOAT XL</a>
+  </div>
+
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 border-l-4 border-l-red-600">
+    <p class="font-bold text-sm">H5 · Supreme Small Box Hoodie — Black (×2)</p>
+    <p class="text-[var(--muted-foreground)] text-xs">Backup · Lo vas a usar mucho</p>
+    <p class="font-bold text-sm mt-1">~$250</p>
+    <a href="https://www.goat.com/search?query=supreme+small+box+hooded+sweatshirt+black+xl" target="_blank" class="buy-btn bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-red-700 mt-1">🛒 GOAT XL</a>
+  </div>
+
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 border-l-4 border-l-red-600">
+    <p class="font-bold text-sm">H6 · Supreme Small Box Hoodie — Navy</p>
+    <p class="text-[var(--muted-foreground)] text-xs">Logo pequeño · Azul marino</p>
+    <p class="font-bold text-sm mt-1">~$250</p>
+    <a href="https://www.goat.com/search?query=supreme+small+box+hooded+sweatshirt+navy+xl" target="_blank" class="buy-btn bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-red-700 mt-1">🛒 GOAT XL</a>
+  </div>
+
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 border-l-4 border-l-red-600">
+    <p class="font-bold text-sm">H7 · Supreme Small Box Hoodie — Heather Grey</p>
+    <p class="text-[var(--muted-foreground)] text-xs">Logo pequeño · Gris jaspeado</p>
+    <p class="font-bold text-sm mt-1">~$250</p>
+    <a href="https://www.goat.com/search?query=supreme+small+box+hooded+sweatshirt+grey+xl" target="_blank" class="buy-btn bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-red-700 mt-1">🛒 GOAT XL</a>
+  </div>
+
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 border-l-4 border-l-red-600">
+    <p class="font-bold text-sm">H8 · Supreme Small Box Hoodie — Natural</p>
+    <p class="text-[var(--muted-foreground)] text-xs">Logo pequeño · Crema/Natural</p>
+    <p class="font-bold text-sm mt-1">~$250</p>
+    <a href="https://www.goat.com/search?query=supreme+small+box+hooded+sweatshirt+natural+xl" target="_blank" class="buy-btn bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-red-700 mt-1">🛒 GOAT XL</a>
+  </div>
+</div>
+
+<h3 class="font-bold text-sm mb-2">ZIP-UP — 4 unidades</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 border-l-4 border-l-red-600">
+    <p class="font-bold text-sm">Z1 · Supreme Small Box Zip Up — Burnt Red</p>
+    <p class="text-[var(--muted-foreground)] text-xs">SS21 · Rojo quemado · De tu wishlist</p>
+    <p class="font-bold text-sm mt-1">~$354</p>
+    <a href="https://www.goat.com/apparel/supreme-small-box-zip-up-hooded-sweatshirt-burnt-red-ss21sw52-burnt-red" target="_blank" class="buy-btn bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-red-700 mt-1">🛒 GOAT XL</a>
+  </div>
+
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 border-l-4 border-l-red-600">
+    <p class="font-bold text-sm">Z2 · Supreme Small Box Drawcord Zip — Washed Navy</p>
+    <p class="text-[var(--muted-foreground)] text-xs">FW22 · Azul lavado · De tu wishlist</p>
+    <p class="font-bold text-sm mt-1">~$220</p>
+    <a href="https://www.goat.com/apparel/supreme-small-box-drawcord-zip-up-hooded-sweatshirt-washed-navy-fw22sw52-washed-navy" target="_blank" class="buy-btn bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-red-700 mt-1">🛒 GOAT XL</a>
+  </div>
+
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 border-l-4 border-l-red-600">
+    <p class="font-bold text-sm">Z3 · Supreme WINDSTOPPER Zip Up — Black</p>
+    <p class="text-[var(--muted-foreground)] text-xs">FW21 · GORE-TEX Windstopper · De tu wishlist</p>
+    <p class="font-bold text-sm mt-1">~$249</p>
+    <a href="https://www.goat.com/apparel/supreme-windstopper-zip-up-hooded-sweatshirt-black-fw21sw16-black" target="_blank" class="buy-btn bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-red-700 mt-1">🛒 GOAT XL</a>
+  </div>
+
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 border-l-4 border-l-red-600">
+    <p class="font-bold text-sm">Z4 · Supreme Small Box Zip Up — Navy</p>
+    <p class="text-[var(--muted-foreground)] text-xs">SS21 · Azul marino · De tu wishlist</p>
+    <p class="font-bold text-sm mt-1">~$250</p>
+    <a href="https://www.goat.com/apparel/supreme-small-box-zip-up-hooded-sweatshirt-navy-ss21sw52-navy" target="_blank" class="buy-btn bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-red-700 mt-1">🛒 GOAT XL</a>
+  </div>
+</div>
+</div>
+
+<!-- ========== TEES ========== -->
+<div id="tab-tees" class="tab-content">
+<div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 mb-4">
+  <h2 class="text-lg font-bold">👕 15 Tees — XL — Supreme + Uniqlo</h2>
+  <p class="text-[var(--muted-foreground)] text-xs">Mix: Supreme Small Box diarias + Box Logo collabs especiales + Uniqlo para Japón</p>
+  <p class="font-bold mt-1 text-red-500">💰 ~$1,200 - $1,800</p>
+</div>
+
+<h3 class="font-bold text-sm mb-2">SUPREME SMALL BOX TEE — Diarias (×5)</h3>
+<div class="grid grid-cols-1 gap-2 mb-3">
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+    <p class="font-bold text-sm">T1–T3 · Supreme Small Box Tee — White × 3 · ~$80-100 c/u</p>
+    <p class="text-[var(--muted-foreground)] text-xs">Logo pequeño bordado. Tu camiseta diaria Supreme.</p>
+    <a href="https://www.goat.com/apparel/supreme-small-box-tee-white-fw22kn12-white" target="_blank" class="buy-btn bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-red-700 mt-1">🛒 GOAT XL</a>
+  </div>
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+    <p class="font-bold text-sm">T4–T5 · Supreme Small Box Tee — White × 2 (diferente temporada) · ~$80-100 c/u</p>
+    <a href="https://www.goat.com/apparel/supreme-small-box-tee-white-fw20kn5-white" target="_blank" class="buy-btn bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-red-700 mt-1">🛒 GOAT XL (FW20)</a>
+  </div>
+</div>
+
+<h3 class="font-bold text-sm mb-2">SUPREME BOX LOGO COLLAB TEES — Grails (×5)</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-2 mb-3">
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 border-l-4 border-l-yellow-500">
+    <p class="font-bold text-sm">T6 · Supreme × Burberry Box Logo Tee — White</p>
+    <p class="text-xs text-[var(--muted-foreground)]">Collab icónica · De tu wishlist</p>
+    <p class="font-bold mt-1">~$299</p>
+    <a href="https://www.goat.com/apparel/supreme-x-burberry-box-logo-tee-white-burberryt1-white" target="_blank" class="buy-btn bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-red-700 mt-1">🛒 GOAT XL</a>
+  </div>
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 border-l-4 border-l-yellow-500">
+    <p class="font-bold text-sm">T7 · Supreme × Tiffany & Co Box Logo — White</p>
+    <p class="text-xs text-[var(--muted-foreground)]">Tiffany blue box logo · De tu wishlist</p>
+    <p class="font-bold mt-1">~$391</p>
+    <a href="https://www.goat.com/apparel/supreme-x-tiffany-co-box-logo-tee-white-fw21t37-white" target="_blank" class="buy-btn bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-red-700 mt-1">🛒 GOAT XL</a>
+  </div>
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 border-l-4 border-l-yellow-500">
+    <p class="font-bold text-sm">T8 · Supreme Bandana Box Logo Tee — White</p>
+    <p class="text-xs text-[var(--muted-foreground)]">Bandana print box logo · De tu wishlist</p>
+    <p class="font-bold mt-1">~$453</p>
+    <a href="https://www.goat.com/apparel/supreme-bandana-box-logo-tee-white-fw19t55-white" target="_blank" class="buy-btn bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-red-700 mt-1">🛒 GOAT XL</a>
+  </div>
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 border-l-4 border-l-yellow-500">
+    <p class="font-bold text-sm">T9 · Supreme LA Box Logo Tee — White</p>
+    <p class="text-xs text-[var(--muted-foreground)]">Los Angeles exclusive · De tu wishlist</p>
+    <p class="font-bold mt-1">~$428</p>
+    <a href="https://www.goat.com/apparel/supreme-la-box-logo-tee-white-ss23t57-white" target="_blank" class="buy-btn bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-red-700 mt-1">🛒 GOAT XL</a>
+  </div>
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 border-l-4 border-l-yellow-500">
+    <p class="font-bold text-sm">T10 · Supreme Milan Box Logo Tee — White</p>
+    <p class="text-xs text-[var(--muted-foreground)]">Milano exclusive · LA MÁS CARA · De tu wishlist</p>
+    <p class="font-bold mt-1">~$678</p>
+    <a href="https://www.goat.com/apparel/supreme-milan-box-logo-tee-white-0052-1ss210103mblt-whit" target="_blank" class="buy-btn bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-red-700 mt-1">🛒 GOAT XL</a>
+  </div>
+</div>
+
+<h3 class="font-bold text-sm mb-2">UNIQLO — Japón (×5)</h3>
+<div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+  <p class="font-bold text-sm">T11–T15 · Uniqlo Supima Cotton White × 5 · ~$10 c/u</p>
+  <p class="text-green-500 text-xs font-semibold">🇯🇵 Comprar en Japón — Uniqlo Akihabara — La mitad de precio</p>
+</div>
+</div>
+
+<!-- ========== ACCESORIOS ========== -->
+<div id="tab-acc" class="tab-content">
+<div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 mb-4">
+  <h2 class="text-lg font-bold">🎒 Accesorios — Supreme + Essentials</h2>
+  <p class="font-bold mt-1 text-red-500">💰 ~$2,250 - $2,500</p>
+</div>
+
+<h3 class="font-bold text-sm mb-2">🩲 ROPA INTERIOR — Supreme × Hanes</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-2 mb-3">
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+    <p class="font-bold text-sm">Boxer Briefs 4-pack Black × 4 paquetes = 16 boxers</p>
+    <p class="text-[var(--muted-foreground)] text-xs">Solo negro. El blanco se nota sucio. $39 × 4</p>
+    <p class="font-bold mt-1">$156</p>
+    <a href="https://www.goat.com/apparel/supreme-x-hanes-boxer-brief-4-pack-black-99haa36-black" target="_blank" class="buy-btn bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-red-700 mt-1">🛒 GOAT XL × 4</a>
+  </div>
+</div>
+
+<h3 class="font-bold text-sm mb-2">🧦 CALCETINES — Supreme × Hanes</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-2 mb-3">
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+    <p class="font-bold text-sm">Crew Socks 4-pack Black × 3 paquetes = 12 pares</p>
+    <p class="text-[var(--muted-foreground)] text-xs">Solo negros con logo rojo Supreme. ~$30 × 3</p>
+    <p class="font-bold mt-1">~$90</p>
+    <a href="https://www.goat.com/apparel/supreme-x-hanes-crew-socks-4-pack-black-99haa26-black" target="_blank" class="buy-btn bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-red-700 mt-1">🛒 GOAT</a>
+  </div>
+</div>
+
+<h3 class="font-bold text-sm mb-2">🧢 GORRAS — Supreme</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-2 mb-3">
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+    <p class="font-bold text-sm">Authorized Mesh Back 5-Panel — Royal</p>
+    <p class="text-[var(--muted-foreground)] text-xs">Azul royal · De tu wishlist</p>
+    <p class="font-bold mt-1">~$60</p>
+    <a href="https://www.goat.com/apparel/supreme-authorized-mesh-back-5-panel-royal-ss25h125-royal" target="_blank" class="buy-btn bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-red-700 mt-1">🛒 GOAT</a>
+  </div>
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+    <p class="font-bold text-sm">World Famous S Logo 6-Panel — Navy</p>
+    <p class="text-[var(--muted-foreground)] text-xs">Azul marino · De tu wishlist</p>
+    <p class="font-bold mt-1">~$69</p>
+    <a href="https://www.goat.com/apparel/supreme-world-famous-s-logo-6-panel-navy-ss25h23-navy" target="_blank" class="buy-btn bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-red-700 mt-1">🛒 GOAT</a>
+  </div>
+</div>
+
+<h3 class="font-bold text-sm mb-2">🧣 BEANIE — Supreme × New Era</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-2 mb-3">
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+    <p class="font-bold text-sm">Box Logo Beanie — Black</p>
+    <p class="text-[var(--muted-foreground)] text-xs">FW24 · Para invierno Tokio · De tu wishlist</p>
+    <p class="font-bold mt-1">~$117</p>
+    <a href="https://www.goat.com/apparel/supreme-x-new-era-box-logo-beanie-black-fw24bn13-black" target="_blank" class="buy-btn bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-red-700 mt-1">🛒 GOAT</a>
+  </div>
+</div>
+
+<h3 class="font-bold text-sm mb-2">🎒 BOLSAS — Supreme</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-2 mb-3">
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+    <p class="font-bold text-sm">Backpack — Black</p>
+    <p class="text-[var(--muted-foreground)] text-xs">SS18 · Mochila principal · De tu wishlist</p>
+    <p class="font-bold mt-1">~$150</p>
+    <a href="https://www.goat.com/apparel/supreme-backpack-black-ss18b7-black" target="_blank" class="buy-btn bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-red-700 mt-1">🛒 GOAT</a>
+  </div>
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+    <p class="font-bold text-sm">Shoulder Bag — Black</p>
+    <p class="text-[var(--muted-foreground)] text-xs">SS18 · Para salir ligero · De tu wishlist</p>
+    <p class="font-bold mt-1">~$175</p>
+    <a href="https://www.goat.com/apparel/supreme-shoulder-bag-black-ss18b10-black" target="_blank" class="buy-btn bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-red-700 mt-1">🛒 GOAT</a>
+  </div>
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+    <p class="font-bold text-sm">Waist Bag — Black</p>
+    <p class="text-[var(--muted-foreground)] text-xs">SS20 · Riñonera · De tu wishlist</p>
+    <p class="font-bold mt-1">~$350</p>
+    <a href="https://www.goat.com/apparel/supreme-waist-bag-black-ss20b5-black" target="_blank" class="buy-btn bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-red-700 mt-1">🛒 GOAT</a>
+  </div>
+</div>
+
+<h3 class="font-bold text-sm mb-2">👛 CARTERA</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-2 mb-3">
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+    <p class="font-bold text-sm">Supreme × TNF Expedition Wallet — Black</p>
+    <p class="text-[var(--muted-foreground)] text-xs">FW18 · Compacta · De tu wishlist</p>
+    <p class="font-bold mt-1">~$75</p>
+    <a href="https://www.goat.com/apparel/supreme-x-the-north-face-expedition-travel-wallet-black-fw18b4-black" target="_blank" class="buy-btn bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-red-700 mt-1">🛒 GOAT</a>
+  </div>
+</div>
+
+<h3 class="font-bold text-sm mb-2">🕶️ LENTES DE SOL</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-2 mb-3">
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+    <p class="font-bold text-sm">Ray-Ban Original Wayfarer Classic — Black</p>
+    <p class="text-[var(--muted-foreground)] text-xs">RB2140 · G-15 Green lens · Los icónicos</p>
+    <p class="font-bold mt-1">~$191</p>
+    <a href="https://www.ray-ban.com/us/sunglasses/RB2140%20UNISEX%20original%20wayfarer%20classic-black/805289126577" target="_blank" class="buy-btn bg-gray-700 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-gray-800 mt-1">🛒 Ray-Ban.com</a>
+  </div>
+</div>
+
+<h3 class="font-bold text-sm mb-2">⌚ SMARTWATCH</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-2 mb-3">
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+    <p class="font-bold text-sm">Samsung Galaxy Watch 7 — 44mm Black</p>
+    <p class="text-[var(--muted-foreground)] text-xs">Galaxy AI · Tracking salud/fitness · BioActive sensor</p>
+    <p class="font-bold mt-1">~$190</p>
+    <a href="https://www.samsung.com/us/watches/galaxy-watch7/" target="_blank" class="buy-btn bg-blue-700 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-blue-800 mt-1">🛒 Samsung.com</a>
+    <a href="https://www.amazon.com/s?k=samsung+galaxy+watch+7+44mm+black" target="_blank" class="buy-btn bg-amber-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-amber-700 mt-1 ml-1">🛒 Amazon</a>
+  </div>
+</div>
+
+<h3 class="font-bold text-sm mb-2">🪪 CINTURÓN</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-2 mb-3">
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+    <p class="font-bold text-sm">Levi's Harness Buckle Belt — Brown Leather</p>
+    <p class="text-[var(--muted-foreground)] text-xs">Cuero · Talla 36 · Va con los jeans y las botas</p>
+    <p class="font-bold mt-1">~$40</p>
+    <a href="https://www.levi.com/US/en_US/accessories/men/belts/c/levi_accessories_men_belts" target="_blank" class="buy-btn bg-blue-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-blue-700 mt-1">🛒 Levi.com</a>
+  </div>
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+    <p class="font-bold text-sm">Levi's Reversible Belt — Black/Brown</p>
+    <p class="text-[var(--muted-foreground)] text-xs">2 en 1 · Cuero reversible</p>
+    <p class="font-bold mt-1">~$35</p>
+    <a href="https://www.levi.com/US/en_US/accessories/men/belts/c/levi_accessories_men_belts" target="_blank" class="buy-btn bg-blue-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-blue-700 mt-1">🛒 Levi.com</a>
+  </div>
+</div>
+
+<h3 class="font-bold text-sm mb-2">🧤 GUANTES INVIERNO</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-2 mb-3">
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+    <p class="font-bold text-sm">Isotoner Leather Gloves — Black Touchscreen</p>
+    <p class="text-[var(--muted-foreground)] text-xs">Cuero genuino · Touchscreen · Forro cálido · Para Tokio invierno</p>
+    <p class="font-bold mt-1">~$39</p>
+    <a href="https://www.amazon.com/s?k=isotoner+men+leather+gloves+touchscreen+black" target="_blank" class="buy-btn bg-amber-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-amber-700 mt-1">🛒 Amazon</a>
+  </div>
+</div>
+
+<h3 class="font-bold text-sm mb-2">☂️ PARAGUAS</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+    <p class="font-bold text-sm">Davek Solo — Black</p>
+    <p class="text-[var(--muted-foreground)] text-xs">Compacto premium · Anti-viento · Garantía de por vida · Japón llueve MUCHO</p>
+    <p class="font-bold mt-1">~$99</p>
+    <a href="https://www.davekny.com" target="_blank" class="buy-btn bg-gray-700 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-gray-800 mt-1">🛒 Davek.com</a>
+  </div>
+</div>
+<h3 class="font-bold text-sm mb-2 mt-4">📱 SAMSUNG TECH — Comprar en Corea 🇰🇷</h3>
+<p class="text-[var(--muted-foreground)] text-xs mb-2">Comprarlo en Samsung Korea durante el viaje de cirugía. Más barato + último modelo directo.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-2 mb-3">
+
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 border-l-4 border-l-blue-500">
+    <p class="font-bold text-sm">📱 Galaxy S26 Ultra</p>
+    <p class="text-[var(--muted-foreground)] text-xs">256GB · El flagship · Lanzado Mar 2026</p>
+    <p class="font-bold mt-1">₩1,797,400 <span class="text-[var(--muted-foreground)] text-xs">(~$1,300 USD)</span></p>
+    <a href="https://www.samsung.com/sec/smartphones/galaxy-s26-ultra/" target="_blank" class="buy-btn bg-blue-700 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-blue-800 mt-1">🛒 Samsung Korea</a>
+  </div>
+
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 border-l-4 border-l-blue-500">
+    <p class="font-bold text-sm">📱 Galaxy Z Fold 8 Ultra</p>
+    <p class="text-[var(--muted-foreground)] text-xs">Plegable · El más premium · Ago 2026</p>
+    <p class="font-bold mt-1">₩2,577,000 <span class="text-[var(--muted-foreground)] text-xs">(~$1,860 USD)</span></p>
+    <a href="https://www.samsung.com/sec/smartphones/galaxy-z-fold8-ultra/" target="_blank" class="buy-btn bg-blue-700 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-blue-800 mt-1">🛒 Samsung Korea</a>
+  </div>
+
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 border-l-4 border-l-blue-500">
+    <p class="font-bold text-sm">📟 Galaxy Tab S11 Ultra</p>
+    <p class="text-[var(--muted-foreground)] text-xs">14.6" · S Pen · Para dev/streaming</p>
+    <p class="font-bold mt-1">₩1,406,720 <span class="text-[var(--muted-foreground)] text-xs">(~$1,015 USD)</span></p>
+    <a href="https://www.samsung.com/sec/tablets/galaxy-tab-s11/buy/?modelCode=SM-X936NZAIKOO" target="_blank" class="buy-btn bg-blue-700 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-blue-800 mt-1">🛒 Samsung Korea</a>
+  </div>
+
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 border-l-4 border-l-blue-500">
+    <p class="font-bold text-sm">⌚ Galaxy Watch Ultra 2</p>
+    <p class="text-[var(--muted-foreground)] text-xs">LTE · Titanio · El tanque · Ago 2026</p>
+    <p class="font-bold mt-1">₩969,100 <span class="text-[var(--muted-foreground)] text-xs">(~$700 USD)</span></p>
+    <a href="https://www.samsung.com/sec/watches/galaxy-watch-ultra2/buy/?modelCode=SM-L715NZKAKOO" target="_blank" class="buy-btn bg-blue-700 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-blue-800 mt-1">🛒 Samsung Korea</a>
+  </div>
+
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 border-l-4 border-l-blue-500">
+    <p class="font-bold text-sm">💍 Galaxy Ring</p>
+    <p class="text-[var(--muted-foreground)] text-xs">Health tracking · Sueño · Discreto</p>
+    <p class="font-bold mt-1">₩499,400 <span class="text-[var(--muted-foreground)] text-xs">(~$360 USD)</span></p>
+    <a href="https://www.samsung.com/sec/rings/galaxy-ring/" target="_blank" class="buy-btn bg-blue-700 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-blue-800 mt-1">🛒 Samsung Korea</a>
+  </div>
+
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 border-l-4 border-l-blue-500">
+    <p class="font-bold text-sm">🎧 Galaxy Buds 4 Pro</p>
+    <p class="text-[var(--muted-foreground)] text-xs">ANC · 360 Audio · Mar 2026</p>
+    <p class="font-bold mt-1">₩349,800 <span class="text-[var(--muted-foreground)] text-xs">(~$250 USD)</span></p>
+    <a href="https://www.samsung.com/sec/buds/galaxy-buds/galaxy-buds4-pro/" target="_blank" class="buy-btn bg-blue-700 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-blue-800 mt-1">🛒 Samsung Korea</a>
+  </div>
+</div>
+
+<div class="bg-yellow-900/30 border border-yellow-600 rounded-xl p-3">
+  <p class="font-bold text-sm text-yellow-400">💰 TOTAL SAMSUNG TECH: ₩7,599,420 (~$5,485 USD)</p>
+  <p class="text-xs text-[var(--muted-foreground)] mt-1">💡 Tax-free shopping disponible en Corea para turistas extranjeros (descuento ~10% IVA)</p>
+  <p class="text-xs text-[var(--muted-foreground)]">📍 Comprar en: Samsung Flagship Store Gangnam o Duty Free Incheon Airport</p>
+</div>
+</div>
+
+<!-- ========== WOLVERINE ========== -->
+<div id="tab-wolf" class="tab-content">
+<div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 mb-4">
+  <h2 class="text-lg font-bold">🐺 Modo Wolverine</h2>
+  <p class="font-bold mt-1">💰 ~$685 - $895</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3"><p class="font-bold text-sm">🥾 Wolverine 1000 Mile · Size 14 · ~$350-400</p><a href="https://www.wolverine.com/US/en/1000-mile/" target="_blank" class="buy-btn bg-amber-700 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-amber-800 mt-1">🛒 Wolverine.com</a></div>
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3"><p class="font-bold text-sm">🧥 Schott NYC Cuero · XL · ~$250-400</p><a href="https://www.schottnyc.com/store/men/jackets" target="_blank" class="buy-btn bg-amber-700 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-amber-800 mt-1">🛒 Schott NYC</a></div>
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3"><p class="font-bold text-sm">🩳 Hanes Tank 5-pack · XL · ~$25</p><a href="https://www.amazon.com/s?k=hanes+premium+white+tank+top+men+xl" target="_blank" class="buy-btn bg-amber-700 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-amber-800 mt-1">🛒 Amazon</a></div>
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3"><p class="font-bold text-sm">🪵 Flannel Roja · XL · ~$60-70</p><a href="https://www.goat.com/search?query=supreme+flannel+xl" target="_blank" class="buy-btn bg-amber-700 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-amber-800 mt-1">🛒 GOAT Supreme Flannel</a></div>
+</div>
+</div>
+
+<!-- ========== OUTFITS ========== -->
+<div id="tab-fits" class="tab-content">
+<div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 mb-3">
+  <h2 class="text-lg font-bold">🔥 30 Street + 5 Wolverine</h2>
+  <p class="text-[var(--muted-foreground)] text-xs">Sneaker + Levi's + Supreme tee blanca + Supreme hoodie con capucha</p>
+</div>
+<div class="space-y-1">
+<p class="font-bold text-xs mt-2 mb-1">🔴⚪ CHICAGO (1)</p>
+<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#01</strong> Chicago + 501 Medium + Small Box Tee + Box Logo Navy pullover — 🔥 El más poderoso</p></div>
+<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#02</strong> Chicago + 512 Dark + Small Box Tee + WINDSTOPPER Black zip — Stealth mode</p></div>
+<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#03</strong> Chicago + 501 Light + Small Box Tee + Small Box Grey pullover — Casual limpio</p></div>
+
+<p class="font-bold text-xs mt-2 mb-1">⚫⚪ BLACK TOE (2)</p>
+<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#04</strong> Black Toe + 501 Dark + Burberry Bogo Tee + Small Box Black pullover — Flex sutil</p></div>
+<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#05</strong> Black Toe + 511 Medium + Small Box Tee + Drawcord Navy zip — Azul flow</p></div>
+
+<p class="font-bold text-xs mt-2 mb-1">🩶⚫ SHADOW (3)</p>
+<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#06</strong> Shadow + 511 Dark + Small Box Tee + Box Logo Ash Grey — Gris total</p></div>
+<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#07</strong> Shadow + 512 Clean Blue + Small Box Tee + Small Box Grey pullover — Neutro limpio</p></div>
+
+<p class="font-bold text-xs mt-2 mb-1">⚪🩶 NEUTRAL GREY (4)</p>
+<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#08</strong> Neutral Grey + 501 Medium + Tiffany Bogo Tee + Small Box Natural — Vintage '85</p></div>
+<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#09</strong> Neutral Grey + 512 Clean Blue + Small Box Tee + Small Box Navy — Suave y limpio</p></div>
+
+<p class="font-bold text-xs mt-2 mb-1">🕷️🔴 SPIDER-VERSE (5)</p>
+<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#10</strong> Spider-Verse + 501 Dark + Small Box Tee + Small Box Black ×2 — Miles Morales mode</p></div>
+<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#11</strong> Spider-Verse + 501 Light + Bandana Bogo Tee + Burnt Red zip — Rojo Spider stack</p></div>
+
+<p class="font-bold text-xs mt-2 mb-1">🟢⚪ TURBO GREEN (6)</p>
+<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#12</strong> Turbo + 501 Medium + Small Box Tee + Small Box Natural — Menta + crema = perfecto</p></div>
+<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#13</strong> Turbo + 512 Dark + Small Box Tee + Small Box Black — Pop de color verde</p></div>
+<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#14</strong> Turbo + 501 Light + Small Box Tee + Swarovski Navy — Premium turbo</p></div>
+
+<p class="font-bold text-xs mt-2 mb-1">🔵⚪ AJ4 MILITARY (7)</p>
+<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#15</strong> AJ4 Military + 511 Dark + Small Box Tee + Box Logo Navy — Triple azul militar</p></div>
+<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#16</strong> AJ4 Military + 501 Medium + Small Box Tee + Small Box Navy zip — Azul cohesivo</p></div>
+
+<p class="font-bold text-xs mt-2 mb-1">⚫🔴 AJ4 BRED (8)</p>
+<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#17</strong> AJ4 Bred + 501 Dark + Small Box Tee + Small Box Black — Fighter mode</p></div>
+<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#18</strong> AJ4 Bred + 512 Dark + LA Bogo Tee + Burnt Red zip — Rojo fuego</p></div>
+
+<p class="font-bold text-xs mt-2 mb-1">⚪🩶 AJ4 WHITE CEMENT (9)</p>
+<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#19</strong> AJ4 Cement + 501 Medium + Milan Bogo Tee + Small Box Natural — El outfit más caro</p></div>
+<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#20</strong> AJ4 Cement + 512 Clean Blue + Small Box Tee + Small Box Grey — Ultra limpio</p></div>
+
+<p class="font-bold text-xs mt-2 mb-1">🔴⚪ AJ7 CARDINAL (10)</p>
+<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#21</strong> Cardinal + 501 Dark + Small Box Tee + Small Box Black — Cardinal + negro</p></div>
+<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#22</strong> Cardinal + 501 Vintage + Small Box Tee + Small Box Natural — Earth warm</p></div>
+
+<p class="font-bold text-xs mt-2 mb-1">🏆🔵 TROPHY ROOM (11)</p>
+<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#23</strong> Trophy + 511 Dark + Tiffany Bogo Tee + Swarovski Navy — Premium night flex</p></div>
+<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#24</strong> Trophy + 512 Clean Blue + Small Box Tee + Drawcord Navy zip — Blue trophy</p></div>
+
+<p class="font-bold text-xs mt-2 mb-1">🕷️🔵 ORIGIN STORY (12)</p>
+<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#25</strong> Origin + 501 Dark + Bandana Bogo Tee + Small Box Black — El grail outfit</p></div>
+<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#26</strong> Origin + 512 Clean Blue + Small Box Tee + Box Logo Navy — Spider blue</p></div>
+
+<p class="font-bold text-xs mt-2 mb-1">🇺🇸 AJ13 FRENCH BLUE (13)</p>
+<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#27</strong> French Blue + 501 Medium + Small Box Tee + Small Box Black — Patriot stealth</p></div>
+<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#28</strong> French Blue + 511 Dark + Small Box Tee + Box Logo Navy — USA night</p></div>
+<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#29</strong> French Blue + 501 Light + Small Box Tee + Small Box Natural — Casual flag</p></div>
+<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#30</strong> French Blue + 512 Dark + Small Box Tee + WINDSTOPPER Black zip — USA stealth</p></div>
+
+<p class="font-bold text-xs mt-3 mb-1">🐺 WOLVERINE — 5 Bonus</p>
+<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2" style="border-left-color:#92400e"><p class="text-xs"><strong>W1 Full Logan</strong> — 🥾Boots + 501 Dark + Tank + Cuero · Intimidante</p></div>
+<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2" style="border-left-color:#92400e"><p class="text-xs"><strong>W2 Leñador</strong> — 🥾Boots + 501 Medium + Small Box Tee + Flannel roja · Rudo casual</p></div>
+<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2" style="border-left-color:#92400e"><p class="text-xs"><strong>W3 Vintage</strong> — 🥾Boots + 501 Vintage + Tank + Cuero · De película</p></div>
+<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2" style="border-left-color:#92400e"><p class="text-xs"><strong>W4 Casual</strong> — 🥾Boots + 501 Light + Small Box Tee + Flannel · Domingo</p></div>
+<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2" style="border-left-color:#92400e"><p class="text-xs"><strong>W5 Winter</strong> — 🥾Boots + 501 Dark + Small Box Black hoodie + Cuero encima · Tokio invierno</p></div>
+</div>
+</div>
+
+<!-- ========== RESUMEN ========== -->
+<div id="tab-deals" class="tab-content">
+<div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 mb-3">
+  <h2 class="text-lg font-bold mb-3">💰 RESUMEN TOTAL</h2>
+  <div class="space-y-2">
+    <div class="flex justify-between border-b border-[var(--border)] pb-1"><span class="text-sm">👟 13 Sneakers (GOAT, US 14)</span><span class="font-bold text-sm">~$3,195</span></div>
+    <div class="flex justify-between border-b border-[var(--border)] pb-1"><span class="text-sm">👖 8 Levi's (levi.com, 36×32)</span><span class="font-bold text-sm">~$466</span></div>
+    <div class="flex justify-between border-b border-[var(--border)] pb-1"><span class="text-sm text-red-500 font-semibold">🧥 12 Supreme Hoodies (GOAT, XL)</span><span class="font-bold text-sm text-red-500">~$3,373</span></div>
+    <div class="flex justify-between border-b border-[var(--border)] pb-1"><span class="text-sm text-red-500 font-semibold">👕 15 Tees (Supreme + Uniqlo, XL)</span><span class="font-bold text-sm text-red-500">~$2,800</span></div>
+    <div class="flex justify-between border-b border-[var(--border)] pb-1"><span class="text-sm text-purple-500 font-semibold">🎒 Accesorios (Supreme, Ray-Ban, etc)</span><span class="font-bold text-sm text-purple-500">~$2,277</span></div>
+    <div class="flex justify-between border-b border-[var(--border)] pb-1"><span class="text-sm text-blue-400 font-semibold">📱 Samsung Tech (Comprar en Corea 🇰🇷)</span><span class="font-bold text-sm text-blue-400">~$5,485</span></div>
+    <div class="flex justify-between border-b border-[var(--border)] pb-1"><span class="text-sm">🐺 Wolverine Mode</span><span class="font-bold text-sm">~$790</span></div>
+    <div class="flex justify-between pt-2"><span class="font-bold">🏆 TOTAL GUARDARROPA + TECH</span><span class="font-bold text-lg text-red-500">~$18,386</span></div>
+    <div class="flex justify-between"><span class="text-[var(--muted-foreground)] text-sm">En yenes</span><span class="text-[var(--muted-foreground)] text-sm">~¥2,705,000</span></div>
+    <div class="flex justify-between"><span class="text-[var(--muted-foreground)] text-sm">En won (Samsung)</span><span class="text-[var(--muted-foreground)] text-sm">₩7,599,420</span></div>
+  </div>
+</div>
+
+<div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4">
+  <h3 class="font-bold text-sm mb-2">📊 Dónde se va el dinero</h3>
+  <div class="space-y-1">
+    <div class="flex items-center gap-2"><div class="h-3 bg-green-600 rounded" style="width:25%"></div><span class="text-xs">Sneakers 25%</span></div>
+    <div class="flex items-center gap-2"><div class="h-3 bg-red-600 rounded" style="width:26%"></div><span class="text-xs">Supreme Hoodies 26%</span></div>
+    <div class="flex items-center gap-2"><div class="h-3 bg-red-400 rounded" style="width:22%"></div><span class="text-xs">Supreme Tees 22%</span></div>
+    <div class="flex items-center gap-2"><div class="h-3 bg-purple-500 rounded" style="width:18%"></div><span class="text-xs">Accesorios 18%</span></div>
+    <div class="flex items-center gap-2"><div class="h-3 bg-amber-700 rounded" style="width:6%"></div><span class="text-xs">Wolverine 6%</span></div>
+    <div class="flex items-center gap-2"><div class="h-3 bg-blue-600 rounded" style="width:3%"></div><span class="text-xs">Levi's 3%</span></div>
+  </div>
+</div>
+
+<div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 mt-3">
+  <h3 class="font-bold text-sm mb-2">🏷️ Promos Activas</h3>
+  <p class="text-xs">👖 <strong>Levi's:</strong> $75 OFF en $200+ (hasta Sep 27) · 15% newsletter · <a href="https://www.levi.com/US/en_US/account/register" target="_blank">Registrarse</a></p>
+  <p class="text-xs mt-1">🥾 <strong>Wolverine:</strong> 15% OFF email · <a href="https://www.wolverine.com" target="_blank">Wolverine.com</a></p>
+  <p class="text-xs mt-1 text-[var(--muted-foreground)]">⚠️ Supreme en GOAT no tiene promos — son precios de resale del mercado</p>
+</div>
+</div>
+
+<script>
+function showTab(n){document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById('tab-'+n).classList.add('active');document.getElementById('btn-'+n).classList.add('active')}
+</script>
+</body>
+</html>

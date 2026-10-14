@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plan Maestro — Imperio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{--background:#0b0b10;--foreground:#e5e7eb;--card:#15151d;--border:#2a2a36;--muted-foreground:#9ca3af;--primary:#ef4444}
+    body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans JP","Noto Sans KR",sans-serif}
+    .back-link{display:inline-block;margin-bottom:12px;font-size:12px;color:#9ca3af;text-decoration:none}
+    .back-link:hover{color:#e5e7eb}
+  </style>
+  <style>
+    .tab-btn.active{border-color:var(--primary);color:var(--primary);background:var(--card)}
+    .tab-content{display:none}.tab-content.active{display:block}
+    .row{display:flex;justify-content:space-between;gap:8px;border-bottom:1px solid var(--border);padding:4px 0}
+    .tl{position:relative;padding-left:22px;border-left:3px solid var(--border);margin-left:8px}
+    .dot{position:absolute;left:-12px;top:4px;width:20px;height:20px;border-radius:9999px;display:flex;align-items:center;justify-content:center;font-size:11px}
+    a{color:#3b82f6}
+  </style>
+</head>
+<body class="bg-[var(--background)] text-[var(--foreground)] antialiased p-4">
+<a class="back-link" href="../">← Volver al Atlas del Imperio</a>
+
+<div class="text-center mb-6">
+  <h1 class="text-3xl font-bold mb-1">🇹🇭 PLAN MAESTRO — TODO GIRA EN TORNO A TAILANDIA</h1>
+  <p class="text-[var(--muted-foreground)] text-sm">Ancla: aterrizar en Phuket el <strong>13 de septiembre de 2027</strong> · Bangtao arranca el 15 de septiembre</p>
+  <p class="text-xs text-[var(--muted-foreground)] mt-1">178 cm (post-columna) · 87 kg → 78.5 kg · Debut en Peso Wélter (−77.1 kg), febrero 2028</p>
+</div>
+
+<div class="flex flex-wrap gap-1.5 mb-4 border-b border-[var(--border)] pb-2">
+  <button onclick="showTab('tl')" class="tab-btn active px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-tl">🗺️ Línea de Tiempo</button>
+  <button onclick="showTab('kr')" class="tab-btn px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-kr">🇰🇷 Corea en 2 Viajes</button>
+  <button onclick="showTab('rec')" class="tab-btn px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-rec">⏱️ Recuperación</button>
+  <button onclick="showTab('money')" class="tab-btn px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-money">💰 Dinero por Fase</button>
+  <button onclick="showTab('check')" class="tab-btn px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-check">✅ Checklist</button>
+  <button onclick="showTab('pre')" class="tab-btn px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-pre">🔍 Pre-aprobación</button>
+  <button onclick="showTab('q')" class="tab-btn px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-q">❓ Pendientes</button>
+</div>
+
+<!-- ========== TIMELINE ========== -->
+<div id="tab-tl" class="tab-content active">
+  <div class="tl space-y-4">
+
+    <div class="relative"><div class="dot bg-gray-500 text-white">1</div>
+      <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+        <div class="flex justify-between flex-wrap"><p class="font-bold">🇺🇸 Preparación — últimos meses en EE.UU.</p><p class="text-xs text-[var(--muted-foreground)]">14 oct 2026 – inicios de ene 2027 · ~12 semanas</p></div>
+        <ul class="text-xs mt-1 list-disc ml-5">
+          <li><strong>Estudios en EE.UU. antes de irte:</strong> columna (radiografías, resonancia, tomografía), ojos (consulta LASIK gratis, que también te da tu graduación) y radiografía panorámica dental.</li>
+          <li>Mandar todo a las clínicas → cotizaciones y fechas por escrito.</li>
+          <li>Abrir Interactive Brokers con tu domicilio de EE.UU. y repartir los $360K en las 3 cubetas.</li>
+          <li>Japonés online 2×/semana · grabar el "Episodio 0" y 8-10 videos de reserva.</li>
+          <li>Consulta con un gyōseishoshi sobre la visa japonesa.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="relative"><div class="dot bg-red-600 text-white">2</div>
+      <div class="bg-[var(--card)] border border-red-600/50 rounded-xl p-3">
+        <div class="flex justify-between flex-wrap"><p class="font-bold">🇰🇷 Corea — Viaje 1 "Fundación"</p><p class="text-xs text-[var(--muted-foreground)]">~6 ene – inicios de mar 2027 · ~8 semanas · Seúl</p></div>
+        <p class="text-xs mt-1">Columna VBT con el Prof. Chang (Sanggye Paik) + nariz completa + LASEK personalizado + pelo + 6 coronas. Ver pestaña 🇰🇷.</p>
+        <p class="text-xs mt-1">🛂 Desde 2027 probablemente vuelve a pedirse el <strong>K-ETA</strong> (₩10,000 en k-eta.go.kr, mínimo 72 h antes). 📱 Aquí compras el Samsung.</p>
+      </div>
+    </div>
+
+    <div class="relative"><div class="dot bg-yellow-600 text-white">3</div>
+      <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+        <div class="flex justify-between flex-wrap"><p class="font-bold">🩹 Recuperación en Tokio 🇯🇵</p><p class="text-xs text-[var(--muted-foreground)]">inicios de mar – 14 jul 2027 · ~4.5 meses</p></div>
+        <ul class="text-xs mt-1 list-disc ml-5">
+          <li>Vives con Ayame y las mascotas, que ya están en Japón. Si es en su casa, te ahorras el depa mensual.</li>
+          <li>Fisioterapia y seguimiento en St. Luke's International (tiene servicio en inglés). Llevas los DICOM y el reporte de la operación.</li>
+          <li>Coto Academy + dev + YouTube a ritmo normal.</li>
+          <li>🛂 Entras con la <strong>visa de nómada digital</strong> (6 meses, la pides en EE.UU. a inicios de diciembre). Te cubre hasta ~septiembre: recuperación y Fase 0, trabajando remoto de forma legal.</li>
+          <li>🚩 <strong>Junio 2027: autorización ESCRITA del Prof. Chang para MMA</strong> (con imágenes nuevas).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="relative"><div class="dot bg-blue-600 text-white">4</div>
+      <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+        <div class="flex justify-between flex-wrap"><p class="font-bold">🛡️ Fase 0 del dossier — Blindaje Pre-Viaje</p><p class="text-xs text-[var(--muted-foreground)]">15 jul – 12 sep 2027 · 8.5 semanas · Tokio (o llegando antes a Phuket)</p></div>
+        <p class="text-xs mt-1">87 → 84.5 kg. Zona 2, tibias, cuello (solo con autorización), sauna. En Tokio, todavía con la visa de nómada digital. Vuelas a Phuket el 13 de septiembre.</p>
+      </div>
+    </div>
+
+    <div class="relative"><div class="dot bg-green-600 text-white">5</div>
+      <div class="bg-[var(--card)] border border-green-600/50 rounded-xl p-3">
+        <div class="flex justify-between flex-wrap"><p class="font-bold">🇹🇭 Bangtao Muay Thai & MMA — La Forja</p><p class="text-xs text-[var(--muted-foreground)]">15 sep – 13 dic 2027 · 90 días · Phuket</p></div>
+        <p class="text-xs mt-1">84.5 → 78.5 kg. All-In Athlete + Varee Suites. El Main Event Media Package = contenido para tu serie de YouTube.</p>
+        <p class="text-xs mt-1 text-yellow-500">⚠️ Tu horario va de 8 am a 7 pm: el ingreso de freelance baja. Lo cubren los ahorros y YouTube.</p>
+      </div>
+    </div>
+
+    <div class="relative"><div class="dot bg-purple-600 text-white">6</div>
+      <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+        <div class="flex justify-between flex-wrap"><p class="font-bold">🇯🇵 Tokio — Fighter's Flow + DEBUT</p><p class="text-xs text-[var(--muted-foreground)]">14 dic 2027 – fin de feb 2028 · ~11 semanas · Takadanobaba</p></div>
+        <ul class="text-xs mt-1 list-disc ml-5">
+          <li>Departamento mensual amueblado cerca de Takadanobaba (no el de Akihabara todavía).</li>
+          <li>Entras como turista (90 días = hasta ~13 mar 2028).</li>
+          <li>Análisis de sangre (hepatitis B, hepatitis C y VIH) + inscripción al torneo en Wélter.</li>
+          <li>🏆 <strong>Debut en febrero de 2028.</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="relative"><div class="dot bg-red-600 text-white">7</div>
+      <div class="bg-[var(--card)] border border-red-600/50 rounded-xl p-3">
+        <div class="flex justify-between flex-wrap"><p class="font-bold">🇰🇷 Corea — Viaje 2 "Estética"</p><p class="text-xs text-[var(--muted-foreground)]">mar – abr 2028 · ~4-5 semanas · Seúl</p></div>
+        <p class="text-xs mt-1">Ojos (cantoplastia), carillas y rellenos. Ya en tu peso de pelea, así decides con datos reales si todavía necesitas lipo o bichectomía. Si la nariz se lastimó peleando, aquí se hace el retoque.</p>
+        <p class="text-xs mt-1">✈️ De paso sales de Japón justo cuando vence la estancia de turista, mientras se aprueba tu visa.</p>
+      </div>
+    </div>
+
+    <div class="relative"><div class="dot bg-yellow-500 text-black">👑</div>
+      <div class="bg-[var(--card)] border border-yellow-600/50 rounded-xl p-3">
+        <div class="flex justify-between flex-wrap"><p class="font-bold">🏯 IMPERIO TOKIO</p><p class="text-xs text-[var(--muted-foreground)]">mayo 2028 → abril 2030 · 24 meses · Akihabara</p></div>
+        <p class="text-xs mt-1">Llegas con la visa aprobada → contrato del depa + CAPEX → OPEX V6.0 de 24 meses. Coto Academy, Fighter's Flow, la vida completa.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== COREA ========== -->
+<div id="tab-kr" class="tab-content">
+  <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 mb-3">
+    <h2 class="text-lg font-bold">🇰🇷 ¿Por qué 2 viajes?</h2>
+    <p class="text-sm mt-1"><strong>Viaje 1 = lo que necesitas para pelear y vivir mejor</strong>: columna, respirar, ver y dientes. <strong>Viaje 2 = lo puramente estético</strong> que un golpe puede arruinar: ojos, carillas y rellenos.</p>
+  </div>
+
+  <div class="bg-red-900/30 border border-red-600 rounded-xl p-4 mb-3">
+    <p class="font-bold text-green-400">🦴 Columna en Corea — PLAN A: Prof. Dong-Gune Chang (장동균), Sanggye Paik Hospital</p>
+    <ul class="text-xs mt-1 list-disc ml-5 space-y-1">
+      <li>✅ <strong>Sí hay VBT (cables, sin fusión) en Corea.</strong> El Prof. Chang, del Inje University Sanggye Paik Hospital en Seúl, es el principal especialista coreano en VBT y publica junto con el Dr. Trobisch (Alemania), uno de los pioneros mundiales.</li>
+      <li>❌ <strong>Wooridul no hace VBT:</strong> su cirugía de escoliosis es con fusión.</li>
+      <li>⚠️ <strong>Lo que hay que confirmar con él:</strong> en adultos la VBT corrige en el quirófano según qué tan flexible sea tu curva. La cifosis de más de ~40-50° puede impedirla, y la vértebra comprimida tal vez no admita tornillo. Él decide con tus estudios.</li>
+      <li>⚠️ <strong>Sobre pelear:</strong> la VBT conserva el movimiento, pero el cable se puede romper. Cuándo puedes volver a pelear lo decide el cirujano. Ningún médico serio te va a garantizar MMA por escrito antes de verte.</li>
+    </ul>
+    <p class="text-xs mt-2"><strong>Contacto:</strong> International Healthcare Center, Sanggye Paik · +82-2-950-1114 · 1342 Dongil-ro, Nowon-gu, Seúl. Mensaje en coreano listo en la pestaña 🔍 Pre-aprobación.</p>
+    <p class="text-xs mt-1"><strong>Plan B</strong> si te dice que no: Dr. Trobisch (Düren, Alemania, ~€35-47K) o Prof. Alanay (Estambul).</p>
+  </div>
+
+  <div class="bg-[var(--card)] border border-green-600/50 rounded-xl p-4 mb-3">
+    <h3 class="font-bold text-green-500 mb-1">✅ Viaje 1 — Ene 2027 · Presupuesto con precios reales</h3>
+    <p class="text-xs text-[var(--muted-foreground)] mb-2">Tipo de cambio ₩1,342 = $1 · Fuentes: Creatrip, páginas de clínicas, Samsung Medical, ClinicSeoul (mar 2026), Reddit 2025-26. Los precios finales llegan con la cotización escrita de cada clínica.</p>
+    <div class="overflow-x-auto">
+    <table class="w-full text-xs">
+      <thead><tr class="border-b border-[var(--border)] text-left"><th class="py-1">Procedimiento</th><th class="text-right">Bajo</th><th class="text-right font-bold">Típico</th><th class="text-right">Alto</th></tr></thead>
+      <tbody>
+        <tr class="border-b border-[var(--border)]"><td class="py-1">👃 Rinoplastia + septo + turbino (+ CT y anestesia)</td><td class="text-right">$4,000</td><td class="text-right font-bold">$7,800</td><td class="text-right">$12,000</td></tr>
+        <tr class="border-b border-[var(--border)]"><td class="py-1">🦅 LASEK personalizado — B&VIIT (base ₩1.6M)</td><td class="text-right">$1,190</td><td class="text-right font-bold">$2,000</td><td class="text-right">$2,000</td></tr>
+        <tr class="border-b border-[var(--border)]"><td class="py-1">🧠 Chequeo Executive Samsung Medical (₩2.99M) + DEXA</td><td class="text-right">$1,500</td><td class="text-right font-bold">$2,300</td><td class="text-right">$5,900</td></tr>
+        <tr class="border-b border-[var(--border)]"><td class="py-1">💇 FUE ~1,500 injertos + PRP — Motion</td><td class="text-right">$3,350</td><td class="text-right font-bold">$5,000</td><td class="text-right">$6,500</td></tr>
+        <tr class="border-b border-[var(--border)]"><td class="py-1">🦷 6 coronas de zirconia con muñón/endodoncia + mouthguard MMA</td><td class="text-right">$1,950</td><td class="text-right font-bold">$4,350</td><td class="text-right">$6,480</td></tr>
+        <tr class="border-b border-[var(--border)]"><td class="py-1">✨ Dermatología: toning, Potenza, Rejuran, lunares, estrías</td><td class="text-right">$1,120</td><td class="text-right font-bold">$2,300</td><td class="text-right">$4,100</td></tr>
+        <tr class="border-b border-[var(--border)]"><td class="py-1">💉 4 IV cocktails + 2 NAD+ + 5 sesiones de HBOT</td><td class="text-right">$600</td><td class="text-right font-bold">$1,530</td><td class="text-right">$3,350</td></tr>
+        <tr class="border-b border-[var(--border)]"><td class="py-1">💈 4 cortes + kit Olive Young</td><td class="text-right">$110</td><td class="text-right font-bold">$210</td><td class="text-right">$335</td></tr>
+        <tr class="border-b border-[var(--border)]"><td class="py-1">🏨 8 semanas: officetel, vuelo, comida, transporte, eSIM, seguro</td><td class="text-right">$4,900</td><td class="text-right font-bold">$8,000</td><td class="text-right">$14,500</td></tr>
+        <tr class="border-b border-[var(--border)]"><td class="py-1 font-bold">Subtotal sin columna</td><td class="text-right">$18,700</td><td class="text-right font-bold">$33,490</td><td class="text-right">$55,200</td></tr>
+        <tr class="border-b border-[var(--border)]"><td class="py-1">🛟 Colchón 10% (IVA, endodoncias extra, tipo de cambio)</td><td class="text-right">—</td><td class="text-right font-bold">$3,350</td><td class="text-right">—</td></tr>
+        <tr class="border-b border-[var(--border)] text-yellow-500"><td class="py-1">🦴 Columna VBT — Prof. Chang · <strong>POR CONFIRMAR</strong> (reserva)</td><td class="text-right">?</td><td class="text-right font-bold">$45,000</td><td class="text-right">$65,000</td></tr>
+        <tr><td class="py-2 font-bold text-sm">TOTAL VIAJE 1</td><td></td><td class="text-right font-bold text-sm text-green-500">~$81,800</td><td></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="bg-yellow-900/30 border border-yellow-600 rounded-lg p-2 mt-2">
+      <p class="text-xs">⚠️ <strong>Desde 2026 ya no hay devolución de IVA (10%)</strong> para extranjeros en cirugía estética, dermatología ni trasplante de pelo. Pide cada cotización <strong>con IVA incluido</strong>. Y pide las cotizaciones en coreano (Gangnam Unni o KakaoTalk): las cotizaciones en inglés llegan a salir entre 30% más caras y el doble.</p>
+    </div>
+    <p class="text-xs text-[var(--muted-foreground)] mt-2">La reserva de columna ($45K) es el precio típico de una cirugía de escoliosis en Corea ($23K-65K, pero con fusión). Se ajusta cuando Wooridul responda.</p>
+  </div>
+
+  <div class="grid grid-cols-1 gap-3">
+    <div class="bg-[var(--card)] border border-red-600/50 rounded-xl p-4">
+      <h3 class="font-bold text-red-400 mb-2">⏳ Viaje 2 — Mar 2028 (después del debut)</h3>
+      <div class="text-xs">
+        <div class="row"><span>👁️ Cantoplastia (hunter eyes) — JW</span><span>$2,500</span></div>
+        <div class="row"><span>🦷 5 carillas + blanqueamiento — MINISH</span><span>~$6,000</span></div>
+        <div class="row"><span>💉 Papada + botox + ojeras</span><span>$1,050</span></div>
+        <div class="row"><span>🔄 Bichectomía (<em>reevaluar a 10% de grasa</em>)</span><span>$1,750</span></div>
+        <div class="row"><span>🔄 Lipo 360° (<em>reevaluar a 10% de grasa</em>)</span><span>$8,000</span></div>
+        <div class="row"><span>🏨 Logística 4-5 semanas (vuelo desde Tokio)</span><span>~$4,000</span></div>
+        <div class="flex justify-between pt-2 font-bold text-sm"><span>Total Viaje 2</span><span class="text-red-400">~$23,300</span></div>
+        <div class="row text-[var(--muted-foreground)]"><span>🛟 Retoque de nariz, solo si se rompe peleando</span><span>~$8-12K</span></div>
+      </div>
+      <div class="bg-green-900/30 border border-green-600 rounded-lg p-2 mt-2">
+        <p class="text-xs">💡 Si a 10% de grasa ya no necesitas lipo ni bichectomía, el Viaje 2 baja a <strong>~$13,550</strong>.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-blue-900/30 border border-blue-600 rounded-xl p-4 mt-3">
+    <p class="font-bold text-sm text-blue-400">🦅 Tu vista de halcón — DECIDIDO: LASEK personalizado en B&VIIT</p>
+    <p class="text-xs mt-1">Para un peleador que quiere la máxima visión es la mejor opción: <strong>láser guiado por el mapa de tu córnea</strong> (el que tiene más ventaja en los estudios para llegar a 20/16 o mejor y corregir astigmatismo) <strong>sin colgajo y sin corte</strong>. Es el estándar tradicional en deportes de combate.</p>
+    <div class="overflow-x-auto mt-2">
+    <table class="w-full text-xs">
+      <thead><tr class="border-b border-[var(--border)] text-left"><th class="py-1"></th><th>LASIK</th><th>SMILE Pro</th><th class="text-blue-400">LASEK personalizado ✅</th></tr></thead>
+      <tbody>
+        <tr class="border-b border-[var(--border)]"><td class="py-1">Precio en B&VIIT</td><td>₩1.9M (~$1,415)</td><td>₩4.3M (~$3,200)</td><td class="font-bold">₩1.6M base (~$1,190) → ~$2,000 personalizado</td></tr>
+        <tr class="border-b border-[var(--border)]"><td class="py-1">Golpes en MMA</td><td>❌ el colgajo se puede mover años después</td><td>✅ casi sin riesgo (corte de 2-4 mm)</td><td class="font-bold">✅ cero colgajo y cero corte</td></tr>
+        <tr class="border-b border-[var(--border)]"><td class="py-1">Visión máxima</td><td>Muy buena</td><td>Muy buena, normalmente 20/20-20/16</td><td class="font-bold">La mayor ventaja para 20/16 o mejor</td></tr>
+        <tr class="border-b border-[var(--border)]"><td class="py-1">Recuperación</td><td>1 día</td><td>1-2 días</td><td>3-7 días con molestia; visión estable en semanas</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="text-xs mt-2">Te operas 9 meses antes de Bangtao, así que la recuperación lenta no importa. Plan B: si el examen previo (~₩100K, se descuenta si te operas) dice que tu córnea no es apta, se cambia a SMILE.</p>
+  </div>
+
+  <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 mt-3">
+    <p class="font-bold text-sm">👃 La nariz en el Viaje 1: bien pensado</p>
+    <ul class="text-xs mt-1 list-disc ml-5 space-y-0.5">
+      <li>Respiras mejor <strong>durante todo el campamento</strong>: más cardio y mejor recuperación entre rounds.</li>
+      <li>Te operas 9 meses antes de Bangtao: hay tiempo para que los huesos se asienten. Pregúntale a Hanabi cuándo puedes volver al contacto.</li>
+      <li>Si se rompe peleando, el retoque es posible, pero más complejo y más caro. Por eso queda como reserva en el Viaje 2.</li>
+    </ul>
+  </div>
+
+  <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 mt-3">
+    <p class="font-bold text-sm">🗓️ Orden propuesto del Viaje 1 (los cirujanos deciden el final)</p>
+    <div class="text-xs mt-2">
+      <div class="row"><span>Semana 1</span><span>Full Body Scan, DEXA, evaluaciones, inicio de coronas</span></div>
+      <div class="row"><span>Semanas 1-2</span><span>🦴 VBT + hospitalización</span></div>
+      <div class="row"><span>Semana 3</span><span>🦅 LASEK (así no necesitas lentes cuando te operen la nariz)</span></div>
+      <div class="row"><span>Semana 5</span><span>👃 Nariz, cuando Wooridul autorice otra anestesia</span></div>
+      <div class="row"><span>Semana 7</span><span>💇 FUE + PRP · 🦷 coronas finales + mouthguard</span></div>
+      <div class="row"><span>Semana 8</span><span>Controles finales y vuelo a casa</span></div>
+    </div>
+    <p class="text-xs text-[var(--muted-foreground)] mt-2">BLS, IV drips y HBOT se reparten a lo largo de las semanas. La lipo no va en este viaje: la VBT entra por el costado del tórax, la misma zona de los flancos.</p>
+  </div>
+
+  <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 mt-2">
+    <p class="text-xs"><strong>Comparación:</strong> plan original en 1 viaje = $73,030 (con la columna estimada en $25K) · nuevo en 2 viajes con precios reales = ~$104,400 (o ~$94,650 sin lipo ni bichectomía). Casi toda la diferencia es la reserva de columna, que puede bajar.</p>
+  </div>
+</div>
+
+<!-- ========== RECUPERACIÓN ========== -->
+<div id="tab-rec" class="tab-content">
+  <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 mb-3">
+    <h2 class="text-lg font-bold">⏱️ ¿Cuánto dura tu recuperación?</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-2 mt-3 text-center">
+      <div class="border border-[var(--border)] rounded-lg p-2"><p class="text-xl font-bold text-green-500">4-6 sem</p><p class="text-xs text-[var(--muted-foreground)]">Vida normal: caminar, trabajar, salir</p></div>
+      <div class="border border-[var(--border)] rounded-lg p-2"><p class="text-xl font-bold text-yellow-500">~3 meses</p><p class="text-xs text-[var(--muted-foreground)]">Entrenar sin contacto: correr, técnica, pesas ligeras</p></div>
+      <div class="border border-[var(--border)] rounded-lg p-2"><p class="text-xl font-bold text-orange-500">6-8 meses</p><p class="text-xs text-[var(--muted-foreground)]">Contacto completo (sparring), con permiso del cirujano</p></div>
+      <div class="border border-[var(--border)] rounded-lg p-2"><p class="text-xl font-bold text-red-500">~12 meses</p><p class="text-xs text-[var(--muted-foreground)]">Resultado final de nariz y pelo, justo para el debut</p></div>
+    </div>
+    <p class="text-xs text-[var(--muted-foreground)] mt-2">Son tiempos típicos de la literatura médica y de las clínicas. Los tuyos los fija cada cirujano según cómo sanes.</p>
+  </div>
+
+  <h3 class="font-bold text-sm mb-2">🩺 Recuperación por procedimiento</h3>
+  <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 mb-3 overflow-x-auto">
+    <table class="w-full text-xs">
+      <thead><tr class="border-b border-[var(--border)] text-left"><th class="py-1">Procedimiento</th><th>Hospital / reposo</th><th>Vida normal</th><th>Entrenar sin contacto</th><th>Contacto / MMA</th><th>Resultado final</th></tr></thead>
+      <tbody>
+        <tr class="border-b border-[var(--border)]"><td class="py-1 font-bold">🦴 Columna VBT</td><td>4-7 días internado · caminas al día siguiente</td><td>3-4 semanas</td><td>6 semanas: caminar, bici · 3 meses: correr</td><td>3-6 meses en jóvenes; en adultos lo decide el cirujano (6-12 meses conservador)</td><td>~12 meses</td></tr>
+        <tr class="border-b border-[var(--border)]"><td class="py-1 font-bold">👃 Nariz (rino + septo + turbino)</td><td>Férula 7 días · moretones 2-3 semanas</td><td>2-3 semanas · sin lentes 4-6 semanas</td><td>Cardio a las 3 semanas · entrenar a las 6-8 semanas</td><td>6-12 meses para sparring completo. Careta o casco hasta los 12 meses.</td><td>12 meses</td></tr>
+        <tr class="border-b border-[var(--border)]"><td class="py-1 font-bold">🦅 LASEK personalizado</td><td>3-5 días de molestia · quedarte 1 mes en Corea</td><td>1 semana</td><td>1-2 semanas (sin agua ni polvo en los ojos)</td><td>~1 mes con protección. Sin colgajo, así que sin riesgo después.</td><td>Visión estable en 1-3 meses</td></tr>
+        <tr class="border-b border-[var(--border)]"><td class="py-1 font-bold">💇 FUE + PRP</td><td>Ambulatorio · costras 10-14 días</td><td>1-2 semanas</td><td>Sin sudar 2 semanas</td><td>~4 semanas (por la fricción en la cabeza)</td><td>9-12 meses. Caída temporal de pelo a los 1-3 meses.</td></tr>
+        <tr class="border-b border-[var(--border)]"><td class="py-1 font-bold">🦷 6 coronas</td><td>2-3 visitas por diente</td><td>Inmediato</td><td>Inmediato</td><td>Con mouthguard hecho a medida (después de las coronas)</td><td>Al terminar</td></tr>
+        <tr><td class="py-1 font-bold">✨ Piel, IV, HBOT</td><td>0-5 días por sesión</td><td>Inmediato</td><td>Inmediato</td><td>—</td><td>1-3 meses</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="font-bold text-sm mb-2">📅 Tu calendario de recuperación (fechas estimadas)</h3>
+  <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 mb-3 text-xs">
+    <div class="row"><span class="font-bold">~12 ene 2027</span><span>🦴 Columna VBT · al día siguiente caminas · alta ~18 ene</span></div>
+    <div class="row"><span class="font-bold">~26 ene</span><span>🦅 LASEK · 3-5 días de molestia · a fin de mes ya ves bien</span></div>
+    <div class="row"><span class="font-bold">~9 feb</span><span>👃 Nariz · te quitan la férula ~16 feb</span></div>
+    <div class="row"><span class="font-bold">~23 feb</span><span>💇 FUE + 🦷 coronas finales + mouthguard</span></div>
+    <div class="row"><span class="font-bold">~26 feb</span><span>🦴 6 semanas de la columna: gimnasio ligero, bici, caminar mucho</span></div>
+    <div class="row"><span class="font-bold">~3 mar</span><span>✈️ Seúl → Tokio (2.5 h de vuelo, con permiso del cirujano)</span></div>
+    <div class="row"><span class="font-bold">Mar 2027</span><span>Tokio: fisio 2×/semana · cardio suave · las costras del pelo ya se cayeron</span></div>
+    <div class="row"><span class="font-bold">Abr 2027</span><span>🦴 3 meses: correr · técnica y sombra · saco ligero, sin golpes en la cara</span></div>
+    <div class="row"><span class="font-bold">Jun 2027</span><span>🚩 Imágenes nuevas + <strong>autorización escrita</strong> del Prof. Chang y de Hanabi</span></div>
+    <div class="row"><span class="font-bold">15 jul 2027</span><span>🛡️ Fase 0 (6 meses de la columna · 5 de la nariz): tibias, saco, Zona 2. Cuello solo con autorización. Todavía sin sparring a la cara.</span></div>
+    <div class="row"><span class="font-bold">15 sep 2027</span><span>🇹🇭 Bangtao (8 meses de la columna · 7 de la nariz): sparring progresivo. Casco en el sparring de golpeo.</span></div>
+    <div class="row"><span class="font-bold">Feb 2028</span><span>🏆 <strong>Debut</strong> (13 meses de la columna · 12 de la nariz · pelo en su resultado final)</span></div>
+  </div>
+
+  <div class="bg-yellow-900/30 border border-yellow-600 rounded-xl p-3">
+    <p class="text-xs">⚠️ <strong>Las 3 reglas de oro:</strong> (1) sin autorización escrita no hay sparring. (2) Si algo duele en la columna o en la nariz después de un golpe, imagen inmediata. (3) Los primeros 12 meses, careta o casco en el sparring de golpeo para proteger la nariz.</p>
+  </div>
+</div>
+
+<!-- ========== DINERO ========== -->
+<div id="tab-money" class="tab-content">
+  <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 mb-3">
+    <h2 class="text-lg font-bold">💰 Gastos únicos por fase (salen de los $360K)</h2>
+    <div class="text-sm mt-2">
+      <div class="row"><span>1. Preparación (estudios, gyōseishoshi)</span><span>~$1,000</span></div>
+      <div class="row"><span>2. 🇰🇷 Corea Viaje 1 (precios reales + reserva de columna de $45K)</span><span>~$81,800</span></div>
+      <div class="row"><span>3. Recuperación en Tokio (fisio y seguimiento en St. Luke's, posiblemente sin seguro + japonés)</span><span>~$6,000</span></div>
+      <div class="row"><span>4. Fase 0 (gimnasio, equipo, DTV, seguro, vuelo a Phuket)</span><span>~$3,000</span></div>
+      <div class="row"><span>5. 🇹🇭 Bangtao 90 días ($13,812) + gastos extra</span><span>~$16,000</span></div>
+      <div class="row"><span>6. 🇯🇵 Tokio camp + debut (depa mensual, Fighter's Flow, comida, vuelo)</span><span>~$9,500</span></div>
+      <div class="row"><span>7. 🇰🇷 Corea Viaje 2</span><span>~$13,550-23,300</span></div>
+      <div class="row"><span>8. CAPEX depa Akihabara + moto</span><span>~$44,300</span></div>
+      <div class="row"><span>Guardarropa + Samsung</span><span>~$18,400</span></div>
+      <div class="row"><span>Visa japonesa (trámites)</span><span>~$3,000</span></div>
+      <div class="flex justify-between pt-2 font-bold"><span>Total gastos únicos</span><span class="text-red-400">~$196K-206K</span></div>
+    </div>
+  </div>
+
+  <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 mb-3">
+    <h3 class="font-bold mb-3">🪣 Cubetas actualizadas de los $360K</h3>
+    <div class="space-y-2">
+      <div class="flex items-center gap-2"><div class="h-7 bg-blue-600 rounded flex items-center px-2 text-white text-xs font-bold" style="width:57%">PROYECTOS $206K</div><span class="text-xs">Todas las fases (escenario alto, columna incluida)</span></div>
+      <div class="flex items-center gap-2"><div class="h-7 bg-yellow-600 rounded flex items-center px-2 text-white text-xs font-bold" style="width:13%">$48K</div><span class="text-xs">Fondo de emergencia (también cubre un retoque de nariz)</span></div>
+      <div class="flex items-center gap-2"><div class="h-7 bg-purple-600 rounded flex items-center px-2 text-white text-xs font-bold" style="width:30%">INVERTIR $106K</div><span class="text-xs">VT o VOO+VXUS (sube si la columna sale más barata)</span></div>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+    <div class="bg-green-900/30 border border-green-600 rounded-xl p-3">
+      <p class="font-bold text-sm text-yellow-400">⚠️ Impuestos japoneses: dependen de tu visa</p>
+      <p class="text-xs mt-1">Con la visa de nómada digital (6 meses, sin residencia) probablemente no eres residente fiscal japonés en 2027. Con visa de cónyuge u otra de residente, sí. Aparta el 40% de cada pago desde enero y confírmalo con un zeirishi.</p>
+    </div>
+    <div class="bg-yellow-900/30 border border-yellow-600 rounded-xl p-3">
+      <p class="font-bold text-sm text-yellow-400">⚠️ Ingreso bajo durante el campamento</p>
+      <p class="text-xs mt-1">Sep 2027 – feb 2028 (~5.5 meses) vas a entrenar casi todo el día. Cuenta con que el freelance baje 50-70%. Asegura retainers antes y usa el campamento como serie de YouTube.</p>
+    </div>
+  </div>
+  <p class="text-xs text-[var(--muted-foreground)] mt-2">El OPEX de Tokio (¥1.18M/mes) arranca en mayo de 2028. Los gastos de casa en 2027 se pagan con tu ingreso normal.</p>
+</div>
+
+<!-- ========== CHECKLIST ========== -->
+<div id="tab-check" class="tab-content">
+  <div class="bg-red-900/30 border border-red-600 rounded-xl p-4 mb-3">
+    <h3 class="font-bold text-red-400 mb-2">🔥 ESTE MES (octubre 2026)</h3>
+    <ul class="text-sm space-y-1">
+      <li>☐ Escribir a Wooridul: <a href="mailto:ipc@wooridul.co.kr">ipc@wooridul.co.kr</a> · +82 2 513 8452. Mandar estudios y pedir fecha a inicios de diciembre.</li>
+      <li>☐ Preguntarle al cirujano, por escrito: <em>"¿Podré competir en MMA amateur 9 meses después de la VBT?"</em></li>
+      <li>☐ Escribir a Hanabi (<a href="https://hanabiclinic.com" target="_blank">hanabiclinic.com</a>) y B&VIIT (<a href="https://bnviit.com" target="_blank">bnviit.com</a>): pedir fechas en semana 5 y semana 3 del viaje, y preguntar a Hanabi cuándo puedes volver al contacto.</li>
+      <li>☐ Abrir Interactive Brokers (con domicilio en EE.UU.).</li>
+      <li>☐ Reservar el primer tutor de japonés (italki o Preply).</li>
+      <li>☐ Agendar consulta con un gyōseishoshi de inmigración.</li>
+    </ul>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+      <p class="font-bold text-sm">🩹 Durante la recuperación (ene-jul 2027)</p>
+      <ul class="text-xs mt-1 space-y-0.5">
+        <li>☐ Autorización escrita para MMA (junio)</li>
+        <li>☐ Reservar Bangtao, bloque 1 (30 días) + bloque 2 (60 días)</li>
+        <li>☐ Solicitar la <strong>DTV de Tailandia</strong>*</li>
+        <li>☐ Seguro médico internacional que cubra artes marciales</li>
+        <li>☐ Vuelo EE.UU. → Phuket para el 13 de septiembre</li>
+        <li>☐ Trámite de la visa japonesa para mayo de 2028</li>
+      </ul>
+    </div>
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+      <p class="font-bold text-sm">🇹🇭 Visa de Tailandia</p>
+      <p class="text-xs mt-1">*Como estadounidense, la exención de visa es de 60 días (y han hablado de bajarla a 30). <strong>90 días no caben.</strong> La <strong>DTV (Destination Thailand Visa)</strong> es para entrenar Muay Thai y trabajar remoto: hasta 180 días por entrada y pide ~500,000 THB en ahorros. Confirmar las reglas vigentes antes de aplicar.</p>
+    </div>
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+      <p class="font-bold text-sm">🇯🇵 Llegada a Tokio (dic 2027)</p>
+      <ul class="text-xs mt-1 space-y-0.5">
+        <li>☐ Departamento mensual en Takadanobaba</li>
+        <li>☐ Membresía Gold en Fighter's Flow</li>
+        <li>☐ Análisis de sangre: hepatitis B, hepatitis C y VIH</li>
+        <li>☐ <strong>Confirmar el reglamento del torneo</strong> (guantes, codos, duración)</li>
+      </ul>
+    </div>
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+      <p class="font-bold text-sm">🥊 Ajustes al dossier</p>
+      <ul class="text-xs mt-1 space-y-0.5">
+        <li>• Amateur Shooto: codos prohibidos, espinilleras obligatorias, guantes de ~6 oz.</li>
+        <li>• DEEP Future King: suele ser 1 round de 5 min (la final, 2×5).</li>
+        <li>• Rodillas al rival en tortuga (Trampa B): revisar si están permitidas.</li>
+        <li>• Entrenar los simulacros con el formato del torneo que elijas.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ========== PRE-APROBACIÓN ========== -->
+<div id="tab-pre" class="tab-content">
+  <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 mb-3">
+    <h2 class="text-lg font-bold">🔍 Pre-aprobación — Todo confirmado por escrito ANTES de comprar el vuelo</h2>
+    <p class="text-xs text-[var(--muted-foreground)] mt-1">Ninguna clínica da un "sí" definitivo a distancia. Lo que sí dan es una <strong>cotización preliminar por escrito + su opinión de si eres candidato</strong>. El "sí" final llega con el examen en persona. Meta: tener todas las respuestas para el <strong>6 de noviembre</strong>.</p>
+  </div>
+
+  <div class="bg-[var(--card)] border border-green-600/50 rounded-xl p-4 mb-3">
+    <p class="font-bold text-green-400">🦴 Columna: VBT con cables, sin fusión, EN COREA</p>
+    <ul class="text-xs mt-1 list-disc ml-5 space-y-1">
+      <li><strong>Plan A:</strong> Prof. Dong-Gune Chang (장동균), Inje University Sanggye Paik Hospital, Seúl. Es el principal cirujano de VBT en Corea y trabaja con Trobisch. Teléfono del centro internacional: <strong>+82-2-950-1114</strong>.</li>
+      <li><strong>Plan B:</strong> Trobisch (Düren, Alemania, +49 2421 30-1700, ~€35-47K) o Alanay (Estambul, info@ahmetalanay.com). De ahí vuelas a Tokio unas 4-6 semanas después.</li>
+      <li>⚠️ Lo que decide si eres candidato: <strong>qué tan flexible es tu curva, cuántos grados de cifosis tienes y el estado de la vértebra comprimida</strong>. Por eso los estudios de esta semana son clave.</li>
+      <li>📏 Estatura realista: <strong>+1-3 cm</strong>. Los 178 cm son el mejor escenario.</li>
+    </ul>
+    <details class="mt-2"><summary class="font-bold text-xs cursor-pointer">✉️ Mensaje en coreano para Sanggye Paik (copiar y pegar)</summary>
+<pre class="text-xs whitespace-pre-wrap mt-2">안녕하세요. 저는 [이름]이고, 24세 미국 국적 남성입니다.
+척추측만증, 척추후만증, 그리고 압박된 척추체 1개가 있습니다.
+장동균 교수님께 비유합 척추체 테더링(VBT / 전방 측만증 교정) 수술 상담을 받고 싶습니다. 성장은 끝난 성인입니다.
+수술 후 종합격투기(MMA) 훈련과 시합을 하고 싶습니다.
+전척추 X-ray(정면/측면/측굴), 전척추 MRI(DICOM), 압박 부위 CT 자료를 보내드릴 수 있습니다.
+
+다음 내용을 알려주시면 감사하겠습니다:
+1. 테더링(비유합) 수술 대상이 되는지
+2. 후만증과 압박된 척추체도 유합 없이 치료 가능한지
+3. 예상 비용 (외국인 자비 부담, 항목별)
+4. 가장 빠른 수술 가능 날짜 (2026년 12월 희망) 및 입원 기간
+5. 격투기(접촉 운동) 복귀 가능 시기
+
+감사합니다.
+[이름] · [WhatsApp] · [이메일]</pre></details>
+    <p class="text-xs text-[var(--muted-foreground)] mt-2">Manda también el mensaje en inglés de abajo. Si contestan en coreano, Ayame o Papago te ayudan a traducirlo.</p>
+  </div>
+
+  <h3 class="font-bold text-sm mb-2">📅 Calendario más rápido</h3>
+  <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 mb-3 text-xs">
+    <div class="row"><span class="font-bold">Jue 15 oct</span><span>Mandar TODOS los mensajes de abajo el mismo día. Si usas lentes de contacto, quítatelos YA.</span></div>
+    <div class="row"><span class="font-bold">15-20 oct</span><span>Consulta por telemedicina para la orden de estudios de columna · radiografía panorámica dental · consulta LASIK gratis</span></div>
+    <div class="row"><span class="font-bold">21-26 oct</span><span>Recibir los archivos (DICOM, panorámica, mapas de córnea) y reenviarlos a cada clínica</span></div>
+    <div class="row"><span class="font-bold">27 oct – 4 nov</span><span>Insistir diario por WhatsApp a quien no conteste · comparar precios en Gangnam Unni · pedir fechas por escrito</span></div>
+    <div class="row"><span class="font-bold">5-6 nov</span><span>Decidir dónde va la columna · pagar depósitos · comprar vuelos <strong>con cambio flexible</strong> y alojamiento</span></div>
+    <div class="row"><span class="font-bold">Oct-nov 2026</span><span>🇹🇭 Pedir la DTV de Tailandia en línea, desde EE.UU.</span></div>
+    <div class="row"><span class="font-bold">Inicios de dic 2026</span><span>🇯🇵 Visa de nómada digital en el consulado japonés de tu estado + seguro privado de ¥10M o más para mar-sep 2027</span></div>
+    <div class="row"><span class="font-bold">Fin de dic 2026</span><span>Sacar el <strong>K-ETA</strong> (₩10,000, k-eta.go.kr) mínimo 72 h antes de volar. Desde el 1 de enero de 2027 probablemente vuelve a pedirse.</span></div>
+    <p class="text-[var(--muted-foreground)] mt-2">🛂 Como estadounidense no necesitas visa coreana: puedes estar hasta 90 días y tu viaje dura ~8 semanas.</p>
+  </div>
+
+  <h3 class="font-bold text-sm mb-2">🇺🇸 Estudios que te haces en EE.UU. esta semana</h3>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-2 mb-3">
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+      <p class="font-bold text-sm">🦴 Columna (~$300-900)</p>
+      <ul class="text-xs mt-1 list-disc ml-4">
+        <li>Orden médica por telemedicina: <a href="https://radiologyassist.com" target="_blank">Radiology Assist</a> (~$40)</li>
+        <li>Radiografía de columna completa de pie, frente y perfil + en flexión lateral</li>
+        <li>Resonancia de columna completa, sin contraste</li>
+        <li>Tomografía del nivel comprimido + DEXA de densidad ósea</li>
+        <li>Pide los archivos <strong>DICOM</strong> + los reportes en PDF</li>
+      </ul>
+    </div>
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+      <p class="font-bold text-sm">👁️ Ojos (gratis)</p>
+      <ul class="text-xs mt-1 list-disc ml-4">
+        <li>Consulta LASIK gratis (LasikPlus, TLC). Incluye topografía y paquimetría.</li>
+        <li>Lentes blandos fuera 4 días antes (tóricos 6, duros 10)</li>
+        <li>Pide copia de los mapas y valores: <em>recordsrequest@lasik.com</em></li>
+        <li>Con eso sabes si eres candidato a LASEK antes de viajar</li>
+      </ul>
+    </div>
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+      <p class="font-bold text-sm">🦷 Dientes (~$100-250)</p>
+      <ul class="text-xs mt-1 list-disc ml-4">
+        <li>Radiografía panorámica (si alcanza, mejor una tomografía 3D)</li>
+        <li>Pide el <strong>archivo digital original</strong>, no foto con el celular</li>
+        <li>Fotos de tu sonrisa e intraorales</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="font-bold text-sm mb-2">📇 Contactos verificados</h3>
+  <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 mb-3 overflow-x-auto">
+    <table class="w-full text-xs">
+      <thead><tr class="border-b border-[var(--border)] text-left"><th class="py-1">Clínica</th><th>WhatsApp</th><th>Email</th><th>Qué mandar</th></tr></thead>
+      <tbody>
+        <tr class="border-b border-[var(--border)] text-green-400"><td class="py-1">🦴 <strong>Sanggye Paik — Prof. Chang (PLAN A)</strong></td><td>+82-2-950-1114</td><td>Centro internacional (pídeles el email por teléfono o WhatsApp)</td><td>DICOM + reportes + mensaje en coreano</td></tr>
+        <tr class="border-b border-[var(--border)]"><td class="py-1">🦴 Trobisch (Düren, DE)</td><td>+49 2421 30-1700</td><td><a href="https://www.artemed-klinikum-dueren.de/wirbelsaeulenchirurgie/wirbelsaeulenverkruemmungen" target="_blank">Formulario</a></td><td>Radiografías + resonancia</td></tr>
+        <tr class="border-b border-[var(--border)]"><td class="py-1">🦴 Alanay (Estambul)</td><td>+90 537 047 42 42</td><td>info@ahmetalanay.com</td><td>Radiografías + resonancia</td></tr>
+        <tr class="border-b border-[var(--border)]"><td class="py-1">🦴 Wooridul (segunda opinión)</td><td><a href="https://wa.me/821050895233" target="_blank">+82 10 5089 5233</a></td><td>ipc@wooridul.co.kr</td><td>DICOM + reportes</td></tr>
+        <tr class="border-b border-[var(--border)]"><td class="py-1">👃 Hanabi</td><td>+82 10 5008 0270</td><td>hanabiclinic@gmail.com</td><td>Fotos: frente, 45° ambos lados, perfiles, desde abajo</td></tr>
+        <tr class="border-b border-[var(--border)]"><td class="py-1">🦅 B&VIIT</td><td><a href="https://wa.me/821063006727" target="_blank">+82 10 6300 6727</a></td><td>bnviiteyecentereng@gmail.com</td><td>Graduación + mapas de córnea</td></tr>
+        <tr class="border-b border-[var(--border)]"><td class="py-1">💇 Motion</td><td>(pedirlo por email)</td><td>motion.seoul@gmail.com</td><td>Fotos de pelo, 10 ángulos</td></tr>
+        <tr class="border-b border-[var(--border)]"><td class="py-1">🦷 Oaks Dental</td><td><a href="https://wa.me/821092688859" target="_blank">+82 10 9268 8859</a></td><td>oaksdentalclinic@gmail.com</td><td>Panorámica + fotos</td></tr>
+        <tr class="border-b border-[var(--border)]"><td class="py-1">🦷 Plan B: Gangnam Gentle Dental</td><td><a href="https://wa.me/821050507095" target="_blank">+82 10 5050 7095</a></td><td>contact@gangnamgentledental.com</td><td>Panorámica + fotos</td></tr>
+        <tr class="border-b border-[var(--border)]"><td class="py-1">🧠 Samsung Medical</td><td>+82 2 3410 0200</td><td>ihs.smc@samsung.com</td><td>Datos del pasaporte + fechas</td></tr>
+        <tr><td class="py-1">✨ BLS Cheongdam</td><td><a href="https://wa.me/821031654842" target="_blank">+82 10 3165 4842</a></td><td>eng.blsclinic.com</td><td>Fechas + tratamientos</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="font-bold text-sm mb-2">✉️ Mensajes listos para copiar (en inglés)</h3>
+  <p class="text-xs text-[var(--muted-foreground)] mb-2">Cambia lo que está entre [corchetes]. Manda el mismo texto por WhatsApp y por email.</p>
+  <div class="space-y-2 mb-3">
+    <details class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3"><summary class="font-bold text-sm cursor-pointer">🦴 Para ISS, Lonner, Trobisch, Alanay y Wooridul (columna)</summary>
+<pre class="text-xs whitespace-pre-wrap mt-2">Hello, my name is [FULL NAME], a 24-year-old male US citizen (DOB [DD/MM/YYYY]).
+I have scoliosis, kyphosis and one compressed (wedge) vertebra. I am looking for NON-FUSION correction (VBT / ASC or similar). I am skeletally mature.
+I plan to train and compete in amateur MMA afterwards.
+
+Attached / to follow: standing full-spine X-rays (PA + lateral, bending), full-spine MRI (DICOM), CT of the compressed level, and reports.
+
+Could you please tell me in writing:
+1. Am I a candidate for non-fusion correction? Which technique?
+2. Can my KYPHOSIS and the wedge vertebra be addressed without fusion?
+3. Expected correction and realistic height change.
+4. Your policy and timeline for contact/combat sports (MMA) after surgery.
+5. Self-pay price estimate (itemized) and what it includes.
+6. Earliest available surgery date (I'm aiming for Nov–Dec 2026 or Jan 2027) and required stay.
+
+Thank you,
+[NAME] · [PHONE / WHATSAPP] · [EMAIL]</pre></details>
+
+    <details class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3"><summary class="font-bold text-sm cursor-pointer">👃 Para Hanabi (nariz)</summary>
+<pre class="text-xs whitespace-pre-wrap mt-2">Hello, I'm [FULL NAME], 24, male, US citizen. I'll be in Seoul from [DATE] to [DATE].
+I'd like a male rhinoplasty: remove the dorsal hump/hook, straight masculine bridge, proportional tip (not small), COMBINED with septoplasty + turbinoplasty because I need to breathe better.
+I train MMA: please advise when I can return to full-contact sparring.
+Attached: photos (front, 45° left/right, profiles, base view, top view). No previous nose surgery.
+Please send: an itemized written quote in KRW INCLUDING VAT (surgery, anesthesia, CT, aftercare), the surgeon's name, available dates, and required stay.
+Thank you! [NAME] · [WHATSAPP] · [EMAIL]</pre></details>
+
+    <details class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3"><summary class="font-bold text-sm cursor-pointer">🦅 Para B&VIIT (ojos)</summary>
+<pre class="text-xs whitespace-pre-wrap mt-2">Hello, I'm [FULL NAME], 24, male, US citizen, in Seoul [DATE]–[DATE] (8 weeks).
+I train MMA, so I want a FLAPLESS procedure with the best possible visual acuity: customized / topography-guided LASEK (or SMILE if better for my eyes).
+My prescription: Right [SPH / CYL / AXIS], Left [SPH / CYL / AXIS]. Contacts: [none / soft / toric / hard].
+Attached: corneal topography + pachymetry from a US clinic (if available).
+Please confirm: price of customized LASEK vs standard LASEK vs SMILE (incl. exam and Avellino test), whether my numbers look suitable, and available exam/surgery dates in my first week ([DATE]).
+Thank you! [NAME] · [WHATSAPP] · [EMAIL]</pre></details>
+
+    <details class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3"><summary class="font-bold text-sm cursor-pointer">💇 Para Motion (pelo)</summary>
+<pre class="text-xs whitespace-pre-wrap mt-2">Hello, I'm [FULL NAME], 24, male, US citizen, in Seoul [DATE]–[DATE].
+I'd like FUE to lower my hairline and close the temples (I estimate ~1,500 grafts) + PRP.
+Hair loss for [X] years; family history: [yes/no]; finasteride/minoxidil: [yes/no]. No previous transplant.
+Attached: dry, unstyled hair photos (front, hairline close-up, 45° L/R, temples L/R, top, crown, donor area, sides).
+Please send: graft estimate, price PER GRAFT and total in KRW INCLUDING VAT, shaven vs non-shaven, what's included (PRP, meds), your WhatsApp number, and available dates.
+Thank you! [NAME] · [EMAIL]</pre></details>
+
+    <details class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3"><summary class="font-bold text-sm cursor-pointer">🦷 Para Oaks / Gangnam Gentle (dientes)</summary>
+<pre class="text-xs whitespace-pre-wrap mt-2">Hello, I'm [FULL NAME], 24, male, US citizen, in Seoul [DATE]–[DATE] (8 weeks).
+I have [NUMBER] broken teeth: [list, e.g. upper left 1st molar]. I'd like zirconia crowns, plus a custom multi-layer MMA mouthguard made after the crowns.
+Attached: panoramic X-ray (digital file) + photos.
+Please tell me in writing: which teeth need crown only vs root canal/core vs extraction+implant; itemized price in KRW incl. VAT; number of visits; and whether everything can be finished within 8 weeks (implants?).
+Thank you! [NAME] · [WHATSAPP] · [EMAIL]</pre></details>
+
+    <details class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3"><summary class="font-bold text-sm cursor-pointer">🧠 Para Samsung Medical (chequeo)</summary>
+<pre class="text-xs whitespace-pre-wrap mt-2">Hello, I'd like to book a self-pay health screening at the Health Promotion Center.
+Name (as passport): [NAME] · DOB: [DATE] · Male · Nationality: USA · Passport: [NUMBER]
+Stay in Seoul: [DATE]–[DATE] · Hotel: [ADDRESS]
+Package: Executive (₩2,990,000) + DEXA body composition. Preferred date: first week, [DATE].
+Please confirm availability, preparation instructions and payment. Thank you! [PHONE] · [EMAIL]</pre></details>
+
+    <details class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3"><summary class="font-bold text-sm cursor-pointer">✨ Para BLS (piel)</summary>
+<pre class="text-xs whitespace-pre-wrap mt-2">Hello, I'm [NAME], male, 24, visiting Seoul [DATE]–[DATE], Cheongdam branch.
+I'd like a 4-session plan: laser toning, Potenza RF microneedling, Rejuran Healer, Aqua Peel, CO2 removal of ~[X] moles, and fractional laser for stretch marks on [AREA].
+Please send prices (incl. VAT), recommended schedule around my other surgeries, and deposit details. Thank you! [WHATSAPP]</pre></details>
+  </div>
+
+  <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+    <p class="font-bold text-sm">💡 Trucos para que te contesten rápido y barato</p>
+    <ul class="text-xs mt-1 list-disc ml-5">
+      <li>Corea va 14 horas adelante (desde el 1 de noviembre). Si escribes en tu noche, te contestan en su mañana.</li>
+      <li>Pide siempre el precio <strong>en wones, con IVA incluido y desglosado</strong>.</li>
+      <li>Compara cada cotización con los precios de la app <strong>Gangnam Unni</strong>.</li>
+      <li>Si usas una agencia, que esté en la <a href="https://www.medicalkorea.or.kr/en/registeredfacilitators" target="_blank">lista oficial de Medical Korea</a>. Cobran comisión del 15-30%, así que mejor contacta tú directo.</li>
+      <li>B&VIIT pide quedarte 1 mes en Corea después del LASEK. Dentro de tus 8 semanas no hay problema.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ========== PENDIENTES ========== -->
+<div id="tab-q" class="tab-content">
+  <div class="space-y-2">
+    <div class="bg-green-900/30 border border-green-600 rounded-xl p-4">
+      <p class="font-bold">🛂 Secuencia legal de visas (investigada en fuentes oficiales)</p>
+      <div class="text-xs mt-2">
+        <div class="row"><span class="font-bold">Oct-nov 2026 (EE.UU.)</span><span>🇹🇭 Pedir la <strong>DTV de Tailandia</strong> en línea (thaievisa.go.th), en la categoría de trabajador remoto. Dura 5 años. Pide ~500,000 THB en el banco.</span></div>
+        <div class="row"><span class="font-bold">Inicios de dic 2026 (EE.UU.)</span><span>🇯🇵 Pedir la <strong>visa de nómada digital</strong> en el consulado japonés de tu estado. Pide ganar más de ¥10M al año y un seguro privado de ¥10M o más. Es de una sola entrada y vence 3 meses después de emitida, por eso se pide en diciembre y no antes.</span></div>
+        <div class="row"><span class="font-bold">Ene – mar 2027</span><span>🇰🇷 Corea sin visa (con K-ETA)</span></div>
+        <div class="row"><span class="font-bold">Mar – sep 2027</span><span>🇯🇵 <strong>Nómada digital, 6 meses:</strong> te alcanza para la recuperación y la Fase 0 completas, trabajando remoto de forma legal. No incluye tarjeta de residencia ni seguro nacional, así que vives en un depa mensual y pagas la fisio por tu cuenta.</span></div>
+        <div class="row"><span class="font-bold">Sep – dic 2027</span><span>🇹🇭 Bangtao con la DTV (hasta 180 días por entrada)</span></div>
+        <div class="row"><span class="font-bold">Dic 2027 – feb 2028</span><span>🇯🇵 Como turista (~75 días). La nómada digital no se puede repetir hasta 6 meses después de salir.</span></div>
+        <div class="row"><span class="font-bold">Mar – abr 2028</span><span>🇰🇷 Viaje 2</span></div>
+        <div class="row"><span class="font-bold">May 2028 →</span><span>🇯🇵 <strong>Visa larga:</strong> de cónyuge (si se casan; tarda 3-6 meses en Tokio) o Business Manager (¥30M de capital + 1 empleado + japonés N2 tuyo o de tu empleado). Un gyōseishoshi la tramita desde oct-dic de 2027.</span></div>
+      </div>
+      <p class="text-xs mt-2">💡 <strong>Si se casan antes</strong>, Ayame puede tramitar tu visa de cónyuge desde Japón en cualquier momento. Eso te da tarjeta de residencia y seguro nacional (la fisio te cuesta 30%), y te ahorra los saltos de visa.</p>
+      <p class="text-xs mt-1 text-yellow-400">⚠️ Guarda tu licencia de manejo y una dirección en EE.UU.: los consulados piden comprobante de residencia para tramitar visas. Y pregúntale al gyōseishoshi si grabar YouTube en Japón entra en la visa de nómada digital (es zona gris).</p>
+    </div>
+    <div class="bg-green-900/30 border border-green-600 rounded-xl p-4">
+      <p class="font-bold">✅ Mascotas: RESUELTO</p>
+      <p class="text-xs mt-1">Ayame, los 2 gatos y las 2 chinchillas ya están en Japón: no hay cuarentena ni importación que tramitar. Mientras tú estás en Corea y en Tailandia, se quedan con ella.</p>
+    </div>
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4">
+      <p class="font-bold">👁️ Tu graduación: pendiente</p>
+      <p class="text-xs mt-1">La consulta LASIK gratis en EE.UU. (LasikPlus o TLC) te da tu graduación + los mapas de córnea. Con eso sabremos qué tan cerca estás de la vista de águila.</p>
+    </div>
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4">
+      <p class="font-bold">💜 ¿Ayame viene a Tailandia y al campamento de Tokio?</p>
+      <p class="text-xs text-[var(--muted-foreground)] mt-1">Cambia el alojamiento (la Varee Two Bedroom ya es de 2 recámaras), los vuelos y el presupuesto.</p>
+    </div>
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4">
+      <p class="font-bold">🥊 Después del debut, ¿quieres seguir peleando?</p>
+      <p class="text-xs text-[var(--muted-foreground)] mt-1">Si buscas una carrera amateur o profesional, conviene retrasar más el Viaje 2 (ojos y carillas). Si es un solo debut, marzo de 2028 está perfecto.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function showTab(n){document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById('tab-'+n).classList.add('active');document.getElementById('btn-'+n).classList.add('active')}
+</script>
+</body>
+</html>
