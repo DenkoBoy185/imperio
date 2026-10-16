@@ -33,7 +33,7 @@
   <button onclick="showTab('ficha')" class="tab-btn active px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-ficha">🧾 Ficha y Prerrequisitos</button>
   <button onclick="showTab('crono')" class="tab-btn px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-crono">📅 Cronograma</button>
   <button onclick="showTab('sedes')" class="tab-btn px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-sedes">🏟️ Sedes y Torneos</button>
-  <button onclick="showTab('rutina')" class="tab-btn px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-rutina">🗓️ Rutina Bangtao</button>
+  <button onclick="showTab('rutina')" class="tab-btn px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-rutina">🗓️ Rutinas (Bangtao + Tokio)</button>
   <button onclick="showTab('nutri')" class="tab-btn px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-nutri">🥩 Nutrición</button>
   <button onclick="showTab('combate')" class="tab-btn px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-combate">🐍 Manual de Combate</button>
   <button onclick="showTab('check')" class="tab-btn px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-check">🎒 Checklist</button>
@@ -49,6 +49,7 @@
       <li>Cuello, tibias sin espinilleras y sparring: solo con <strong>autorización escrita</strong>. Casco en el sparring de golpeo hasta el debut.</li>
       <li>Reglas de torneo por confirmar: guantes de ~6 oz, sin codos en Shooto amateur, formato 2×3 o 1×5.</li>
       <li>Estatura: 175 cm hoy → <strong>176-178 cm</strong> esperados después de la VBT.</li>
+      <li><strong>Horario oficial de Fighter's Flow integrado:</strong> bloques exactos de Lucha (レスリング), MMA基礎打ち込み, MMA【All English】 (viernes 20:00) y Sparring (スパー).</li>
     </ul>
   </div>
 
@@ -105,8 +106,8 @@
         <li><strong>Cardio base:</strong> 3×/semana, 40 min en Zona 2 (135-145 lpm). Elevaciones de talón y tibia: 4×25 diarias.</li>
         <li><strong>Cuello:</strong> empezar con isométricos a mano. El arnés o disco (4×20 por lado) <strong>solo con autorización del Prof. Chang</strong>.</li>
         <li><strong>Fuerza:</strong> peso muerto rumano, hip thrust y farmer's walks, con cargas progresivas. Nada máximo sin autorización.</li>
-        <li><strong>Agosto:</strong> curtido de tibias: 5×3 min de saco descalzo sobre lona, 4 días por semana. Sin espinilleras solo si ya está autorizado el contacto.</li>
-        <li><strong>Técnica:</strong> clases sin contacto en Fighter's Flow. Así conoces al equipo con el que vas a debutar.</li>
+        <li><strong>Agosto (en el bloque 07:30–08:30 自主練 / Open Mat):</strong> curtido de tibias: 5×3 min de saco descalzo sobre lona, 4 días por semana.</li>
+        <li><strong>Clases exactas sin contacto duro en Fighter's Flow:</strong> Lunes y jueves <strong>11:30–12:30 MMA基礎打ち込み</strong> (drills básicos de MMA) + <strong>12:30–13:30 MMA</strong>; martes y jueves <strong>08:30–09:30 ボクシング</strong> (boxeo técnico); y viernes <strong>20:00–21:00 MMA【All English】</strong> (100% en inglés).</li>
         <li><strong>Calor:</strong> sauna de 15-20 min después de entrenar, 3×/semana (saunas o sentō de Tokio).</li>
       </ul>
     </div>
@@ -135,13 +136,20 @@
         <li>Semana 1: membresía Gold en Fighter's Flow, evaluación 1 a 1 y análisis de sangre (hepatitis B, hepatitis C y VIH).</li>
         <li><strong>Pedir el reglamento oficial (ルールブック) del torneo</strong> y ajustar guantes, codos, rodillas y duración. <span class="v2">V2</span></li>
         <li>Invierno (6 °C): calentar 15 min con sudadera antes de patear o luchar.</li>
-        <li>Semanas 2-6: 3 días de equipo y sparring + 2 días de trabajo 1 a 1. Inscripción al torneo de febrero en Wélter.</li>
+        <li><strong>Semanas 2-6 (Horario oficial Fighter's Flow):</strong>
+          <ul class="list-disc ml-5">
+            <li><strong>Lun y Mié (19:00–22:00):</strong> Cadena completa <strong>レスリング (Lucha) → MMA → スパー (Sparring)</strong>.</li>
+            <li><strong>Vie (19:00–22:00):</strong> <strong>キックボクシング → MMA【All English】 → スパー (Sparring)</strong>.</li>
+            <li><strong>Mar y Jue (11:30–13:30) + 2 Privadas 1 a 1 (Personal Studio):</strong> drills de la Anaconda (`MMA基礎打ち込み`), pads y ajustes con Takao Ueda.</li>
+            <li><strong>Dom (11:00–13:30):</strong> 90 min de <strong>レスリング (Lucha)</strong> + 60 min de <strong>MMA</strong>.</li>
+          </ul>
+        </li>
       </ul>
     </div>
     <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4">
       <p class="font-bold text-sm">🏆 Fase 3 — Fight camp y fight week (24 ene – fin de feb)</p>
       <ul class="text-xs mt-1 list-disc ml-5 space-y-0.5">
-        <li>Semanas −4 a −2: Shark Tank (un compañero fresco cada 60 s) en el formato del torneo.</li>
+        <li>Semanas −4 a −2: Shark Tank en el bloque de <strong>スパー (21:00–22:00 Lun/Mar/Mié/Vie)</strong> o en <strong>プロ練 (14:30–16:30)</strong> si Ueda te invita con los pros.</li>
         <li><strong>Lunes a miércoles:</strong>
           <ul class="list-disc ml-5">
             <li>2 sesiones de velocidad de 20 min, sin contacto duro.</li>
@@ -178,9 +186,10 @@
       <div class="text-xs mt-2">
         <div class="row"><span>Membresía Gold</span><span>Clases ilimitadas + privadas</span></div>
         <div class="row"><span>10 privadas de 60 min</span><span>¥85,000 (¥8,500 c/u)</span></div>
+        <div class="row"><span>Viernes 20:00–21:00 <span class="v2">V2</span></span><span><strong>MMA【All English】</strong> + Sparring 21:00</span></div>
         <div class="row"><span>Uso en la V2 <span class="v2">V2</span></span><span>Fase 0A (sin contacto) + Fases 2-3</span></div>
       </div>
-      <p class="text-xs mt-2">Desde Akihabara: ~20 min en tren (Sōbu hasta Iidabashi, después Tōzai). De paso queda Coto Academy en Iidabashi.</p>
+      <p class="text-xs mt-2">Desde Akihabara: ~20 min en tren (Sōbu hasta Iidabashi, después Tōzai). De paso queda Coto Academy en Iidabashi. Ver horario completo en la pestaña <strong>🗓️ Rutinas</strong>.</p>
     </div>
   </div>
 
@@ -200,7 +209,7 @@
 
 <!-- ========== RUTINA ========== -->
 <div id="tab-rutina" class="tab-content">
-  <h3 class="font-bold text-sm mb-2">4. Rutina semanal en Bangtao</h3>
+  <h3 class="font-bold text-sm mb-2">4A. Rutina semanal en Bangtao (Phuket — Fase 1: 15 sep a 13 dic 2027)</h3>
   <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 mb-3 overflow-x-auto">
     <table class="w-full text-xs">
       <thead><tr class="border-b border-[var(--border)] text-left"><th>Hora</th><th>Lun</th><th>Mar</th><th>Mié</th><th>Jue</th><th>Vie</th><th>Sáb</th><th>Dom</th></tr></thead>
@@ -218,13 +227,132 @@
     <p class="text-xs text-[var(--muted-foreground)] mt-2">*Codos: solo si el torneo los permite. En Amateur Shooto están prohibidos. <span class="v2">V2</span></p>
   </div>
 
-  <h3 class="font-bold text-sm mb-2">💪 Las 5 privadas de S&C</h3>
-  <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 text-xs space-y-1">
+  <h3 class="font-bold text-sm mb-2">💪 Las 5 privadas de S&C en Bangtao</h3>
+  <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 mb-4 text-xs space-y-1">
     <p><strong>#1 Lunes — Caderas y piernas:</strong> trap bar deadlift 4×5 explosivo, box jumps 4×5, landmine rotations 3×8, sled push.</p>
     <p><strong>#2 Miércoles — Fuerza para la Anaconda:</strong> dominadas con lastre 4×6, remo Pendlay 4×6, Zercher holds / abrazo de saco 4×45 s, farmer's walks.</p>
     <p><strong>#3 Viernes — Motor de 6 minutos:</strong> 2 bloques de 3 min (60 s de descanso) alternando cada 30 s AirBike, sprawls con balón medicinal y trineo hacia atrás.</p>
     <p><strong>#4 y #5 Martes y jueves — Blindaje articular:</strong> arnés de cuello en 4 direcciones, rotadores de hombro, Nordic curl y descompresión lumbar.</p>
     <p class="text-yellow-400 mt-2">⚠️ <span class="v2">V2</span> Con la columna operada: trap bar pesado, Zercher y arnés de cuello <strong>solo con la autorización del Prof. Chang</strong>. Dale al coach de S&C el protocolo por escrito el día 1.</p>
+  </div>
+
+  <h3 class="font-bold text-sm mb-2">4B. Horario Oficial de Fighter's Flow — Takadanobaba, Tokio (Traducido) <span class="v2">V2</span></h3>
+  <div class="bg-[var(--card)] border border-red-600/50 rounded-xl p-3 mb-3 overflow-x-auto">
+    <p class="text-xs text-[var(--muted-foreground)] mb-2">Traducción exacta de la parrilla oficial (`FIGHTER'S FLOW スケジュール`). Los bloques en <strong>negrita</strong> son las clases clave para tu sistema (Lucha + MMA + Sparring):</p>
+    <table class="w-full text-xs">
+      <thead>
+        <tr class="border-b border-[var(--border)] text-left">
+          <th>Hora</th>
+          <th>月 Lunes</th>
+          <th>火 Martes</th>
+          <th>水 Miércoles</th>
+          <th>木 Jueves</th>
+          <th>金 Viernes</th>
+          <th>土 Sábado</th>
+          <th>日 Domingo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="border-b border-[var(--border)]">
+          <td class="font-bold">07:30–08:30</td>
+          <td colspan="5" class="text-[var(--muted-foreground)]">自主練 — Entrenamiento libre / Open Mat (ideal para saco, movilidad y tibias en Fase 0A)</td>
+          <td>—</td>
+          <td>—</td>
+        </tr>
+        <tr class="border-b border-[var(--border)]">
+          <td class="font-bold">08:30–09:30</td>
+          <td class="text-blue-400">キックボクシング ※フィットネス (Kickboxing Fitness)</td>
+          <td class="text-pink-400">ボクシング (Boxeo)</td>
+          <td class="text-blue-400">キックボクシング ※フィットネス (Kickboxing Fitness)</td>
+          <td class="text-pink-400">ボクシング (Boxeo)</td>
+          <td class="text-blue-400">キックボクシング ※フィットネス (Kickboxing Fitness)</td>
+          <td>—</td>
+          <td>—</td>
+        </tr>
+        <tr class="border-b border-[var(--border)]">
+          <td class="font-bold">11:00–12:30</td>
+          <td>11:30–12:30<br><strong class="text-green-400">MMA基礎打ち込み</strong><br>(Drills básicos MMA)</td>
+          <td>11:30–12:30<br><span class="text-blue-400">キックボクシング</span><br>(Kickboxing)</td>
+          <td><em>Libre (ideal para Privada 1 a 1)</em></td>
+          <td>11:30–12:30<br><strong class="text-green-400">MMA基礎打ち込み</strong><br>(Drills básicos MMA)</td>
+          <td>12:00–13:30<br><span class="text-gray-400">プロ練 (Entreno Pro)</span></td>
+          <td>11:00–12:00 <span class="text-blue-400">Kickboxing</span><br>12:00–12:30 <span class="text-blue-400">ミット打ち (Manoplas)</span></td>
+          <td>11:00–12:30<br><strong class="text-yellow-400">レスリング (Lucha 90 min) ⭐</strong></td>
+        </tr>
+        <tr class="border-b border-[var(--border)]">
+          <td class="font-bold">12:30–13:30</td>
+          <td><strong class="text-orange-400">MMA</strong></td>
+          <td><strong class="text-orange-400">MMA</strong></td>
+          <td>—</td>
+          <td><strong class="text-orange-400">MMA</strong></td>
+          <td><span class="text-gray-400">(Sigue プロ練 hasta 13:30)</span></td>
+          <td>13:30–15:00<br><span class="text-[var(--muted-foreground)]">キッズレスリング (Niños)</span></td>
+          <td>12:30–13:30<br><strong class="text-orange-400">MMA ⭐</strong></td>
+        </tr>
+        <tr class="border-b border-[var(--border)]">
+          <td class="font-bold">14:30–16:30</td>
+          <td colspan="5" class="text-gray-400">プロ練 — Entrenamiento Pro (2 h). <em>En Fases 2 y 3, pregunta a Takao Ueda si puedes sumarte 1-2 días.</em></td>
+          <td>16:00–17:00 <strong class="text-orange-400">MMA</strong></td>
+          <td>15:00 Kick principiante<br>16:00 <span class="text-blue-400">Kickboxing</span></td>
+        </tr>
+        <tr class="border-b border-[var(--border)]">
+          <td class="font-bold">17:00–19:00</td>
+          <td class="text-[var(--muted-foreground)]">17:00–19:00 Lucha niños</td>
+          <td><em>Libre (ideal para Privada 1 a 1)</em></td>
+          <td class="text-[var(--muted-foreground)]">17:00–19:00 Lucha niños</td>
+          <td>18:00–19:00<br><span class="text-pink-400">ボクシング (Boxeo)</span></td>
+          <td>17:00 Gimnasia niños<br>18:00 <span class="text-blue-400">Kick principiante</span></td>
+          <td class="text-gray-400">17:00–20:30<br>プロ練 (Entreno Pro)</td>
+          <td class="text-gray-400">17:00–18:30<br>プロ練 (Entreno Pro)</td>
+        </tr>
+        <tr class="border-b border-[var(--border)]">
+          <td class="font-bold">19:00–20:00</td>
+          <td><strong class="text-yellow-400">レスリング (Lucha) 🔥</strong></td>
+          <td><strong class="text-orange-400">MMA</strong></td>
+          <td><strong class="text-yellow-400">レスリング (Lucha) 🔥</strong></td>
+          <td><strong class="text-orange-400">MMA</strong></td>
+          <td><span class="text-blue-400">キックボクシング (Kickboxing)</span></td>
+          <td><span class="text-gray-400">(Sigue プロ練 hasta 20:30)</span></td>
+          <td>—</td>
+        </tr>
+        <tr class="border-b border-[var(--border)]">
+          <td class="font-bold">20:00–21:00</td>
+          <td><strong class="text-orange-400">MMA 🔥</strong></td>
+          <td><strong class="text-orange-400">MMA</strong></td>
+          <td><strong class="text-orange-400">MMA 🔥</strong></td>
+          <td><strong class="text-orange-400">MMA</strong></td>
+          <td><strong class="text-green-400">MMA【All English】 🦅🔥</strong></td>
+          <td>—</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td class="font-bold">21:00–22:00</td>
+          <td><strong class="text-red-400">スパー (Sparring) 🥊</strong></td>
+          <td><strong class="text-red-400">スパー (Sparring) 🥊</strong></td>
+          <td><strong class="text-red-400">スパー (Sparring) 🥊</strong></td>
+          <td><em>Sin sparring (descanso)</em></td>
+          <td><strong class="text-red-400">スパー (Sparring) 🥊</strong></td>
+          <td>—</td>
+          <td>—</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
+    <div class="bg-[var(--card)] border border-green-600/50 rounded-xl p-4 text-xs space-y-1.5">
+      <p class="font-bold text-sm text-green-400">🎯 Cómo le sacas jugo en Tokio (Fases 2 y 3 — Rumbo al Debut)</p>
+      <p><strong>1. Lun y Mié (19:00–22:00) — La Cadena Anaconda (3 h):</strong> Haces 1 h de <strong>レスリング (Lucha)</strong> (entradas, sprawls y front headlock) → 1 h de <strong>MMA</strong> → 1 h de <strong>スパー (Sparring)</strong> con casco y mouthguard coreano.</p>
+      <p><strong>2. Viernes (19:00–22:00) — Noche en Inglés + Guerra:</strong> 19:00 Kickboxing → 20:00 <strong>MMA【All English】</strong> (puedes preguntar cada detalle técnico en inglés sin barrera de idioma) → 21:00 <strong>スパー (Sparring)</strong>.</p>
+      <p><strong>3. Mar y Jue al mediodía (11:30–13:30) + 2 Privadas 1 a 1:</strong> El jueves tienes <strong>MMA基礎打ち込み (drills de MMA) + MMA</strong> de 11:30 a 13:30. Mete tus 2 sesiones privadas 1 a 1 (Personal Studio, lado oeste) los <strong>martes y sábados al mediodía</strong> para pulir el Gator Roll y el plan de pelea del torneo.</p>
+      <p><strong>4. Domingo de Grappler (11:00–13:30):</strong> 90 min seguidos de <strong>レスリング (Lucha)</strong> + 1 h de <strong>MMA</strong>, y tarde libre con Ayame comiendo un buen Ribeye.</p>
+    </div>
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 text-center">
+      <p class="font-bold text-xs mb-2">📸 Horario original de Fighter's Flow (clic para ampliar)</p>
+      <a href="menu/fighters-flow-horario.png" target="_blank">
+        <img src="menu/fighters-flow-horario.png" alt="Horario oficial Fighter's Flow" class="rounded-lg border border-[var(--border)] mx-auto max-h-64 object-contain bg-white">
+      </a>
+    </div>
   </div>
 </div>
 
