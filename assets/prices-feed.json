@@ -1,0 +1,210 @@
+{
+  "meta": {
+    "version": "2.0.0",
+    "description": "Fuente oficial de precios verificados y divisas en tiempo real para Atlas del Imperio (Tokio, Seúl, Phuket, EE.UU.)",
+    "last_updated_utc": "2026-10-16T21:59:47Z",
+    "fx_sources": [
+      "https://open.er-api.com/v6/latest/USD",
+      "https://api.frankfurter.dev/v1/latest?base=USD&symbols=JPY,KRW,THB"
+    ],
+    "active_fx_source": "open.er-api.com",
+    "catalog_apis": {
+      "venum_japan": {
+        "online": true,
+        "sample_count": 5,
+        "checked_url": "https://jp.venum.com/products.json?limit=5"
+      },
+      "billabong_us": {
+        "online": true,
+        "sample_count": 5,
+        "checked_url": "https://www.billabong.com/products.json?limit=5"
+      }
+    }
+  },
+  "fx_rates": {
+    "base": "USD",
+    "live": {
+      "JPY": 158.087,
+      "KRW": 1342.7411,
+      "THB": 33.5261,
+      "USD": 1.0
+    },
+    "reference": {
+      "JPY": 147.0,
+      "KRW": 1380.0,
+      "THB": 33.55,
+      "USD": 1.0
+    }
+  },
+  "capital_total_usd": 360000,
+  "emergency_fund_usd": 48000,
+  "opex_tokyo": {
+    "base_jpy": 736880,
+    "with_suzuki_1on1_jpy": 796880,
+    "items": {
+      "rent_effective_303_jpy": 266580,
+      "carnivore_diet_hanamasa_jpy": 145000,
+      "ayame_allowance_therapy_jpy": 152000,
+      "fighters_flow_gold_jpy": 25300,
+      "supplements_jpy": 36000,
+      "utilities_suica_jpy": 52000,
+      "pets_2cats_2chinchillas_jpy": 60000,
+      "suzuki_pack_5_optional_jpy": 60000
+    },
+    "live_base_usd": 4661,
+    "live_with_suzuki_usd": 5041
+  },
+  "capex_rooms_jpy": {
+    "ayame_room": 114440,
+    "denkoboy_room": 104570,
+    "tech_pc_stream": 985160,
+    "ayame_gaming": 586440,
+    "chinchillas": 66420,
+    "cats_functional": 75980,
+    "ldk_shared_washer": 294080,
+    "kitchen_carnivore_fridge": 133100,
+    "total_jpy": 2360190,
+    "live_total_usd": 14930
+  },
+  "phases": [
+    {
+      "id": 1,
+      "name": "Estudios Pre-Viaje en EE.UU. (EOS + MRI DICOM + Topografía + OPG)",
+      "components": [
+        {
+          "amount": 550,
+          "currency": "USD"
+        }
+      ],
+      "ref_usd": 550,
+      "live_usd": 550
+    },
+    {
+      "id": 2,
+      "name": "Corea Viaje 1 Completo (Ene–Mar 2027 · 8 Semanas · VBT + Rino + LASEK + Bichectomía/Papada + FUE + 6 Coronas + Estancia)",
+      "components": [
+        {
+          "amount": 63330000,
+          "currency": "KRW"
+        }
+      ],
+      "ref_usd": 45892,
+      "live_usd": 47165
+    },
+    {
+      "id": 3,
+      "name": "Recuperación y Fisioterapia en Tokio (Mar–Jul 2027 · St. Luke's + 18 Sesiones Fisio)",
+      "components": [
+        {
+          "amount": 223000,
+          "currency": "JPY"
+        }
+      ],
+      "ref_usd": 1517,
+      "live_usd": 1411
+    },
+    {
+      "id": 4,
+      "name": "Fase 0A Tokio + Fase 0B Aclimatación Phuket (15 Jul – 13 Sept 2027)",
+      "components": [
+        {
+          "amount": 160600,
+          "currency": "JPY"
+        },
+        {
+          "amount": 42662,
+          "currency": "THB"
+        },
+        {
+          "amount": 770,
+          "currency": "USD"
+        }
+      ],
+      "ref_usd": 3133,
+      "live_usd": 3058
+    },
+    {
+      "id": 5,
+      "name": "Campamento Bangtao 90 Días (469,300 THB) + Filetotes Mamma Mia 90 Días (83,829 THB) + Suplementos/Masajes (12,390 THB)",
+      "components": [
+        {
+          "amount": 565519,
+          "currency": "THB"
+        }
+      ],
+      "ref_usd": 16856,
+      "live_usd": 16868
+    },
+    {
+      "id": 6,
+      "name": "Tokio Camp + Equipamiento Venum Japan + Campaña 5 Peleas (Dic 2027 – Verano 2028)",
+      "components": [
+        {
+          "amount": 334900,
+          "currency": "JPY"
+        },
+        {
+          "amount": 1713,
+          "currency": "USD"
+        }
+      ],
+      "ref_usd": 3992,
+      "live_usd": 3831
+    },
+    {
+      "id": 7,
+      "name": "Corea Viaje 2 — Estética Fina Post-Campaña (CERO LIPO · Cantoplastia + 5 Carillas + Blanqueamiento + Estancia)",
+      "components": [
+        {
+          "amount": 12100000,
+          "currency": "KRW"
+        }
+      ],
+      "ref_usd": 8768,
+      "live_usd": 9011
+    },
+    {
+      "id": 8,
+      "name": "CAPEX Casa Urbanex Asakusabashi Front (Muebles Funcionales Nitori + Setups PC/Gaming Intactos + Refri 282L + Lavadora 8kg)",
+      "components": [
+        {
+          "amount": 2360190,
+          "currency": "JPY"
+        }
+      ],
+      "ref_usd": 16056,
+      "live_usd": 14930
+    },
+    {
+      "id": 9,
+      "name": "Guardarropa Imperio V8 (110 Prendas + 13 Pares US 14 + 6 Kits Pelea) + Ecosistema Samsung",
+      "components": [
+        {
+          "amount": 15226,
+          "currency": "USD"
+        }
+      ],
+      "ref_usd": 15226,
+      "live_usd": 15226
+    },
+    {
+      "id": 10,
+      "name": "Trámites Legales de Visa Nómada Digital, Matrimonio y Abogado COE Cónyuge en Japón",
+      "components": [
+        {
+          "amount": 165000,
+          "currency": "JPY"
+        },
+        {
+          "amount": 330,
+          "currency": "USD"
+        }
+      ],
+      "ref_usd": 1452,
+      "live_usd": 1374
+    }
+  ],
+  "grand_total_live_usd": 113424,
+  "grand_total_ref_usd": 113442,
+  "investment_bucket_live_usd": 198576
+}
