@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dossier de Campamento V2 — Imperio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{--background:#0b0b10;--foreground:#e5e7eb;--card:#15151d;--border:#2a2a36;--muted-foreground:#9ca3af;--primary:#ef4444}
+    body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans JP","Noto Sans KR",sans-serif}
+    .back-link{display:inline-block;margin-bottom:12px;font-size:12px;color:#9ca3af;text-decoration:none}
+    .back-link:hover{color:#e5e7eb}
+  </style>
+  <style>
+    .tab-btn.active{border-color:var(--primary);color:var(--primary);background:var(--card)}
+    .tab-content{display:none}.tab-content.active{display:block}
+    .row{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--border);padding:4px 0}
+    .v2{display:inline-block;font-size:10px;font-weight:700;background:#16a34a;color:#fff;border-radius:4px;padding:0 4px;margin-left:4px;vertical-align:middle}
+    table td,table th{padding:4px 6px;vertical-align:top}
+    a{color:#3b82f6}
+  </style>
+</head>
+<body class="bg-[var(--background)] text-[var(--foreground)] antialiased p-4">
+<a class="back-link" href="../">← Volver al Atlas del Imperio</a>
+
+<div class="text-center mb-6">
+  <h1 class="text-3xl font-bold mb-1">🥊 DOSSIER MAESTRO DE CAMPAMENTO — V2</h1>
+  <p class="text-[var(--muted-foreground)] text-sm">Proyecto Debut Japón (2027–2028) · Alineado con el Plan Maestro</p>
+  <p class="text-xs text-[var(--muted-foreground)] mt-1">Las etiquetas <span class="v2">V2</span> marcan lo que cambió respecto al dossier original</p>
+</div>
+
+<div class="flex flex-wrap gap-1.5 mb-4 border-b border-[var(--border)] pb-2">
+  <button onclick="showTab('ficha')" class="tab-btn active px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-ficha">🧾 Ficha y Prerrequisitos</button>
+  <button onclick="showTab('crono')" class="tab-btn px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-crono">📅 Cronograma</button>
+  <button onclick="showTab('sedes')" class="tab-btn px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-sedes">🏟️ Sedes y Torneos</button>
+  <button onclick="showTab('rutina')" class="tab-btn px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-rutina">🗓️ Rutina Bangtao</button>
+  <button onclick="showTab('nutri')" class="tab-btn px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-nutri">🥩 Nutrición</button>
+  <button onclick="showTab('combate')" class="tab-btn px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-combate">🐍 Manual de Combate</button>
+  <button onclick="showTab('check')" class="tab-btn px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-check">🎒 Checklist</button>
+</div>
+
+<!-- ========== FICHA ========== -->
+<div id="tab-ficha" class="tab-content active">
+  <div class="bg-green-900/30 border border-green-600 rounded-xl p-4 mb-3">
+    <p class="font-bold text-green-400">🔄 Qué cambió en la V2</p>
+    <ul class="text-xs mt-1 list-disc ml-5 space-y-0.5">
+      <li>La Fase 0 se hace en <strong>Tokio</strong> (Fighter's Flow) y las 2 últimas semanas en <strong>Phuket</strong>, porque la visa de nómada digital vence ~2 de septiembre.</li>
+      <li>Nueva sección de <strong>prerrequisitos médicos</strong>: columna VBT, nariz, LASEK, pelo y coronas de Corea (ene–feb 2027).</li>
+      <li>Cuello, tibias sin espinilleras y sparring: solo con <strong>autorización escrita</strong>. Casco en el sparring de golpeo hasta el debut.</li>
+      <li>Reglas de torneo por confirmar: guantes de ~6 oz, sin codos en Shooto amateur, formato 2×3 o 1×5.</li>
+      <li>Estatura: 175 cm hoy → <strong>176-178 cm</strong> esperados después de la VBT.</li>
+    </ul>
+  </div>
+
+  <h3 class="font-bold text-sm mb-2">1. Ficha técnica del peleador</h3>
+  <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 mb-3 text-sm">
+    <div class="row"><span>Estatura</span><span>175 cm hoy → <strong>176-178 cm</strong> después de la VBT (+1-3 cm realista) <span class="v2">V2</span></span></div>
+    <div class="row"><span>Peso inicial (15 jul 2027)</span><span>87.0 kg (~18-20% de grasa)</span></div>
+    <div class="row"><span>Peso de campamento</span><span>78.5-79.0 kg (~10% de grasa)</span></div>
+    <div class="row"><span>Categoría de debut</span><span><strong>Wélter (−77.1 kg / 170 lb)</strong>, pesaje la mañana de la pelea</span></div>
+    <div class="row"><span>Sistema</span><span>Muay Thai + lucha en reja + BJJ No-Gi, adaptado al <strong>guante del torneo</strong> <span class="v2">V2</span></span></div>
+    <div class="row"><span>Plan A</span><span>Calf kicks → sprawl → front headlock → <strong>Anaconda</strong> (encadenada con D'Arce y toma de espalda)</span></div>
+  </div>
+
+  <h3 class="font-bold text-sm mb-2">0. Prerrequisitos médicos <span class="v2">V2</span></h3>
+  <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 mb-3 overflow-x-auto">
+    <table class="w-full text-xs">
+      <thead><tr class="border-b border-[var(--border)] text-left"><th>Procedimiento (Corea)</th><th>Fecha</th><th>Meses al 15 jul</th><th>Meses al 15 sep</th><th>Meses al debut</th><th>Regla en el campamento</th></tr></thead>
+      <tbody>
+        <tr class="border-b border-[var(--border)]"><td class="font-bold">🦴 Columna VBT (Prof. Chang)</td><td>~12 ene 2027</td><td>6</td><td>8</td><td>13</td><td>Cuello, peso muerto pesado, slams y sparring: solo con autorización escrita</td></tr>
+        <tr class="border-b border-[var(--border)]"><td class="font-bold">👃 Nariz (Hanabi)</td><td>~9 feb 2027</td><td>5</td><td>7</td><td>12</td><td>Casco o careta en todo sparring de golpeo hasta feb 2028</td></tr>
+        <tr class="border-b border-[var(--border)]"><td class="font-bold">🦅 LASEK (B&VIIT)</td><td>~26 ene 2027</td><td>5.5</td><td>7.5</td><td>13</td><td>Sin restricción (no deja colgajo)</td></tr>
+        <tr class="border-b border-[var(--border)]"><td class="font-bold">💇 FUE + PRP (Motion)</td><td>~23 feb 2027</td><td>4.5</td><td>6.5</td><td>12</td><td>Sin restricción después de las 4 semanas</td></tr>
+        <tr><td class="font-bold">🦷 6 coronas + mouthguard</td><td>feb 2027</td><td>—</td><td>—</td><td>—</td><td>Siempre con el <strong>mouthguard a medida</strong> hecho en Corea</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="bg-red-900/30 border border-red-600 rounded-xl p-3">
+    <p class="text-xs"><strong>🚩 Junio 2027 — Puerta médica:</strong> imágenes nuevas de columna + <strong>autorización escrita del Prof. Chang (columna) y de Hanabi (nariz)</strong> para entrenar MMA con contacto. Sin las dos, la Fase 0 arranca solo sin contacto. Si algo duele en la columna o en la nariz después de un golpe, se para todo y se hace imagen.</p>
+  </div>
+</div>
+
+<!-- ========== CRONOGRAMA ========== -->
+<div id="tab-crono" class="tab-content">
+  <h3 class="font-bold text-sm mb-2">3. Cronograma maestro (julio 2027 – febrero 2028)</h3>
+  <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 mb-3 overflow-x-auto">
+    <table class="w-full text-xs">
+      <thead><tr class="border-b border-[var(--border)] text-left"><th>Etapa</th><th>Fechas</th><th>Dónde</th><th>Visa</th><th>Peso</th></tr></thead>
+      <tbody>
+        <tr class="border-b border-[var(--border)]"><td class="font-bold">Fase 0A: Blindaje <span class="v2">V2</span></td><td>15 jul – 31 ago 2027</td><td>Tokio (Fighter's Flow + gimnasio + sauna)</td><td>Nómada digital (hasta ~2 sep)</td><td>87.0 → 85.0 kg</td></tr>
+        <tr class="border-b border-[var(--border)]"><td class="font-bold">Fase 0B: Aclimatación <span class="v2">V2</span></td><td>1 – 14 sep 2027</td><td>Phuket (llegas antes)</td><td>DTV</td><td>85.0 → 84.5 kg</td></tr>
+        <tr class="border-b border-[var(--border)]"><td class="font-bold">Fase 1A: Base y volumen</td><td>15 sep – 14 nov</td><td>Bangtao, Phuket</td><td>DTV</td><td>84.5 → 79.5 kg</td></tr>
+        <tr class="border-b border-[var(--border)]"><td class="font-bold">Fase 1B: Fusión con guante chico</td><td>15 nov – 13 dic</td><td>Bangtao, Phuket</td><td>DTV</td><td>79.5 → 78.5 kg</td></tr>
+        <tr class="border-b border-[var(--border)]"><td class="font-bold">Fase 2: Adaptación a Japón</td><td>14 dic 2027 – 23 ene 2028</td><td>Takadanobaba, Tokio</td><td>Turista (máx. 90 días, hasta ~13 mar)</td><td>78.5-79.0 kg</td></tr>
+        <tr><td class="font-bold">Fase 3: Fight camp y debut</td><td>24 ene – fin de feb 2028</td><td>Takadanobaba → arena en Tokio</td><td>Turista</td><td>76.9 kg en báscula → 78.5 kg en jaula</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="space-y-2">
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4">
+      <p class="font-bold text-sm">🛡️ Fase 0A — Tokio (15 jul – 31 ago) <span class="v2">V2</span></p>
+      <ul class="text-xs mt-1 list-disc ml-5 space-y-0.5">
+        <li><strong>Logística:</strong> reservar los 2 bloques de Bangtao + 2 semanas extra de alojamiento (1-14 sep). Vuelo Tokio → Phuket el <strong>1 de septiembre</strong>.</li>
+        <li><strong>Cardio base:</strong> 3×/semana, 40 min en Zona 2 (135-145 lpm). Elevaciones de talón y tibia: 4×25 diarias.</li>
+        <li><strong>Cuello:</strong> empezar con isométricos a mano. El arnés o disco (4×20 por lado) <strong>solo con autorización del Prof. Chang</strong>.</li>
+        <li><strong>Fuerza:</strong> peso muerto rumano, hip thrust y farmer's walks, con cargas progresivas. Nada máximo sin autorización.</li>
+        <li><strong>Agosto:</strong> curtido de tibias: 5×3 min de saco descalzo sobre lona, 4 días por semana. Sin espinilleras solo si ya está autorizado el contacto.</li>
+        <li><strong>Técnica:</strong> clases sin contacto en Fighter's Flow. Así conoces al equipo con el que vas a debutar.</li>
+        <li><strong>Calor:</strong> sauna de 15-20 min después de entrenar, 3×/semana (saunas o sentō de Tokio).</li>
+      </ul>
+    </div>
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4">
+      <p class="font-bold text-sm">🌴 Fase 0B — Phuket (1 – 14 sep) <span class="v2">V2</span></p>
+      <ul class="text-xs mt-1 list-disc ml-5 space-y-0.5">
+        <li>Aclimatación real a 34 °C y 80% de humedad: mejor que la sauna.</li>
+        <li>Volumen al 50%: trotes suaves, técnica, movilidad. Llegas al día 1 sin microdesgarros.</li>
+        <li>14 de septiembre: descanso total.</li>
+      </ul>
+    </div>
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4">
+      <p class="font-bold text-sm">🔥 Fase 1 — La Forja en Bangtao (15 sep – 13 dic)</p>
+      <ul class="text-xs mt-1 list-disc ml-5 space-y-0.5">
+        <li><strong>Día 1:</strong> InBody #1. Cupón de 15,000 THB en la Fightstore: guantes de 16 oz, guantes MMA de 7 oz, espinilleras, <strong>casco</strong> <span class="v2">V2</span> y rashguards.</li>
+        <li><strong>Día 1:</strong> enseñar a los coaches las autorizaciones médicas y avisar de la columna operada y la nariz. <span class="v2">V2</span></li>
+        <li><strong>Mes 1:</strong> elegir tu Kru fijo. Sprawl pesado y lucha con la espalda en la reja. Regla de los 3 segundos en No-Gi. <strong>Sparring al 50% las 2 primeras semanas</strong>. <span class="v2">V2</span></li>
+        <li><strong>Mes 2:</strong> pads con guante chico (4 oz) para medir la distancia. <strong>Practicar también con un guante amateur de ~6 oz.</strong> Codos cortos solo si el torneo los permite. <span class="v2">V2</span></li>
+        <li><strong>Mes 3:</strong> simulacros en el <strong>formato exacto del torneo elegido</strong>: 2×3 min con 1 min de descanso, o 1×5 min. A 190 lpm. <span class="v2">V2</span></li>
+        <li><strong>7-13 dic:</strong> descarga, volumen de impacto −40%.</li>
+      </ul>
+    </div>
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4">
+      <p class="font-bold text-sm">🇯🇵 Fase 2 — Tokio (14 dic – 23 ene)</p>
+      <ul class="text-xs mt-1 list-disc ml-5 space-y-0.5">
+        <li>Semana 1: membresía Gold en Fighter's Flow, evaluación 1 a 1 y análisis de sangre (hepatitis B, hepatitis C y VIH).</li>
+        <li><strong>Pedir el reglamento oficial (ルールブック) del torneo</strong> y ajustar guantes, codos, rodillas y duración. <span class="v2">V2</span></li>
+        <li>Invierno (6 °C): calentar 15 min con sudadera antes de patear o luchar.</li>
+        <li>Semanas 2-6: 3 días de equipo y sparring + 2 días de trabajo 1 a 1. Inscripción al torneo de febrero en Wélter.</li>
+      </ul>
+    </div>
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4">
+      <p class="font-bold text-sm">🏆 Fase 3 — Fight camp y fight week (24 ene – fin de feb)</p>
+      <ul class="text-xs mt-1 list-disc ml-5 space-y-0.5">
+        <li>Semanas −4 a −2: Shark Tank (un compañero fresco cada 60 s) en el formato del torneo.</li>
+        <li><strong>Lunes a miércoles:</strong>
+          <ul class="list-disc ml-5">
+            <li>2 sesiones de velocidad de 20 min, sin contacto duro.</li>
+            <li>Dieta de 1,800 kcal (180 P / 80 C / 85 G), sin sal añadida.</li>
+            <li>Desde el miércoles en la noche: pescado blanco o pechuga en vez de res.</li>
+          </ul>
+        </li>
+        <li><strong>Carga de agua:</strong> 4 L lunes y martes · 2.5 L miércoles · 1.5 L jueves y viernes.</li>
+        <li><strong>Jueves a sábado:</strong> descanso total y 9 h de sueño. El sábado te acuestas en 77.0 kg.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ========== SEDES ========== -->
+<div id="tab-sedes" class="tab-content">
+  <h3 class="font-bold text-sm mb-2">2. Sedes y presupuesto</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
+    <div class="bg-[var(--card)] border border-green-600/50 rounded-xl p-4">
+      <p class="font-bold">🇹🇭 Bangtao Muay Thai & MMA — Cherngtalay, Phuket</p>
+      <p class="text-xs text-[var(--muted-foreground)]">Ajarn Wat (Muay Thai) · George y Frank Hickman (MMA y lucha) · Alex Schild (No-Gi) · equipo de S&C</p>
+      <div class="text-xs mt-2">
+        <div class="row"><span>Bloque 1 (15 sep – 14 oct): All-In Athlete + Varee 2BR</span><span>164,300 THB (~$4,897)</span></div>
+        <div class="row"><span>Bloque 2 (15 oct – 13 dic): All-In Athlete + Varee 2BR</span><span>299,200 THB (~$8,915)</span></div>
+        <div class="row font-bold"><span>Total 90 días</span><span>463,500 THB (~$13,812)</span></div>
+        <div class="row"><span>Extra V2: alojamiento 1-14 sep <span class="v2">V2</span></span><span>~23,000 THB (~$700)</span></div>
+      </div>
+      <p class="text-xs mt-2">Incluye: clases ilimitadas, 5 privadas de S&C por semana, 5 ice baths por semana, 2 comidas al día, InBody, cupón de 15,000 THB, Main Event Media Package y traslados del aeropuerto.</p>
+      <p class="text-xs mt-1 text-[var(--muted-foreground)]">Alternativas de cuarto: Lagoon Double (40,600 THB/mes) o Prasong Double (29,000 THB/mes).</p>
+    </div>
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4">
+      <p class="font-bold">🇯🇵 Fighter's Flow MMA — Takadanobaba, Tokio</p>
+      <p class="text-xs text-[var(--muted-foreground)]">Head coach: Takao Ueda · gimnasio (lado este) + Personal Studio 1 a 1 (lado oeste)</p>
+      <div class="text-xs mt-2">
+        <div class="row"><span>Membresía Gold</span><span>Clases ilimitadas + privadas</span></div>
+        <div class="row"><span>10 privadas de 60 min</span><span>¥85,000 (¥8,500 c/u)</span></div>
+        <div class="row"><span>Uso en la V2 <span class="v2">V2</span></span><span>Fase 0A (sin contacto) + Fases 2-3</span></div>
+      </div>
+      <p class="text-xs mt-2">Desde Akihabara: ~20 min en tren (Sōbu hasta Iidabashi, después Tōzai). De paso queda Coto Academy en Iidabashi.</p>
+    </div>
+  </div>
+
+  <h3 class="font-bold text-sm mb-2">🏆 Torneos objetivo — reglas por confirmar <span class="v2">V2</span></h3>
+  <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 overflow-x-auto">
+    <table class="w-full text-xs">
+      <thead><tr class="border-b border-[var(--border)] text-left"><th>Torneo</th><th>Duración</th><th>Guantes</th><th>Codos</th><th>Golpes en el suelo</th><th>Equipo</th></tr></thead>
+      <tbody>
+        <tr class="border-b border-[var(--border)]"><td class="font-bold">Amateur Shooto</td><td>Según la clase (confirmar)</td><td>Amateur acolchado, ~6 oz</td><td>❌ Prohibidos</td><td>Solo al cuerpo; ❌ a la cabeza</td><td>Espinilleras y protecciones obligatorias</td></tr>
+        <tr class="border-b border-[var(--border)]"><td class="font-bold">DEEP Future King</td><td>1×5 min (final 2×5)</td><td>Amateur, los da la organización</td><td>Confirmar</td><td>Más cerca de las reglas profesionales</td><td>Confirmar</td></tr>
+        <tr><td class="font-bold">KROSS OVER</td><td>Confirmar (el dossier original decía 2×3)</td><td>Confirmar</td><td>Confirmar</td><td>Confirmar</td><td>Confirmar</td></tr>
+      </tbody>
+    </table>
+    <p class="text-xs text-[var(--muted-foreground)] mt-2">Fuentes: resúmenes de búsqueda (Shooto, DEEP). Elige el torneo y pide el reglamento a más tardar en la Fase 2 (dic 2027). El plan de pelea se adapta a esas reglas.</p>
+  </div>
+</div>
+
+<!-- ========== RUTINA ========== -->
+<div id="tab-rutina" class="tab-content">
+  <h3 class="font-bold text-sm mb-2">4. Rutina semanal en Bangtao</h3>
+  <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 mb-3 overflow-x-auto">
+    <table class="w-full text-xs">
+      <thead><tr class="border-b border-[var(--border)] text-left"><th>Hora</th><th>Lun</th><th>Mar</th><th>Mié</th><th>Jue</th><th>Vie</th><th>Sáb</th><th>Dom</th></tr></thead>
+      <tbody>
+        <tr class="border-b border-[var(--border)]"><td class="font-bold">06:45</td><td colspan="5">Despertar + electrolitos + pre-entreno</td><td>07:30 despertar</td><td>08:30 sin alarma</td></tr>
+        <tr class="border-b border-[var(--border)]"><td class="font-bold">08:00</td><td>Muay Thai (pads, calf kicks, clinch)</td><td>MMA / lucha (Hickman)</td><td>Muay Thai</td><td>MMA técnico (transiciones con guante chico)</td><td>Muay Thai (codos y rodillas*)</td><td>09:00 No-Gi o Muay Thai</td><td>09:30 desayuno</td></tr>
+        <tr class="border-b border-[var(--border)]"><td class="font-bold">09:45</td><td>S&C privada #1</td><td>10:00 No-Gi (Schild)</td><td>S&C privada #2</td><td>10:00 No-Gi (front headlock)</td><td>S&C privada #3</td><td>11:00 sparring de golpeo, 16 oz <strong>+ casco</strong> <span class="v2">V2</span></td><td>11:00 nadar en el mar</td></tr>
+        <tr class="border-b border-[var(--border)]"><td class="font-bold">11:00</td><td colspan="5">Comida #1 (filete magro, término medio)</td><td>12:15 ice bath + comida</td><td>13:00 filete</td></tr>
+        <tr class="border-b border-[var(--border)]"><td class="font-bold">12:30</td><td colspan="5">Siesta obligatoria</td><td>14:00-16:30 siesta</td><td>15:00 masaje tailandés</td></tr>
+        <tr class="border-b border-[var(--border)]"><td class="font-bold">16:00</td><td>Muay Thai (sparring y clinch)</td><td>16:30 sparring MMA &gt;75 kg</td><td>Privada con el Kru</td><td>16:30 lucha para MMA</td><td>16:30 sparring MMA &gt;75 kg</td><td>Descanso activo</td><td>Notas y visualización</td></tr>
+        <tr class="border-b border-[var(--border)]"><td class="font-bold">17:30</td><td>18:15 No-Gi (escapes)</td><td>S&C #4 + ice bath</td><td>18:15 No-Gi + ice bath</td><td>S&C #5 + ice bath</td><td>Yoga + ice bath</td><td>19:00 cena del rey</td><td>19:30 cena del rey</td></tr>
+        <tr><td class="font-bold">19:30</td><td colspan="5">Cena #2 (striploin o ribeye) · 21:15 piña/papaya + yogurt · dormir</td><td>Libre</td><td>22:00 dormir 9 h</td></tr>
+      </tbody>
+    </table>
+    <p class="text-xs text-[var(--muted-foreground)] mt-2">*Codos: solo si el torneo los permite. En Amateur Shooto están prohibidos. <span class="v2">V2</span></p>
+  </div>
+
+  <h3 class="font-bold text-sm mb-2">💪 Las 5 privadas de S&C</h3>
+  <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 text-xs space-y-1">
+    <p><strong>#1 Lunes — Caderas y piernas:</strong> trap bar deadlift 4×5 explosivo, box jumps 4×5, landmine rotations 3×8, sled push.</p>
+    <p><strong>#2 Miércoles — Fuerza para la Anaconda:</strong> dominadas con lastre 4×6, remo Pendlay 4×6, Zercher holds / abrazo de saco 4×45 s, farmer's walks.</p>
+    <p><strong>#3 Viernes — Motor de 6 minutos:</strong> 2 bloques de 3 min (60 s de descanso) alternando cada 30 s AirBike, sprawls con balón medicinal y trineo hacia atrás.</p>
+    <p><strong>#4 y #5 Martes y jueves — Blindaje articular:</strong> arnés de cuello en 4 direcciones, rotadores de hombro, Nordic curl y descompresión lumbar.</p>
+    <p class="text-yellow-400 mt-2">⚠️ <span class="v2">V2</span> Con la columna operada: trap bar pesado, Zercher y arnés de cuello <strong>solo con la autorización del Prof. Chang</strong>. Dale al coach de S&C el protocolo por escrito el día 1.</p>
+  </div>
+</div>
+
+<!-- ========== NUTRICIÓN ========== -->
+<div id="tab-nutri" class="tab-content">
+  <h3 class="font-bold text-sm mb-2">5. Plan nutricional "Steak Fighter" — 3,100 kcal, término medio</h3>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-2 mb-3 text-center">
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3"><p class="text-xl font-bold">3,100</p><p class="text-xs text-[var(--muted-foreground)]">kcal/día (gasto ~4,000)</p></div>
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3"><p class="text-xl font-bold text-red-400">210 g</p><p class="text-xs text-[var(--muted-foreground)]">proteína</p></div>
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3"><p class="text-xl font-bold text-yellow-400">355 g</p><p class="text-xs text-[var(--muted-foreground)]">carbohidratos</p></div>
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3"><p class="text-xl font-bold text-green-400">93 g</p><p class="text-xs text-[var(--muted-foreground)]">grasas</p></div>
+  </div>
+  <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 mb-3 text-xs">
+    <div class="row"><span><strong>07:15</strong> Pre-entreno: plátano + 2 cdas de miel + café frío + Royal-D</span><span>230 kcal</span></div>
+    <div class="row"><span><strong>11:00</strong> Meiji High Protein + 250 g de tenderloin o sirloin + 250 g de arroz jazmín + verduras</span><span>1,080 kcal · 88 g P</span></div>
+    <div class="row"><span><strong>14:45-17:30</strong> 2 tostadas con miel + 1.5 L de agua con 2 Royal-D</span><span>350 kcal</span></div>
+    <div class="row"><span><strong>19:30</strong> 280 g de striploin, ribeye o flank + 2 huevos + 250 g de camote, papa o arroz + ½ aguacate</span><span>1,120 kcal · 82 g P</span></div>
+    <div class="row"><span><strong>21:15</strong> Piña y papaya + yogurt griego alto en proteína</span><span>320 kcal · 34 g P</span></div>
+    <p class="text-[var(--muted-foreground)] mt-2">Agua 4.5-5.5 L · 3 Royal-D · creatina 5 g en la mañana · omega-3 3 g + magnesio glicinato 400 mg en la noche.</p>
+  </div>
+
+  <h3 class="font-bold text-sm mb-2">🥩 Cortes, precios y cocción</h3>
+  <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 mb-3 overflow-x-auto">
+    <table class="w-full text-xs">
+      <thead><tr class="border-b border-[var(--border)] text-left"><th>Corte (250 g)</th><th>Cuándo</th><th>Macros</th><th>Phuket (Villa Market)</th><th>Tokio (Hanamasa / OK Store)</th></tr></thead>
+      <tbody>
+        <tr class="border-b border-[var(--border)]"><td>Tenderloin</td><td>Mediodía</td><td>340 kcal · 55 P · 12 G</td><td>398-490 THB</td><td>~¥1,400</td></tr>
+        <tr class="border-b border-[var(--border)]"><td>Top sirloin</td><td>Mediodía</td><td>365 kcal · 56 P · 14 G</td><td>240 THB</td><td>~¥780</td></tr>
+        <tr class="border-b border-[var(--border)]"><td>Flank / skirt</td><td>Mediodía o cena</td><td>410 kcal · 53 P · 20 G</td><td>190-225 THB</td><td>~¥850</td></tr>
+        <tr class="border-b border-[var(--border)]"><td>Striploin</td><td>Cena</td><td>485 kcal · 52 P · 29 G</td><td>360 THB</td><td>~¥1,000</td></tr>
+        <tr><td>Ribeye</td><td>Cena en días duros</td><td>560 kcal · 48 P · 38 G</td><td>399-465 THB</td><td>~¥1,150</td></tr>
+      </tbody>
+    </table>
+    <p class="text-xs mt-2"><strong>Regla 3 – 2.5 – 4</strong> (filete de 3 cm): 3 min el lado A · 2.5 min el lado B · 4 min de reposo.</p>
+    <p class="text-xs mt-1">🇹🇭 「เอาความสุกระดับมีเดียมนะครับ ไม่ราดซอส」 · 🇯🇵 「ミディアムでお願いします。ソースは別皿で。」</p>
+  </div>
+
+  <h3 class="font-bold text-sm mb-2">🍽️ Guía del steakhouse en Phuket (res australiana grass-fed)</h3>
+  <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 mb-3 overflow-x-auto">
+    <table class="w-full text-xs">
+      <thead><tr class="border-b border-[var(--border)] text-left"><th>Plato</th><th>Precio</th><th>Cuándo</th><th>Macros</th></tr></thead>
+      <tbody>
+        <tr class="border-b border-[var(--border)]"><td>#54 Ribeye 250 g</td><td>695 THB (~$20.70)</td><td>Cena mar, vie y sáb, después del sparring</td><td>840 kcal · 56 P · 68 C · 38 G</td></tr>
+        <tr class="border-b border-[var(--border)]"><td>#53 Striploin 200 g ⭐</td><td>545 THB (~$16.25)</td><td>Cena lun, mié y jue</td><td>680 kcal · 48 P · 68 C · 23 G</td></tr>
+        <tr class="border-b border-[var(--border)]"><td>#62 Brocheta de tenderloin</td><td>650 THB (~$19.35)</td><td>Mediodía o cena ligera</td><td>610 kcal · 52 P · 68 C · 14 G</td></tr>
+        <tr class="border-b border-[var(--border)]"><td>#52 Tenderloin 300 g</td><td>1,095 THB (~$32.60)</td><td>Mediodía de días pesados</td><td>790 kcal · 72 P · 68 C · 18 G</td></tr>
+        <tr><td>#58 Atún / #59 Salmón 180 g</td><td>545 THB</td><td>1 noche por semana o en la fight week</td><td>550-710 kcal · 42-46 P</td></tr>
+      </tbody>
+    </table>
+    <ul class="text-xs mt-2 list-disc ml-5 space-y-0.5">
+      <li><strong>Pide:</strong> <em>"Medium, please. And no garlic butter inside the potato."</em> Solo salsa BBQ; nada de bearnesa ni alioli. Te ahorras ~420 kcal.</li>
+      <li><strong>Sábado en la noche:</strong> #28 Double Burger Wagyu (695 THB) como comida de recarga, sin la salsa de ajo.</li>
+      <li><strong>Postre:</strong> fruta fresca (80 THB) por la bromelina. Mango con sticky rice (150 THB) al mediodía de los días de sparring.</li>
+      <li><strong>Evitar:</strong> #201-#205 y #210. Guárdalos para el domingo después de la victoria.</li>
+    </ul>
+    <p class="text-xs text-[var(--muted-foreground)] mt-2">💰 Cenar en el steakhouse cuesta ~$1,500-1,900 en 90 días y ya está dentro del presupuesto de Bangtao del Plan Maestro.</p>
+  </div>
+</div>
+
+<!-- ========== COMBATE ========== -->
+<div id="tab-combate" class="tab-content">
+  <h3 class="font-bold text-sm mb-2">6. Manual de combate: el sistema Anaconda</h3>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-2 mb-3">
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+      <p class="font-bold text-sm">Trampa A — Calf kick → sprawl</p>
+      <p class="text-xs mt-1">2-3 patadas bajas en el primer minuto. Cuando entre desesperado a tus piernas, sprawl con todo tu peso en su nuca y front headlock.</p>
+    </div>
+    <div class="bg-[var(--card)] border border-yellow-600/50 rounded-xl p-3">
+      <p class="font-bold text-sm">Trampa B — Rodillas en tortuga <span class="v2">V2</span></p>
+      <p class="text-xs mt-1">1-2 rodillas cortas al costado. Cuando abra el codo, metes el brazo. <strong>Solo si el torneo permite rodillas al rival en el suelo.</strong> Si no: <strong>presión de hombro + jalón de muñeca</strong> para abrir el codo.</p>
+    </div>
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
+      <p class="font-bold text-sm">Trampa C — Jab + finta de overhand + snap-down</p>
+      <p class="text-xs mt-1">Finta el volado para que baje la cabeza y jálale la nuca a la lona (collar tie).</p>
+    </div>
+  </div>
+  <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 mb-3 text-xs space-y-1">
+    <p class="font-bold text-sm">🔒 Los 4 detalles de la finalización</p>
+    <p><strong>1. El ancla del guante:</strong> pasa el guante por su axila y engánchalo detrás de tu bíceps. Funciona igual con 4 o con 6 oz. <span class="v2">V2</span></p>
+    <p><strong>2. Colapsar el codo:</strong> empújalo hacia su ombligo antes de rodar.</p>
+    <p><strong>3. Gator roll a 45°:</strong> rueda con el hombro bajo su torso y atrapa una de sus piernas entre las tuyas.</p>
+    <p><strong>4. Compresión en "C":</strong> caderas adentro y camina hacia sus caderas. Si abre el brazo: D'Arce o espalda + mataleón.</p>
+  </div>
+  <div class="bg-[var(--card)] border border-green-600/50 rounded-xl p-4 text-xs">
+    <p class="font-bold text-sm">🏟️ Domingo de pelea en Tokio</p>
+    <div class="row"><span><strong>09:00</strong></span><span>Pesaje oficial: 76.9 kg (límite 77.1)</span></div>
+    <div class="row"><span><strong>09:15</strong></span><span>500 ml de OS-1 a sorbos + plátano + 2 cdas de miel + 2 onigiris de salmón → vuelves a 78.5 kg en ~2 h</span></div>
+    <div class="row"><span><strong>Salida −25 min</strong></span><span>Manoplas y sprawls con tu esquina de Fighter's Flow, con sudadera, hasta 155-160 lpm. Entras a la jaula en tu "segundo aire".</span></div>
+  </div>
+</div>
+
+<!-- ========== CHECKLIST ========== -->
+<div id="tab-check" class="tab-content">
+  <h3 class="font-bold text-sm mb-2">7. Checklist de equipaje, documentos y botiquín</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4">
+      <p class="font-bold text-sm">📄 Documentos</p>
+      <ul class="text-xs mt-1 space-y-0.5">
+        <li>☐ Pasaporte con más de 6 meses de vigencia</li>
+        <li>☐ DTV de Tailandia (pedida desde EE.UU.) <span class="v2">V2</span></li>
+        <li>☐ Seguro médico internacional que cubra <strong>deportes de contacto Y condiciones preexistentes</strong> (la columna operada) <span class="v2">V2</span></li>
+        <li>☐ <strong>Autorizaciones escritas en inglés</strong> del Prof. Chang y de Hanabi <span class="v2">V2</span></li>
+        <li>☐ Reportes de las operaciones + DICOM de la columna en USB <span class="v2">V2</span></li>
+        <li>☐ Resultados de sangre para el torneo (se hacen en Tokio, en la Fase 2)</li>
+      </ul>
+    </div>
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4">
+      <p class="font-bold text-sm">🥊 Equipo</p>
+      <ul class="text-xs mt-1 space-y-0.5">
+        <li>☐ <strong>2 mouthguards a medida multicapa</strong>, hechos en Corea después de las 6 coronas <span class="v2">V2</span></li>
+        <li>☐ 2 coquillas rígidas</li>
+        <li>☐ 3 pares de vendas de 4.5 m</li>
+        <li>☐ <strong>Casco de sparring</strong> (o cómpralo con el cupón de Bangtao) <span class="v2">V2</span></li>
+        <li>☐ Con el cupón de Bangtao: guantes de 16 oz, guantes MMA de 7 oz y 4 oz, espinilleras, 5 rashguards y spats</li>
+      </ul>
+    </div>
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 md:col-span-2">
+      <p class="font-bold text-sm">🩹 Botiquín de tatami</p>
+      <p class="text-xs mt-1">Mupirocina (Bactroban) · clotrimazol · jabón antibacterial (Dettol o Hibiscrub) · cortaúñas · cinta deportiva. <span class="v2">V2</span> + gotas lubricantes para los ojos (post-LASEK) y protector solar para cicatrices.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function showTab(n){document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById('tab-'+n).classList.add('active');document.getElementById('btn-'+n).classList.add('active')}
+</script>
+</body>
+</html>
