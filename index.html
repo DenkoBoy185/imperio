@@ -666,19 +666,21 @@
             
             <!-- Plan Tabs -->
             <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:1.5rem;">
-                <button class="plan-tab active" onclick="showPlan('general', this)">🏠 全体 / General</button>
-                <button class="plan-tab" onclick="showPlan('ayame', this)">🌸 あやめの部屋</button>
-                <button class="plan-tab" onclick="showPlan('denkoboy', this)">💻 デンコボーイ司令室</button>
-                <button class="plan-tab" onclick="showPlan('ldk', this)">🛋️ LDK (12.7帖)</button>
-                <button class="plan-tab" onclick="showPlan('bathroom', this)">🚿 水回り / Baño</button>
+                <button class="plan-tab active" onclick="showPlan('general', this)">🏠 全体 / General Amueblado (2SLDK 50.18m²)</button>
+                <button class="plan-tab" onclick="showPlan('ayame', this)">🌸 Bed Room 1: あやめの部屋 & アトリエ (3.8帖 + WIC)</button>
+                <button class="plan-tab" onclick="showPlan('denkoboy', this)">💻 Bed Room 2: デンコボーイ司令室 (4.0帖)</button>
+                <button class="plan-tab" onclick="showPlan('ldk', this)">🛋️ LDK (12.7帖) + Store Room チンチラ (1.4帖)</button>
+                <button class="plan-tab" onclick="showPlan('bathroom', this)">🚿 水回り & 玄関 / Baño y Entrada</button>
+                <button class="plan-tab" onclick="showPlan('madori', this)">📐 間取り図 Oficial (RF12)</button>
             </div>
             
             <div style="display: flex; justify-content: center; width: 100%;">
-                <img id="plan-general" src="assets/plan_general.png" alt="Plano General 間取り図" class="floor-plan-img" style="display:block;">
-                <img id="plan-ayame" src="assets/plan_room1_ayame.jpg" alt="あやめの部屋 Bed Room 1" class="floor-plan-img" style="display:none;">
-                <img id="plan-denkoboy" src="assets/plan_room2_denkoboy.jpg" alt="デンコボーイ司令室 Bed Room 2" class="floor-plan-img" style="display:none;">
-                <img id="plan-ldk" src="assets/plan_ldk.jpg" alt="LDK リビング・ダイニング・キッチン" class="floor-plan-img" style="display:none;">
-                <img id="plan-bathroom" src="assets/plan_bathroom.jpg" alt="水回り トイレ・洗面室・浴室" class="floor-plan-img" style="display:none;">
+                <img id="plan-general" src="assets/plan_general.png?v=2" alt="Plano General Amueblado 間取り図" class="floor-plan-img" style="display:block;">
+                <img id="plan-ayame" src="assets/plan_room1_ayame.jpg?v=2" alt="あやめの部屋 Bed Room 1 (3.8帖 + WIC)" class="floor-plan-img" style="display:none;">
+                <img id="plan-denkoboy" src="assets/plan_room2_denkoboy.jpg?v=2" alt="デンコボーイ司令室 Bed Room 2 (4.0帖)" class="floor-plan-img" style="display:none;">
+                <img id="plan-ldk" src="assets/plan_ldk.jpg?v=2" alt="LDK (12.7帖) + Store Room (1.4帖)" class="floor-plan-img" style="display:none;">
+                <img id="plan-bathroom" src="assets/plan_bathroom.jpg?v=2" alt="水回り & 玄関 トイレ・洗面室・浴室" class="floor-plan-img" style="display:none;">
+                <img id="plan-madori" src="assets/plan_madori_real.png?v=2" alt="間取り図 Oficial RF12" class="floor-plan-img" style="display:none;">
             </div>
         </section>
 
@@ -1431,9 +1433,10 @@
         }
         // Floor Plan Gallery
         function showPlan(planName, btn) {
-            const plans = ['general','ayame','denkoboy','ldk','bathroom'];
+            const plans = ['general','ayame','denkoboy','ldk','bathroom','madori'];
             plans.forEach(p => {
-                document.getElementById('plan-' + p).style.display = 'none';
+                const el = document.getElementById('plan-' + p);
+                if (el) el.style.display = 'none';
             });
             document.getElementById('plan-' + planName).style.display = 'block';
             document.querySelectorAll('.plan-tab').forEach(t => t.classList.remove('active'));
