@@ -1,0 +1,826 @@
+/**
+ * Atlas del Imperio — API en Vivo de Radar de Eventos, Lugares y Actividades para あやめ
+ * (Ikebukuro + Tokio + Las 8 Regiones de Japón)
+ * Conectado en tiempo real a:
+ *   1. Open-Meteo API (Clima y Biometeorología en vivo en Ikebukuro y las 8 regiones de Japón)
+ *   2. Nager.Date Japan Holidays API (Festivos oficiales y alertas de multitudes en Japón)
+ *   3. ExchangeRate-API / Frankfurter ECB (Conversión en vivo JPY -> USD)
+ */
+(function () {
+  const INITIAL_FEED = {
+  "updated_at": "2026-10-17T20:53:32Z",
+  "usd_jpy_rate": 157.994345,
+  "cohabitation_rule": "あやめ vive contigo en su hogar compartido (2LDK Urbanex Asakusabashi Front) junto a nuestros 2 gatitos y 2 chinchillas. Regresar a casa es regresar juntos antes de las 21:00 hrs para el baño de las 21:15 y dormir abrazados a las 22:30 hrs.",
+  "cities_weather": {
+    "ikebukuro": {
+      "name": "Ikebukuro / Asakusabashi (Tokio)",
+      "region": "Kanto",
+      "temp_c": 11.9,
+      "humidity": 88,
+      "rain_mm": 0.0,
+      "ayame_status": "🌸 Clima Perfecto para あやめ (Brisa Suave y Cero Fatiga)"
+    },
+    "sapporo": {
+      "name": "Sapporo / Hakodate",
+      "region": "Hokkaido",
+      "temp_c": 4.0,
+      "humidity": 86,
+      "rain_mm": 0.0,
+      "ayame_status": "❄️ Fresco Invernal: Ideal para Onsen Privado y Abrigo Suave"
+    },
+    "sendai": {
+      "name": "Sendai / Ginzan Onsen",
+      "region": "Tohoku",
+      "temp_c": 9.4,
+      "humidity": 84,
+      "rain_mm": 0.0,
+      "ayame_status": "❄️ Fresco Invernal: Ideal para Onsen Privado y Abrigo Suave"
+    },
+    "kanazawa": {
+      "name": "Kanazawa / Shirakawa-go",
+      "region": "Chubu & Hokuriku",
+      "temp_c": 13.3,
+      "humidity": 75,
+      "rain_mm": 0.0,
+      "ayame_status": "🌸 Clima Perfecto para あやめ (Brisa Suave y Cero Fatiga)"
+    },
+    "kyoto": {
+      "name": "Kioto / Kobe / Osaka",
+      "region": "Kansai",
+      "temp_c": 14.7,
+      "humidity": 91,
+      "rain_mm": 0.0,
+      "ayame_status": "🌸 Clima Perfecto para あやめ (Brisa Suave y Cero Fatiga)"
+    },
+    "hiroshima": {
+      "name": "Miyajima / Izumo / Tottori",
+      "region": "Chugoku",
+      "temp_c": 15.1,
+      "humidity": 66,
+      "rain_mm": 0.0,
+      "ayame_status": "🌸 Clima Perfecto para あやめ (Brisa Suave y Cero Fatiga)"
+    },
+    "matsuyama": {
+      "name": "Matsuyama (Dogo Onsen)",
+      "region": "Shikoku",
+      "temp_c": 17.6,
+      "humidity": 75,
+      "rain_mm": 0.0,
+      "ayame_status": "🌸 Clima Perfecto para あやめ (Brisa Suave y Cero Fatiga)"
+    },
+    "fukuoka": {
+      "name": "Fukuoka / Beppu / Ibusuki",
+      "region": "Kyushu",
+      "temp_c": 19.0,
+      "humidity": 68,
+      "rain_mm": 0.0,
+      "ayame_status": "🌸 Clima Perfecto para あやめ (Brisa Suave y Cero Fatiga)"
+    },
+    "okinawa": {
+      "name": "Naha / Isla Ishigaki",
+      "region": "Okinawa",
+      "temp_c": 25.6,
+      "humidity": 72,
+      "rain_mm": 0.0,
+      "ayame_status": "🌸 Clima Perfecto para あやめ (Brisa Suave y Cero Fatiga)"
+    }
+  },
+  "upcoming_jp_holidays": [
+    {
+      "date": "2026-11-03",
+      "localName": "文化の日",
+      "name": "Culture Day"
+    },
+    {
+      "date": "2026-11-23",
+      "localName": "勤労感謝の日",
+      "name": "Labour Thanksgiving Day"
+    },
+    {
+      "date": "2027-01-01",
+      "localName": "元日",
+      "name": "New Year's Day"
+    },
+    {
+      "date": "2027-01-11",
+      "localName": "成人の日",
+      "name": "Coming of Age Day"
+    },
+    {
+      "date": "2027-02-11",
+      "localName": "建国記念の日",
+      "name": "Foundation Day"
+    },
+    {
+      "date": "2027-02-23",
+      "localName": "天皇誕生日",
+      "name": "The Emperor's Birthday"
+    }
+  ],
+  "events_and_places": [
+    {
+      "id": "ikb-planetarium-manten",
+      "title": "Konica Minolta Planetarium MANTEN — Asientos Cama 'Kumo (Nube)'",
+      "zone": "ikebukuro",
+      "region": "Kanto (Ikebukuro)",
+      "category": "🌙 Cero Desgaste & Relax",
+      "energy_level": "⚡ Cero Desgaste (Acostados juntos)",
+      "return_home": "18 min en JR/Metro directo a nuestra casa en Asakusabashi (llegada 20:30 hrs)",
+      "fight_zone": "🟢🟡🔴 Apto incluso en Fight Camp (77 kg)",
+      "price_jpy": 8400,
+      "schedule": "Funciones 18:00 y 19:00 hrs (Sunshine City World Import Mart Bldg RF)",
+      "ayame_standard": "Solo 5 camas dobles 'Nube' por función. Se acuestan juntos abrazados mirando la vía láctea con aromaterapia de bosque y música suave. Cero caminata.",
+      "diet_note": "Cena previa o posterior de Ribeye/Hire 300g en Ikebukuro o en nuestra casa (0 alcohol 🚫🍺, 0 mango 🚫🥭).",
+      "url": "https://planetarium.konicaminolta.jp/manten/"
+    },
+    {
+      "id": "ikb-sunshine-aquarium",
+      "title": "Sunshine Aquarium (Sky Oasis) — Ruta Nocturna de Medusas 'Kurage Kukan'",
+      "zone": "ikebukuro",
+      "region": "Kanto (Ikebukuro)",
+      "category": "🪼 Acuario & Brisa en Altura",
+      "energy_level": "🌸 Paseo Suave con Bancas",
+      "return_home": "18 min a nuestra casa en Asakusabashi con nuestros 2 gatitos y 2 chinchillas",
+      "fight_zone": "🟢🟡🔴 Apto en Fight Camp (Cita Mes 06 · Mar 2028)",
+      "price_jpy": 5600,
+      "schedule": "17:30 – 20:00 hrs (Menos gente y luces azules relajantes)",
+      "ayame_standard": "Pingüinos nadando sobre el cielo de Tokio y el túnel inmersivo de medusas con música ambiental que calma el sistema nervioso de あやめ al instante.",
+      "diet_note": "Combinar con filete de res magro o pescado blanco limpio en Sunshine City 60F.",
+      "url": "https://sunshinecity.jp/aquarium/"
+    },
+    {
+      "id": "ikb-animate-flagship",
+      "title": "Animate Ikebukuro Flagship (9 Pisos) + Exposiciones Pop-Up Space Galleria",
+      "zone": "ikebukuro",
+      "region": "Kanto (Ikebukuro)",
+      "category": "🎮 Friki / Anime / Gaming",
+      "energy_level": "🌸 Ascensor VIP piso por piso",
+      "return_home": "18 min en JR directo a nuestro hogar en Asakusabashi",
+      "fight_zone": "🟢🟡🔴 Apto todo el año",
+      "price_jpy": 12000,
+      "schedule": "Exposiciones rotativas cada mes en el Piso 8 (Space Galleria)",
+      "ayame_standard": "La tienda de anime más grande del mundo (Récord Guinness). Ideal para buscar mercancía oficial de Blue Archive (Wakamo, Yuuka, Ako), Chainsaw Man (Denji y Reze), Kingdom Hearts y Final Fantasy.",
+      "diet_note": "Gratis en pisos generales; ¥2,000–¥4,000 exposición + presupuesto para figuras/artbooks.",
+      "url": "https://www.animate.co.jp/shop/ikebukuro/"
+    },
+    {
+      "id": "ikb-swallowtail-butler",
+      "title": "Swallowtail Butler Café (Otome Road, Ikebukuro) — Té de la Tarde en Mansión",
+      "zone": "ikebukuro",
+      "region": "Kanto (Ikebukuro)",
+      "category": "🍰 Experiencia Única Otome",
+      "energy_level": "⚡ Cero Desgaste (80 min sentados como realeza)",
+      "return_home": "20 min a nuestra casa en Asakusabashi antes de las 20:45 hrs",
+      "fight_zone": "🟢🟡 Off-Camp / Bono Post-Pelea",
+      "price_jpy": 9600,
+      "schedule": "Reserva previa online (Turnos de 17:30 o 18:45 hrs)",
+      "ayame_standard": "El café más famoso de Otome Road en Ikebukuro: mayordomos de frac les sirven té seleccionado entre 50 variedades y bandejas de tres pisos en un salón victoriano silencioso y privado.",
+      "diet_note": "100% libre de alcohol 🚫🍺; solicitar menú sin mango 🚫🥭 al reservar + Roast Beef Sandwiches.",
+      "url": "https://www.butlers-cafe.jp/"
+    },
+    {
+      "id": "ikb-acos-kbooks-cosplay",
+      "title": "Ruta de Cosplay & Juegos Retro: ACOS + K-BOOKS (Cosplay-kan / Game-kan) + Super Potato",
+      "zone": "ikebukuro",
+      "region": "Kanto (Ikebukuro)",
+      "category": "🧵 Cosplay & Juegos Retro",
+      "energy_level": "🌸 Ritmo libre a pasos de distancia",
+      "return_home": "18 min a nuestra casa para probar telas en su cuarto con la máquina JUKI",
+      "fight_zone": "🟢🟡🔴 Cita Oficial Mes 06 (Fight Camp #1 · Marzo 2028)",
+      "price_jpy": 15000,
+      "schedule": "17:00 – 19:45 hrs en Higashi-Ikebukuro",
+      "ayame_standard": "Paraíso para あやめ: pelucas profesionales, pupilentes, trajes de colección y ediciones retro de Kingdom Hearts y Final Fantasy para jugar juntos al regresar a nuestra casa.",
+      "diet_note": "Cena de filete de res 300g en Ikinari Steak / Miura Misakiko Ikebukuro.",
+      "url": "https://www.k-books.co.jp/"
+    },
+    {
+      "id": "ikb-namjatown-cats",
+      "title": "NAMJATOWN (Sunshine City) — Nyanderful Cat Town & Gyoza Stadium",
+      "zone": "ikebukuro",
+      "region": "Kanto (Ikebukuro)",
+      "category": "🐱 Gatos & Eventos Pop-Up",
+      "energy_level": "🌸 Parque temático techado climatizado",
+      "return_home": "18 min a nuestra casa para abrazar a nuestros 2 gatitos reales",
+      "fight_zone": "🟢🟡 Ideal para tardes de lluvia o calor en Tokio",
+      "price_jpy": 7800,
+      "schedule": "Colaboraciones de anime mensuales + área de interacción con gatos",
+      "ayame_standard": "Combina sus dos amores: pueblo decorado de gatitos (Fukubukuro 7-Chome), juegos de feria suaves con premios asegurados y eventos de colaboración de anime sin sol ni lluvia.",
+      "diet_note": "Degustación de gyozas de carne Wagyu y postres en forma de gatito (sin mango 🚫🥭).",
+      "url": "https://bandainamco-am.co.jp/tp/namjatown/"
+    },
+    {
+      "id": "ikb-sesame-street-sunshine",
+      "title": "Bandai Namco Cross Store + Gashapon Dept. Store (3,000 Máquinas) & Mirador Sky Circus",
+      "zone": "ikebukuro",
+      "region": "Kanto (Ikebukuro)",
+      "category": "🎮 Friki / Mirador al Atardecer",
+      "energy_level": "🌸 Todo en el mismo edificio con elevador",
+      "return_home": "18 min a nuestra casa en Asakusabashi antes de las 21:00 hrs",
+      "fight_zone": "🟢🟡🔴 Apto todo el año",
+      "price_jpy": 6500,
+      "schedule": "Atardecer 17:30 – 20:00 hrs",
+      "ayame_standard": "Ver el Monte Fuji teñido de rosa al atardecer desde el piso 60 de Sunshine City en sillones acolchados y luego sacar cápsulas coleccionables juntos.",
+      "diet_note": "Té sin azúcar + cena de cortes de carne en el piso 59 de Sunshine 60.",
+      "url": "https://sunshinecity.jp/observatory/"
+    },
+    {
+      "id": "ikb-global-ring-night",
+      "title": "Ikebukuro Nishiguchi Park GLOBAL RING — Concierto Nocturno al Aire Libre & Fuente",
+      "zone": "ikebukuro",
+      "region": "Kanto (Ikebukuro)",
+      "category": "🎶 Música & Brisa Nocturna",
+      "energy_level": "⚡ Cero Desgaste (Sentados en el café del anillo)",
+      "return_home": "16 min en metro directo a nuestra casa en Asakusabashi",
+      "fight_zone": "🟢🟡🔴 Perfecto para terminar cualquier cita en Ikebukuro",
+      "price_jpy": 3800,
+      "schedule": "19:00 – 20:15 hrs",
+      "ayame_standard": "Anfiteatro moderno al aire libre junto al Tokyo Metropolitan Theatre con pantallas circulares, brisa fresca de noche y música clásica o acústica sin multitudes apretadas.",
+      "diet_note": "Té caliente o chocolate sin alcohol en GLOBAL RING CAFÉ antes de volver a casa.",
+      "url": "https://globalring-theatre.com/"
+    },
+    {
+      "id": "tky-ginza-kimono-tailor",
+      "title": "Ginza Motoji & Erizen Ginza — Sastrería de Kimono a Medida para あやめ",
+      "zone": "tokio",
+      "region": "Kanto (Tokio)",
+      "category": "👘 Alta Costura & Telas",
+      "energy_level": "⚡ Atención privada sentados con té matcha",
+      "return_home": "12 min en metro Asakusa Line directo a nuestra casa en Asakusabashi",
+      "fight_zone": "🟡 Expedición Oficial Mes 01 (Octubre 2027 · Kanto)",
+      "price_jpy": 45000,
+      "schedule": "Cita privada reservada a las 16:00 hrs",
+      "ayame_standard": "Elegir juntos rollos de seda pura (Tsumugi y Yuzen) en Ginza para su kimono a medida y accesorios Obi, celebrando que viven juntos en su nuevo hogar.",
+      "diet_note": "Cena de festejo de filete Wagyu A5 a la plancha en Ginza (0 alcohol 🚫🍺).",
+      "url": "https://www.motoji.co.jp/"
+    },
+    {
+      "id": "tky-nippori-fabric-vip",
+      "title": "Nippori Fabric Town (Tomato Fabrics 5 Pisos) — Expedición de Sedas y Encajes",
+      "zone": "tokio",
+      "region": "Kanto (Tokio)",
+      "category": "🧵 Costura & Diseño en Casa",
+      "energy_level": "🌸 A solo 10 min en tren JR de nuestra casa",
+      "return_home": "10 min en JR/Taxi directo al cuarto de costura de あやめ en nuestra casa",
+      "fight_zone": "🟢🟡🔴 Ideal para tardes creativas + noche de costura juntos en casa",
+      "price_jpy": 16000,
+      "schedule": "15:30 – 18:00 hrs + Cena de filetes en nuestra casa a las 19:00 hrs",
+      "ayame_standard": "Comprar sedas carmesí, brocados dorados y encajes para su máquina JUKI HZL-G100B y su maniquí 9号, regresando juntos a casa para cenar y diseñar con nuestros gatitos.",
+      "diet_note": "Cena en nuestra casa: Tenderloin 300g de Niku no Hanamasa en sartén Lodge.",
+      "url": "https://www.nippori-senigai.com/"
+    },
+    {
+      "id": "tky-bay-dinner-cruise",
+      "title": "Crucero Nocturno Symphony Moderna por la Bahía de Tokio (Salón Privado)",
+      "zone": "tokio",
+      "region": "Kanto (Tokio)",
+      "category": "🚢 Crucero & Brisa Marina",
+      "energy_level": "⚡ Cero Desgaste (Cenando frente al mar iluminado)",
+      "return_home": "15 min desde Hinode Pier a nuestra casa en Asakusabashi (llegada 21:00 hrs)",
+      "fight_zone": "🟢 Expedición Oficial Mes 07 (Abril 2028 · Victoria Pelea #1 Debut)",
+      "price_jpy": 34000,
+      "schedule": "Sunset/Twilight Cruise 16:20–18:20 o 19:00–21:00 hrs",
+      "ayame_standard": "Celebración de tu primera victoria en 77 kg junto a tu Mánager Oficial あやめ: ver el Rainbow Bridge y la Bahía de Tokio con brisa marina desde la cubierta privada.",
+      "diet_note": "Menú Francés/Teppanyaki con corte de res Kuroge Wagyu (sin alcohol 🚫🍺, sin mango 🚫🥭).",
+      "url": "https://www.symphony-cruise.co.jp/"
+    },
+    {
+      "id": "tky-helicopter-finale",
+      "title": "Sobrevuelo Privado en Helicóptero al Atardecer sobre Tokio (Tokyo Heliport)",
+      "zone": "tokio",
+      "region": "Kanto (Tokio)",
+      "category": "🚁 Gala & Gran Final",
+      "energy_level": "⚡ Cero Desgaste (Chofer privado ida y vuelta a nuestra casa)",
+      "return_home": "20 min en taxi VIP directo a nuestra casa en Asakusabashi",
+      "fight_zone": "👑 Expedición Oficial Mes 24 (Septiembre 2029 · Gran Final 5 Peleas)",
+      "price_jpy": 98000,
+      "schedule": "Atardecer 17:30 hrs (Tokyo Tower, Skytree, Bahía y Monte Fuji)",
+      "ayame_standard": "El broche de oro al cerrar invicto tus 5 peleas de MMA con あやめ como Mánager antes de iniciar la etapa de Capitán en Okinawa.",
+      "diet_note": "Cena de gala Chateaubriand Wagyu A5 post-vuelo (0 alcohol 🚫🍺).",
+      "url": "https://airoots.jp/"
+    },
+    {
+      "id": "jp-nikko-spacia-x",
+      "title": "Tren Privado 'Spacia X Cockpit Suite' a Nikko Imperial & Kinugawa Onsen",
+      "zone": "japon",
+      "region": "Kanto Norte (Tochigi)",
+      "category": "🚅 Tren Suite + Onsen Privado",
+      "energy_level": "⚡ Suite privada desde Asakusa (a 4 min de nuestra casa)",
+      "return_home": "Regreso directo a Estación Asakusa + Pet-Sitter 24h en nuestra casa para los gatitos",
+      "fight_zone": "🟡 Expedición Oficial Mes 03 (Diciembre 2027 · Tochigi)",
+      "price_jpy": 68000,
+      "schedule": "2 Días / 1 Noche en Ryokan con Rotenburo privado sobre el río Kinugawa",
+      "ayame_standard": "Abordan el Spacia X a 4 minutos de nuestra casa en un salón privado con sofás. Visitan el santuario dorado Toshogu sin caminatas pesadas y duermen a las 22:30 hrs tras el onsen.",
+      "diet_note": "Cena Tochigi Wagyu A5 a la plancha en la habitación a las 18:30 hrs.",
+      "url": "https://www.tobu.co.jp/spaciax/"
+    },
+    {
+      "id": "jp-ginzan-onsen-sendai",
+      "title": "Pueblo Termal Nevado de Ginzan Onsen (Yamagata) & Bahía de Sendai",
+      "zone": "japon",
+      "region": "Tohoku Sur (Yamagata & Miyagi)",
+      "category": "❄️ Onsen de Cuento en la Nieve",
+      "energy_level": "⚡ Shinkansen Green Car desde Ueno + Ryokan histórico",
+      "return_home": "2h en Yamabiko Shinkansen a Ueno (a 5 min de nuestra casa) + Pet-Sitter",
+      "fight_zone": "🟡 Expedición Oficial Mes 04 (Enero 2028 · Tohoku Sur)",
+      "price_jpy": 88000,
+      "schedule": "2 Días / 1 Noche (Pueblo peatonal iluminado con faroles de gas al atardecer)",
+      "ayame_standard": "El paisaje invernal más mágico de Japón (idéntico a 'El Viaje de Chihiro'). Aguas termales sulfurosas calientes mientras cae la nieve para que あやめ duerma como reina.",
+      "diet_note": "Cena de Yonezawa Beef A5 y lengua de res Gyutan de Sendai (alta proteína, 0 alcohol).",
+      "url": "https://www.ginzanonsen.jp/"
+    },
+    {
+      "id": "jp-izu-kawazu-sakura",
+      "title": "Tren Panorámico 'Saphir Odoriko' a los Cerezos Tempranos de Kawazu y Mar de Izu",
+      "zone": "japon",
+      "region": "Chubu Costero (Shizuoka)",
+      "category": "🌸 Cerezos Tempranos & Mar",
+      "energy_level": "⚡ Compartimento privado Green Car + Ryokan frente al Pacífico",
+      "return_home": "2h15m directo a Estación Tokio + regreso a nuestra casa con los gatitos",
+      "fight_zone": "🟡 Expedición Oficial Mes 05 (Febrero 2028 · Pre-Campamento #1)",
+      "price_jpy": 72000,
+      "schedule": "2 Días / 1 Noche en febrero (Festival Kawazu-zakura)",
+      "ayame_standard": "En febrero ya están en flor 8,000 cerezos rosas junto al río y el mar de Izu. Brisa marina suave que le encanta a あやめ y baño termal viendo el océano.",
+      "diet_note": "Pescado blanco magro Kinmedai y filete Ashitaka Wagyu limpio antes de iniciar el Camp #1.",
+      "url": "https://www.jreast.co.jp/saphir/"
+    },
+    {
+      "id": "jp-kobe-wagyu-himeji",
+      "title": "Banquete de Victoria Kobe Beef A5 en Kobe, Castillo Blanco de Himeji & Osaka",
+      "zone": "japon",
+      "region": "Kansai (Hyogo & Osaka)",
+      "category": "🥩 Banquete Wagyu & Castillo",
+      "energy_level": "⚡ Nozomi Shinkansen Green Car + Hotel frente al puerto de Kobe",
+      "return_home": "2h30m en Shinkansen a Tokio + Pet-Sitter con video por LINE de nuestras mascotas",
+      "fight_zone": "🟢 Expedición Oficial Mes 08 (Mayo 2028 · Bono Post-Pelea #1)",
+      "price_jpy": 96000,
+      "schedule": "3 Días / 2 Noches (Kobe Harborland, Arima Onsen y Himeji)",
+      "ayame_standard": "Viaje de premio tras tu debut en 77 kg: paseo nocturno frente al faro rojo de Kobe Harborland con brisa marina y aguas termales doradas (Kinsen) en Arima Onsen.",
+      "diet_note": "Teppanyaki privado de Kobe Beef A5 certificado sin culpa de báscula (0 alcohol 🚫🍺).",
+      "url": "https://www.feel-kobe.jp/"
+    },
+    {
+      "id": "jp-okinawa-ishigaki",
+      "title": "Resort Frente al Mar Turquesa en Okinawa e Isla Ishigaki (Catamarán al Atardecer)",
+      "zone": "japon",
+      "region": "Okinawa (Islas Ryukyu)",
+      "category": "🏝️ Paraíso Tropical & Mar",
+      "energy_level": "⚡ Cabaña frente a la playa privada + Cero caminatas cansadas",
+      "return_home": "Vuelo directo a Haneda (a 30 min de nuestra casa en Asakusabashi) + Pet-Sitter",
+      "fight_zone": "🟢 Expedición Oficial Mes 09 (Junio 2028 · Vacaciones Post-Debut)",
+      "price_jpy": 135000,
+      "schedule": "3 Días / 2 Noches en Kabira Bay / Miyakojima / Churaumi",
+      "ayame_standard": "Cumple el sueño que platicaste con あやめ para junio-julio: brisa cálida junto al mar turquesa al atardecer, acuario Churaumi (tiburón ballena) y descanso absoluto.",
+      "diet_note": "Filetes de Ishigaki Beef A5 y Agu Pork a la parrilla (0 mango 🚫🥭, 0 alcohol 🚫🍺).",
+      "url": "https://www.visitokinawajapan.com/"
+    },
+    {
+      "id": "jp-aomori-towada-akita",
+      "title": "Bosques Frescos del Lago Towada, Castillo de Hirosaki & Brisa del Norte",
+      "zone": "japon",
+      "region": "Tohoku Norte (Aomori & Akita)",
+      "category": "🌲 Escape del Calor & Naturaleza",
+      "energy_level": "🌸 Crucero tranquilo por el lago + Ryokan junto al arroyo Oirase",
+      "return_home": "Hayabusa Shinkansen Green Car directo a Ueno (a 5 min de nuestra casa)",
+      "fight_zone": "🟡 Expedición Oficial Mes 10 (Julio 2028 · Off-Camp 79 kg)",
+      "price_jpy": 84000,
+      "schedule": "3 Días / 2 Noches en pleno verano fresco (21–23 °C)",
+      "ayame_standard": "Evita la humedad sofocante de julio en Tokio llevándola a los bosques frescos y cascadas de Oirase y al Museo Nebuta Wa Rasse (carrozas gigantes iluminadas).",
+      "diet_note": "Carne Aomori Kuraishi Wagyu magra y salmón/vieiras frescas del estrecho de Tsugaru.",
+      "url": "https://aomori-tourism.com/"
+    },
+    {
+      "id": "jp-hokkaido-hakodate-furano",
+      "title": "Vista Nocturna del Monte Hakodate (En Teleférico), Sapporo & Lavandas de Furano",
+      "zone": "japon",
+      "region": "Hokkaido (Isla Norte)",
+      "category": "🌌 Mirador Nocturno & Clima 22°C",
+      "energy_level": "⚡ Teleférico directo a la cima + Carrito eléctrico entre flores en Furano",
+      "return_home": "Vuelo/Shinkansen directo a Tokio + regreso a nuestra casa con nuestros gatitos",
+      "fight_zone": "🟡 Expedición Oficial Mes 11 (Agosto 2028 · Pre-Camp Pelea #2)",
+      "price_jpy": 118000,
+      "schedule": "3 Días / 2 Noches escapando del calor de agosto en Tokio",
+      "ayame_standard": "Una de las 3 vistas nocturnas más hermosas de Japón desde el Monte Hakodate (en forma de reloj de arena iluminado entre dos mares) sin sudar ni caminar en subida.",
+      "diet_note": "Proteína marina ultra limpia (cangrejo real, vieiras, salmón) y Furano Wagyu magro.",
+      "url": "https://334.co.jp/"
+    },
+    {
+      "id": "jp-kanazawa-shirakawago",
+      "title": "Seda Imperial Kaga Yuzen en Kanazawa, Jardín Kenrokuen & Aldea de Shirakawa-go",
+      "zone": "japon",
+      "region": "Hokuriku & Chubu (Ishikawa & Gifu)",
+      "category": "👘 Seda Imperial, Oro & Aldea",
+      "energy_level": "⚡ Kagayaki Shinkansen Green Car directo desde Ueno (2h25m)",
+      "return_home": "Regreso directo a Ueno + 5 min a nuestra casa en Asakusabashi",
+      "fight_zone": "🟢 Expedición Oficial Mes 13 (Octubre 2028 · Bono Post-Pelea #2)",
+      "price_jpy": 89000,
+      "schedule": "3 Días / 2 Noches en otoño dorado",
+      "ayame_standard": "Paraíso textil para あやめ: taller de teñido de seda Kaga Yuzen, helado de leche cubierto en hoja de oro puro en Higashi Chaya y casas históricas de Shirakawa-go.",
+      "diet_note": "Banquete de Noto Beef A5 y Hida-gyu A5 a la parrilla en hoja de magnolia (Hoba Miso).",
+      "url": "https://visitkanazawa.jp/"
+    },
+    {
+      "id": "jp-kyushu-beppu-ibusuki",
+      "title": "Gran Ruta de Kyushu: Fukuoka, Infiernos de Beppu, Kumamoto & Arena Termal de Ibusuki",
+      "zone": "japon",
+      "region": "Kyushu Norte y Sur (Fukuoka, Oita, Kumamoto, Kagoshima)",
+      "category": "♨️ Baño de Arena Volcánica & Sur Cálido",
+      "energy_level": "⚡ Vuelo a Fukuoka/Kagoshima + Tren panorámico Ibusuki no Tamatebako",
+      "return_home": "Vuelo a Haneda + 30 min a nuestra casa con nuestros 2 gatitos y 2 chinchillas",
+      "fight_zone": "🟢 Expediciones Oficiales Mes 16 y Mes 17 (Ene–Feb 2029 · Post-DEEP Future King)",
+      "price_jpy": 124000,
+      "schedule": "3 Días / 2 Noches por expedición en invierno templado",
+      "ayame_standard": "Tras ganar 2 peleas el mismo día en el DEEP Future King Tournament de diciembre, se entierran juntos en la arena volcánica caliente frente al mar en Ibusuki: desinflamación articular total.",
+      "diet_note": "Kagoshima Kuroge Wagyu A5 (campeón nacional de Wagyu) y Miyazaki Beef A5.",
+      "url": "https://www.welcomekyushu.jp/"
+    },
+    {
+      "id": "jp-ise-wakayama-kyoto",
+      "title": "Gran Santuario de Ise, Bahía de Perlas de Mikimoto & Kioto en Kimono a Medida",
+      "zone": "japon",
+      "region": "Kansai Imperial & Península de Kii (Mie, Wakayama, Kioto, Nara)",
+      "category": "⛩️ Santuario Sagrado, Perlas & Kimono",
+      "energy_level": "⚡ Shinkansen + Tren Expreso Shimakaze (asientos de cuero con masaje lumbar)",
+      "return_home": "Regreso en Shinkansen a Tokio + 8 min a nuestra casa en Asakusabashi",
+      "fight_zone": "🟡 Expediciones Oficiales Mes 18 y Mes 19 (Marzo–Abril 2029)",
+      "price_jpy": 94000,
+      "schedule": "3 Días / 2 Noches en temporada de cerezos en flor",
+      "ayame_standard": "Estrenar juntos en Kioto el kimono hecho a medida de あやめ paseando en Rickshaw privado (Jinrikisha, cero fatiga en los pies) y ver a las buceadoras de perlas en Ise-Shima.",
+      "diet_note": "Matsusaka Beef A5 en Mie y Omi Beef A5 en Kioto (0 alcohol 🚫🍺).",
+      "url": "https://www.isejingu.or.jp/"
+    },
+    {
+      "id": "jp-chugoku-shikoku-complete",
+      "title": "Torii Flotante de Miyajima, Dunas de Tottori, Santuario del Matrimonio Izumo & Dogo Onsen",
+      "zone": "japon",
+      "region": "Chugoku & Shikoku (Hiroshima, Tottori, Shimane, Yamaguchi, Ehime)",
+      "category": "🐪 Dunas, Lazos del Destino & Baño de Chihiro",
+      "energy_level": "⚡ Paseo en camello en Tottori + Sala Imperial Privada en Dogo Onsen",
+      "return_home": "Vuelo desde Matsuyama/Izumo a Haneda + 30 min a nuestra casa con las mascotas",
+      "fight_zone": "🟡 Expediciones Oficiales Mes 20 y Mes 21 (Mayo–Junio 2029)",
+      "price_jpy": 108000,
+      "schedule": "3 Días / 2 Noches conquistando Chugoku y la isla de Shikoku",
+      "ayame_standard": "Visitar Izumo Taisha (el santuario de los lazos eternos y el matrimonio en Japón), cruzar el puente esmeralda de Tsunoshima y bañarse en Dogo Onsen (el onsen real de 'El Viaje de Chihiro').",
+      "diet_note": "Tottori Wagyu Oleic 55, ostras a la parrilla de Miyajima y filete Iyo Beef de Ehime.",
+      "url": "https://dogo.jp/"
+    }
+  ]
+};
+  const CITIES_COORDS = [{"id": "ikebukuro", "name": "Ikebukuro / Asakusabashi (Tokio)", "region": "Kanto", "lat": 35.7295, "lon": 139.7109}, {"id": "sapporo", "name": "Sapporo / Hakodate", "region": "Hokkaido", "lat": 43.0618, "lon": 141.3545}, {"id": "sendai", "name": "Sendai / Ginzan Onsen", "region": "Tohoku", "lat": 38.2682, "lon": 140.8694}, {"id": "kanazawa", "name": "Kanazawa / Shirakawa-go", "region": "Chubu & Hokuriku", "lat": 36.5613, "lon": 136.6562}, {"id": "kyoto", "name": "Kioto / Kobe / Osaka", "region": "Kansai", "lat": 35.0116, "lon": 135.7681}, {"id": "hiroshima", "name": "Miyajima / Izumo / Tottori", "region": "Chugoku", "lat": 34.3853, "lon": 132.4553}, {"id": "matsuyama", "name": "Matsuyama (Dogo Onsen)", "region": "Shikoku", "lat": 33.8392, "lon": 132.7656}, {"id": "fukuoka", "name": "Fukuoka / Beppu / Ibusuki", "region": "Kyushu", "lat": 33.5902, "lon": 130.4017}, {"id": "okinawa", "name": "Naha / Isla Ishigaki", "region": "Okinawa", "lat": 26.2124, "lon": 127.6809}];
+
+  let liveJpyRate = INITIAL_FEED.usd_jpy_rate || 158.09;
+  let liveWeather = INITIAL_FEED.cities_weather || {};
+  let liveHolidays = INITIAL_FEED.upcoming_jp_holidays || [];
+  let lastSyncTime = INITIAL_FEED.updated_at;
+
+  function fmtJpy(n) {
+    return "¥" + Math.round(n).toLocaleString("en-US");
+  }
+
+  function fmtUsd(jpy) {
+    return "$" + Math.round(jpy / liveJpyRate).toLocaleString("en-US");
+  }
+
+  async function refreshLiveApis() {
+    // 1. Live FX API
+    try {
+      const r = await fetch("https://open.er-api.com/v6/latest/USD", { cache: "no-store" });
+      if (r.ok) {
+        const d = await r.json();
+        if (d && d.rates && d.rates.JPY) liveJpyRate = Number(d.rates.JPY);
+      }
+    } catch (_) {}
+
+    // 2. Live Open-Meteo Weather API for Ikebukuro + 8 Regions of Japan
+    try {
+      const lats = CITIES_COORDS.map((c) => c.lat).join(",");
+      const lons = CITIES_COORDS.map((c) => c.lon).join(",");
+      const url = `https://api.open-meteo.com/v1/forecast?latitude=${lats}&longitude=${lons}&current=temperature_2m,relative_humidity_2m,precipitation,wind_speed_10m&timezone=Asia%2FTokyo`;
+      const r2 = await fetch(url, { cache: "no-store" });
+      if (r2.ok) {
+        const wList = await r2.json();
+        if (Array.isArray(wList)) {
+          CITIES_COORDS.forEach((c, idx) => {
+            const curr = (wList[idx] && wList[idx].current) || {};
+            const temp = curr.temperature_2m ?? 20;
+            const rain = curr.precipitation ?? 0;
+            const hum = curr.relative_humidity_2m ?? 55;
+            liveWeather[c.id] = {
+              name: c.name,
+              region: c.region,
+              temp_c: temp,
+              humidity: hum,
+              rain_mm: rain,
+              ayame_status:
+                rain > 0.2
+                  ? "☔ Lluvia: Activar Plan Techado VIP (Sunshine City / Ryokan)"
+                  : temp >= 28.0
+                  ? "🔥 Calor: Ruta Climatizada / Brisa Nocturna o Norte"
+                  : temp <= 11.0
+                  ? "❄️ Fresco Invernal: Ideal para Onsen Privado y Abrigo Suave"
+                  : "🌸 Clima Perfecto para あやめ (Brisa Suave y Cero Fatiga)"
+            };
+          });
+        }
+      }
+    } catch (_) {}
+
+    // 3. Live Nager.Date Japan Public Holidays API
+    try {
+      const r3 = await fetch("https://date.nager.at/api/v3/NextPublicHolidays/JP", { cache: "no-store" });
+      if (r3.ok) {
+        const hList = await r3.json();
+        if (Array.isArray(hList) && hList.length > 0) {
+          liveHolidays = hList.slice(0, 6).map((h) => ({
+            date: h.date,
+            localName: h.localName,
+            name: h.name
+          }));
+        }
+      }
+    } catch (_) {}
+
+    lastSyncTime = new Date().toLocaleTimeString();
+  }
+
+  async function initAyameRadar() {
+    const root = document.getElementById("ayame-radar-container");
+    if (!root) return;
+
+    let activeZone = "all";
+    let searchTerm = "";
+    const savedFavs = JSON.parse(localStorage.getItem("imperio_ayame_radar_favs_v1") || "{}");
+
+    function renderWeatherAndHolidays() {
+      const wEl = document.getElementById("ayame-live-weather-grid");
+      if (wEl) {
+        const entries = Object.entries(liveWeather);
+        wEl.innerHTML = entries
+          .map(([id, w]) => {
+            const isIkb = id === "ikebukuro";
+            const border = isIkb ? "#f472b6" : "rgba(255,255,255,0.14)";
+            const bg = isIkb ? "rgba(244,114,182,0.12)" : "rgba(0,0,0,0.35)";
+            return `
+              <div style="background:${bg}; border:1px solid ${border}; border-radius:8px; padding:9px 11px;">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                  <span style="font-size:0.75rem; font-weight:700; color:${isIkb ? "#f9a8d4" : "#93c5fd"};">${isIkb ? "🏠 " : "🗾 "}${w.name}</span>
+                  <span style="font-size:0.88rem; font-weight:800; color:#fff;">${w.temp_c}°C</span>
+                </div>
+                <div style="font-size:0.68rem; color:#9ca3af; margin-top:2px;">Región: ${w.region} · Humedad: ${w.humidity}% · Lluvia: ${w.rain_mm}mm</div>
+                <div style="font-size:0.71rem; color:#4ade80; margin-top:4px; font-weight:600;">${w.ayame_status}</div>
+              </div>
+            `;
+          })
+          .join("");
+      }
+
+      const hEl = document.getElementById("ayame-live-holidays-strip");
+      if (hEl && liveHolidays.length > 0) {
+        hEl.innerHTML =
+          `<span style="color:#f0b90b; font-weight:700; font-size:0.76rem;">🎌 Próximos Festivos Nacionales en Japón (API Nager.Date en Vivo — Alerta de Multitudes):</span> ` +
+          liveHolidays
+            .map(
+              (h) =>
+                `<span style="background:rgba(240,185,11,0.14); border:1px solid rgba(240,185,11,0.4); color:#fde68a; padding:2px 8px; border-radius:999px; font-size:0.72rem;">📅 ${h.date}: <strong>${h.localName}</strong> (${h.name})</span>`
+            )
+            .join(" ");
+      }
+    }
+
+    function renderPlaces() {
+      const gridEl = document.getElementById("ayame-radar-places-grid");
+      if (!gridEl) return;
+      const q = searchTerm.trim().toLowerCase();
+
+      const filtered = INITIAL_FEED.events_and_places.filter((item) => {
+        if (activeZone === "favs" && !savedFavs[item.id]) return false;
+        if (activeZone !== "all" && activeZone !== "favs" && item.zone !== activeZone) return false;
+        if (!q) return true;
+        return (
+          item.title.toLowerCase().includes(q) ||
+          item.region.toLowerCase().includes(q) ||
+          item.category.toLowerCase().includes(q) ||
+          item.ayame_standard.toLowerCase().includes(q) ||
+          item.diet_note.toLowerCase().includes(q)
+        );
+      });
+
+      gridEl.innerHTML = filtered
+        .map((item) => {
+          const isFav = !!savedFavs[item.id];
+          const zoneColor =
+            item.zone === "ikebukuro"
+              ? "#f472b6"
+              : item.zone === "tokio"
+              ? "#38bdf8"
+              : "#f0b90b";
+          return `
+            <div style="background:#161b22; border:1px solid #30363d; border-top:3px solid ${zoneColor}; border-radius:10px; padding:16px; display:flex; flex-direction:column; justify-content:space-between;">
+              <div>
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:8px; margin-bottom:6px;">
+                  <span style="font-size:0.72rem; font-weight:700; color:${zoneColor}; text-transform:uppercase;">📍 ${item.region} · ${item.category}</span>
+                  <button data-fav-id="${item.id}" style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.2); color:${isFav ? "#f472b6" : "#9ca3af"}; border-radius:6px; padding:2px 8px; font-size:0.72rem; cursor:pointer;">
+                    ${isFav ? "💖 En Lista de あやめ" : "🤍 Guardar"}
+                  </button>
+                </div>
+                <h4 style="color:#fff; font-size:0.98rem; margin:4px 0 8px;">${item.title}</h4>
+                <p style="color:#d1d5db; font-size:0.82rem; line-height:1.45; margin-bottom:8px;">✨ <strong>Estándar あやめ:</strong> ${item.ayame_standard}</p>
+                <div style="font-size:0.76rem; color:#9ca3af; margin-bottom:4px;">⚡ <strong>Energía:</strong> <span style="color:#a7f3d0;">${item.energy_level}</span></div>
+                <div style="font-size:0.76rem; color:#9ca3af; margin-bottom:4px;">🏠 <strong>Regreso Juntos a Casa:</strong> <span style="color:#fbcfe8;">${item.return_home}</span></div>
+                <div style="font-size:0.76rem; color:#9ca3af; margin-bottom:4px;">🥊 <strong>Sincronía MMA:</strong> <span style="color:#fde68a;">${item.fight_zone}</span></div>
+                <div style="font-size:0.76rem; color:#9ca3af; margin-bottom:10px;">🥩 <strong>Protocolo Carnívoro:</strong> ${item.diet_note}</div>
+              </div>
+              <div style="display:flex; justify-content:space-between; align-items:center; padding-top:10px; border-top:1px solid rgba(255,255,255,0.08);">
+                <div>
+                  <span style="font-size:0.92rem; font-weight:800; color:#fff;">${fmtJpy(item.price_jpy)}</span>
+                  <span style="font-size:0.78rem; font-weight:700; color:#4ade80; background:rgba(34,197,94,0.14); border:1px solid rgba(74,222,128,0.35); padding:2px 6px; border-radius:5px; margin-left:4px;">⚡ ${fmtUsd(item.price_jpy)} USD</span>
+                </div>
+                <a href="${item.url}" target="_blank" rel="noopener" class="btn-link" style="font-size:0.74rem;">🔗 Sitio Oficial ↗</a>
+              </div>
+            </div>
+          `;
+        })
+        .join("");
+
+      gridEl.querySelectorAll("button[data-fav-id]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const id = btn.getAttribute("data-fav-id");
+          if (savedFavs[id]) delete savedFavs[id];
+          else savedFavs[id] = true;
+          localStorage.setItem("imperio_ayame_radar_favs_v1", JSON.stringify(savedFavs));
+          renderPlaces();
+        });
+      });
+    }
+
+    root.innerHTML = `
+      <div style="background:linear-gradient(135deg, rgba(244,114,182,0.12), rgba(56,189,248,0.08)); border:1px solid rgba(244,114,182,0.4); border-radius:12px; padding:18px; margin-bottom:18px;">
+        <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px; margin-bottom:12px;">
+          <div>
+            <span style="background:rgba(34,197,94,0.2); color:#4ade80; border:1px solid #22c55e; padding:3px 10px; border-radius:999px; font-size:0.72rem; font-weight:700;">
+              🛰️ 3 APIs CONECTADAS EN VIVO (Open-Meteo Japan + Nager.Date Festivos JP + FX USD/JPY)
+            </span>
+            <h3 style="color:#fff; margin:8px 0 4px; font-size:1.25rem;">🌸 Radar en Tiempo Real de Ikebukuro, Tokio y las 8 Regiones de Japón para あやめ</h3>
+            <p style="color:#d1d5db; font-size:0.82rem; margin:0;">
+              🏠 <strong>Regla de Hogar Compartido:</strong> あやめ vive contigo en <strong>Urbanex Asakusabashi Front (柳橋1-13-6)</strong> junto a nuestros <strong>2 gatitos y 2 chinchillas</strong>. Regresar a casa es <strong>regresar juntos a nuestro hogar antes de las 21:00 hrs</strong> para bañarnos a las 21:15 y dormir abrazados a las <strong>22:30 hrs</strong>.
+            </p>
+          </div>
+          <button id="btn-refresh-ayame-radar" class="plan-tab active" style="cursor:pointer; font-size:0.78rem;">🔄 Sincronizar Clima & Eventos API Ahora</button>
+        </div>
+
+        <div id="ayame-live-weather-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:8px; margin-bottom:12px;"></div>
+        <div id="ayame-live-holidays-strip" style="display:flex; flex-wrap:wrap; gap:6px; align-items:center; padding-top:8px; border-top:1px solid rgba(255,255,255,0.1);"></div>
+      </div>
+
+      <div style="display:flex; flex-wrap:wrap; gap:8px; justify-content:space-between; align-items:center; margin-bottom:16px;">
+        <div style="display:flex; flex-wrap:wrap; gap:6px;">
+          <button class="plan-tab radar-zone-btn active" data-zone="all">🌟 Todo el Radar (${INITIAL_FEED.events_and_places.length} Experiencias)</button>
+          <button class="plan-tab radar-zone-btn" data-zone="ikebukuro" style="border-color:#f472b6; color:#f9a8d4;">🦉 Ikebukuro VIP & Otome Road (8)</button>
+          <button class="plan-tab radar-zone-btn" data-zone="tokio" style="border-color:#38bdf8; color:#7dd3fc;">👘 Tokio: Costura, Cruceros & Gala (4)</button>
+          <button class="plan-tab radar-zone-btn" data-zone="japon" style="border-color:#f0b90b; color:#fde68a;">🗾 Todo Japón: 8 Regiones & Trenes Suite (10)</button>
+          <button class="plan-tab radar-zone-btn" data-zone="favs">💖 Guardados de あやめ</button>
+        </div>
+        <input id="ayame-radar-search" type="search" placeholder="🔍 Buscar Ikebukuro, planetario, kimono, onsen, gatos, Wagyu..." style="background:rgba(0,0,0,0.5); border:1px solid rgba(255,255,255,0.22); color:#fff; padding:7px 12px; border-radius:6px; min-width:280px; font-size:0.82rem;">
+      </div>
+
+      <div id="ayame-radar-places-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:16px;"></div>
+    `;
+
+    renderWeatherAndHolidays();
+    renderPlaces();
+
+    // Also refresh live in browser
+    refreshLiveApis().then(() => {
+      renderWeatherAndHolidays();
+      renderPlaces();
+    });
+
+    root.querySelectorAll(".radar-zone-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        root.querySelectorAll(".radar-zone-btn").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        activeZone = btn.getAttribute("data-zone");
+        renderPlaces();
+      });
+    });
+
+    const sInput = document.getElementById("ayame-radar-search");
+    if (sInput) {
+      sInput.addEventListener("input", (e) => {
+        searchTerm = e.target.value || "";
+        renderPlaces();
+      });
+    }
+
+    const refreshBtn = document.getElementById("btn-refresh-ayame-radar");
+    if (refreshBtn) {
+      refreshBtn.addEventListener("click", async () => {
+        refreshBtn.textContent = "⏳ Actualizando APIs en vivo...";
+        await refreshLiveApis();
+        renderWeatherAndHolidays();
+        renderPlaces();
+        updateAtlasCardsUsd();
+        refreshBtn.textContent = "✅ APIs Sincronizadas (" + lastSyncTime + ")";
+      });
+    }
+  }
+
+  function updateAtlasCardsUsd() {
+    document.querySelectorAll("[data-exp-jpy]").forEach((el) => {
+      const jpy = Number(el.getAttribute("data-exp-jpy") || 0);
+      if (jpy > 0) {
+        el.innerHTML = `${fmtJpy(jpy)} <span style="color:#4ade80; font-weight:700;">(⚡ ${fmtUsd(jpy)} USD)</span>`;
+      }
+    });
+  }
+
+  function initAtlasNacionalTracker() {
+    const grid = document.getElementById("atlas-24-grid");
+    if (!grid) return;
+
+    const savedExp = JSON.parse(localStorage.getItem("imperio_atlas_24_exp_v1") || "{}");
+    let activeRegion = "all";
+    let activeLight = "all";
+
+    function updateProgressAndFilter() {
+      const cards = Array.from(grid.querySelectorAll(".exp-24-card"));
+      let completedExp = 0;
+      const conqueredRegions = new Set();
+
+      cards.forEach((card) => {
+        const id = card.getAttribute("data-exp-id");
+        const reg = card.getAttribute("data-region");
+        const light = card.getAttribute("data-light");
+        const isDone = !!savedExp[id];
+        if (isDone) {
+          completedExp++;
+          if (reg) reg.split(",").forEach((r) => conqueredRegions.add(r.trim()));
+        }
+        card.style.boxShadow = isDone ? "0 0 0 2px #2ea043, 0 6px 18px rgba(46,160,67,0.22)" : "none";
+
+        const matchReg = activeRegion === "all" || (reg && reg.includes(activeRegion));
+        const matchLight = activeLight === "all" || light === activeLight;
+        card.style.display = matchReg && matchLight ? "block" : "none";
+      });
+
+      const progText = document.getElementById("atlas-24-progress-text");
+      const progBar = document.getElementById("atlas-24-progress-bar");
+      if (progText) {
+        progText.innerHTML = `✅ <strong>${completedExp} / 24 Expediciones Conquistadas Juntos</strong> · 🗾 <strong>${conqueredRegions.size} / 8 Regiones de Japón</strong>`;
+      }
+      if (progBar) {
+        progBar.style.width = Math.round((completedExp / 24) * 100) + "%";
+      }
+
+      document.querySelectorAll("[data-region-pill]").forEach((pill) => {
+        const rName = pill.getAttribute("data-region-pill");
+        const done = conqueredRegions.has(rName);
+        pill.style.borderColor = done ? "#2ea043" : "#30363d";
+        pill.style.background = done ? "rgba(46,160,67,0.22)" : "rgba(255,255,255,0.04)";
+        pill.style.color = done ? "#4ade80" : "#9ca3af";
+      });
+    }
+
+    grid.querySelectorAll("input[data-exp-check]").forEach((cb) => {
+      const id = cb.getAttribute("data-exp-check");
+      cb.checked = !!savedExp[id];
+      cb.addEventListener("change", (e) => {
+        if (e.target.checked) savedExp[id] = true;
+        else delete savedExp[id];
+        localStorage.setItem("imperio_atlas_24_exp_v1", JSON.stringify(savedExp));
+        updateProgressAndFilter();
+      });
+    });
+
+    document.querySelectorAll(".atlas-reg-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".atlas-reg-btn").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        activeRegion = btn.getAttribute("data-reg-filter");
+        updateProgressAndFilter();
+      });
+    });
+
+    document.querySelectorAll(".atlas-light-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".atlas-light-btn").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        activeLight = btn.getAttribute("data-light-filter");
+        updateProgressAndFilter();
+      });
+    });
+
+    updateAtlasCardsUsd();
+    updateProgressAndFilter();
+  }
+
+  function bootAll() {
+    initAyameRadar();
+    initAtlasNacionalTracker();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", bootAll);
+  } else {
+    bootAll();
+  }
+})();

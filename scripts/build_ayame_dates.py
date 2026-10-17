@@ -1580,9 +1580,9 @@ def main():
                   <thead>
                     <tr style="background:rgba(255,255,255,0.04);">
                       <th style="width:85px;">Semana &amp; Costo API</th>
-                      <th style="width:22%;">🏠 1. Cita en Casa<br><small style="color:#9ca3af;">(Mié 19:00–21:15)</small></th>
-                      <th style="width:22%;">🎮 2. Cita Friki Juntos<br><small style="color:#9ca3af;">(Jue 19:00–21:15)</small></th>
-                      <th style="width:22%;">🌿 3. Actividad Afuera Tokio<br><small style="color:#9ca3af;">(Vie 17:45–21:00)</small></th>
+                      <th style="width:22%;">🏠 1. Cita en Nuestra Casa<br><small style="color:#9ca3af;">(Mié 19:00–21:15 · Juntos en el 2LDK)</small></th>
+                      <th style="width:22%;">🎮 2. Cita Friki Juntos<br><small style="color:#9ca3af;">(Jue 19:00–21:15 · Ikebukuro/Akiba/Casa)</small></th>
+                      <th style="width:22%;">🌿 3. Actividad Afuera Tokio<br><small style="color:#9ca3af;">(Vie 17:45–21:00 · Regreso Juntos)</small></th>
                       <th style="width:34%;">🚅 4. Escapada Prefectura (1 a 3 Días)<br><small style="color:#9ca3af;">(Ryokan / Onsen / Wagyu / Pet-Sitter)</small></th>
                     </tr>
                   </thead>
@@ -1656,19 +1656,19 @@ def main():
       <div id="ayame-live-api-summary"></div>
 
       <div class="item-card" style="margin-bottom:1.1rem; border-color:#38bdf8; background:rgba(56,189,248,0.05);">
-        <h4 style="color:#7dd3fc; margin-bottom:0.4rem;">🛎️ Protocolo de Perfección Logística para Escapadas de 2–3 Días (Cero Estrés para あやめ y Mascotas Protegidas)</h4>
+        <h4 style="color:#7dd3fc; margin-bottom:0.4rem;">🏡 Protocolo de Hogar Compartido con あやめ &amp; Logística de Escapadas de 2–3 Días</h4>
         <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:10px; font-size:0.8rem; color:var(--text-main);">
           <div>
-            <strong>🐱🐹 1. Protocolo Mascotas (2 Gatos + 2 Chinchillas):</strong><br>
-            En cada viaje de 2 o 3 días se deja programado el comedero doble automático <strong>PETLIBRO</strong>, fuente de acero inox, deshumidificador Sharp + termómetro <strong>SwitchBot</strong> para las chinchillas y visita diaria de <strong>Pet-Sitter certificada en Taito-ku (Japan Pet Sitter Service / Sewakl, ¥3,500/visita — ya incluido en el costo de cada viaje)</strong> con reporte en video por LINE para que あやめ viaje 100% tranquila.
+            <strong>🏠🐱🐹 1. Hogar Compartido (Regresar a Casa = Regresar Juntos):</strong><br>
+            あやめ vive contigo en su departamento 2LDK en <strong>Urbanex Asakusabashi Front</strong> junto a nuestros <strong>2 gatitos y 2 chinchillas</strong>. En las citas locales regresan juntos a casa antes de las 21:00 hrs; y en los viajes de 2 o 3 días queda programado el comedero <strong>PETLIBRO</strong>, fuente inox, deshumidificador Sharp + <strong>SwitchBot</strong> y visita diaria de <strong>Pet-Sitter certificada en Taito-ku (Japan Pet Sitter Service / Sewakl, ¥3,500/visita — ya incluido)</strong> con video por LINE.
           </div>
           <div>
             <strong>♨️ 2. Reserva de Ryokan con Rotenburo Privado:</strong><br>
-            Todos los viajes de 2–3 días incluyen habitación con <strong>baño termal privado al aire libre (客室露天風呂 / Kashikiri Onsen)</strong> reservado vía <a href="https://travel.rakuten.co.jp/" target="_blank" style="color:#f472b6;">Rakuten Travel</a> / <a href="https://www.jalan.net/" target="_blank" style="color:#f472b6;">Jalan</a>, cena Kaiseki/Teppanyaki con <strong>Wagyu regional (Kobe, Hida, Omi, Koshu, Sendai, Hitachi — 0 alcohol 🚫🍺 y 0 mango 🚫🥭)</strong> servida a las 18:30 para que a las <strong>22:30 hrs</strong> esté durmiendo en su futón.
+            Todos los viajes de 2–3 días incluyen habitación con <strong>baño termal privado al aire libre (客室露天風呂 / Kashikiri Onsen)</strong> reservado vía <a href="https://travel.rakuten.co.jp/" target="_blank" style="color:#f472b6;">Rakuten Travel</a> / <a href="https://www.jalan.net/" target="_blank" style="color:#f472b6;">Jalan</a>, cena Kaiseki/Teppanyaki con <strong>Wagyu regional (Kobe, Hida, Omi, Koshu, Sendai, Hitachi, Kagoshima — 0 alcohol 🚫🍺 y 0 mango 🚫🥭)</strong> servida a las 18:30 para que a las <strong>22:30 hrs</strong> esté durmiendo abrazada a ti.
           </div>
           <div>
-            <strong>🚅 3. Transporte VIP Sin Multitudes:</strong><br>
-            Asientos reservados en <strong>Shinkansen Green Car</strong> (<a href="https://www.eki-net.com/" target="_blank" style="color:#38bdf8;">JR East Ekinet</a> / SmartEX), <strong>Odakyu Romancecar GSE</strong> (a Hakone/Enoshima) o <strong>Tobu Spacia X Cockpit Lounge</strong> (a Nikko), llevando solo una mochila ligera (enviando equipaje por <em>Yamato Takkyubin</em> si es de 3 días).
+            <strong>🚅 3. Transporte VIP Sin Multitudes (Estándar あやめ):</strong><br>
+            Asientos reservados en <strong>Shinkansen Green Car</strong> (<a href="https://www.eki-net.com/" target="_blank" style="color:#38bdf8;">JR East Ekinet</a> / SmartEX), <strong>Odakyu Romancecar GSE</strong>, <strong>Saphir Odoriko</strong> o <strong>Tobu Spacia X Cockpit Suite</strong>, llevando solo una mochila ligera (enviando equipaje por <em>Yamato Takkyubin</em> si es de 3 días).
           </div>
         </div>
       </div>

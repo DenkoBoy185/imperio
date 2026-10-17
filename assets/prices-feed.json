@@ -2,7 +2,7 @@
   "meta": {
     "version": "2.0.0",
     "description": "Fuente oficial de precios verificados y divisas en tiempo real para Atlas del Imperio (Tokio, Seúl, Phuket, EE.UU.)",
-    "last_updated_utc": "2026-10-16T22:29:27Z",
+    "last_updated_utc": "2026-10-17T20:53:34Z",
     "fx_sources": [
       "https://open.er-api.com/v6/latest/USD",
       "https://api.frankfurter.dev/v1/latest?base=USD&symbols=JPY,KRW,THB"
@@ -24,9 +24,9 @@
   "fx_rates": {
     "base": "USD",
     "live": {
-      "JPY": 158.087,
-      "KRW": 1342.7411,
-      "THB": 33.5261,
+      "JPY": 157.9943,
+      "KRW": 1334.8922,
+      "THB": 33.4304,
       "USD": 1.0
     },
     "reference": {
@@ -51,8 +51,8 @@
       "pets_2cats_2chinchillas_jpy": 60000,
       "suzuki_pack_5_optional_jpy": 60000
     },
-    "live_base_usd": 4661,
-    "live_with_suzuki_usd": 5041
+    "live_base_usd": 4664,
+    "live_with_suzuki_usd": 5044
   },
   "capex_rooms_jpy": {
     "ayame_room": 114440,
@@ -64,7 +64,7 @@
     "ldk_shared_washer": 294080,
     "kitchen_carnivore_fridge": 133100,
     "total_jpy": 2360190,
-    "live_total_usd": 14930
+    "live_total_usd": 14938
   },
   "phases": [
     {
@@ -89,7 +89,7 @@
         }
       ],
       "ref_usd": 45892,
-      "live_usd": 47165
+      "live_usd": 47442
     },
     {
       "id": 3,
@@ -121,7 +121,7 @@
         }
       ],
       "ref_usd": 3133,
-      "live_usd": 3058
+      "live_usd": 3063
     },
     {
       "id": 5,
@@ -133,7 +133,7 @@
         }
       ],
       "ref_usd": 16856,
-      "live_usd": 16868
+      "live_usd": 16916
     },
     {
       "id": 6,
@@ -149,7 +149,7 @@
         }
       ],
       "ref_usd": 3992,
-      "live_usd": 3831
+      "live_usd": 3833
     },
     {
       "id": 7,
@@ -161,7 +161,7 @@
         }
       ],
       "ref_usd": 8768,
-      "live_usd": 9011
+      "live_usd": 9064
     },
     {
       "id": 8,
@@ -173,7 +173,7 @@
         }
       ],
       "ref_usd": 16056,
-      "live_usd": 14930
+      "live_usd": 14938
     },
     {
       "id": 9,
@@ -204,7 +204,7 @@
       "live_usd": 1374
     }
   ],
-  "grand_total_live_usd": 113424,
+  "grand_total_live_usd": 113817,
   "grand_total_ref_usd": 113442,
-  "investment_bucket_live_usd": 198576
+  "investment_bucket_live_usd": 198183
 }
