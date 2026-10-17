@@ -1624,7 +1624,7 @@ def main():
             <div class="nav-group-label">03 · Universo あやめ &amp; Citas</div>
             <li><a href="#ayame-protocol"><span class="nav-num">3.1</span> Protocolo Clínico &amp; 22:30</a></li>
             <li><a href="#ayame-radar"><span class="nav-num">3.2</span> API Radar Ikebukuro &amp; Japón</a></li>
-            <li><a href="#ayame-24-expediciones"><span class="nav-num">3.3</span> 24 Expediciones (8 Regiones)</a></li>
+            <li><a href="#ayame-24-expediciones"><span class="nav-num">3.3</span> 24 Meses · 47 Prefecturas (全国制覇)</a></li>
             <li><a href="#ayame-dates"><span class="nav-num">3.4</span> 384 Citas Semanales (2 Años)</a></li>
 
             <div class="nav-group-label">04 · Campaña MMA 6-0 &amp; Show</div>
@@ -2218,9 +2218,9 @@ def main():
             btn.classList.add('active');
         }}
     </script>
-    <script src="assets/ayame-events-api.js?v=4"></script>
-    <script src="assets/citas-ayame.js?v=4"></script>
-    <script src="assets/live-prices.js?v=4"></script>
+    <script src="assets/ayame-events-api.js?v=5"></script>
+    <script src="assets/citas-ayame.js?v=5"></script>
+    <script src="assets/live-prices.js?v=5"></script>
 </body>
 </html>
 """
