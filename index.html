@@ -3,30 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>👑 ATLAS DEL IMPERIO: Bruno & あやめ (2027–2029+) / 帝国の地図</title>
+    <title>ATLAS DEL IMPERIO — Bruno & あやめ (2027–2029+)</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@500;700;900&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-base: #07090e;
+            --bg-base: #080a0f;
             --bg-surface: #0d1117;
-            --bg-card: #131822;
-            --bg-card-hover: #1a2130;
+            --bg-card: #121721;
+            --bg-card-hover: #171e2b;
             --gold: #d4a853;
-            --amber: #f0b90b;
+            --amber: #eab308;
             --sakura: #f472b6;
-            --crimson: #f85149;
-            --emerald: #3fb950;
+            --crimson: #ef4444;
+            --emerald: #22c55e;
             --cyan: #38bdf8;
             --purple: #a78bfa;
             --text-main: #e6edf3;
             --text-muted: #8b949e;
-            --border: #262c36;
+            --border: #21262d;
+            --border-subtle: rgba(255, 255, 255, 0.07);
             --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            --font-head: 'Orbitron', sans-serif;
+            --font-head: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'Orbitron', monospace;
             --font-jp: 'Noto Serif JP', serif;
-            --accent-gradient: linear-gradient(135deg, #d4a853, #f0b90b);
+            --accent-gradient: linear-gradient(135deg, #e5c158, #d4a853);
+            --sidebar-width: 264px;
+            --topbar-height: 58px;
         }
 
         * {
@@ -39,14 +43,12 @@
         body {
             font-family: var(--font-body);
             background-color: var(--bg-base);
-            background-image:
-                radial-gradient(circle at 15% 5%, rgba(212, 168, 83, 0.06), transparent 35%),
-                radial-gradient(circle at 85% 25%, rgba(244, 114, 182, 0.05), transparent 35%),
-                radial-gradient(circle at 50% 80%, rgba(56, 189, 248, 0.04), transparent 40%);
             color: var(--text-main);
-            line-height: 1.65;
+            line-height: 1.6;
             display: flex;
+            min-height: 100vh;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
         /* Top Scroll Progress Bar */
@@ -54,210 +56,400 @@
             position: fixed;
             top: 0;
             left: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--gold), var(--sakura), var(--cyan));
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), #f59e0b);
             z-index: 10000;
             width: 0%;
             transition: width 0.1s;
         }
 
-        /* Professional Grouped Sidebar */
+        /* =====================================================================
+           SIDEBAR NAVIGATION (CLEAN, MONOCHROME-GOLD EXECUTIVE HIERARCHY)
+           ===================================================================== */
         .sidebar {
-            width: 280px;
-            background: rgba(13, 17, 23, 0.96);
-            backdrop-filter: blur(16px);
+            width: var(--sidebar-width);
+            background: #0b0e14;
             height: 100vh;
             position: fixed;
+            top: 0;
+            left: 0;
             border-right: 1px solid var(--border);
             display: flex;
             flex-direction: column;
-            z-index: 1000;
-            transition: transform 0.3s ease;
+            z-index: 1100;
+            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body.sidebar-collapsed .sidebar {
+            transform: translateX(-100%);
         }
 
         .sidebar-header {
-            padding: 1.4rem 1.2rem;
+            height: var(--topbar-height);
+            padding: 0 1.15rem;
             border-bottom: 1px solid var(--border);
-            background: linear-gradient(180deg, rgba(212,168,83,0.10), transparent);
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+        }
+
+        .sidebar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sidebar-crest {
+            width: 28px;
+            height: 28px;
+            border-radius: 7px;
+            background: rgba(212, 168, 83, 0.14);
+            border: 1px solid rgba(212, 168, 83, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
         }
 
         .sidebar-header h1 {
-            font-family: var(--font-head);
-            font-size: 1.02rem;
-            color: var(--gold);
+            font-size: 0.84rem;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: 0.8px;
             text-transform: uppercase;
-            letter-spacing: 1.8px;
-            line-height: 1.35;
+            line-height: 1.15;
         }
 
         .sidebar-sub {
-            font-size: 0.72rem;
+            font-size: 0.66rem;
             color: var(--text-muted);
-            margin-top: 4px;
+            font-weight: 500;
             display: block;
         }
 
         .nav-links {
             list-style: none;
-            padding: 0.6rem 0 1.5rem 0;
+            padding: 0.6rem 0.65rem 1.5rem 0.65rem;
             overflow-y: auto;
             flex-grow: 1;
         }
 
         .nav-links::-webkit-scrollbar {
-            width: 5px;
+            width: 4px;
         }
         .nav-links::-webkit-scrollbar-thumb {
-            background: #262c36;
+            background: #21262d;
             border-radius: 4px;
         }
 
         .nav-group-label {
-            font-size: 0.66rem;
-            font-weight: 800;
+            font-size: 0.64rem;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1.2px;
+            letter-spacing: 1px;
             color: #6e7681;
-            padding: 0.9rem 1.2rem 0.3rem 1.2rem;
-            border-top: 1px solid rgba(255,255,255,0.04);
-            margin-top: 0.3rem;
+            padding: 0.85rem 0.6rem 0.35rem 0.6rem;
+            margin-top: 0.25rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
         }
         .nav-group-label:first-child {
             border-top: none;
             margin-top: 0;
+            padding-top: 0.35rem;
         }
 
         .nav-links li a {
             display: flex;
             align-items: center;
-            gap: 8px;
-            padding: 0.52rem 1.2rem;
-            color: var(--text-muted);
+            gap: 9px;
+            padding: 0.44rem 0.65rem;
+            color: #9ca3af;
             text-decoration: none;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             font-weight: 500;
-            transition: all 0.2s ease;
-            border-left: 3px solid transparent;
+            border-radius: 7px;
+            transition: all 0.15s ease;
+            margin-bottom: 1px;
         }
 
-        .nav-links li a:hover, .nav-links li a.active {
+        .nav-links li a .nav-num {
+            font-size: 0.66rem;
+            font-weight: 700;
+            color: #6e7681;
+            min-width: 18px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .nav-links li a:hover {
+            color: #f3f4f6;
+            background: rgba(255, 255, 255, 0.04);
+            text-decoration: none;
+        }
+
+        .nav-links li a.active {
             color: #ffffff;
-            background: rgba(212, 168, 83, 0.10);
-            border-left-color: var(--gold);
+            background: rgba(212, 168, 83, 0.12);
             font-weight: 600;
         }
 
-        /* Main Content Area */
-        .main-content {
-            margin-left: 280px;
-            padding: 0 3.2rem 4rem 3.2rem;
-            width: calc(100% - 280px);
-            max-width: 1520px;
+        .nav-links li a.active .nav-num {
+            color: var(--gold);
         }
 
-        /* Sticky Top Executive Command Bar */
+        .sidebar-footer {
+            padding: 0.75rem 0.85rem;
+            border-top: 1px solid var(--border);
+            background: rgba(0, 0, 0, 0.25);
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            flex-shrink: 0;
+        }
+
+        .sidebar-footer-title {
+            font-size: 0.62rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.9px;
+            color: #6e7681;
+            margin-bottom: 2px;
+        }
+
+        .sidebar-ext-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+        }
+
+        .sidebar-ext-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px 4px;
+            font-size: 0.68rem;
+            font-weight: 600;
+            color: #c9d1d9;
+            background: #131822;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.15s;
+        }
+        .sidebar-ext-btn:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        /* =====================================================================
+           MAIN CONTENT & SINGLE-ROW STICKY COMMAND HEADER (ZERO OVERLAP)
+           ===================================================================== */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            padding: 0 2.5rem 4rem 2.5rem;
+            width: calc(100% - var(--sidebar-width));
+            max-width: 1600px;
+            transition: margin-left 0.25s cubic-bezier(0.4, 0, 0.2, 1), width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body.sidebar-collapsed .main-content {
+            margin-left: 0;
+            width: 100%;
+        }
+
         .top-command-bar {
             position: sticky;
             top: 0;
-            z-index: 900;
-            background: rgba(7, 9, 14, 0.88);
-            backdrop-filter: blur(14px);
+            z-index: 1000;
+            height: var(--topbar-height);
+            background: rgba(8, 10, 15, 0.92);
+            backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border);
-            margin: 0 -3.2rem 2.2rem -3.2rem;
-            padding: 0.7rem 3.2rem;
+            margin: 0 -2.5rem 2rem -2.5rem;
+            padding: 0 1.5rem;
             display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
             align-items: center;
             justify-content: space-between;
+            gap: 12px;
         }
 
+        .topbar-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 0;
+            flex: 1;
+        }
+
+        .sidebar-toggle-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            height: 34px;
+            padding: 0 11px;
+            border-radius: 7px;
+            background: #121721;
+            border: 1px solid var(--border);
+            color: #e6edf3;
+            font-family: var(--font-body);
+            font-size: 0.76rem;
+            font-weight: 600;
+            cursor: pointer;
+            flex-shrink: 0;
+            transition: all 0.15s ease;
+        }
+
+        .sidebar-toggle-btn:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+            background: rgba(212, 168, 83, 0.08);
+        }
+
+        /* Segmented Single-Row Pillar Bar */
         .domain-pills-nav {
             display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
+            align-items: center;
+            gap: 4px;
+            background: #0d1117;
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            padding: 3px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            white-space: nowrap;
+        }
+
+        .domain-pills-nav::-webkit-scrollbar {
+            display: none;
         }
 
         .domain-pill {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            padding: 6px 12px;
-            border-radius: 999px;
-            font-size: 0.75rem;
+            height: 28px;
+            padding: 0 11px;
+            border-radius: 6px;
+            font-size: 0.74rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: #9ca3af;
+            border: 1px solid transparent;
+            transition: all 0.15s ease;
+            flex-shrink: 0;
+        }
+
+        .domain-pill .pill-num {
+            font-size: 0.66rem;
             font-weight: 700;
-            text-decoration: none;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid var(--border);
-            color: var(--text-muted);
-            transition: all 0.2s ease;
+            color: var(--gold);
+            opacity: 0.85;
         }
 
-        .domain-pill:hover {
-            color: #fff;
-            border-color: var(--gold);
-            background: rgba(212, 168, 83, 0.12);
+        .domain-pill:hover,
+        .domain-pill.active {
+            color: #ffffff;
+            background: #171e2b;
+            border-color: rgba(212, 168, 83, 0.35);
             text-decoration: none;
         }
 
+        /* Right Dossier Links Group */
         .external-dossiers {
             display: flex;
-            flex-wrap: wrap;
+            align-items: center;
             gap: 6px;
+            flex-shrink: 0;
+            padding-left: 10px;
+            border-left: 1px solid var(--border);
         }
 
-        /* Master Domain Hero Divider Banners */
+        .dossier-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            height: 30px;
+            padding: 0 10px;
+            border-radius: 7px;
+            font-size: 0.73rem;
+            font-weight: 600;
+            color: #c9d1d9;
+            background: #121721;
+            border: 1px solid var(--border);
+            text-decoration: none;
+            white-space: nowrap;
+            transition: all 0.15s ease;
+        }
+
+        .dossier-chip:hover {
+            border-color: var(--gold);
+            color: #ffffff;
+            background: #171e2b;
+            text-decoration: none;
+        }
+
+        /* =====================================================================
+           MASTER DOMAIN BANNERS (ARCHITECTURAL DIVIDERS)
+           ===================================================================== */
         .domain-banner {
             position: relative;
             overflow: hidden;
-            border-radius: 16px;
-            padding: 26px 28px;
-            margin: 3.2rem 0 1.8rem 0;
+            border-radius: 14px;
+            padding: 24px 28px;
+            margin: 3rem 0 1.6rem 0;
             border: 1px solid var(--border);
-            background: linear-gradient(135deg, rgba(19, 24, 34, 0.95), rgba(13, 17, 23, 0.98));
-            box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
+            border-left: 4px solid var(--gold);
+            background: linear-gradient(180deg, #111620 0%, #0c1017 100%);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+            scroll-margin-top: 76px;
         }
 
         .domain-banner:first-of-type {
-            margin-top: 0.5rem;
+            margin-top: 0.25rem;
         }
 
         .domain-banner::after {
             content: attr(data-kanji);
             position: absolute;
             right: 24px;
-            bottom: -10px;
+            bottom: -12px;
             font-family: var(--font-jp);
-            font-size: 5.2rem;
+            font-size: 4.8rem;
             font-weight: 700;
-            color: rgba(255, 255, 255, 0.03);
+            color: rgba(255, 255, 255, 0.025);
             pointer-events: none;
             user-select: none;
         }
 
         .domain-eyebrow {
-            display: inline-block;
-            font-size: 0.72rem;
-            font-weight: 800;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.68rem;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1.4px;
-            padding: 4px 12px;
-            border-radius: 999px;
+            letter-spacing: 1.2px;
+            color: var(--gold);
+            background: rgba(212, 168, 83, 0.1);
+            border: 1px solid rgba(212, 168, 83, 0.28);
+            padding: 3px 10px;
+            border-radius: 6px;
             margin-bottom: 10px;
         }
 
         .domain-banner h2 {
-            font-family: var(--font-head);
-            font-size: 1.55rem;
+            font-size: 1.4rem;
+            font-weight: 800;
             color: #ffffff;
             margin-bottom: 6px;
-            letter-spacing: 0.5px;
+            letter-spacing: -0.01em;
         }
 
         .domain-banner p {
             color: var(--text-muted);
-            font-size: 0.92rem;
+            font-size: 0.88rem;
             max-width: 920px;
             margin-bottom: 14px;
         }
@@ -265,107 +457,118 @@
         .domain-sublinks {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 6px;
         }
 
         .domain-sublinks a {
-            font-size: 0.76rem;
+            font-size: 0.74rem;
             font-weight: 600;
-            padding: 5px 12px;
-            border-radius: 8px;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.12);
-            color: var(--text-main);
+            padding: 5px 11px;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.035);
+            border: 1px solid var(--border);
+            color: #c9d1d9;
             text-decoration: none;
-            transition: all 0.2s;
+            transition: all 0.15s;
         }
 
         .domain-sublinks a:hover {
             border-color: var(--gold);
             color: var(--gold);
-            background: rgba(212,168,83,0.1);
+            background: rgba(212, 168, 83, 0.08);
+            text-decoration: none;
         }
 
-        /* Section Styling */
+        /* =====================================================================
+           SECTION CONTAINERS, TYPOGRAPHY & CARDS
+           ===================================================================== */
         section {
-            margin-bottom: 2.8rem;
-            scroll-margin-top: 80px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.75rem 2rem;
+            margin-bottom: 1.75rem;
+            scroll-margin-top: 76px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
         }
 
         h2.section-title {
-            font-family: var(--font-head);
-            font-size: 1.35rem;
-            color: var(--gold);
-            margin-bottom: 1.2rem;
-            padding-bottom: 0.6rem;
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 1.1rem;
+            padding-bottom: 0.75rem;
             border-bottom: 1px solid var(--border);
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
+            letter-spacing: -0.01em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
         }
 
         h3 {
-            font-family: var(--font-head);
             color: var(--text-main);
-            margin-top: 1.2rem;
-            margin-bottom: 0.8rem;
-            font-size: 1.05rem;
+            margin-top: 1.1rem;
+            margin-bottom: 0.7rem;
+            font-size: 0.98rem;
+            font-weight: 700;
         }
 
         /* Hero & Countdown Banner */
         .hero-subtitle {
             text-align: center;
             color: var(--gold);
-            font-size: 1.15rem;
-            margin-bottom: 1.8rem;
-            letter-spacing: 2px;
+            font-size: 0.95rem;
+            margin-bottom: 1.4rem;
+            letter-spacing: 0.8px;
             font-weight: 600;
         }
 
         .hero {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
-            gap: 1.1rem;
-            margin-bottom: 1.8rem;
+            grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+            gap: 0.9rem;
+            margin-bottom: 1.4rem;
         }
 
         .stat-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.25rem 1rem;
+            border-radius: 10px;
+            padding: 1.1rem 0.95rem;
             text-align: center;
-            transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+            transition: border-color 0.2s, transform 0.2s;
         }
 
         .stat-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
-            border-color: var(--gold);
+            transform: translateY(-2px);
+            border-color: rgba(212, 168, 83, 0.5);
         }
 
         .stat-value {
-            font-family: var(--font-head);
-            font-size: 1.65rem;
+            font-family: var(--font-mono);
+            font-size: 1.4rem;
             font-weight: 800;
-            background: var(--accent-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 0.35rem;
+            color: #ffffff;
+            margin-bottom: 0.3rem;
         }
 
         .stat-label {
-            font-size: 0.78rem;
+            font-size: 0.72rem;
             color: var(--text-muted);
             text-transform: uppercase;
-            letter-spacing: 0.8px;
+            letter-spacing: 0.6px;
+            font-weight: 600;
         }
 
         .countdown-banner {
-            background: linear-gradient(135deg, rgba(240,185,11,0.10), rgba(244,114,182,0.07));
-            border: 1px solid rgba(240,185,11,0.38);
-            border-radius: 14px;
-            padding: 18px 20px;
+            background: #10151f;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px 18px;
             margin-top: 0.5rem;
+            margin-bottom: 1rem;
         }
 
         .countdown-banner-header {
@@ -375,48 +578,51 @@
             align-items: center;
             gap: 8px;
             margin-bottom: 12px;
-            font-size: 0.75rem;
-            font-weight: 800;
-            color: var(--amber);
-            letter-spacing: 1px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
         }
 
         .badge-pill-gold {
-            background: rgba(240,185,11,0.18);
-            border: 1px solid var(--amber);
-            color: #fde68a;
+            background: rgba(212, 168, 83, 0.12);
+            border: 1px solid rgba(212, 168, 83, 0.35);
+            color: var(--gold);
             padding: 3px 10px;
-            border-radius: 999px;
-            font-size: 0.7rem;
+            border-radius: 6px;
+            font-size: 0.68rem;
+            font-weight: 700;
         }
 
         .countdown-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 12px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 10px;
         }
 
         .countdown-card {
             background: var(--bg-surface);
             border: 1px solid var(--border);
-            border-top: 3px solid var(--gold);
-            border-radius: 10px;
+            border-radius: 9px;
             padding: 12px 14px;
-            text-align: center;
+            text-align: left;
         }
 
         .cd-label {
-            font-size: 0.72rem;
-            font-weight: 800;
+            font-size: 0.68rem;
+            font-weight: 700;
+            color: var(--text-muted);
             letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
 
         .cd-timer {
-            font-family: 'Orbitron', monospace;
-            font-size: 1.2rem;
+            font-family: var(--font-mono);
+            font-size: 1.12rem;
             font-weight: 800;
             color: #ffffff;
-            margin: 6px 0;
+            margin: 5px 0 3px 0;
         }
 
         .cd-sub {
@@ -426,32 +632,27 @@
 
         /* Floor Plan */
         .floor-plan-img {
-            max-height: 75vh;
+            max-height: 72vh;
             width: auto;
             max-width: 100%;
-            border-radius: 12px;
+            border-radius: 10px;
             border: 1px solid var(--border);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.65);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.5);
             display: block;
-            margin: 0 auto 2rem auto;
-            transition: transform 0.3s;
-        }
-        .floor-plan-img:hover {
-            transform: scale(1.015);
-            border-color: var(--gold);
+            margin: 0 auto 1.5rem auto;
         }
 
         .plan-tab {
-            padding: 8px 14px;
+            padding: 7px 13px;
             background: var(--bg-card);
             border: 1px solid var(--border);
             color: var(--text-muted);
             font-family: var(--font-body);
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             font-weight: 600;
-            border-radius: 8px;
+            border-radius: 7px;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: all 0.15s;
         }
         .plan-tab:hover {
             border-color: var(--gold);
@@ -459,7 +660,7 @@
         }
         .plan-tab.active {
             background: var(--gold);
-            color: #07090e;
+            color: #080a0f;
             border-color: var(--gold);
             font-weight: 700;
         }
@@ -468,47 +669,46 @@
         .room-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 12px;
-            margin-bottom: 1.25rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
             overflow: hidden;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.28);
         }
 
         .room-header {
-            padding: 1.15rem 1.4rem;
+            padding: 1rem 1.25rem;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(255,255,255,0.02);
-            transition: background 0.25s;
+            background: rgba(255,255,255,0.015);
+            transition: background 0.2s;
         }
 
         .room-header:hover {
-            background: rgba(255,255,255,0.05);
+            background: rgba(255,255,255,0.04);
         }
 
         .room-title {
-            font-family: var(--font-head);
-            font-size: 0.98rem;
-            color: var(--amber);
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: #ffffff;
         }
 
         .room-subtotal {
             font-weight: 700;
-            color: var(--text-main);
-            font-size: 0.9rem;
+            color: var(--gold);
+            font-size: 0.86rem;
         }
 
         .room-content {
-            padding: 0 1.4rem;
+            padding: 0 1.25rem;
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.4s ease-out, padding 0.4s ease;
+            transition: max-height 0.35s ease-out, padding 0.35s ease;
         }
 
         .room-content.open {
-            padding: 1.3rem 1.4rem;
+            padding: 1.15rem 1.25rem;
             max-height: 6000px;
             overflow: auto;
         }
@@ -517,51 +717,50 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 1rem;
-            font-size: 0.84rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.82rem;
         }
 
         th, td {
-            padding: 0.75rem 0.85rem;
+            padding: 0.7rem 0.85rem;
             text-align: left;
             border-bottom: 1px solid var(--border);
         }
 
         th {
-            font-family: var(--font-head);
-            font-size: 0.75rem;
-            color: var(--gold);
+            font-size: 0.72rem;
+            color: var(--text-muted);
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.8px;
-            background: rgba(0,0,0,0.35);
+            letter-spacing: 0.6px;
+            background: rgba(0,0,0,0.28);
             position: sticky;
             top: 0;
         }
 
         tr:hover td {
-            background: rgba(255,255,255,0.025);
+            background: rgba(255,255,255,0.02);
         }
 
         a {
             color: var(--gold);
             text-decoration: none;
-            transition: color 0.2s;
+            transition: color 0.15s;
         }
 
         a:hover {
-            color: var(--amber);
+            color: #f3f4f6;
             text-decoration: underline;
         }
 
         .btn-link {
             display: inline-block;
-            background: rgba(212, 168, 83, 0.14);
-            border: 1px solid var(--gold);
+            background: rgba(212, 168, 83, 0.12);
+            border: 1px solid rgba(212, 168, 83, 0.35);
             color: var(--gold);
-            padding: 0.28rem 0.65rem;
+            padding: 0.25rem 0.6rem;
             border-radius: 6px;
-            font-size: 0.78rem;
+            font-size: 0.75rem;
             font-weight: 600;
             text-decoration: none;
             white-space: nowrap;
@@ -576,92 +775,82 @@
         /* Grid Cards */
         .grid-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-            gap: 1.25rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.1rem;
         }
 
         .item-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.35rem;
+            border-radius: 10px;
+            padding: 1.25rem;
             position: relative;
-            transition: border-color 0.25s, transform 0.25s;
+            transition: border-color 0.2s;
         }
 
         .item-card:hover {
-            border-color: rgba(212, 168, 83, 0.55);
+            border-color: rgba(212, 168, 83, 0.45);
         }
 
         .item-card h4 {
-            font-family: var(--font-head);
-            color: var(--gold);
-            margin-bottom: 0.5rem;
-            font-size: 0.98rem;
+            color: #ffffff;
+            margin-bottom: 0.45rem;
+            font-size: 0.94rem;
+            font-weight: 700;
         }
 
         .item-card .price {
-            font-family: var(--font-head);
-            font-size: 1.15rem;
-            color: var(--text-main);
-            margin: 0.8rem 0;
+            font-family: var(--font-mono);
+            font-size: 1.08rem;
+            color: var(--gold);
+            margin: 0.7rem 0;
             font-weight: 700;
         }
 
         .badge {
             position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: var(--accent-gradient);
-            color: var(--bg-base);
-            padding: 0.2rem 0.6rem;
-            border-radius: 999px;
-            font-size: 0.7rem;
-            font-weight: 800;
-            font-family: var(--font-head);
+            top: 0.9rem;
+            right: 0.9rem;
+            background: rgba(212, 168, 83, 0.15);
+            border: 1px solid rgba(212, 168, 83, 0.4);
+            color: var(--gold);
+            padding: 0.18rem 0.55rem;
+            border-radius: 6px;
+            font-size: 0.68rem;
+            font-weight: 700;
         }
 
-        /* OPEX Donut */
+        /* OPEX Donut & Legend */
+        .chart-container,
         .opex-container {
             display: flex;
             flex-wrap: wrap;
             gap: 2.5rem;
             align-items: center;
-        }
-
-        .donut-chart-container {
-            flex: 1;
-            min-width: 280px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            background: var(--bg-card);
+            padding: 1.75rem 2rem;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
         }
 
         .donut-chart {
-            width: 240px;
-            height: 240px;
+            width: 210px;
+            height: 210px;
             border-radius: 50%;
-            background: conic-gradient(
-                #4CAF50 0% 36.4%,
-                #FF9800 36.4% 49.3%,
-                #F44336 49.3% 76.5%,
-                #9C27B0 76.5% 84.4%,
-                #2196F3 84.4% 89.8%,
-                #00BCD4 89.8% 95.3%,
-                #E91E63 95.3% 98.0%,
-                #607D8B 98.0% 100%
-            );
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 0 24px rgba(0,0,0,0.5);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+            flex-shrink: 0;
         }
 
+        .donut-inner,
         .donut-hole {
-            width: 155px;
-            height: 155px;
-            background-color: var(--bg-base);
+            width: 146px;
+            height: 146px;
+            background-color: var(--bg-card);
             border-radius: 50%;
             display: flex;
             flex-direction: column;
@@ -671,29 +860,55 @@
             padding: 10px;
         }
 
-        .opex-table-container {
-            flex: 2;
-            min-width: 320px;
+        .donut-inner span {
+            font-family: var(--font-mono);
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--text-main);
+            line-height: 1.3;
+        }
+
+        .chart-legend {
+            list-style: none;
+            flex: 1;
+            min-width: 260px;
+        }
+
+        .chart-legend li {
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            font-size: 0.85rem;
+            color: var(--text-main);
+        }
+
+        .legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+            flex-shrink: 0;
         }
 
         /* Tabs for 168h Matrix */
         .tabs {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.2rem;
+            gap: 0.45rem;
+            margin-bottom: 1.1rem;
         }
 
         .tab-btn {
             background: var(--bg-card);
             border: 1px solid var(--border);
             color: var(--text-muted);
-            padding: 0.7rem 1.2rem;
+            padding: 0.55rem 1rem;
             cursor: pointer;
-            font-family: var(--font-head);
+            font-family: var(--font-body);
             font-size: 0.78rem;
-            border-radius: 8px;
-            transition: all 0.25s;
+            font-weight: 600;
+            border-radius: 7px;
+            transition: all 0.15s;
         }
 
         .tab-btn.active, .tab-btn:hover {
@@ -704,7 +919,7 @@
 
         .tab-content {
             display: none;
-            animation: fadeIn 0.35s;
+            animation: fadeIn 0.25s;
         }
 
         .tab-content.active {
@@ -712,30 +927,30 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(6px); }
+            from { opacity: 0; transform: translateY(4px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         #back-to-top {
             position: fixed;
-            bottom: 2rem;
-            right: 2rem;
+            bottom: 1.75rem;
+            right: 1.75rem;
             background: var(--bg-card);
-            border: 1px solid var(--gold);
+            border: 1px solid var(--border);
             color: var(--gold);
-            width: 46px;
-            height: 46px;
-            border-radius: 50%;
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
             display: flex;
             justify-content: center;
             align-items: center;
             text-decoration: none;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             opacity: 0;
             pointer-events: none;
-            transition: all 0.3s;
+            transition: all 0.2s;
             z-index: 999;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.45);
         }
 
         #back-to-top.visible {
@@ -744,44 +959,30 @@
         }
 
         #back-to-top:hover {
-            background: var(--gold);
-            color: var(--bg-base);
+            border-color: var(--gold);
+            background: #171e2b;
+            text-decoration: none;
         }
 
-        .mobile-toggle {
-            display: none;
-            position: fixed;
-            top: 0.85rem;
-            left: 0.85rem;
-            z-index: 1001;
-            background: var(--bg-card);
-            border: 1px solid var(--gold);
-            color: var(--gold);
-            padding: 0.45rem 0.75rem;
-            border-radius: 6px;
-            cursor: pointer;
-            font-family: var(--font-head);
-            font-size: 0.78rem;
-        }
-
-        @media (max-width: 1024px) {
+        @media (max-width: 1180px) {
             .sidebar {
                 transform: translateX(-100%);
             }
-            .sidebar.open {
+            body.sidebar-open .sidebar {
                 transform: translateX(0);
+                box-shadow: 20px 0 50px rgba(0,0,0,0.75);
             }
             .main-content {
                 margin-left: 0;
                 width: 100%;
-                padding: 0 1.4rem 3rem 1.4rem;
+                padding: 0 1.25rem 3rem 1.25rem;
             }
             .top-command-bar {
-                margin: 0 -1.4rem 1.5rem -1.4rem;
-                padding: 0.7rem 1.4rem 0.7rem 5.5rem;
+                margin: 0 -1.25rem 1.5rem -1.25rem;
+                padding: 0 1rem;
             }
-            .mobile-toggle {
-                display: block;
+            .external-dossiers {
+                display: none;
             }
         }
     </style>
@@ -790,88 +991,102 @@
 
     <div id="progress-bar"></div>
 
-    <button class="mobile-toggle" onclick="toggleSidebar()">☰ IMPERIO</button>
-
-    <!-- ==================== GROUPED PROFESSIONAL SIDEBAR ==================== -->
+    <!-- ==================== EXECUTIVE SIDEBAR ==================== -->
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-header">
-            <h1>👑 ATLAS DEL IMPERIO</h1>
-            <span class="sidebar-sub">帝国の地図 • Bruno &amp; あやめ (6-0 → O-3)</span>
+            <div class="sidebar-brand">
+                <div class="sidebar-crest">👑</div>
+                <div>
+                    <h1>ATLAS IMPERIO</h1>
+                    <span class="sidebar-sub">Bruno &amp; あやめ • 2027–2029+</span>
+                </div>
+            </div>
         </div>
+
         <ul class="nav-links">
-            <div class="nav-group-label">I. Mando Central &amp; Finanzas</div>
-            <li><a href="#hero">👑 Panel Ejecutivo &amp; Reloj JST</a></li>
-            <li><a href="#opex">💴 Presupuesto Mensual (OPEX)</a></li>
-            <li><a href="#capex">🛋️ Capital &amp; Muebles (CAPEX)</a></li>
+            <div class="nav-group-label">01 · Mando Central &amp; Finanzas</div>
+            <li><a href="#hero"><span class="nav-num">1.1</span> Panel Ejecutivo &amp; Reloj JST</a></li>
+            <li><a href="#opex"><span class="nav-num">1.2</span> Presupuesto Mensual (OPEX)</a></li>
+            <li><a href="#capex"><span class="nav-num">1.3</span> Capital &amp; Muebles (CAPEX)</a></li>
 
-            <div class="nav-group-label">II. Nuestro Hogar, Moto &amp; 168H</div>
-            <li><a href="#floor-plan">🏡 Hogar 2LDK con あやめ</a></li>
-            <li><a href="#motorcycle">🏍️ Honda CBR (Regla Conbini)</a></li>
-            <li><a href="#japanese">🇯🇵 Clases de Japonés 1-a-1</a></li>
-            <li><a href="#matrix">⏱️ Matriz Semanal 168 Horas</a></li>
+            <div class="nav-group-label">02 · Nuestro Hogar, Moto &amp; 168H</div>
+            <li><a href="#floor-plan"><span class="nav-num">2.1</span> Hogar 2LDK con あやめ</a></li>
+            <li><a href="#motorcycle"><span class="nav-num">2.2</span> Honda CBR (Regla Conbini)</a></li>
+            <li><a href="#japanese"><span class="nav-num">2.3</span> Clases de Japonés 1-a-1</a></li>
+            <li><a href="#matrix"><span class="nav-num">2.4</span> Matriz Semanal 168 Horas</a></li>
 
-            <div class="nav-group-label" style="color:#f472b6;">III. Universo あやめ &amp; Citas</div>
-            <li><a href="#ayame-protocol" style="color:#f9a8d4;">🌸 Protocolo Clínico &amp; 22:30</a></li>
-            <li><a href="#ayame-radar" style="color:#7dd3fc;">🛰️ API Radar Ikebukuro &amp; Japón</a></li>
-            <li><a href="#ayame-24-expediciones" style="color:#fde68a;">🗾 24 Expediciones (8 Regiones)</a></li>
-            <li><a href="#ayame-dates" style="color:#f472b6;">💕 384 Citas Semanales (2 Años)</a></li>
+            <div class="nav-group-label">03 · Universo あやめ &amp; Citas</div>
+            <li><a href="#ayame-protocol"><span class="nav-num">3.1</span> Protocolo Clínico &amp; 22:30</a></li>
+            <li><a href="#ayame-radar"><span class="nav-num">3.2</span> API Radar Ikebukuro &amp; Japón</a></li>
+            <li><a href="#ayame-24-expediciones"><span class="nav-num">3.3</span> 24 Expediciones (8 Regiones)</a></li>
+            <li><a href="#ayame-dates"><span class="nav-num">3.4</span> 384 Citas Semanales (2 Años)</a></li>
 
-            <div class="nav-group-label" style="color:#f0b90b;">IV. Campaña MMA 6-0 &amp; Show</div>
-            <li><a href="#mma-6-0-roadmap" style="color:#fcd34d;">🥊 Ruta Invicta 6-0 &amp; Doble Llave</a></li>
-            <li><a href="#walkout-godzilla-mothra" style="color:#fb923c;">🦖🦋 Entrada Godzilla &amp; Mothra</a></li>
-            <li><a href="#dojos">🦅 Fighter's Flow + Hayato Suzuki</a></li>
-            <li><a href="#combat">🥊 Equipo YOKKAO &amp; Venum Pro</a></li>
+            <div class="nav-group-label">04 · Campaña MMA 6-0 &amp; Show</div>
+            <li><a href="#mma-6-0-roadmap"><span class="nav-num">4.1</span> Ruta Invicta 6-0 &amp; Doble Llave</a></li>
+            <li><a href="#walkout-godzilla-mothra"><span class="nav-num">4.2</span> Entrada Godzilla &amp; Mothra</a></li>
+            <li><a href="#dojos"><span class="nav-num">4.3</span> Fighter's Flow + Hayato Suzuki</a></li>
+            <li><a href="#combat"><span class="nav-num">4.4</span> Equipo YOKKAO &amp; Venum Pro</a></li>
 
-            <div class="nav-group-label" style="color:#4ade80;">V. Biología Carnívora &amp; Extremis</div>
-            <li><a href="#restaurants">🥩 Carnicerías 24h &amp; Steaks</a></li>
-            <li><a href="#supplements">💊 Suplementos &amp; Articulaciones</a></li>
-            <li><a href="#extremis">🧬 Proyecto Extremis (Seúl)</a></li>
+            <div class="nav-group-label">05 · Biología Carnívora &amp; Seúl</div>
+            <li><a href="#restaurants"><span class="nav-num">5.1</span> Carnicerías 24h &amp; Steaks</a></li>
+            <li><a href="#supplements"><span class="nav-num">5.2</span> Suplementos &amp; Articulaciones</a></li>
+            <li><a href="#extremis"><span class="nav-num">5.3</span> Proyecto Extremis (Seúl)</a></li>
 
-            <div class="nav-group-label" style="color:#38bdf8;">VI. Futuro Capitán O-3 Okinawa</div>
-            <li><a href="#okinawa-captain" style="color:#60a5fa;">✈️🌺 Kadena O-3 &amp; Casa Kanagawa</a></li>
-
-            <div class="nav-group-label">Dossiers Especializados</div>
-            <li><a href="plan/" style="color:#22c55e;font-weight:700;">🇹🇭 Plan Maestro Tailandia/Seúl ↗</a></li>
-            <li><a href="campamento/" style="color:#f59e0b;font-weight:700;">🥊 Dossier de Campamento ↗</a></li>
-            <li><a href="guardarropa/" style="color:#ef4444;font-weight:700;">👕 Guardarropa Imperio ↗</a></li>
+            <div class="nav-group-label">06 · Futuro Capitán O-3 Okinawa</div>
+            <li><a href="#okinawa-captain"><span class="nav-num">6.1</span> Kadena O-3 &amp; Casa Kanagawa</a></li>
         </ul>
+
+        <div class="sidebar-footer">
+            <div class="sidebar-footer-title">Dossiers Complementarios</div>
+            <div class="sidebar-ext-grid">
+                <a href="plan/" class="sidebar-ext-btn">🇹🇭 Plan</a>
+                <a href="campamento/" class="sidebar-ext-btn">🥊 Camp</a>
+                <a href="guardarropa/" class="sidebar-ext-btn">👕 Ropa</a>
+            </div>
+        </div>
     </aside>
 
     <!-- ==================== MAIN CONTENT ==================== -->
     <main class="main-content">
 
-        <!-- STICKY TOP COMMAND BAR -->
-        <div class="top-command-bar">
-            <div class="domain-pills-nav">
-                <a href="#domain-1" class="domain-pill">👑 I. Mando &amp; Finanzas</a>
-                <a href="#domain-2" class="domain-pill">🏡 II. Hogar, CBR &amp; 168H</a>
-                <a href="#domain-3" class="domain-pill" style="border-color:rgba(244,114,182,0.4); color:#f9a8d4;">🌸 III. Universo あやめ &amp; Citas</a>
-                <a href="#domain-4" class="domain-pill" style="border-color:rgba(240,185,11,0.4); color:#fde68a;">🥊 IV. MMA 6-0 &amp; Godzilla/Mothra</a>
-                <a href="#domain-5" class="domain-pill" style="border-color:rgba(74,222,128,0.4); color:#86efac;">🥩 V. Dieta Carnívora &amp; Extremis</a>
-                <a href="#domain-6" class="domain-pill" style="border-color:rgba(56,189,248,0.4); color:#7dd3fc;">✈️ VI. Capitán Okinawa O-3</a>
+        <!-- SINGLE-ROW STICKY TOP COMMAND BAR (ZERO OVERLAP) -->
+        <header class="top-command-bar">
+            <div class="topbar-left">
+                <button class="sidebar-toggle-btn" onclick="toggleSidebar()" title="Mostrar / Ocultar Índice Lateral">
+                    <span>☰</span>
+                    <span>Índice</span>
+                </button>
+
+                <nav class="domain-pills-nav" aria-label="Pilares del Imperio">
+                    <a href="#domain-1" class="domain-pill active"><span class="pill-num">I</span> Finanzas &amp; Reloj</a>
+                    <a href="#domain-2" class="domain-pill"><span class="pill-num">II</span> Hogar &amp; 168H</a>
+                    <a href="#domain-3" class="domain-pill"><span class="pill-num">III</span> あやめ &amp; Citas</a>
+                    <a href="#domain-4" class="domain-pill"><span class="pill-num">IV</span> MMA 6-0</a>
+                    <a href="#domain-5" class="domain-pill"><span class="pill-num">V</span> Carnívoro &amp; Seúl</a>
+                    <a href="#domain-6" class="domain-pill"><span class="pill-num">VI</span> Okinawa O-3</a>
+                </nav>
             </div>
+
             <div class="external-dossiers">
-                <a href="plan/" class="btn-link" style="border-color:#22c55e; color:#4ade80;">🇹🇭 Plan Maestro</a>
-                <a href="campamento/" class="btn-link" style="border-color:#f59e0b; color:#fbbf24;">🥊 Campamento</a>
-                <a href="guardarropa/" class="btn-link" style="border-color:#ef4444; color:#f87171;">👕 Guardarropa</a>
+                <a href="plan/" class="dossier-chip">🇹🇭 Plan Maestro ↗</a>
+                <a href="campamento/" class="dossier-chip">🥊 Campamento ↗</a>
+                <a href="guardarropa/" class="dossier-chip">👕 Guardarropa ↗</a>
             </div>
-        </div>
+        </header>
 
         <!-- =====================================================================
              PILAR I: MANDO CENTRAL, RELOJ TÁCTICO & FINANZAS DEL IMPERIO
              ===================================================================== -->
-        <div id="domain-1" class="domain-banner" data-kanji="統括" style="border-left: 5px solid var(--gold);">
-            <span class="domain-eyebrow" style="background:rgba(212,168,83,0.16); color:var(--gold); border:1px solid rgba(212,168,83,0.4);">
-                PILAR I • MANDO CENTRAL, CRONÓMETRO JAPÓN &amp; ARQUITECTURA FINANCIERA
-            </span>
-            <h2>👑 I. Centro de Mando Ejecutivo, OPEX Mensual &amp; CAPEX Funcional</h2>
+        <div id="domain-1" class="domain-banner" data-kanji="統括">
+            <span class="domain-eyebrow">PILAR 01 / 06 • MANDO CENTRAL, CRONÓMETRO JAPÓN &amp; ARQUITECTURA FINANCIERA</span>
+            <h2>I. Centro de Mando Ejecutivo, OPEX Mensual &amp; CAPEX Funcional</h2>
             <p>
                 Resumen estratégico de tu Imperio en Tokio, relojes regresivos en tiempo real (JST) hacia cada hito clave y presupuestos 100% reales conectados en vivo a la API de divisas (<code>USD / JPY / KRW / THB</code>).
             </p>
             <div class="domain-sublinks">
-                <a href="#hero">📊 KPIs &amp; Reloj Táctico JST</a>
-                <a href="#opex">💴 Presupuesto Mensual (OPEX)</a>
-                <a href="#capex">🛋️ Equipamiento por Cuarto (CAPEX)</a>
+                <a href="#hero">1.1 KPIs &amp; Reloj Táctico JST</a>
+                <a href="#opex">1.2 Presupuesto Mensual (OPEX)</a>
+                <a href="#capex">1.3 Equipamiento por Cuarto (CAPEX)</a>
             </div>
         </div>
 
@@ -905,35 +1120,40 @@
                 </div>
             </div>
         
+            
+            
             <!-- RELOJ TÁCTICO EN TIEMPO REAL (SINCRONIZADO CON HORA DE JAPÓN JST) -->
             <div class="countdown-banner">
               <div class="countdown-banner-header">
-                <span>⏱️ RELOJ TÁCTICO EN TIEMPO REAL • SINCRONIZADO CON HORA DE JAPÓN (JST)</span>
-                <span class="badge-pill-gold">OBJETIVO INVICTO 6-0 (77 KG) → CAPITÁN O-3 OKINAWA</span>
+                <span>⏱️ CRONÓMETRO TÁCTICO EN TIEMPO REAL • HUSO HORARIO DE JAPÓN (JST / UTC+9)</span>
+                <span class="badge-pill-gold">CAMPAÑA INVICTA 6-0 (77 KG) → CAPITÁN O-3 OKINAWA</span>
               </div>
               <div id="imperio-live-countdowns" class="countdown-grid">
-                <div class="countdown-card" style="border-top-color:#d29922;">
-                  <div class="cd-label" style="color:#fbbf24;">🗾 INICIO OPERACIÓN JAPÓN (OCT 2027)</div>
+                <div class="countdown-card">
+                  <div class="cd-label">01 · OPERACIÓN JAPÓN (OCT 2027)</div>
                   <div id="cd-oct-2027" class="cd-timer">--d --h --m --s</div>
                   <div class="cd-sub">Expedición #1: Ginza Kimono &amp; Base Tokio</div>
                 </div>
-                <div class="countdown-card" style="border-top-color:#3fb950;">
-                  <div class="cd-label" style="color:#4ade80;">🥊 PELEA #1 DEBUT 77 KG (ABR 2028)</div>
+                <div class="countdown-card">
+                  <div class="cd-label">02 · PELEA #1 DEBUT 77 KG (ABR 2028)</div>
                   <div id="cd-apr-2028" class="cd-timer">--d --h --m --s</div>
                   <div class="cd-sub">KROSS×OVER / JMMAF • Inicio del 6-0</div>
                 </div>
-                <div class="countdown-card" style="border-top-color:#f0b90b;">
-                  <div class="cd-label" style="color:#f0b90b;">🦖🦋 6ª PELEA: GODZILLA &amp; MOTHRA (SEP 2029)</div>
-                  <div id="cd-sep-2029" class="cd-timer" style="color:#f0b90b;">--d --h --m --s</div>
+                <div class="countdown-card">
+                  <div class="cd-label">03 · 6ª PELEA: GODZILLA &amp; MOTHRA (SEP 2029)</div>
+                  <div id="cd-sep-2029" class="cd-timer" style="color:var(--gold);">--d --h --m --s</div>
                   <div class="cd-sub">Retiro Invicto 6-0 + Helicóptero Privado</div>
                 </div>
-                <div class="countdown-card" style="border-top-color:#58a6ff;">
-                  <div class="cd-label" style="color:#60a5fa;">✈️🌺 FASE CAPITÁN O-3 OKINAWA (OCT 2029)</div>
-                  <div id="cd-oct-2029" class="cd-timer" style="color:#60a5fa;">--d --h --m --s</div>
+                <div class="countdown-card">
+                  <div class="cd-label">04 · FASE CAPITÁN O-3 OKINAWA (OCT 2029)</div>
+                  <div id="cd-oct-2029" class="cd-timer">--d --h --m --s</div>
                   <div class="cd-sub">Kadena Air Base + Hogar Frente al Mar con あやめ</div>
                 </div>
               </div>
             </div>
+
+            <!-- ANCLAJE DEDICADO PARA EL MOTOR DE DIVISAS EN VIVO (USD / JPY / KRW / THB) -->
+            <div id="live-fx-anchor"></div>
     
         </section>
 
@@ -1206,19 +1426,17 @@
         <!-- =====================================================================
              PILAR II: NUESTRO HOGAR COMPARTIDO, MOVILIDAD & AGENDA 168H
              ===================================================================== -->
-        <div id="domain-2" class="domain-banner" data-kanji="日常" style="border-left: 5px solid #a78bfa;">
-            <span class="domain-eyebrow" style="background:rgba(167,139,250,0.16); color:#c4b5fd; border:1px solid rgba(167,139,250,0.4);">
-                PILAR II • CONVIVENCIA CON あやめ, REGLA DEL CONBINI (HONDA CBR) &amp; MATRIZ 168H
-            </span>
-            <h2>🏡 II. Nuestro Hogar Compartido, Movilidad Táctica &amp; Horario 168 Horas</h2>
+        <div id="domain-2" class="domain-banner" data-kanji="日常">
+            <span class="domain-eyebrow">PILAR 02 / 06 • CONVIVENCIA CON あやめ, REGLA DEL CONBINI (HONDA CBR) &amp; MATRIZ 168H</span>
+            <h2>II. Nuestro Hogar Compartido, Movilidad Táctica &amp; Horario 168 Horas</h2>
             <p>
                 Distribución arquitectónica del departamento 2LDK donde vives con <strong>あやめ</strong>, nuestros <strong>2 gatitos y 2 chinchillas</strong>, tu traslado diario en <strong>Honda CBR</strong> sin depender del tren, clases de japonés y la matriz de 168 horas semanales que protege su sueño sagrado a las <strong>22:30 hrs</strong>.
             </p>
             <div class="domain-sublinks">
-                <a href="#floor-plan">📐 Plano 2LDK (Cuarto あやめ + Cuarto Bruno)</a>
-                <a href="#motorcycle">🏍️ Moto Honda CBR &amp; Tiempos</a>
-                <a href="#japanese">🇯🇵 Clases de Japonés</a>
-                <a href="#matrix">🗓️ Matriz 168H (Lunes a Domingo)</a>
+                <a href="#floor-plan">2.1 Plano 2LDK (Cuarto あやめ + Cuarto Bruno)</a>
+                <a href="#motorcycle">2.2 Moto Honda CBR &amp; Tiempos</a>
+                <a href="#japanese">2.3 Clases de Japonés</a>
+                <a href="#matrix">2.4 Matriz 168H (Lunes a Domingo)</a>
             </div>
         </div>
 
@@ -1470,19 +1688,17 @@
         <!-- =====================================================================
              PILAR III: UNIVERSO あやめ — BIENESTAR, RADAR API, 24 EXPEDICIONES & 384 CITAS
              ===================================================================== -->
-        <div id="domain-3" class="domain-banner" data-kanji="愛姫" style="border-left: 5px solid var(--sakura);">
-            <span class="domain-eyebrow" style="background:rgba(244,114,182,0.16); color:#f9a8d4; border:1px solid rgba(244,114,182,0.45);">
-                PILAR III • SANTUARIO DE BIENESTAR, API EN VIVO DE IKEBUKURO/JAPÓN &amp; CALENDARIO DE 2 AÑOS
-            </span>
-            <h2>🌸 III. Universo あやめ: Salud Mental, Radar API en Vivo, 24 Expediciones &amp; 384 Citas</h2>
+        <div id="domain-3" class="domain-banner" data-kanji="愛姫">
+            <span class="domain-eyebrow">PILAR 03 / 06 • SANTUARIO DE BIENESTAR, API EN VIVO DE IKEBUKURO/JAPÓN &amp; CALENDARIO DE 2 AÑOS</span>
+            <h2>III. Universo あやめ: Salud Mental, Radar API en Vivo, 24 Expediciones &amp; 384 Citas</h2>
             <p>
                 Todo lo diseñado para cuidar y hacer feliz a <strong>あやめ</strong> en un solo lugar: su seguimiento clínico en Kanda (Dra. Nishimatsu + <em>haco</em>), el <strong>Radar API en vivo de Ikebukuro y Japón</strong>, el <strong>Mapa de Conquista de las 24 Expediciones Nacionales</strong> y las <strong>384 Citas Semanales Únicas</strong> regresando siempre juntos a nuestro hogar.
             </p>
             <div class="domain-sublinks">
-                <a href="#ayame-protocol">🩺 Protocolo Clínico &amp; Regla 22:30</a>
-                <a href="#ayame-radar">🛰️ API Radar Ikebukuro &amp; Japón</a>
-                <a href="#ayame-24-expediciones">🗾 24 Expediciones (8 Regiones)</a>
-                <a href="#ayame-dates">💕 384 Citas Semanales (96 Semanas)</a>
+                <a href="#ayame-protocol">3.1 Protocolo Clínico &amp; Regla 22:30</a>
+                <a href="#ayame-radar">3.2 API Radar Ikebukuro &amp; Japón</a>
+                <a href="#ayame-24-expediciones">3.3 24 Expediciones (8 Regiones)</a>
+                <a href="#ayame-dates">3.4 384 Citas Semanales (96 Semanas)</a>
             </div>
         </div>
 
@@ -1564,7 +1780,7 @@
             <div id="ayame-radar-container"></div>
         </section>
 
-        <section id="ayame-24-expediciones">
+<section id="ayame-24-expediciones">
             <h2 class="section-title">🗾 Mapa Nacional: Las 24 Expediciones Mensuales con あやめ (Oct 2027 – Sep 2029) / 全国24遠征マップ</h2>
             <p style="color:var(--text-muted); margin-bottom:1.2rem;">
                 Recorrido táctico por más de <strong>30 prefecturas en las 8 regiones de Japón</strong> junto a <strong>あやめ</strong> (1 gran expedición por cada mes durante 2 años), sincronizado con el <strong>Sistema Semáforo de tus 6 Peleas</strong> para que jamás choque con tu corte a 77 kg ni con su descanso sagrado de las <strong>22:30 hrs</strong>.
@@ -1873,23 +2089,21 @@
         <!-- =====================================================================
              PILAR IV: CAMPAÑA MMA INVICTA (6-0), DOJO & ENTRADA «GODZILLA & MOTHRA»
              ===================================================================== -->
-        <div id="domain-4" class="domain-banner" data-kanji="無敗" style="border-left: 5px solid var(--crimson);">
-            <span class="domain-eyebrow" style="background:rgba(248,81,73,0.16); color:#fca5a5; border:1px solid rgba(248,81,73,0.45);">
-                PILAR IV • CIRCUITO JAPONÉS 77 KG, CANDADO DOBLE LLAVE &amp; SHOW DE RETIRO 6-0
-            </span>
-            <h2>🥊 IV. Campaña MMA Invicta (6-0), Producción «Godzilla &amp; Mothra» &amp; Arsenal</h2>
+        <div id="domain-4" class="domain-banner" data-kanji="無敗">
+            <span class="domain-eyebrow">PILAR 04 / 06 • CIRCUITO JAPONÉS 77 KG, CANDADO DOBLE LLAVE &amp; SHOW DE RETIRO 6-0</span>
+            <h2>IV. Campaña MMA Invicta (6-0), Producción «Godzilla &amp; Mothra» &amp; Arsenal</h2>
             <p>
                 Tu carrera competitiva completa en Japón: las <strong>6 peleas hacia el retiro invicto (6-0)</strong> protegidas por el candado de Doble Llave con <strong>あやめ</strong>, la producción escénica de 70 segundos (<strong>«Ginza 1954: Godzilla &amp; Mothra 1961»</strong> con el kimono de seda real), tu cuartel general en <strong>FIGHTER'S FLOW</strong> con Hayato Suzuki y tu equipo tricolor <strong>YOKKAO + Venum Pro Boxing</strong>.
             </p>
             <div class="domain-sublinks">
-                <a href="#mma-6-0-roadmap">🏆 Ruta Invicta 6-0 &amp; Doble Llave</a>
-                <a href="#walkout-godzilla-mothra">🦖🦋 Entrada Godzilla 1954 &amp; Kimono Mothra</a>
-                <a href="#dojos">🦅 Fighter's Flow + 1-a-1 Hayato Suzuki</a>
-                <a href="#combat">🥊 Shorts YOKKAO &amp; Guantes Venum Pro</a>
+                <a href="#mma-6-0-roadmap">4.1 Ruta Invicta 6-0 &amp; Doble Llave</a>
+                <a href="#walkout-godzilla-mothra">4.2 Entrada Godzilla 1954 &amp; Kimono Mothra</a>
+                <a href="#dojos">4.3 Fighter's Flow + 1-a-1 Hayato Suzuki</a>
+                <a href="#combat">4.4 Shorts YOKKAO &amp; Guantes Venum Pro</a>
             </div>
         </div>
 
-        <section id="mma-6-0-roadmap">
+<section id="mma-6-0-roadmap">
             <h2 class="section-title">🥊 Hoja de Ruta Competitiva: La Campaña Invicta (6-0 en 77 kg) &amp; Doble Llave / 6戦無敗計画</h2>
             <p style="color:var(--text-muted); margin-bottom:1.2rem;">
                 Estructura táctica diseñada para conquistar <strong>dos coronas de torneo sin obligación de defensa</strong> (<em>DEEP Future King</em> + <em>Campeonato KROSS×OVER / All-Japan</em> = <strong>Doble Campeón 二冠王</strong>) y cerrar con una única <strong>6ª Superpelea Profesional de Retiro</strong> bajo contrato individual (<em>Wan-Matchi Keiyaku</em> / ワンマッチ契約) con entrada teatral completa.
@@ -1964,7 +2178,7 @@
             </div>
         </section>
 
-        <section id="walkout-godzilla-mothra">
+<section id="walkout-godzilla-mothra">
             <h2 class="section-title">🦖🦋 Producción Escénica de la 6ª Pelea: «La Caída de Ginza 1954 &amp; El Vuelo de Mothra 1961» (70 Segundos) / 最終戦入場演出</h2>
             <p style="color:var(--text-muted); margin-bottom:1.2rem;">
                 Entrada relámpago de <strong>70 segundos</strong> diseñada para no enfriar el cuerpo antes del combate, sin infringir derechos de Toho (homenaje original sin logotipos registrados y rugido con ajuste de <em>pitch</em> para evitar bloqueos de Content ID en YouTube).
@@ -2284,18 +2498,16 @@
         <!-- =====================================================================
              PILAR V: BIOLOGÍA HIPER-CARNÍVORA, SUPLEMENTOS & PROYECTO EXTREMIS
              ===================================================================== -->
-        <div id="domain-5" class="domain-banner" data-kanji="肉体" style="border-left: 5px solid var(--emerald);">
-            <span class="domain-eyebrow" style="background:rgba(63,185,80,0.16); color:#86efac; border:1px solid rgba(63,185,80,0.45);">
-                PILAR V • DIETA DE FILETES PUROS (0 ALCOHOL 🚫🍺 / 0 MANGO 🚫🥭), SUPLEMENTOS &amp; CIRUGÍAS SEÚL
-            </span>
-            <h2>🥩 V. Nutrición Hiper-Carnívora, Suplementación &amp; Proyecto Extremis</h2>
+        <div id="domain-5" class="domain-banner" data-kanji="肉体">
+            <span class="domain-eyebrow">PILAR 05 / 06 • DIETA DE FILETES PUROS (0 ALCOHOL 🚫🍺 / 0 MANGO 🚫🥭), SUPLEMENTOS &amp; CIRUGÍAS SEÚL</span>
+            <h2>V. Nutrición Hiper-Carnívora, Suplementación &amp; Proyecto Extremis</h2>
             <p>
                 Tu motor biológico para mantener <strong>77 kg fibrosos de pelea</strong>: mapa de carnicerías mayoristas 24h y steakhouses a pasos de casa, protocolo de suplementación articular y el presupuesto médico real de <strong>Proyecto Extremis en Seúl</strong> (VBT/ASC espinal sin fusión, rinoplastia funcional + bichectomía, visión SMILE Pro / LASEK, dental y FUE).
             </p>
             <div class="domain-sublinks">
-                <a href="#restaurants">🥩 Carnicerías 24h &amp; Steakhouses</a>
-                <a href="#supplements">💊 Suplementos &amp; Recuperación</a>
-                <a href="#extremis">🧬 Proyecto Extremis (Seúl)</a>
+                <a href="#restaurants">5.1 Carnicerías 24h &amp; Steakhouses</a>
+                <a href="#supplements">5.2 Suplementos &amp; Recuperación</a>
+                <a href="#extremis">5.3 Proyecto Extremis (Seúl)</a>
             </div>
         </div>
 
@@ -2552,22 +2764,20 @@
         <!-- =====================================================================
              PILAR VI: FUTURO IMPERIAL — CAPITÁN O-3 EN OKINAWA & LEGADO FAMILIAR
              ===================================================================== -->
-        <div id="domain-6" class="domain-banner" data-kanji="沖縄" style="border-left: 5px solid var(--cyan);">
-            <span class="domain-eyebrow" style="background:rgba(56,189,248,0.16); color:#7dd3fc; border:1px solid rgba(56,189,248,0.45);">
-                PILAR VI • TRANSICIÓN POST-SEPTIEMBRE 2029: KADENA AIR BASE &amp; CASA BIFAMILIAR KANAGAWA
-            </span>
-            <h2>✈️🌺 VI. Operación Okinawa: Fase Capitán (O-3) junto a あやめ &amp; Legado Familiar</h2>
+        <div id="domain-6" class="domain-banner" data-kanji="沖縄">
+            <span class="domain-eyebrow">PILAR 06 / 06 • TRANSICIÓN POST-SEPTIEMBRE 2029: KADENA AIR BASE &amp; CASA BIFAMILIAR KANAGAWA</span>
+            <h2>VI. Operación Okinawa: Fase Capitán (O-3) junto a あやめ &amp; Legado Familiar</h2>
             <p>
                 La siguiente etapa tras retirarte invicto (<strong>6-0</strong>) en Tokio: tu servicio como Oficial Capitán en <strong>Kadena Air Base (Okinawa)</strong> viviendo frente al mar turquesa con <strong>あやめ</strong> y nuestros gatitos, y la consolidación de la casa de dos generaciones (<strong>二世帯住宅</strong>) para <strong>千秋-san</strong> en Kanagawa.
             </p>
             <div class="domain-sublinks">
-                <a href="#okinawa-captain">✈️🌺 Kadena Air Base (O-3) &amp; Casa Kanagawa</a>
+                <a href="#okinawa-captain">6.1 Kadena Air Base (O-3) &amp; Casa Kanagawa</a>
                 <a href="plan/">🇹🇭 Ver Plan Maestro de Viajes ↗</a>
                 <a href="campamento/">🥊 Ver Dossier de Campamento ↗</a>
             </div>
         </div>
 
-        <section id="okinawa-captain">
+<section id="okinawa-captain">
             <h2 class="section-title">✈️🌺 Operación Okinawa (Post-Septiembre 2029): Nueva Vida como Capitán (O-3) junto a あやめ &amp; Casa Kanagawa / 沖縄大尉フェーズ</h2>
             <p style="color:var(--text-muted); margin-bottom:1.2rem;">
                 Tras colgar los guantes invicto (<strong>6-0</strong>) y sin lesiones en septiembre de 2029, inicia tu servicio como <strong>Oficial Capitán (O-3) en Kadena Air Base (Okinawa)</strong>, brindándole a <strong>あやめ</strong> el entorno costero ideal dentro de su propio país junto a nuestros 2 gatitos y 2 chinchillas, mientras consolidan el patrimonio familiar para <strong>千秋-san</strong>.
@@ -2628,7 +2838,7 @@
             let current = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 130) {
+                if (pageYOffset >= sectionTop - 140) {
                     current = section.getAttribute('id');
                 }
             });
@@ -2640,10 +2850,27 @@
                     link.classList.add('active');
                 }
             });
+
+            // Highlight active Pillar in the top segmented bar
+            const domains = document.querySelectorAll('.domain-banner');
+            const domainPills = document.querySelectorAll('.domain-pill');
+            let currentDomain = 'domain-1';
+            domains.forEach(d => {
+                if (pageYOffset >= d.offsetTop - 160) {
+                    currentDomain = d.getAttribute('id');
+                }
+            });
+            domainPills.forEach(pill => {
+                pill.classList.toggle('active', pill.getAttribute('href') === '#' + currentDomain);
+            });
         });
 
         function toggleSidebar() {
-            document.getElementById('sidebar').classList.toggle('open');
+            if (window.innerWidth <= 1180) {
+                document.body.classList.toggle('sidebar-open');
+            } else {
+                document.body.classList.toggle('sidebar-collapsed');
+            }
         }
 
         function toggleRoom(element) {
@@ -2681,8 +2908,8 @@
             btn.classList.add('active');
         }
     </script>
-    <script src="assets/ayame-events-api.js?v=2"></script>
-    <script src="assets/citas-ayame.js?v=2"></script>
-    <script src="assets/live-prices.js?v=2"></script>
+    <script src="assets/ayame-events-api.js?v=3"></script>
+    <script src="assets/citas-ayame.js?v=3"></script>
+    <script src="assets/live-prices.js?v=3"></script>
 </body>
 </html>

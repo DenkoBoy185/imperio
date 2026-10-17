@@ -254,15 +254,20 @@
     if (!banner) {
       banner = document.createElement("div");
       banner.id = "imperio-live-banner";
-      const mainContainer =
-        document.querySelector("main.main-content") ||
-        document.querySelector(".max-w-6xl") ||
-        document.querySelector(".container") ||
-        document.body;
-      if (mainContainer === document.body) {
-        document.body.insertBefore(banner, document.body.firstChild);
+      const dedicatedAnchor = document.getElementById("live-fx-anchor");
+      if (dedicatedAnchor) {
+        dedicatedAnchor.appendChild(banner);
       } else {
-        mainContainer.insertBefore(banner, mainContainer.firstChild);
+        const mainContainer =
+          document.querySelector("main.main-content") ||
+          document.querySelector(".max-w-6xl") ||
+          document.querySelector(".container") ||
+          document.body;
+        if (mainContainer === document.body) {
+          document.body.insertBefore(banner, document.body.firstChild);
+        } else {
+          mainContainer.insertBefore(banner, mainContainer.firstChild);
+        }
       }
     }
 
