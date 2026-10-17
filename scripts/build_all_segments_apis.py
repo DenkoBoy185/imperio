@@ -1,0 +1,191 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Builds the Unified Multi-Segment API Feed (assets/imperio-segments-api.json)
+covering all 6 Master Pillars of the Imperio + Guardarropa V8 + Thailand Camp:
+  - Segment 1: Finanzas, Divisas, CAPEX por Cuarto & OPEX 10 Partidas
+  - Segment 2: Hogar Compartido, Telemetría Honda CBR, Santuario Mascotas & Matriz 168H JST
+  - Segment 3: Universo あやめ (Clínica NHI, Textil Godzilla/Mothra, Radar Ikebukuro & 47 Prefecturas)
+  - Segment 4: Campaña MMA Invicta 6-0 (77 kg), Doble Llave, Dojos & Arsenal YOKKAO/Venum
+  - Segment 5: Biología Hiper-Carnívora (Hanamasa/Mamma Mia) & Proyecto Extremis Seúl (KRW)
+  - Segment 6: Operación Okinawa Capitán (O-3 Kadena Air Base) & Casa Bifamiliar Kanagawa
+"""
+import json
+import urllib.request
+from datetime import datetime, timezone
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+ASSETS = ROOT / "assets"
+
+
+def fetch_fx():
+    rates = {"USD": 1.0, "JPY": 158.087, "KRW": 1342.741, "THB": 33.526}
+    try:
+        req = urllib.request.Request(
+            "https://open.er-api.com/v6/latest/USD",
+            headers={"User-Agent": "ImperioMultiSegmentAPI/4.0"},
+        )
+        with urllib.request.urlopen(req, timeout=8) as r:
+            data = json.loads(r.read().decode("utf-8"))
+            if "rates" in data:
+                for k in ("JPY", "KRW", "THB"):
+                    if k in data["rates"]:
+                        rates[k] = float(data["rates"][k])
+    except Exception:
+        pass
+    return rates
+
+
+def main():
+    fx = fetch_fx()
+    jpy_rate = fx["JPY"]
+    krw_rate = fx["KRW"]
+    thb_rate = fx["THB"]
+    now_iso = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+    segments_feed = {
+        "meta": {
+            "engine": "Imperio Enterprise Multi-Segment Telemetry API v4.0",
+            "updated_at_utc": now_iso,
+            "live_fx": fx,
+            "ref_fx": {"USD": 1.0, "JPY": 147.0, "KRW": 1380.0, "THB": 33.55},
+            "segments_count": 7,
+        },
+        "segment_1_finanzas": {
+            "id": "seg-1-finanzas",
+            "title": "API Segmento 01 · Telemetría Financiera, Divisas, OPEX & CAPEX",
+            "capital_total_usd": 360000,
+            "emergency_fund_usd": 48000,
+            "capex_rooms": [
+                {"id": "bruno_room", "name": "Cuarto Bruno (Setup Dev/Stream + Cama Nitori)", "items": 14, "jpy": 1084140, "usd_live": round(1084140 / jpy_rate), "store": "Nitori / Amazon.co.jp", "url": "https://www.nitori-net.jp/ec/"},
+                {"id": "ayame_room", "name": "Cuarto あやめ (Setup Gaming/Costura JUKI + Recámara Nitori)", "items": 13, "jpy": 699410, "usd_live": round(699410 / jpy_rate), "store": "Nitori / JUKI / Amazon.co.jp", "url": "https://www.nitori-net.jp/ec/"},
+                {"id": "ldk_kitchen", "name": "Sala-Comedor-Cocina (Refri 282L Hanamasa + Hierro Lodge)", "items": 9, "jpy": 358860, "usd_live": round(358860 / jpy_rate), "store": "BicCamera / Nitori", "url": "https://www.biccamera.com/"},
+                {"id": "laundry_bath", "name": "Lavandería & Baño (Lavadora 8kg Gear MMA + Báscula 77kg)", "items": 6, "jpy": 122790, "usd_live": round(122790 / jpy_rate), "store": "Amazon.co.jp / Nitori", "url": "https://www.amazon.co.jp/"},
+                {"id": "pets_sanctuary", "name": "Santuario 2 Gatitos & 2 Chinchillas (SANKO 80 High + Rascador)", "items": 6, "jpy": 94990, "usd_live": round(94990 / jpy_rate), "store": "Charm.jp / Amazon.co.jp", "url": "https://www.chanet.jp/"},
+            ],
+            "opex_modes": {
+                "oro_effective_jpy": 736880,
+                "suzuki_1on1_jpy": 796880,
+                "nominal_full_jpy": 844300,
+            },
+        },
+        "segment_2_hogar_cbr": {
+            "id": "seg-2-hogar-cbr",
+            "title": "API Segmento 02 · Hogar Compartido, Telemetría Honda CBR, Mascotas & Matriz 168H",
+            "gas_price_tokyo_jpy_l": 174,
+            "cbr_efficiency_km_l": 27.5,
+            "cbr_routes": [
+                {"dest": "FIGHTER'S FLOW (Takadanobaba)", "purpose": "Entrenamiento Diario MMA 77 kg", "km": 3.8, "cbr_min": 9, "train_min": 26, "fuel_jpy": 24, "url": "https://www.google.com/maps/search/?api=1&query=FIGHTERS+FLOW+Takadanobaba"},
+                {"dest": "Nippori Fabric Town (Tomato)", "purpose": "Sedas y Telas para あやめ", "km": 5.4, "cbr_min": 13, "train_min": 28, "fuel_jpy": 34, "url": "https://www.google.com/maps/search/?api=1&query=Nippori+Fabric+Town+Tokyo"},
+                {"dest": "Ai Clinic Kanda / Room haco", "purpose": "Seguimiento Clínico de あやめ", "km": 6.8, "cbr_min": 15, "train_min": 31, "fuel_jpy": 43, "url": "https://www.google.com/maps/search/?api=1&query=Ai+Clinic+Kanda+Tokyo"},
+                {"dest": "Niku no Hanamasa 24h / Little Butcher", "purpose": "Abasto Hiper-Carnívoro (550g/día)", "km": 1.2, "cbr_min": 4, "train_min": 12, "fuel_jpy": 8, "url": "https://www.google.com/maps/search/?api=1&query=Niku+no+Hanamasa+Ikebukuro"},
+                {"dest": "Sunshine City / Otome Road", "purpose": "Citas VIP en Ikebukuro con あやめ", "km": 1.5, "cbr_min": 5, "train_min": 14, "fuel_jpy": 10, "url": "https://www.google.com/maps/search/?api=1&query=Sunshine+City+Ikebukuro"},
+            ],
+            "pets_telemetry": {
+                "cats_count": 2,
+                "chinchillas_count": 2,
+                "chinchilla_temp_target_c": "19.5°C – 21.5°C (Clima 24/7 Activo)",
+                "chinchilla_humidity_target": "< 50% HR (Deshumidificador Activo)",
+                "monthly_supplies_jpy": 18500,
+                "cat_sitter_tiers": [
+                    {"tier": "Nivel 1 · Cita de 1 Día", "protocol": "Alimentadores automáticos + Fuentes + Regreso antes de 21:00 hrs", "cost_jpy": 0},
+                    {"tier": "Nivel 2 · Escapada 1 Noche (30h)", "protocol": "Cámara Wi-Fi 2K + Fuentes dobles + 1 visita preventiva", "cost_jpy": 4000},
+                    {"tier": "Nivel 3 · Expedición 2–3 Noches", "protocol": "Cat Sitter certificada en Tokio con reporte diario de fotos/video por LINE", "cost_jpy": 14000},
+                ],
+                "booking_url": "https://www.olive-sitter.com/",
+            },
+            "schedule_168h_blocks": [
+                {"start": 0, "end": 7, "label": "🌙 Sueño Reparador con あやめ (22:30 – 07:00 JST)", "detail": "8.5 horas de sueño profundo juntos para recuperación hormonal y articular."},
+                {"start": 7, "end": 9, "label": "🥩 Desayuno Carnívoro & Cuidado de Gatitos/Chinchillas", "detail": "Huevos + corte magro, revisión de agua/comida de mascotas y salida en Honda CBR."},
+                {"start": 9, "end": 13, "label": "🥊 Sesión Pro MMA & Grappling en FIGHTER'S FLOW + Japonés 1-a-1", "detail": "Trabajo técnico de golpeo, lucha y piso rumbo al 6-0 en 77 kg + clase de japonés."},
+                {"start": 13, "end": 18, "label": "💻 Bloque Deep Work: Ingeniería de Software & YouTube ($250K–$280K/año)", "detail": "Desarrollo en tu setup mientras あやめ cose en su máquina JUKI o juega en su cuarto."},
+                {"start": 18, "end": 21, "label": "🌸 Cita Sagrada con あやめ & Cena de Filetotes (0 Alcohol / 0 Mango)", "detail": "Tiempo 100% dedicado a ella (en casa, Ikebukuro o Tokio) regresando juntos antes de las 21:00."},
+                {"start": 21, "end": 22.5, "label": "🛁 Baño Juntos (21:15) & Desconexión Total sin Pantallas", "detail": "Tina japonesa caliente a las 21:15, preparación de cama y luces apagadas a las 22:30 exactas."},
+                {"start": 22.5, "end": 24, "label": "🌙 Sueño Sagrado con あやめ (Iniciado 22:30 JST)", "detail": "Descanso absoluto protegido por cortinas blackout Nitori."},
+            ],
+        },
+        "segment_3_ayame_universe": {
+            "id": "seg-3-ayame",
+            "title": "API Segmento 03 · Salud Clínica de あやめ, Textil Godzilla/Mothra & 47 Prefecturas",
+            "clinical_care": [
+                {"provider": "Ai Clinic Kanda (Dra. Yoshiko Nishimatsu)", "service": "Psiquiatría clínica con Seguro Nacional NHI (30%)", "freq": "1 vez / mes", "cost_jpy": 2000, "url": "https://ai-clinic-kanda.jp/"},
+                {"provider": "Counseling Room haco (Tokio)", "service": "Terapia somática y de trauma especializada", "freq": "Quincenal (2 / mes)", "cost_jpy": 25000, "url": "https://counseling-haco.com/"},
+                {"provider": "Fondo Diamante あやめ (Nippori / Ginza)", "service": "Presupuesto mensual libre para telas, alta costura y bienestar", "freq": "Mensual fijo", "cost_jpy": 200000, "url": "https://www.nippori-senigai.com/"},
+            ],
+            "godzilla_mothra_craft_stages": [
+                {"stage": "1. Octubre 2027 (M01 · Tokio)", "milestone": "Bocetos y selección de sedas base en Ginza Motoji & Nippori", "piece": "Base Kimono Mothra 1961 & Bata Godzilla 1954", "cost_jpy": 45000},
+                {"stage": "2. Mayo 2028 (M08 · Kioto)", "milestone": "Adquisición de brocado imperial Nishijin-ori (naranja, amarillo, negro y azul)", "piece": "Obi y mangas tipo ala de Mothra 1961", "cost_jpy": 65000},
+                {"stage": "3. Octubre 2028 (M13 · Kanazawa)", "milestone": "Seda teñida Kaga Yuzen + hilo de oro para placas dorsales", "piece": "Detalles luminiscentes de las placas de ShodaiGoji 1954", "cost_jpy": 55000},
+                {"stage": "4. Enero 2029 (M16 · Tokio)", "milestone": "Fittings privados de sastrería y forro texturizado carbón en Ginza", "piece": "Ensamblaje estructural de la bata Godzilla 1954", "cost_jpy": 38000},
+                {"stage": "5. Febrero 2029 (M17 · Kagoshima)", "milestone": "Seda volcánica Oshima Tsumugi para profundidad de escamas oscuras", "piece": "Acabado de colección en solapas y cinturón", "cost_jpy": 50000},
+                {"stage": "6. Septiembre 2029 (M24 · Gala 6-0)", "milestone": "Coronación con tocado doble de plumas doradas/turquesas y caminata de 70s con Taiko", "piece": "Estreno en la 6ª Pelea Especial de Retiro", "cost_jpy": 80000},
+            ],
+        },
+        "segment_4_mma_campaign": {
+            "id": "seg-4-mma-6-0",
+            "title": "API Segmento 04 · Campaña Invicta 6-0 (77 kg), Doble Llave & Arsenal Tricolor",
+            "weight_class_kg": 77.0,
+            "off_camp_kg": 79.0,
+            "bouts": [
+                {"bout": "Pelea #1 (Debut)", "org": "KROSS×OVER / JMMAF (77 kg)", "date_iso": "2028-04-15", "camp_start": "2028-03-01", "target_record": "1-0", "reward_trip": "M07 Alpes + M08 Kioto/Osaka/Kobe", "status": "Programada"},
+                {"bout": "Pelea #2 (Regional)", "org": "Amateur Shooto Kanto Championship", "date_iso": "2028-09-16", "camp_start": "2028-08-01", "target_record": "2-0", "reward_trip": "M13 Hokuriku Kanazawa & Shirakawa-go", "status": "Programada"},
+                {"bout": "Peleas #3 y #4 (Torneo)", "org": "DEEP Future King Tournament (2 peleas en 1 noche)", "date_iso": "2028-12-16", "camp_start": "2028-11-01", "target_record": "4-0 (Campeón)", "reward_trip": "M17 y M18 Gran Gira Imperial de Kyushu", "status": "Programada"},
+                {"bout": "Pelea #5 (Título)", "org": "Campeonato KROSS×OVER / All-Japan 77 kg", "date_iso": "2029-08-18", "camp_start": "2029-07-01", "target_record": "5-0 (Doble Corona)", "reward_trip": "Preparación para la Gala de Retiro", "status": "Programada"},
+                {"bout": "Pelea #6 (Retiro Especial)", "org": "Wan-Matchi Keiyaku · Gala «Ginza 1954: Godzilla & Mothra»", "date_iso": "2029-09-15", "camp_start": "2029-08-20", "target_record": "6-0 (Retiro Invicto)", "reward_trip": "Helicóptero Nocturno Tokio + Transición Capitán O-3 Okinawa", "status": "Coronación Final"},
+            ],
+            "gear_and_dojos": [
+                {"item": "FIGHTER'S FLOW (Takadanobaba) — Membresía Oro Ilimitada", "currency": "JPY", "amount": 25300, "period": "Mensual", "url": "https://fighters-flow.com/"},
+                {"item": "Pack 5 Sesiones Privadas 1-a-1 con Hayato Suzuki", "currency": "JPY", "amount": 60000, "period": "Mensual (Opcional)", "url": "https://fighters-flow.com/"},
+                {"item": "Shorts Muay Thai YOKKAO (Blanco, Rojo y Azul Rey)", "currency": "USD", "amount": 240, "period": "Rotación Campamento", "url": "https://yokkao.com/collections/muay-thai-shorts"},
+                {"item": "Guantes Venum Pro Boxing (Azul Rey, Rojo y Blanco · 14/16 oz)", "currency": "USD", "amount": 380, "period": "Sparring & Camerino", "url": "https://www.venum.com/collections/pro-boxing-gloves"},
+                {"item": "Campamento Bangtao Muay Thai & MMA Phuket (90 Días All-Inclusive)", "currency": "THB", "amount": 469300, "period": "Fase Tailandia 90d", "url": "https://bangtaomuaythai.com/"},
+            ],
+        },
+        "segment_5_carnivora_seul": {
+            "id": "seg-5-carnivora-seul",
+            "title": "API Segmento 05 · Biología Hiper-Carnívora & Clínicas Proyecto Extremis (Seúl)",
+            "nutrition_sources": [
+                {"source": "Niku no Hanamasa 24h (Tokio)", "cut": "Grass-Fed Ribeye / Striploin / Chuck Roll (550g/día)", "currency": "JPY", "daily_cost": 2650, "monthly_cost": 79500, "protein_g_day": 165, "url": "https://www.hanamasa.co.jp/"},
+                {"source": "Huevos Camperos + Arroz Blanco (Tokio)", "cut": "6 Huevos diarios + Arroz en Zojirushi/Tiger", "currency": "JPY", "daily_cost": 515, "monthly_cost": 15500, "protein_g_day": 36, "url": "https://www.hanamasa.co.jp/"},
+                {"source": "Mamma Mia Steakhouse Bangtao (Phuket 90d)", "cut": "2 Filetotes diarios (500g–600g Res Importada)", "currency": "THB", "daily_cost": 931, "monthly_cost": 27943, "protein_g_day": 175, "url": "https://www.google.com/maps/search/?api=1&query=Mamma+Mia+Grill+Restaurant+Bangtao+Phuket"},
+                {"source": "Stack Suplementos Limpios (iHerb JP)", "cut": "Creatina 5g, Omega-3, D3+K2, Magnesio, Zinc, Pocari", "currency": "JPY", "daily_cost": 316, "monthly_cost": 9500, "protein_g_day": 0, "url": "https://jp.iherb.com/"},
+            ],
+            "seoul_clinics": [
+                {"trip": "Viaje 1 (8 Semanas)", "clinic": "Wooridul Spine Hospital (Cheongdam)", "procedure": "Corrección No-Fusión VBT / Estabilización Dinámica", "krw": 34500000, "url": "https://wooridul.co.kr/"},
+                {"trip": "Viaje 1 (8 Semanas)", "clinic": "Hanabi Rhinoplasty Clinic (Gangnam)", "procedure": "Rinoplastia Masculina + Septoplastia Funcional MMA", "krw": 8970000, "url": "https://hanabiclinic.com/"},
+                {"trip": "Viaje 1 (8 Semanas)", "clinic": "B&VIIT Eye Center (Gangnam)", "procedure": "LASEK Sin Flap (Especial Deportes de Contacto 20/15)", "krw": 2900000, "url": "https://english.bnviit.com/"},
+                {"trip": "Viaje 1 (8 Semanas)", "clinic": "Motion Hair Clinic + Contorno Facial", "procedure": "FUE 1,500 Grafts + Bichectomía y Papada", "krw": 9860000, "url": "http://www.motionclinic.co.kr/"},
+                {"trip": "Viaje 1 (8 Semanas)", "clinic": "Oaks Dental Gangnam + Estancia 8 Sem", "procedure": "Coronas Zirconia + Guarda MMA + Officetel Gangnam", "krw": 7100000, "url": "https://oaksdental.co.kr/"},
+                {"trip": "Viaje 2 (Post-Campamento)", "clinic": "Oculoplastia + Oaks Dental (Cero Lipo)", "procedure": "Cantoplastia Lateral + 5 Carillas + Blanqueamiento", "krw": 12100000, "url": "https://oaksdental.co.kr/"},
+            ],
+        },
+        "segment_6_okinawa_captain": {
+            "id": "seg-6-okinawa",
+            "title": "API Segmento 06 · Operación Okinawa Capitán (O-3) & Casa Bifamiliar Kanagawa",
+            "captain_o3_compensation": {
+                "rank": "Captain (O-3) · U.S. Air Force",
+                "base": "Kadena Air Base (18th Wing · Okinawa, Japón)",
+                "monthly_base_pay_usd": 6800,
+                "monthly_oha_housing_usd": 2450,
+                "monthly_cola_bas_usd": 980,
+                "total_monthly_comp_usd": 10230,
+                "total_monthly_comp_jpy": round(10230 * jpy_rate),
+                "housing_zone": "Chatan / Yomitan / Onna-son (2LDK/3LDK Frente al Mar Turquesa con あやめ y los Gatitos)",
+            },
+            "kanagawa_nisetai": {
+                "project": "Casa Bifamiliar de Dos Generaciones (二世帯住宅 / Nisetai Jutaku) para 千秋-san",
+                "location": "Prefectura de Kanagawa (Kamakura / Fujisawa / Yokohama Sur)",
+                "features": "Entradas independientes, jardín compartido, santuario térmico para mascotas y espacio para recibir a la madre de あやめ con respeto total.",
+                "search_url": "https://suumo.jp/ikkodate/kanagawa/",
+            },
+        },
+    }
+
+    out_path = ASSETS / "imperio-segments-api.json"
+    out_path.write_text(json.dumps(segments_feed, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"[OK] Built {out_path.name} ({out_path.stat().st_size:,} bytes)")
+
+
+if __name__ == "__main__":
+    main()

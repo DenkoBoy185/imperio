@@ -3036,55 +3036,61 @@
 
           const c = m.costs_jpy || {};
           const b = m.booking_links || {};
+          const tot = Math.max(1, m.total_jpy || 1);
+          const pTr = (((c.transporte || 0) / tot) * 100).toFixed(1);
+          const pHo = (((c.hospedaje || 0) / tot) * 100).toFixed(1);
+          const pAc = (((c.actividades_telas || 0) / tot) * 100).toFixed(1);
+          const pGa = (((c.gastronomia || 0) / tot) * 100).toFixed(1);
+          const pCs = (((c.cat_sitter || 0) / tot) * 100).toFixed(1);
 
           return `
-            <div id="card-${m.id}" class="exp-47-card" style="background:#0d1117; border:1px solid ${
-              isDone ? "#22c55e" : "#30363d"
-            }; border-top:4px solid ${zc.border}; border-radius:12px; padding:18px; display:flex; flex-direction:column; justify-content:space-between; box-shadow:${
-              isDone ? "0 0 0 2px rgba(34,197,94,0.35), 0 10px 26px rgba(0,0,0,0.45)" : "0 6px 20px rgba(0,0,0,0.35)"
-            };">
+            <div id="card-${m.id}" class="exp-47-card" style="background:linear-gradient(180deg, #0f172a 0%, #090d16 100%); border:1px solid ${
+              isDone ? "#10b981" : "rgba(148,163,184,0.18)"
+            }; border-top:4px solid ${zc.border}; border-radius:14px; padding:18px; display:flex; flex-direction:column; justify-content:space-between; box-shadow:${
+              isDone ? "0 0 0 2px rgba(16,185,129,0.35), 0 12px 28px rgba(0,0,0,0.5)" : "0 10px 26px rgba(0,0,0,0.4)"
+            }; font-variant-numeric:tabular-nums;">
               <div>
                 <!-- ENCABEZADO DEL MES -->
                 <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:8px; margin-bottom:8px;">
                   <div style="display:flex; flex-wrap:wrap; align-items:center; gap:6px;">
-                    <span style="background:${zc.bg}; border:1px solid ${zc.border}; color:${zc.text}; padding:2px 9px; border-radius:999px; font-size:0.71rem; font-weight:800;">
-                      MES ${String(m.month_num).padStart(2, "0")} • ${m.date_label.toUpperCase()}
+                    <span style="background:${zc.bg}; border:1px solid ${zc.border}; color:${zc.text}; padding:2px 9px; border-radius:6px; font-size:0.7rem; font-weight:800; font-family:ui-monospace,monospace;">
+                      API /mes-${String(m.month_num).padStart(2, "0")} • ${m.date_label.toUpperCase()}
                     </span>
-                    <span style="font-size:0.72rem; color:#9ca3af; font-weight:700;">${m.zone_badge}</span>
+                    <span style="font-size:0.72rem; color:#94a3b8; font-weight:700;">${m.zone_badge}</span>
                     ${weatherPill}
                   </div>
                   <label style="display:inline-flex; align-items:center; gap:6px; background:${
-                    isDone ? "rgba(34,197,94,0.2)" : "rgba(255,255,255,0.06)"
+                    isDone ? "rgba(16,185,129,0.2)" : "rgba(255,255,255,0.05)"
                   }; border:1px solid ${
-                    isDone ? "#22c55e" : "rgba(255,255,255,0.2)"
+                    isDone ? "#10b981" : "rgba(148,163,184,0.25)"
                   }; color:${
-                    isDone ? "#4ade80" : "#d1d5db"
-                  }; padding:3px 10px; border-radius:8px; font-size:0.74rem; font-weight:700; cursor:pointer;">
+                    isDone ? "#34d399" : "#cbd5e1"
+                  }; padding:3px 10px; border-radius:8px; font-size:0.73rem; font-weight:700; cursor:pointer;">
                     <input type="checkbox" data-check-month="${m.id}" ${isDone ? "checked" : ""} style="cursor:pointer;">
-                    ${isDone ? "✅ Conquistado" : "Sellar Mes"}
+                    ${isDone ? "✅ Sellado" : "Sellar Mes"}
                   </label>
                 </div>
 
                 <!-- TÍTULO Y PREFECTURAS -->
-                <h3 style="color:#ffffff; font-size:1.08rem; margin:6px 0 8px; line-height:1.35;">${m.title}</h3>
+                <h3 style="color:#f8fafc; font-size:1.06rem; font-weight:800; margin:6px 0 8px; line-height:1.35;">${m.title}</h3>
                 <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px;">
                   ${prefsPills}
-                  <span style="background:rgba(167,139,250,0.14); border:1px solid rgba(167,139,250,0.35); color:#ddd6fe; padding:2px 8px; border-radius:6px; font-size:0.71rem; font-weight:600;">
+                  <span style="background:rgba(167,139,250,0.12); border:1px solid rgba(167,139,250,0.32); color:#ddd6fe; padding:2px 8px; border-radius:6px; font-size:0.7rem; font-weight:600;">
                     ⏱️ ${m.duration} · ${m.region_label}
                   </span>
                 </div>
 
                 <!-- LOGÍSTICA TÁCTICA: ATAJO IKEBUKURO + GATITOS + MMA -->
-                <div style="background:rgba(22,27,34,0.9); border:1px solid #21262d; border-radius:8px; padding:10px 12px; margin-bottom:10px; font-size:0.76rem;">
-                  <div style="margin-bottom:4px; color:#93c5fd;">🚀 <strong>Ruta / Atajo desde Ikebukuro:</strong> <span style="color:#e5e7eb;">${m.ikebukuro_shortcut}</span></div>
-                  <div style="margin-bottom:4px; color:#f9a8d4;">🐱 <strong>Protocolo Gatitos de あやめ:</strong> <span style="color:#e5e7eb;">${m.cat_protocol}</span></div>
-                  <div style="color:#fde047;">🥊 <strong>Sincronía Campamento (77 kg):</strong> <span style="color:#e5e7eb;">${m.fight_sync}</span></div>
+                <div style="background:rgba(15,23,42,0.75); border:1px solid rgba(148,163,184,0.14); border-radius:9px; padding:10px 12px; margin-bottom:10px; font-size:0.75rem;">
+                  <div style="margin-bottom:4px; color:#7dd3fc;">🚀 <strong>Atajo Ikebukuro:</strong> <span style="color:#e2e8f0;">${m.ikebukuro_shortcut}</span></div>
+                  <div style="margin-bottom:4px; color:#f9a8d4;">🐱 <strong>Protocolo Gatitos:</strong> <span style="color:#e2e8f0;">${m.cat_protocol}</span></div>
+                  <div style="color:#fde047;">🥊 <strong>Sincronía MMA (77 kg):</strong> <span style="color:#e2e8f0;">${m.fight_sync}</span></div>
                 </div>
 
                 <!-- ITINERARIO HORARIO POR HORARIO / DÍA POR DÍA -->
                 <div style="margin-bottom:10px;">
-                  <div style="font-size:0.73rem; font-weight:800; color:#f0b90b; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:5px;">
-                    📋 Itinerario Táctico Paso a Paso:
+                  <div style="font-size:0.71rem; font-weight:800; color:#f0b90b; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:5px;">
+                    📋 Cronograma Táctico Paso a Paso:
                   </div>
                   <ul style="margin:0; padding-left:18px;">
                     ${scheduleHtml}
@@ -3092,30 +3098,38 @@
                 </div>
 
                 <!-- NUTRICIÓN 77 KG & MIMO PARA AYAME -->
-                <div style="background:rgba(16,185,129,0.07); border:1px solid rgba(16,185,129,0.25); border-radius:8px; padding:9px 11px; margin-bottom:12px; font-size:0.75rem;">
+                <div style="background:rgba(16,185,129,0.06); border:1px solid rgba(16,185,129,0.22); border-radius:9px; padding:9px 11px; margin-bottom:12px; font-size:0.74rem;">
                   <div style="margin-bottom:4px; color:#6ee7b7;">🥩 <strong>Nutrición 77 kg (0 Alcohol 🚫🍺):</strong> <span style="color:#ecfdf5;">${m.nutrition_77kg}</span></div>
-                  <div style="color:#fbcfe8;">🌸 <strong>Mimo & Estándar de あやめ (0 Mango 🚫🥭):</strong> <span style="color:#fdf2f8;">${m.ayame_treat}</span></div>
+                  <div style="color:#fbcfe8;">🌸 <strong>Mimo &amp; Arte Textil de あやめ (0 Mango 🚫🥭):</strong> <span style="color:#fdf2f8;">${m.ayame_treat}</span></div>
                 </div>
               </div>
 
-              <!-- DESGLOSE FINANCIERO MULTI-ÁNGULO + BOTONES DE RESERVA 1-CLICK -->
+              <!-- DESGLOSE FINANCIERO MULTI-ÁNGULO + BARRA PROPORCIONAL + RESERVA 1-CLICK -->
               <div>
-                <div style="background:#161b22; border:1px solid #30363d; border-radius:8px; padding:10px; margin-bottom:10px;">
-                  <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px; margin-bottom:6px; padding-bottom:6px; border-bottom:1px solid rgba(255,255,255,0.08);">
-                    <span style="font-size:0.73rem; font-weight:700; color:#9ca3af; text-transform:uppercase;">💰 Desglose Real en Vivo (Mes ${String(m.month_num).padStart(2, "0")})</span>
+                <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(148,163,184,0.16); border-radius:10px; padding:11px; margin-bottom:10px;">
+                  <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px; margin-bottom:6px;">
+                    <span style="font-size:0.7rem; font-weight:700; color:#94a3b8; text-transform:uppercase; letter-spacing:0.04em;">💰 Telemetría de Costos (5 Rubros)</span>
                     <div>
-                      <span style="font-size:1rem; font-weight:800; color:#fff;">${fmtJpy(m.total_jpy)} JPY</span>
-                      <span style="font-size:0.8rem; font-weight:800; color:#4ade80; background:rgba(34,197,94,0.16); border:1px solid rgba(74,222,128,0.4); padding:2px 7px; border-radius:5px; margin-left:5px;">
-                        ⚡ ${fmtUsd(m.total_jpy)} USD Hoy
+                      <span style="font-size:0.98rem; font-weight:800; color:#f8fafc;">${fmtJpy(m.total_jpy)} JPY</span>
+                      <span style="font-size:0.78rem; font-weight:800; color:#34d399; background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.38); padding:2px 7px; border-radius:5px; margin-left:5px;">
+                        ⚡ ${fmtUsd(m.total_jpy)} USD
                       </span>
                     </div>
                   </div>
-                  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(115px, 1fr)); gap:6px; font-size:0.7rem; color:#d1d5db;">
-                    <div>🚄 Transp: <strong>${fmtJpy(c.transporte || 0)}</strong> (${fmtUsd(c.transporte || 0)})</div>
-                    <div>♨️ Hotel: <strong>${fmtJpy(c.hospedaje || 0)}</strong> (${fmtUsd(c.hospedaje || 0)})</div>
-                    <div>👘 Activ/Telas: <strong>${fmtJpy(c.actividades_telas || 0)}</strong> (${fmtUsd(c.actividades_telas || 0)})</div>
-                    <div>🥩 Comida: <strong>${fmtJpy(c.gastronomia || 0)}</strong> (${fmtUsd(c.gastronomia || 0)})</div>
-                    <div>🐱 Cat Sitter: <strong>${fmtJpy(c.cat_sitter || 0)}</strong> (${fmtUsd(c.cat_sitter || 0)})</div>
+                  <!-- Barra proporcional de los 5 rubros -->
+                  <div style="display:flex; width:100%; height:6px; border-radius:999px; overflow:hidden; background:#090d16; margin-bottom:8px;">
+                    <div style="width:${pTr}%; background:#38bdf8;" title="Transporte: ${pTr}%"></div>
+                    <div style="width:${pHo}%; background:#a78bfa;" title="Hospedaje: ${pHo}%"></div>
+                    <div style="width:${pAc}%; background:#f472b6;" title="Actividades & Telas: ${pAc}%"></div>
+                    <div style="width:${pGa}%; background:#f59e0b;" title="Gastronomía: ${pGa}%"></div>
+                    <div style="width:${pCs}%; background:#22c55e;" title="Cat Sitter: ${pCs}%"></div>
+                  </div>
+                  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(115px, 1fr)); gap:6px; font-size:0.69rem; color:#cbd5e1;">
+                    <div><span style="color:#38bdf8;">●</span> Transp: <strong>${fmtJpy(c.transporte || 0)}</strong> (${fmtUsd(c.transporte || 0)})</div>
+                    <div><span style="color:#a78bfa;">●</span> Hotel: <strong>${fmtJpy(c.hospedaje || 0)}</strong> (${fmtUsd(c.hospedaje || 0)})</div>
+                    <div><span style="color:#f472b6;">●</span> Telas/Act: <strong>${fmtJpy(c.actividades_telas || 0)}</strong> (${fmtUsd(c.actividades_telas || 0)})</div>
+                    <div><span style="color:#f59e0b;">●</span> Comida: <strong>${fmtJpy(c.gastronomia || 0)}</strong> (${fmtUsd(c.gastronomia || 0)})</div>
+                    <div><span style="color:#22c55e;">●</span> Sitter: <strong>${fmtJpy(c.cat_sitter || 0)}</strong> (${fmtUsd(c.cat_sitter || 0)})</div>
                   </div>
                 </div>
 

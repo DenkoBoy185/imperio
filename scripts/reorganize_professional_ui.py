@@ -2218,9 +2218,10 @@ def main():
             btn.classList.add('active');
         }}
     </script>
-    <script src="assets/ayame-events-api.js?v=5"></script>
-    <script src="assets/citas-ayame.js?v=5"></script>
-    <script src="assets/live-prices.js?v=5"></script>
+    <script src="assets/ayame-events-api.js?v=6"></script>
+    <script src="assets/citas-ayame.js?v=6"></script>
+    <script src="assets/imperio-telemetry-ui.js?v=6"></script>
+    <script src="assets/live-prices.js?v=6"></script>
 </body>
 </html>
 """
