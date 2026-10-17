@@ -601,8 +601,124 @@ DESTINATIONS = [
         "ikebukuro": {"km": 89.5, "cb250r_min": 75, "train_min": 102, "highway": True},
         "parking_spot": "Hakone Sightseeing Boat Moto-Hakone Free Bike Parking",
         "tactical_note": "Con un solo tanque de 10L (337–450 km de autonomía) vas desde Tokio hasta el Lago Ashi, recorres el Hakone Skyline y regresas a Tokio sin repostar."
+    },
+
+    # 6. TALLERES CUSTOM «SHODAIGOJI 1954 SPEC» (初ゴジ仕様) EN TOKIO
+    {
+        "id": "mystyle_custom_itabashi",
+        "category": "shodaigoji_custom",
+        "category_label": "🦖 Talleres Custom «ShodaiGoji 1954» (Tokio)",
+        "name": "MyStyleCustom (マイスタイルカスタム · 板橋区 — Piel Volcánica 結晶塗装)",
+        "subtitle": "Especialistas en Pintura Cristalina Rugosa al Horno (結晶塗装 / Wrinkle Reptile Skin) & Gun-Kote",
+        "lat": 35.7604,
+        "lon": 139.7052,
+        "address": "東京都板橋区本町27-9-110 (Honcho, Itabashi-ku, Tokyo · https://mystyle-custom.com/)",
+        "schedule_slot": "Fase Custom #1: Texturizado Volcánico 1954 en Cubiertas de Motor, Shrouds y Tanque",
+        "trips_per_week": 0.0,
+        "asakusabashi": {"km": 11.4, "cb250r_min": 22, "train_min": 36, "highway": False},
+        "ikebukuro": {"km": 3.4, "cb250r_min": 7, "train_min": 15, "highway": False},
+        "parking_spot": "Garaje privado de taller MyStyleCustom (Itabashi Honcho)",
+        "tactical_note": "Su técnica de Pintura Cristalina al Horno (ちぢみ塗装 / 結晶塗装) encoge la resina creando literalmente la piel rugosa de reptil quemado del traje original de Godzilla 1954, además de recubrimiento militar Gun-Kote disipador de calor en el motor MC52E."
+    },
+    {
+        "id": "zworks_adachi_airbrush",
+        "category": "shodaigoji_custom",
+        "category_label": "🦖 Talleres Custom «ShodaiGoji 1954» (Tokio)",
+        "name": "Custom Art Paint Z-WORKS (ゼットワークス · 足立区 — Aerografía Atómica)",
+        "subtitle": "Aerografía de Escamas 1954, Placas Dorsales en Azul Cherenkov y Anodizado Negro/Azul",
+        "lat": 35.7689,
+        "lon": 139.7722,
+        "address": "〒123-0873 東京都足立区扇1-5-26 (Ogi, Adachi-ku, Tokyo · https://zwp.jp/)",
+        "schedule_slot": "Fase Custom #2: Aerografía de Placas Dorsales (背びれ), Kanji 初代ゴジラ y Casco Shoei a Juego",
+        "trips_per_week": 0.0,
+        "asakusabashi": {"km": 8.6, "cb250r_min": 16, "train_min": 32, "highway": False},
+        "ikebukuro": {"km": 9.2, "cb250r_min": 19, "train_min": 34, "highway": False},
+        "parking_spot": "Patio de taller Z-WORKS (Ogi, Adachi-ku)",
+        "tactical_note": "Aquí pintan con aerógrafo las venas luminiscentes de Aliento Atómico (Azul Cherenkov → Blanco Incandescente) sobre los alerones del tanque y anodizan (アルマイト加工) tus manetas y estriberas."
+    },
+    {
+        "id": "garage_shanti_wrap",
+        "category": "shodaigoji_custom",
+        "category_label": "🦖 Talleres Custom «ShodaiGoji 1954» (Tokio)",
+        "name": "GARAGE SHANTI (ガレージシャンティ · 足立区 — Wrapping 3M & Coating CR-1)",
+        "subtitle": "Wrapping Exclusivo de Motos (Vinil Texturizado Escamas 3M Removible) + Vidrio Líquido CR-1",
+        "lat": 35.7885,
+        "lon": 139.8355,
+        "address": "〒121-0051 東京都足立区神明3丁目14-23 (Shinmei, Adachi-ku, Tokyo · https://shanti-lp.com/)",
+        "schedule_slot": "Fase Custom #3 (Opción Reversible): Wrap Texturizado ShodaiGoji + Blindaje Cerámico CR-1",
+        "trips_per_week": 0.0,
+        "asakusabashi": {"km": 11.8, "cb250r_min": 21, "train_min": 41, "highway": False},
+        "ikebukuro": {"km": 15.2, "cb250r_min": 28, "train_min": 48, "highway": True},
+        "parking_spot": "Pit interior climatizado Garage Shanti",
+        "tactical_note": "Desmontan tanque y carenados para aplicar vinil 3M texturizado de escamas negras/grafito y sellan toda la moto (incluyendo motor y escape a 1,300°C) con recubrimiento de vidrio verdadero CR-1. Al ser removible, conserva intacta la pintura original para reventa antes de irte a Okinawa."
+    },
+    {
+        "id": "motoparts_kspeed_moriwaki",
+        "category": "shodaigoji_custom",
+        "category_label": "🦖 Talleres Custom «ShodaiGoji 1954» (Tokio)",
+        "name": "MOTO PARTS Tokyo & 2rinkan (練馬区 · Kit K-SPEED Diabolus & Escape Moriwaki)",
+        "subtitle": "Quilla Kaiju K-SPEED Diabolus, Máscara de Faro y Escape Negro Moriwaki NEO CLASSIC BP-X (JMCA)",
+        "lat": 35.7483,
+        "lon": 139.6512,
+        "address": "Nerima-ku, Tokyo (https://motoparts.jp/ & https://www.moriwaki.co.jp/)",
+        "schedule_slot": "Fase Custom #4: Carrocería Musculosa K-SPEED + Escape Negro Rugido Grave Legal en Calle",
+        "trips_per_week": 0.0,
+        "asakusabashi": {"km": 14.2, "cb250r_min": 26, "train_min": 39, "highway": False},
+        "ikebukuro": {"km": 6.1, "cb250r_min": 14, "train_min": 18, "highway": False},
+        "parking_spot": "Estacionamiento de clientes 2rinkan / MOTO PARTS",
+        "tactical_note": "El Belly Pan (アンダーカウル) de K-SPEED Diabolus le da el pecho acorazado y las branquias de Godzilla, mientras que el escape Moriwaki NEO CLASSIC Black Pearl (certificado JMCA para chasis 8BK-MC52) transforma el sonido del motor MC52E en un rugido grave sin problemas con la policía japonesa."
     }
 ]
+
+SHODAIGOJI_CUSTOM_BLUEPRINT = {
+    "project_title": "Proyecto «ShodaiGoji 1954 Spec» (初代ゴジラ 1954年型・CB250R 特別仕様)",
+    "base_bike": "Honda CB250R (8BK-MC52) en color oficial Matte Gunpowder Black Metallic (マットガンパウダーブラックメタリック)",
+    "why_this_base": "El color Negro Mate Pólvora de fábrica ya trae el chasis, basculante y barras de la horquilla Showa SFF-BP completamente negros, ahorrándote más de ¥120,000 en desarmado de suspensión.",
+    "stages": [
+        {
+            "step": "01",
+            "part": "Textura de Piel Volcánica 1954 (結晶塗装 / Wrinkle Finish + Gun-Kote)",
+            "shop": "MyStyleCustom (Itabashi-ku · 東京都板橋区本町27-9-110)",
+            "shop_url": "https://mystyle-custom.com/",
+            "spec": "Aplicación de pintura cristalina horneada a alta temperatura (ちぢみ塗装) en las tapas laterales del motor MC52E, cubiertas de radiador y sección central del tanque, logrando la textura rugosa exacta de las escamas de carbón del traje original de 1954.",
+            "cost_jpy": 68000
+        },
+        {
+            "step": "02",
+            "part": "Quilla Acorazada & Aletas Dorsales (K-SPEED Diabolus Belly Pan + Cowl Kit)",
+            "shop": "MOTO PARTS Tokyo (Nerima-ku · https://motoparts.jp/)",
+            "shop_url": "https://motoparts.jp/",
+            "spec": "Quilla inferior (アンダーカウル) K-SPEED Diabolus con branquias laterales tipo anfibio prehistórico, visera de faro agresiva, protector de radiador en malla negra y Fender Eliminator (フェンダーレスキット) para afilar la cola.",
+            "cost_jpy": 54000
+        },
+        {
+            "step": "03",
+            "part": "Aerografía «Aliento Atómico Cherenkov» & Emblemas 1954 (エアーブラシアート)",
+            "shop": "Custom Art Paint Z-WORKS (Adachi-ku · 東京都足立区扇1-5-26)",
+            "shop_url": "https://zwp.jp/",
+            "spec": "Sombreado a mano de placas dorsales (背びれ) en los alerones del tanque (Shrouds) con líneas internas luminiscentes en Azul Cherenkov (チェレンコフ光) que brillan bajo los neones de Tokio, más tipografía original Toho 1954 「初代ゴジラ · GINZA 1954」.",
+            "cost_jpy": 75000
+        },
+        {
+            "step": "04",
+            "part": "Rugido del Kaiju: Escape Moriwaki NEO CLASSIC Black Pearl (BP-X · JMCA Legal)",
+            "shop": "Moriwaki Engineering / Instalación en 2rinkan Tokio",
+            "shop_url": "https://www.moriwaki.co.jp/",
+            "spec": "Silenciador Slip-On en acabado acero inoxidable negro perla mate (Black Pearl) con certificación gubernamental japonesa JMCA (政府認証) específica para el modelo 8BK-MC52: sonido grave, seco y retumbante 100% legal en calle.",
+            "cost_jpy": 69300
+        },
+        {
+            "step": "05",
+            "part": "Blindaje de Vidrio Líquido CR-1 + Iluminación Indirecta Cherenkov LED",
+            "shop": "GARAGE SHANTI (Adachi-ku · 東京都足立区神明3-14-23)",
+            "shop_url": "https://shanti-lp.com/",
+            "spec": "Recubrimiento cerámico de vidrio real CR-1 (resiste hasta 1,300°C en motor y escape) + tira micro-LED oculta bajo el tanque en azul hielo (encendido con interruptor independiente para sesiones de fotos y videos 4K en Ginza/Akihabara).",
+            "cost_jpy": 48000
+        }
+    ],
+    "total_custom_cost_jpy": 314300,
+    "total_bike_plus_custom_jpy": 564300 + 314300
+}
 
 GAS_PRICE_JPY_PER_L = 175.0
 FX_DEFAULT = 158.2
@@ -656,13 +772,14 @@ for base_key in ("asakusabashi", "ikebukuro"):
     }
 
 FEED_PAYLOAD = {
-    "api_version": "1.0.0",
-    "generated_at": "2026-10-17T23:15:00Z",
+    "api_version": "1.1.0",
+    "generated_at": "2026-10-17T23:26:00Z",
     "source": "Honda Motor Co., Ltd. Official Japan Specs (https://www.honda.co.jp/CB250R/type/ & /spec/) + OSRM Tokyo Street Routing Engine",
     "default_fx_jpy_per_usd": FX_DEFAULT,
     "tokyo_regular_gas_jpy_per_l": GAS_PRICE_JPY_PER_L,
     "bases": BASES,
     "cb250r_specs": CB250R_OFFICIAL_SPECS,
+    "shodaigoji_custom_blueprint": SHODAIGOJI_CUSTOM_BLUEPRINT,
     "weekly_summary": WEEKLY_SUMMARY,
     "destinations": DESTINATIONS
 }
@@ -670,3 +787,4 @@ FEED_PAYLOAD = {
 feed_path = ASSETS / "cb250r-routes-feed.json"
 feed_path.write_text(json.dumps(FEED_PAYLOAD, ensure_ascii=False, indent=2), encoding="utf-8")
 print(f"[OK] Generated {feed_path} ({feed_path.stat().st_size:,} bytes)")
+

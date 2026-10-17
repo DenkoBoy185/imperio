@@ -31,12 +31,13 @@
   };
 
   const CATEGORY_META = {
-    all: { label: '🌐 Todos los Destinos (21)', color: '#38bdf8' },
+    all: { label: '🌐 Todos los Destinos (25)', color: '#38bdf8' },
     mma: { label: '🥊 MMA & Dojos (6-0)', color: '#ef4444' },
     nutrition: { label: '🥩 Abasto Carnívoro & Restaurantes', color: '#f59e0b' },
     ayame_care: { label: '🌸 Salud, Clínica & Telas あやめ', color: '#ec4899' },
     dates_irl: { label: '💑 4 Citas Semanales & Kick/YT IRL', color: '#a855f7' },
-    arenas_hubs: { label: '🏟️ Arenas MMA & Hubs Shinkansen/Avión', color: '#10b981' }
+    arenas_hubs: { label: '🏟️ Arenas MMA & Hubs Shinkansen/Avión', color: '#10b981' },
+    shodaigoji_custom: { label: '🦖 Talleres Custom «ShodaiGoji 1954» (4)', color: '#06b6d4' }
   };
 
   function fmtJPY(n) {
@@ -285,6 +286,118 @@
         </div>
       </div>
 
+      <!-- BLUEPRINT DE MODIFICACIÓN EN TOKIO: HONDA CB250R «SHODAIGOJI 1954 SPEC» (初代ゴジラ仕様) -->
+      <div style="background:linear-gradient(135deg, #070b12 0%, #0f172a 60%, #082f49 100%); border:1px solid rgba(6,182,212,0.55); border-left:5px solid #06b6d4; border-radius:14px; padding:18px 20px; margin-bottom:20px; box-shadow:0 10px 28px rgba(6,182,212,0.12);">
+        <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:12px; margin-bottom:12px;">
+          <div>
+            <span style="background:rgba(6,182,212,0.2); color:#22d3ee; border:1px solid #06b6d4; padding:3px 10px; border-radius:999px; font-size:0.71rem; font-weight:800; text-transform:uppercase; letter-spacing:0.8px;">
+              🦖 PROYECTO CUSTOM TOKIO · 初代ゴジラ 1954年型 · SHODAIGOJI BUILD
+            </span>
+            <h4 style="margin:6px 0 2px; color:#fff; font-size:1.18rem; font-weight:900;">
+              Talleres Reales en Tokio para Transformar tu CB250R en «ShodaiGoji 1954» (Piel Volcánica 結晶塗装 + Aliento Atómico Cherenkov)
+            </h4>
+            <div style="font-size:0.78rem; color:#cbd5e1;">
+              Partiendo del color oficial <strong>Matte Gunpowder Black Metallic (マットガンパウダーブラックメタリック)</strong> —que ya incluye chasis y horquilla Showa SFF-BP negros de fábrica—, estos <strong>4 talleres especializados de Tokio</strong> ejecutan la conversión completa:
+            </div>
+          </div>
+          <div style="background:rgba(9,13,22,0.9); border:1px solid rgba(34,211,238,0.4); border-radius:10px; padding:10px 14px; text-align:right;">
+            <div style="font-size:0.68rem; color:#94a3b8; text-transform:uppercase; font-weight:700;">Inversión Full Custom (5 Etapas)</div>
+            <div style="font-size:1.2rem; font-weight:900; color:#22d3ee;">¥314,300 <span style="font-size:0.8rem; color:#67e8f9;">(${fmtUSD(314300)})</span></div>
+            <div style="font-size:0.7rem; color:#94a3b8;">Moto + Build Completo: <strong>¥878,600 (${fmtUSD(878600)})</strong></div>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(245px, 1fr)); gap:12px;">
+          <!-- Etapa 1: MyStyleCustom -->
+          <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(255,255,255,0.1); border-top:3px solid #22d3ee; border-radius:10px; padding:12px; display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.71rem; color:#22d3ee; font-weight:800; margin-bottom:4px;">
+                <span>FASE 01 · PIEL DE REPTIL 1954</span>
+                <span>¥68,000 (${fmtUSD(68000)})</span>
+              </div>
+              <div style="font-size:0.88rem; font-weight:800; color:#fff; margin-bottom:4px;">
+                MyStyleCustom (板橋区本町27-9-110)
+              </div>
+              <p style="font-size:0.74rem; color:#cbd5e1; margin:0 0 8px; line-height:1.45;">
+                Especialistas en <strong>Pintura Cristalina / Corrugada al Horno (結晶塗装 / ちぢみ塗装)</strong> y <strong>Gun-Kote</strong>. Encoge la resina en horno creando literalmente la <strong>textura rugosa tridimensional de piel volcánica quemada de Godzilla 1954</strong> en tapas de motor, radiador y tanque. A solo <strong>7 min de Ikebukuro</strong> (22 min desde Asakusabashi).
+              </p>
+            </div>
+            <div style="display:flex; gap:6px;">
+              <button type="button" class="cb250r-jump-shop-btn" data-dest="mystyle_custom_itabashi" style="flex:1; cursor:pointer; background:#0891b2; color:#fff; border:none; border-radius:6px; padding:6px 8px; font-size:0.72rem; font-weight:800;">
+                📍 Trazar Ruta en Mapa
+              </button>
+              <a href="https://mystyle-custom.com/" target="_blank" rel="noopener" style="background:rgba(255,255,255,0.08); color:#e2e8f0; text-decoration:none; padding:6px 9px; border-radius:6px; font-size:0.72rem; font-weight:700;">Web ↗</a>
+            </div>
+          </div>
+
+          <!-- Etapa 2: MOTO PARTS / K-SPEED & Moriwaki -->
+          <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(255,255,255,0.1); border-top:3px solid #f59e0b; border-radius:10px; padding:12px; display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.71rem; color:#f59e0b; font-weight:800; margin-bottom:4px;">
+                <span>FASE 02 · QUILLA KAIJU + RUGIDO</span>
+                <span>¥123,300 (${fmtUSD(123300)})</span>
+              </div>
+              <div style="font-size:0.88rem; font-weight:800; color:#fff; margin-bottom:4px;">
+                MOTO PARTS (練馬区) &amp; Moriwaki BP-X
+              </div>
+              <p style="font-size:0.74rem; color:#cbd5e1; margin:0 0 8px; line-height:1.45;">
+                Kit de carrocería <strong>K-SPEED Diabolus</strong> (quilla inferior <em>Belly Pan</em> con branquias tipo anfibio prehistórico + máscara de faro + colín corto: ¥54,000) + Escape <strong>Moriwaki NEO CLASSIC Black Pearl (BP-X · Certificado JMCA 政府認証: ¥69,300)</strong> para darle un rugido grave 100% legal en Japón.
+              </p>
+            </div>
+            <div style="display:flex; gap:6px;">
+              <button type="button" class="cb250r-jump-shop-btn" data-dest="motoparts_kspeed_moriwaki" style="flex:1; cursor:pointer; background:#d97706; color:#fff; border:none; border-radius:6px; padding:6px 8px; font-size:0.72rem; font-weight:800;">
+                📍 Trazar Ruta en Mapa
+              </button>
+              <a href="https://motoparts.jp/" target="_blank" rel="noopener" style="background:rgba(255,255,255,0.08); color:#e2e8f0; text-decoration:none; padding:6px 9px; border-radius:6px; font-size:0.72rem; font-weight:700;">Web ↗</a>
+            </div>
+          </div>
+
+          <!-- Etapa 3: Z-WORKS Airbrush -->
+          <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(255,255,255,0.1); border-top:3px solid #38bdf8; border-radius:10px; padding:12px; display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.71rem; color:#38bdf8; font-weight:800; margin-bottom:4px;">
+                <span>FASE 03 · AEROGRAFÍA CHERENKOV</span>
+                <span>¥75,000 (${fmtUSD(75000)})</span>
+              </div>
+              <div style="font-size:0.88rem; font-weight:800; color:#fff; margin-bottom:4px;">
+                Custom Art Paint Z-WORKS (足立区扇1-5-26)
+              </div>
+              <p style="font-size:0.74rem; color:#cbd5e1; margin:0 0 8px; line-height:1.45;">
+                Maestros en <strong>Aerografía Custom (エアーブラシアート)</strong> y anodizado (<strong>アルマイト加工</strong>). Pintan a mano las placas dorsales (背びれ) con grietas de <strong>Aliento Atómico en Azul Cherenkov → Blanco Incandescente</strong> en los alerones del tanque, el emblema <strong>「初代ゴジラ 1954」</strong> y tu casco Shoei a juego. A <strong>16 min de Asakusabashi</strong>.
+              </p>
+            </div>
+            <div style="display:flex; gap:6px;">
+              <button type="button" class="cb250r-jump-shop-btn" data-dest="zworks_adachi_airbrush" style="flex:1; cursor:pointer; background:#0284c7; color:#fff; border:none; border-radius:6px; padding:6px 8px; font-size:0.72rem; font-weight:800;">
+                📍 Trazar Ruta en Mapa
+              </button>
+              <a href="https://zwp.jp/" target="_blank" rel="noopener" style="background:rgba(255,255,255,0.08); color:#e2e8f0; text-decoration:none; padding:6px 9px; border-radius:6px; font-size:0.72rem; font-weight:700;">Web ↗</a>
+            </div>
+          </div>
+
+          <!-- Etapa 4: GARAGE SHANTI Wrapping & CR-1 -->
+          <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(255,255,255,0.1); border-top:3px solid #a855f7; border-radius:10px; padding:12px; display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.71rem; color:#c084fc; font-weight:800; margin-bottom:4px;">
+                <span>FASE 04 · WRAP 3M / COATING CR-1</span>
+                <span>¥48,000 (${fmtUSD(48000)})</span>
+              </div>
+              <div style="font-size:0.88rem; font-weight:800; color:#fff; margin-bottom:4px;">
+                GARAGE SHANTI (足立区神明3-14-23)
+              </div>
+              <p style="font-size:0.74rem; color:#cbd5e1; margin:0 0 8px; line-height:1.45;">
+                Taller exclusivo de <strong>Wrapping de Motos (バイクラッピング)</strong> y blindaje de vidrio líquido <strong>CR-1 (resiste 1,300°C)</strong>. Pueden aplicar vinil 3M texturizado de escamas removible (protegiendo la pintura original para reventa antes de irte a Okinawa) + luz indirecta LED Azul Cherenkov bajo el tanque.
+              </p>
+            </div>
+            <div style="display:flex; gap:6px;">
+              <button type="button" class="cb250r-jump-shop-btn" data-dest="garage_shanti_wrap" style="flex:1; cursor:pointer; background:#7c3aed; color:#fff; border:none; border-radius:6px; padding:6px 8px; font-size:0.72rem; font-weight:800;">
+                📍 Trazar Ruta en Mapa
+              </button>
+              <a href="https://shanti-lp.com/" target="_blank" rel="noopener" style="background:rgba(255,255,255,0.08); color:#e2e8f0; text-decoration:none; padding:6px 9px; border-radius:6px; font-size:0.72rem; font-weight:700;">Web ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- MAPA INTERACTIVO EN VIVO (LEAFLET + OSRM ROUTING API) + INSPECTOR DE RUTA -->
       <div style="background:#0d131f; border:1px solid rgba(56,189,248,0.35); border-radius:14px; padding:18px; margin-bottom:20px;">
         <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:12px; margin-bottom:14px;">
@@ -479,6 +592,19 @@
         renderTableRows();
       });
     }
+
+    document.querySelectorAll('.cb250r-jump-shop-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const destId = btn.getAttribute('data-dest');
+        STATE.categoryFilter = 'shodaigoji_custom';
+        STATE.selectedDestId = destId;
+        renderDashboard();
+        const mapEl = document.getElementById('cb250r-leaflet-map');
+        if (mapEl) {
+          mapEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      });
+    });
   }
 
   function getFilteredDestinations() {
