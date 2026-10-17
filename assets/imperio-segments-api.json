@@ -1,7 +1,7 @@
 {
   "meta": {
     "engine": "Imperio Enterprise Multi-Segment Telemetry API v4.0",
-    "updated_at_utc": "2026-10-17T22:44:33Z",
+    "updated_at_utc": "2026-10-17T23:18:44Z",
     "live_fx": {
       "USD": 1.0,
       "JPY": 157.994345,
@@ -84,54 +84,101 @@
   },
   "segment_2_hogar_cbr": {
     "id": "seg-2-hogar-cbr",
-    "title": "API Segmento 02 · Hogar Compartido, Telemetría Honda CBR, Mascotas & Matriz 168H (Empresa + Kick/YT)",
-    "gas_price_tokyo_jpy_l": 174,
-    "cbr_efficiency_km_l": 27.5,
+    "title": "API Segmento 02 · Hogar Compartido, Telemetría Honda CB250R (8BK-MC52), Mascotas & Matriz 168H",
+    "official_bike_url": "https://www.honda.co.jp/CB250R/type/",
+    "bike_model": "Honda CB250R (Neo Sports Café · 8BK-MC52 · 249cc DOHC 27 PS · 144 kg · ¥564,300 · 0 Shaken)",
+    "gas_price_tokyo_jpy_l": 175,
+    "cbr_efficiency_km_l": 33.7,
     "cbr_routes": [
       {
         "dest": "FIGHTER'S FLOW (Takadanobaba)",
-        "purpose": "Entrenamiento Diario MMA 77 kg",
-        "km": 3.8,
-        "cbr_min": 9,
-        "train_min": 26,
-        "fuel_jpy": 24,
+        "purpose": "Entrenamiento Diario MMA 77 kg + Hayato Suzuki",
+        "km": 9.4,
+        "cbr_min": 18,
+        "train_min": 31,
+        "fuel_jpy": 49,
         "url": "https://www.google.com/maps/search/?api=1&query=FIGHTERS+FLOW+Takadanobaba"
       },
       {
-        "dest": "Nippori Fabric Town (Tomato)",
-        "purpose": "Sedas y Telas para あやめ",
-        "km": 5.4,
-        "cbr_min": 13,
-        "train_min": 28,
-        "fuel_jpy": 34,
+        "dest": "Kodokan Judo Institute (Kasuga)",
+        "purpose": "Derribos, Clinch y Judo Olímpico",
+        "km": 3.8,
+        "cbr_min": 9,
+        "train_min": 21,
+        "fuel_jpy": 20,
+        "url": "https://www.google.com/maps/search/?api=1&query=Kodokan+Judo+Institute+Tokyo"
+      },
+      {
+        "dest": "Nippori Fabric Town (Tomato & Nagato)",
+        "purpose": "Sedas Mothra 1961 y Godzilla 1954 para あやめ",
+        "km": 4.1,
+        "cbr_min": 9,
+        "train_min": 19,
+        "fuel_jpy": 21,
         "url": "https://www.google.com/maps/search/?api=1&query=Nippori+Fabric+Town+Tokyo"
       },
       {
-        "dest": "Ai Clinic Kanda / Room haco",
-        "purpose": "Seguimiento Clínico de あやめ",
-        "km": 6.8,
-        "cbr_min": 15,
-        "train_min": 31,
-        "fuel_jpy": 43,
+        "dest": "Ai Clinic Kanda & Counseling Room haco",
+        "purpose": "Salud Ginecológica y Terapia con あやめ",
+        "km": 1.6,
+        "cbr_min": 5,
+        "train_min": 14,
+        "fuel_jpy": 8,
         "url": "https://www.google.com/maps/search/?api=1&query=Ai+Clinic+Kanda+Tokyo"
       },
       {
-        "dest": "Niku no Hanamasa 24h / Little Butcher",
-        "purpose": "Abasto Hiper-Carnívoro (550g/día)",
-        "km": 1.2,
-        "cbr_min": 4,
-        "train_min": 12,
-        "fuel_jpy": 8,
-        "url": "https://www.google.com/maps/search/?api=1&query=Niku+no+Hanamasa+Ikebukuro"
+        "dest": "Niku no Hanamasa 24h & Little Butcher",
+        "purpose": "Abasto Hiper-Carnívoro (550g/día · Regla Conbini)",
+        "km": 0.3,
+        "cbr_min": 1,
+        "train_min": 3,
+        "fuel_jpy": 2,
+        "url": "https://www.google.com/maps/search/?api=1&query=Niku+no+Hanamasa+Asakusabashi"
       },
       {
-        "dest": "Sunshine City / Otome Road",
-        "purpose": "Citas VIP en Ikebukuro con あやめ",
-        "km": 1.5,
-        "cbr_min": 5,
-        "train_min": 14,
-        "fuel_jpy": 10,
+        "dest": "Sunshine City Ikebukuro (Acuario & Manten)",
+        "purpose": "Cita Semanal #1 con あやめ + B-Roll 4K",
+        "km": 9.1,
+        "cbr_min": 18,
+        "train_min": 29,
+        "fuel_jpy": 47,
         "url": "https://www.google.com/maps/search/?api=1&query=Sunshine+City+Ikebukuro"
+      },
+      {
+        "dest": "Akihabara Radio Kaikan & Kanda Myojin",
+        "purpose": "Cita Semanal #2 Geek & Stream IRL en Kick",
+        "km": 1.4,
+        "cbr_min": 4,
+        "train_min": 11,
+        "fuel_jpy": 7,
+        "url": "https://www.google.com/maps/search/?api=1&query=Kanda+Myojin+Shrine+Tokyo"
+      },
+      {
+        "dest": "Ginza 4-Chome (Torre Wako & Ginza Motoji)",
+        "purpose": "Cita de Gala Viernes #3 · Ruta Godzilla 1954",
+        "km": 4.2,
+        "cbr_min": 11,
+        "train_min": 20,
+        "fuel_jpy": 22,
+        "url": "https://www.google.com/maps/search/?api=1&query=Ginza+Wako+Tokyo"
+      },
+      {
+        "dest": "Kagurazaka & Asakusa Kannon-ura Hanamachi",
+        "purpose": "Cita Sábado #4 · Callejones Históricos de Geishas",
+        "km": 4.8,
+        "cbr_min": 11,
+        "train_min": 22,
+        "fuel_jpy": 25,
+        "url": "https://www.google.com/maps/search/?api=1&query=Kagurazaka+Tokyo"
+      },
+      {
+        "dest": "Aeropuerto de Haneda (Vía Shuto Expressway)",
+        "purpose": "Vuelos Nacionales 47 Prefecturas (249cc Legal Autopista)",
+        "km": 21.4,
+        "cbr_min": 24,
+        "train_min": 41,
+        "fuel_jpy": 111,
+        "url": "https://www.google.com/maps/search/?api=1&query=Haneda+Airport+Motorcycle+Parking"
       }
     ],
     "pets_telemetry": {
@@ -187,8 +234,8 @@
       {
         "start": 13,
         "end": 15,
-        "label": "🥩🇯🇵 Almuerzo de Filetote + Clase de Japonés 1-a-1 + Ruta CBR",
-        "detail": "Steak 300g, clase 1-a-1 de japonés N3/N2 y traslado en 9 min en tu Honda CBR."
+        "label": "🥩🇯🇵 Almuerzo de Filetote + Clase de Japonés 1-a-1 + Ruta CB250R",
+        "detail": "Steak 300g, clase 1-a-1 de japonés N3/N2 y traslado ágil en tu Honda CB250R (144 kg / 33.7 km/L)."
       },
       {
         "start": 15,

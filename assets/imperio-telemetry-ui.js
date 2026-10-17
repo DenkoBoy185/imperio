@@ -380,9 +380,9 @@
           <div class="seg-kpi-sub" id="seg2-active-block-sub" style="color:#cbd5e1;">${jstInfo.activeBlock.detail}</div>
         </div>
         <div class="seg-kpi-box">
-          <div class="seg-kpi-lbl">🏍️ Telemetría Honda CBR (Tokio)</div>
-          <div class="seg-kpi-val">27.5 km/L · ¥${s2.gas_price_tokyo_jpy_l}/L</div>
-          <div class="seg-kpi-sub">+42 hrs/mes ahorradas (Regla del Conbini)</div>
+          <div class="seg-kpi-lbl">🏍️ Honda CB250R (8BK-MC52 · 249cc)</div>
+          <div class="seg-kpi-val">33.7 km/L · 144 kg · 27 PS</div>
+          <div class="seg-kpi-sub"><a href="https://www.honda.co.jp/CB250R/type/" target="_blank" rel="noopener" style="color:#38bdf8;text-decoration:underline;">MSRP ¥564,300 · 0 Shaken (Oficial Honda) ↗</a></div>
         </div>
         <div class="seg-kpi-box">
           <div class="seg-kpi-lbl">🐾 Clima 2 Gatitos & 2 Chinchillas</div>
@@ -403,8 +403,8 @@
               <th>Destino Frecuente desde Casa</th>
               <th>Propósito Táctico</th>
               <th>Distancia</th>
-              <th>Tiempo Honda CBR vs Tren</th>
-              <th>Gasolina (Ida)</th>
+              <th>Tiempo Honda CB250R vs Tren</th>
+              <th>Gasolina (Ida · 33.7 km/L)</th>
               <th>Navegación</th>
             </tr>
           </thead>
