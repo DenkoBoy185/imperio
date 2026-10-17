@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-10-17T20:53:32Z",
+  "updated_at": "2026-10-17T21:04:27Z",
   "usd_jpy_rate": 157.994345,
   "cohabitation_rule": "あやめ vive contigo en su hogar compartido (2LDK Urbanex Asakusabashi Front) junto a nuestros 2 gatitos y 2 chinchillas. Regresar a casa es regresar juntos antes de las 21:00 hrs para el baño de las 21:15 y dormir abrazados a las 22:30 hrs.",
   "cities_weather": {
     "ikebukuro": {
       "name": "Ikebukuro / Asakusabashi (Tokio)",
       "region": "Kanto",
-      "temp_c": 11.9,
+      "temp_c": 11.8,
       "humidity": 88,
       "rain_mm": 0.0,
       "ayame_status": "🌸 Clima Perfecto para あやめ (Brisa Suave y Cero Fatiga)"
@@ -14,8 +14,8 @@
     "sapporo": {
       "name": "Sapporo / Hakodate",
       "region": "Hokkaido",
-      "temp_c": 4.0,
-      "humidity": 86,
+      "temp_c": 3.9,
+      "humidity": 87,
       "rain_mm": 0.0,
       "ayame_status": "❄️ Fresco Invernal: Ideal para Onsen Privado y Abrigo Suave"
     },
@@ -38,7 +38,7 @@
     "kyoto": {
       "name": "Kioto / Kobe / Osaka",
       "region": "Kansai",
-      "temp_c": 14.7,
+      "temp_c": 14.8,
       "humidity": 91,
       "rain_mm": 0.0,
       "ayame_status": "🌸 Clima Perfecto para あやめ (Brisa Suave y Cero Fatiga)"
@@ -46,7 +46,7 @@
     "hiroshima": {
       "name": "Miyajima / Izumo / Tottori",
       "region": "Chugoku",
-      "temp_c": 15.1,
+      "temp_c": 15.2,
       "humidity": 66,
       "rain_mm": 0.0,
       "ayame_status": "🌸 Clima Perfecto para あやめ (Brisa Suave y Cero Fatiga)"
@@ -54,8 +54,8 @@
     "matsuyama": {
       "name": "Matsuyama (Dogo Onsen)",
       "region": "Shikoku",
-      "temp_c": 17.6,
-      "humidity": 75,
+      "temp_c": 17.7,
+      "humidity": 77,
       "rain_mm": 0.0,
       "ayame_status": "🌸 Clima Perfecto para あやめ (Brisa Suave y Cero Fatiga)"
     },
@@ -71,7 +71,7 @@
       "name": "Naha / Isla Ishigaki",
       "region": "Okinawa",
       "temp_c": 25.6,
-      "humidity": 72,
+      "humidity": 73,
       "rain_mm": 0.0,
       "ayame_status": "🌸 Clima Perfecto para あやめ (Brisa Suave y Cero Fatiga)"
     }

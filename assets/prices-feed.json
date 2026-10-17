@@ -2,7 +2,7 @@
   "meta": {
     "version": "2.0.0",
     "description": "Fuente oficial de precios verificados y divisas en tiempo real para Atlas del Imperio (Tokio, Seúl, Phuket, EE.UU.)",
-    "last_updated_utc": "2026-10-17T20:53:34Z",
+    "last_updated_utc": "2026-10-17T21:04:29Z",
     "fx_sources": [
       "https://open.er-api.com/v6/latest/USD",
       "https://api.frankfurter.dev/v1/latest?base=USD&symbols=JPY,KRW,THB"

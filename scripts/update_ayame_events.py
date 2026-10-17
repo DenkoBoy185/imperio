@@ -823,9 +823,40 @@ def main():
     updateProgressAndFilter();
   }}
 
+  function initImperioCountdowns() {{
+    const targets = [
+      {{ id: "cd-oct-2027", iso: "2027-10-01T00:00:00+09:00" }},
+      {{ id: "cd-apr-2028", iso: "2028-04-15T18:00:00+09:00" }},
+      {{ id: "cd-sep-2029", iso: "2029-09-15T19:00:00+09:00" }},
+      {{ id: "cd-oct-2029", iso: "2029-10-01T09:00:00+09:00" }}
+    ];
+
+    function tick() {{
+      const now = Date.now();
+      targets.forEach((t) => {{
+        const el = document.getElementById(t.id);
+        if (!el) return;
+        const diff = new Date(t.iso).getTime() - now;
+        if (diff <= 0) {{
+          el.textContent = "🔥 ¡EN CURSO / CONQUISTADO!";
+          return;
+        }}
+        const days = Math.floor(diff / 86400000);
+        const hours = Math.floor((diff % 86400000) / 3600000);
+        const mins = Math.floor((diff % 3600000) / 60000);
+        const secs = Math.floor((diff % 60000) / 1000);
+        el.textContent = `${{days}}d ${{String(hours).padStart(2, "0")}}h ${{String(mins).padStart(2, "0")}}m ${{String(secs).padStart(2, "0")}}s`;
+      }});
+    }}
+
+    tick();
+    setInterval(tick, 1000);
+  }}
+
   function bootAll() {{
     initAyameRadar();
     initAtlasNacionalTracker();
+    initImperioCountdowns();
   }}
 
   if (document.readyState === "loading") {{

@@ -8,14 +8,14 @@
  */
 (function () {
   const INITIAL_FEED = {
-  "updated_at": "2026-10-17T20:53:32Z",
+  "updated_at": "2026-10-17T21:04:27Z",
   "usd_jpy_rate": 157.994345,
   "cohabitation_rule": "あやめ vive contigo en su hogar compartido (2LDK Urbanex Asakusabashi Front) junto a nuestros 2 gatitos y 2 chinchillas. Regresar a casa es regresar juntos antes de las 21:00 hrs para el baño de las 21:15 y dormir abrazados a las 22:30 hrs.",
   "cities_weather": {
     "ikebukuro": {
       "name": "Ikebukuro / Asakusabashi (Tokio)",
       "region": "Kanto",
-      "temp_c": 11.9,
+      "temp_c": 11.8,
       "humidity": 88,
       "rain_mm": 0.0,
       "ayame_status": "🌸 Clima Perfecto para あやめ (Brisa Suave y Cero Fatiga)"
@@ -23,8 +23,8 @@
     "sapporo": {
       "name": "Sapporo / Hakodate",
       "region": "Hokkaido",
-      "temp_c": 4.0,
-      "humidity": 86,
+      "temp_c": 3.9,
+      "humidity": 87,
       "rain_mm": 0.0,
       "ayame_status": "❄️ Fresco Invernal: Ideal para Onsen Privado y Abrigo Suave"
     },
@@ -47,7 +47,7 @@
     "kyoto": {
       "name": "Kioto / Kobe / Osaka",
       "region": "Kansai",
-      "temp_c": 14.7,
+      "temp_c": 14.8,
       "humidity": 91,
       "rain_mm": 0.0,
       "ayame_status": "🌸 Clima Perfecto para あやめ (Brisa Suave y Cero Fatiga)"
@@ -55,7 +55,7 @@
     "hiroshima": {
       "name": "Miyajima / Izumo / Tottori",
       "region": "Chugoku",
-      "temp_c": 15.1,
+      "temp_c": 15.2,
       "humidity": 66,
       "rain_mm": 0.0,
       "ayame_status": "🌸 Clima Perfecto para あやめ (Brisa Suave y Cero Fatiga)"
@@ -63,8 +63,8 @@
     "matsuyama": {
       "name": "Matsuyama (Dogo Onsen)",
       "region": "Shikoku",
-      "temp_c": 17.6,
-      "humidity": 75,
+      "temp_c": 17.7,
+      "humidity": 77,
       "rain_mm": 0.0,
       "ayame_status": "🌸 Clima Perfecto para あやめ (Brisa Suave y Cero Fatiga)"
     },
@@ -80,7 +80,7 @@
       "name": "Naha / Isla Ishigaki",
       "region": "Okinawa",
       "temp_c": 25.6,
-      "humidity": 72,
+      "humidity": 73,
       "rain_mm": 0.0,
       "ayame_status": "🌸 Clima Perfecto para あやめ (Brisa Suave y Cero Fatiga)"
     }
@@ -813,9 +813,40 @@
     updateProgressAndFilter();
   }
 
+  function initImperioCountdowns() {
+    const targets = [
+      { id: "cd-oct-2027", iso: "2027-10-01T00:00:00+09:00" },
+      { id: "cd-apr-2028", iso: "2028-04-15T18:00:00+09:00" },
+      { id: "cd-sep-2029", iso: "2029-09-15T19:00:00+09:00" },
+      { id: "cd-oct-2029", iso: "2029-10-01T09:00:00+09:00" }
+    ];
+
+    function tick() {
+      const now = Date.now();
+      targets.forEach((t) => {
+        const el = document.getElementById(t.id);
+        if (!el) return;
+        const diff = new Date(t.iso).getTime() - now;
+        if (diff <= 0) {
+          el.textContent = "🔥 ¡EN CURSO / CONQUISTADO!";
+          return;
+        }
+        const days = Math.floor(diff / 86400000);
+        const hours = Math.floor((diff % 86400000) / 3600000);
+        const mins = Math.floor((diff % 3600000) / 60000);
+        const secs = Math.floor((diff % 60000) / 1000);
+        el.textContent = `${days}d ${String(hours).padStart(2, "0")}h ${String(mins).padStart(2, "0")}m ${String(secs).padStart(2, "0")}s`;
+      });
+    }
+
+    tick();
+    setInterval(tick, 1000);
+  }
+
   function bootAll() {
     initAyameRadar();
     initAtlasNacionalTracker();
+    initImperioCountdowns();
   }
 
   if (document.readyState === "loading") {
