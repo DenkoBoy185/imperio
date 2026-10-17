@@ -1,7 +1,7 @@
 {
   "meta": {
     "engine": "Imperio Enterprise Multi-Segment Telemetry API v4.0",
-    "updated_at_utc": "2026-10-17T22:15:32Z",
+    "updated_at_utc": "2026-10-17T22:44:33Z",
     "live_fx": {
       "USD": 1.0,
       "JPY": 157.994345,
@@ -18,9 +18,17 @@
   },
   "segment_1_finanzas": {
     "id": "seg-1-finanzas",
-    "title": "API Segmento 01 · Telemetría Financiera, Divisas, OPEX & CAPEX",
+    "title": "API Segmento 01 · Telemetría Financiera, Ingresos (Empresa + YouTube/Kick +$15K/mes), OPEX & CAPEX",
     "capital_total_usd": 360000,
     "emergency_fund_usd": 48000,
+    "revenue_streams": {
+      "company_owner_monthly_usd": 10000,
+      "kick_streaming_monthly_usd": 8500,
+      "youtube_channels_monthly_usd": 6500,
+      "youtube_plus_kick_monthly_usd": 15000,
+      "total_combined_monthly_usd": 25000,
+      "streams_per_week": "6 Streams/sem en Kick (Lun–Vie 10:30–12:30 JST + Sáb IRL Prefecturas) + 2–3 Videos YouTube/sem"
+    },
     "capex_rooms": [
       {
         "id": "bruno_room",
@@ -76,7 +84,7 @@
   },
   "segment_2_hogar_cbr": {
     "id": "seg-2-hogar-cbr",
-    "title": "API Segmento 02 · Hogar Compartido, Telemetría Honda CBR, Mascotas & Matriz 168H",
+    "title": "API Segmento 02 · Hogar Compartido, Telemetría Honda CBR, Mascotas & Matriz 168H (Empresa + Kick/YT)",
     "gas_price_tokyo_jpy_l": 174,
     "cbr_efficiency_km_l": 27.5,
     "cbr_routes": [
@@ -154,39 +162,51 @@
     "schedule_168h_blocks": [
       {
         "start": 0,
-        "end": 7,
-        "label": "🌙 Sueño Reparador con あやめ (22:30 – 07:00 JST)",
-        "detail": "8.5 horas de sueño profundo juntos para recuperación hormonal y articular."
+        "end": 6.5,
+        "label": "🌙 Sueño Reparador con あやめ (22:30 – 06:30 JST)",
+        "detail": "8 horas de sueño profundo juntos para recuperación hormonal y articular."
       },
       {
-        "start": 7,
-        "end": 9,
-        "label": "🥩 Desayuno Carnívoro & Cuidado de Gatitos/Chinchillas",
-        "detail": "Huevos + corte magro, revisión de agua/comida de mascotas y salida en Honda CBR."
+        "start": 6.5,
+        "end": 8,
+        "label": "🥩 Desayuno Carnívoro, Movilidad & Cuidado de Gatitos/Chinchillas",
+        "detail": "Huevos + corte magro, movilidad de columna y revisión de agua/comida de mascotas."
       },
       {
-        "start": 9,
+        "start": 8,
+        "end": 10.5,
+        "label": "🏢 Dueño de Empresa (CEO & Lead Dev · 08:00–10:30 JST)",
+        "detail": "Deep Work en tu propia empresa: arquitectura, clientes, automatización e ingresos corporativos."
+      },
+      {
+        "start": 10.5,
         "end": 13,
-        "label": "🥊 Sesión Pro MMA & Grappling en FIGHTER'S FLOW + Japonés 1-a-1",
-        "detail": "Trabajo técnico de golpeo, lucha y piso rumbo al 6-0 en 77 kg + clase de japonés."
+        "label": "🟢🔴 LIVE Stream en Kick + Grabación YouTube (10:30–13:00 JST)",
+        "detail": "En vivo en Kick (Prime América/LatAm) + grabación YouTube para superar los +$15,000+ USD/mes."
       },
       {
         "start": 13,
+        "end": 15,
+        "label": "🥩🇯🇵 Almuerzo de Filetote + Clase de Japonés 1-a-1 + Ruta CBR",
+        "detail": "Steak 300g, clase 1-a-1 de japonés N3/N2 y traslado en 9 min en tu Honda CBR."
+      },
+      {
+        "start": 15,
         "end": 18,
-        "label": "💻 Bloque Deep Work: Ingeniería de Software & YouTube ($250K–$280K/año)",
-        "detail": "Desarrollo en tu setup mientras あやめ cose en su máquina JUKI o juega en su cuarto."
+        "label": "🥊 Sesión Pro MMA & Grappling en FIGHTER'S FLOW + Hayato Suzuki",
+        "detail": "Trabajo técnico de golpeo, lucha y piso rumbo al 6-0 en 77 kg con shorts YOKKAO y guantes Venum."
       },
       {
         "start": 18,
         "end": 21,
-        "label": "🌸 Cita Sagrada con あやめ & Cena de Filetotes (0 Alcohol / 0 Mango)",
-        "detail": "Tiempo 100% dedicado a ella (en casa, Ikebukuro o Tokio) regresando juntos antes de las 21:00."
+        "label": "🌸🎬 Cita Sagrada con あやめ / Edición YouTube & Cena (Apagar Cámaras 21:00)",
+        "detail": "Mié/Jue/Vie/Sáb Cita con あやめ; Lun/Mar/Dom edición de YouTube mientras ella cose en su JUKI."
       },
       {
         "start": 21,
         "end": 22.5,
-        "label": "🛁 Baño Juntos (21:15) & Desconexión Total sin Pantallas",
-        "detail": "Tina japonesa caliente a las 21:15, preparación de cama y luces apagadas a las 22:30 exactas."
+        "label": "🛁 Baño Juntos (21:15) & Ritual de Relajación sin Pantallas",
+        "detail": "Tina japonesa caliente a las 21:15, mimos con los gatitos y luces apagadas a las 22:30 exactas."
       },
       {
         "start": 22.5,

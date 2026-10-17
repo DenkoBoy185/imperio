@@ -1,9 +1,9 @@
 /**
- * Atlas del Imperio — Motor Multi-API en Tiempo Real para あやめ (v5.0)
+ * Atlas del Imperio — Motor Multi-API en Tiempo Real para あやめ (v6.0)
  * 1. Radar de Eventos, Lugares y Clima en Ikebukuro, Tokio y Japón (#ayame-radar-hub)
- * 2. Códice Maestro de 24 Meses y las 47 Prefecturas de Japón (Zenkoku Seiha 全国制覇)
- *    con Clima en Vivo por Prefectura, Desglose de Costos Multi-Ángulo (JPY/USD)
- *    y Central de Reservas 1-Click (#ayame-24-expediciones)
+ * 2. Códice Maestro de 24 Meses, 47 Prefecturas (Zenkoku Seiha 全国制覇),
+ *    Mapeo Desde Bajar del Tren/Aeropuerto, Ruta Nacional de Geishas (Hanamachi)
+ *    y Plan de Rodaje YouTube + Kick IRL (#ayame-24-expediciones)
  * 3. Cronómetro Táctico en Tiempo Real sincronizado con Japón JST (#imperio-live-countdowns)
  */
 (function () {
@@ -467,8 +467,8 @@
 };
   const INITIAL_47_FEED = {
   "meta": {
-    "title": "Atlas del Imperio — API Maestra de las 47 Prefecturas (全国制覇) y 24 Meses con あやめ",
-    "last_updated_utc": "2026-10-17T22:04:23Z",
+    "title": "Atlas del Imperio — API Maestra de las 47 Prefecturas (全国制覇), Ruta de Geishas (花街) y 24 Meses con あやめ",
+    "last_updated_utc": "2026-10-17T22:37:19Z",
     "fx_rates": {
       "JPY": 157.994,
       "KRW": 1334.892,
@@ -478,6 +478,7 @@
     },
     "total_prefectures": 47,
     "total_months": 24,
+    "total_geisha_districts": 24,
     "total_campaign_jpy": 5594200,
     "total_campaign_live_usd": 35408,
     "base_location": "Apartamento en Ikebukuro (池袋), Tokio",
@@ -518,6 +519,224 @@
       }
     ]
   },
+  "geisha_districts_atlas": [
+    {
+      "id": "shimbashi_ginza",
+      "name": "Shimbashi Hanamachi & Shinbashi Enbujo (新橋花街)",
+      "city": "Tokio (Ginza)",
+      "region": "Kanto",
+      "month_num": 1,
+      "highlight": "Cuna de las Geishas de Ginza y el festival Azuma Odori; casas de té históricas a pasos de la Torre Wako 1954.",
+      "url": "https://www.shochiku.co.jp/play/theater/enbujo/"
+    },
+    {
+      "id": "kawagoe_edo",
+      "name": "Kawagoe Kuruwa-machi & Kurazukuri (川越花街)",
+      "city": "Kawagoe (Saitama)",
+      "region": "Kanto",
+      "month_num": 2,
+      "highlight": "Antiguo barrio Edo de casas de té con shamisen tradicional y paseo en kimono retro bajo la campana Toki no Kane.",
+      "url": "https://koedo.or.jp/foreign/en/"
+    },
+    {
+      "id": "kusatsu_yumomi",
+      "name": "Kusatsu Onsen Netsu-no-Yu & Geigi (草津温泉湯もみ)",
+      "city": "Kusatsu (Gunma) & Nikko",
+      "region": "Kanto",
+      "month_num": 3,
+      "highlight": "Ceremonia tradicional Yumomi cantada con tablas de madera entre el vapor termal esmeralda del Yubatake.",
+      "url": "https://www.kusatsu-onsen.ne.jp/guide/en/"
+    },
+    {
+      "id": "yamagata_sakata",
+      "name": "Yamagata Geigi & Aizu Higashiyama Geigi (山形舞妓・東山芸妓)",
+      "city": "Ginzan / Aizu (Tohoku)",
+      "region": "Tohoku",
+      "month_num": 4,
+      "highlight": "Tradición de las Geigi de nieve en Tohoku y danzas clásicas en ryokan histórico iluminado con gas.",
+      "url": "https://www.ginzanonsen.jp/"
+    },
+    {
+      "id": "atami_geigi",
+      "name": "Atami Geigi Kenban (熱海芸妓見番 — Kaburenjo)",
+      "city": "Atami / Izu (Shizuoka)",
+      "region": "Chubu",
+      "month_num": 5,
+      "highlight": "Uno de los mayores gremios de Geigi de Japón: espectáculo Hana no Mai con shamisen y abanicos frente al mar.",
+      "url": "https://atami-geigi.jp/"
+    },
+    {
+      "id": "kagurazaka_tokyo",
+      "name": "Kagurazaka Hanamachi (神楽坂花街 — Callejones Empedrados)",
+      "city": "Tokio (A 8 min de Ikebukuro)",
+      "region": "Kanto",
+      "month_num": 6,
+      "highlight": "El barrio de Geishas franco-japonés más romántico de Tokio (Hyogo Yokocho y Kakurenbo Yokocho).",
+      "url": "https://www.gotokyo.org/es/destinations/central-tokyo/kagurazaka/index.html"
+    },
+    {
+      "id": "asakusa_mukojima",
+      "name": "Asakusa & Mukojima Hanamachi (浅草・向島花街)",
+      "city": "Tokio (Río Sumida / Bahía)",
+      "region": "Kanto",
+      "month_num": 7,
+      "highlight": "El distrito de Geishas más antiguo de Tokio junto al río Sumida antes de zarpar en el crucero Symphony.",
+      "url": "https://www.asakusakanko.com/"
+    },
+    {
+      "id": "arima_shinchi",
+      "name": "Arima Onsen Geigi & Osaka Kita-Shinchi (有馬芸妓・北新地)",
+      "city": "Kobe (Hyogo) & Osaka",
+      "region": "Kansai",
+      "month_num": 8,
+      "highlight": "Danzas tradicionales de las Geigi de Arima (Geigi Café Ichifuku) y hospitalidad imperial de Kansai.",
+      "url": "https://arima-onsen.com/"
+    },
+    {
+      "id": "ryukyu_buyo",
+      "name": "Danza Real Ryukyu Buyo & Corte de Shuri (琉球舞踊)",
+      "city": "Naha / Shuri (Okinawa)",
+      "region": "Kyushu & Okinawa",
+      "month_num": 9,
+      "highlight": "Arte escénico real del Reino de Ryukyu con kimonos Bingata multicolores y música de Sanshin en vivo.",
+      "url": "https://www.nt-okinawa.or.jp/"
+    },
+    {
+      "id": "akita_maiko",
+      "name": "Akita Maiko — Salón Histórico Matsushita (秋田舞妓・松下)",
+      "city": "Akita & Kakunodate",
+      "region": "Tohoku",
+      "month_num": 10,
+      "highlight": "Encuentro privado con las Maiko de Akita en la casa de té Matsushita y mansiones samurái del norte.",
+      "url": "https://www.akitamaiko.com/"
+    },
+    {
+      "id": "otaru_hakodate",
+      "name": "Antiguas Casas de Té Portuarias de Otaru & Hakodate (小樽・函館花街)",
+      "city": "Otaru & Hakodate (Hokkaido)",
+      "region": "Hokkaido",
+      "month_num": 11,
+      "highlight": "Arquitectura Meiji frente al canal iluminado con lámparas de gas y salones históricos del norte.",
+      "url": "https://www.otaru-orgel.co.jp/en/"
+    },
+    {
+      "id": "yokohama_geigi",
+      "name": "Yokohama Geigi — Puerto Internacional (横浜芸者)",
+      "city": "Yokohama Minato Mirai",
+      "region": "Kanto",
+      "month_num": 12,
+      "highlight": "Las Geigi nacidas en la apertura del puerto de Yokohama en 1859 combinadas con gala nocturna en las alturas.",
+      "url": "https://yokohama-air-cabin.jp/"
+    },
+    {
+      "id": "kanazawa_chayagai",
+      "name": "Kanazawa San-Chayagai: Higashi Chaya, Kazuemachi & Nishi Chaya (金沢三茶屋街)",
+      "city": "Kanazawa (Ishikawa)",
+      "region": "Chubu",
+      "month_num": 13,
+      "highlight": "¡La Capital de las Geigi del Mar de Japón! Casas de té de 1820 (Kaikaro y Shima) con tambores recubiertos en pan de oro y encargo del Kimono de Mothra.",
+      "url": "https://www.chayagai.jp/"
+    },
+    {
+      "id": "hakone_yumoto",
+      "name": "Hakone Yumoto Geigi Kenban (箱根湯本芸妓見番)",
+      "city": "Hakone (Kanagawa)",
+      "region": "Kanto",
+      "month_num": 14,
+      "highlight": "El famoso gremio de 150 Geigi de montaña en Hakone Yumoto junto al río Hayakawa.",
+      "url": "https://www.geigi.jp/"
+    },
+    {
+      "id": "akasaka_tokyo",
+      "name": "Akasaka Hanamachi & Marunouchi Imperial (赤坂花街)",
+      "city": "Tokio (Marunouchi / Akasaka)",
+      "region": "Kanto",
+      "month_num": 15,
+      "highlight": "El barrio de Ryotei de más alto rango político e imperial de Tokio para celebrar el campeonato DEEP 4-0.",
+      "url": "https://www.marunouchi.com/en/"
+    },
+    {
+      "id": "nagasaki_maruyama",
+      "name": "Nagasaki Maruyama Hanamachi (Kagetsu 花月 1642) & Hakata Geigi",
+      "city": "Nagasaki & Fukuoka",
+      "region": "Kyushu & Okinawa",
+      "month_num": 16,
+      "highlight": "Cena histórica en Kagetsu (Nagasaki, fundada en 1642) con música de las Geigi de Maruyama y tradición Hakata Kenban.",
+      "url": "https://www.at-nagasaki.jp/"
+    },
+    {
+      "id": "kumamoto_suizenji",
+      "name": "Salón Imperial Kokin-Denju-no-Ma & Takachiho Kagura (古今伝授の間・高千穂神楽)",
+      "city": "Kumamoto & Takachiho",
+      "region": "Kyushu & Okinawa",
+      "month_num": 17,
+      "highlight": "Ceremonia de té señorial del clan Hosokawa frente al lago Suizenji y danza sagrada nocturna Kagura en Miyazaki.",
+      "url": "http://www.suizenji.or.jp/"
+    },
+    {
+      "id": "ise_okage",
+      "name": "Ise Okage Yokocho & Toba Mikimoto Pearl Island (おかげ横丁・鳥羽)",
+      "city": "Ise & Toba (Mie)",
+      "region": "Kansai",
+      "month_num": 18,
+      "highlight": "Tambores y danza tradicional Ise Ondo junto al santuario sagrado y buceadoras tradicionales Ama en la bahía de Toba.",
+      "url": "https://okageyokocho.com/"
+    },
+    {
+      "id": "kyoto_gokagai",
+      "name": "Los 5 Distritos Imperiales de Kioto (五花街 Gokagai): Gion Kobu, Pontocho, Miyagawacho, Kamishichiken & Gion Higashi",
+      "city": "Kioto & Nara",
+      "region": "Kansai",
+      "month_num": 19,
+      "highlight": "¡La cúspide mundial de las Geiko y Maiko! Festival de primavera Miyako Odori, velada privada Ozashiki junto al río Kamo y entrega del Obi de Mothra en Nishijin.",
+      "url": "https://miyako-odori.jp/english/"
+    },
+    {
+      "id": "izumo_kurashiki",
+      "name": "Tamatsukuri / Matsue Geigi & Canales de Kurashiki (松江・倉敷美観地区)",
+      "city": "Izumo (Shimane) & Kurashiki",
+      "region": "Chugoku",
+      "month_num": 20,
+      "highlight": "Canciones folclóricas Yasugi-bushi en Shimane, botes tradicionales en Kurashiki y el Torii flotante de Miyajima.",
+      "url": "https://izumooyashiro.or.jp/en"
+    },
+    {
+      "id": "niigata_furumachi",
+      "name": "Las Legendarias Furumachi Geigi de Niigata (新潟古町芸妓) + Dogo Onsen Imperial",
+      "city": "Niigata & Matsuyama (Ehime)",
+      "region": "Chubu",
+      "month_num": 21,
+      "highlight": "Junto a Kioto y Shimbashi, las Furumachi Geigi de Niigata son una de las 3 Grandes Capitales de Geishas de Japón (200 años de historia en Ryotei Ikinariya).",
+      "url": "https://www.nvcb.or.jp/"
+    },
+    {
+      "id": "fuji_kawaguchiko",
+      "name": "Gala Musical Koto & Shamisen Frente al Monte Fuji + Ensayo General Godzilla & Mothra",
+      "city": "Kawaguchiko (Yamanashi)",
+      "region": "Chubu",
+      "month_num": 22,
+      "highlight": "Sello #47 (100% de Japón conquistado) y ensayo privado con el Kimono Kaga Yuzen de Mothra y la bata ShodaiGoji 1954 frente al Monte Fuji.",
+      "url": "https://kawaguchikomusicforest.jp/"
+    },
+    {
+      "id": "tokyo_double_champ",
+      "name": "Ryotei Imperial de Tokio — Coronación Doble Campeón (二冠王 5-0)",
+      "city": "Tokio (Toranomon / Azabudai)",
+      "region": "Kanto",
+      "month_num": 23,
+      "highlight": "Brindis sin alcohol de Doble Campeón y firma con Doble Llave del contrato Wan-Matchi Keiyaku para la pelea de retiro.",
+      "url": "https://www.azabudai-hills.com/en/"
+    },
+    {
+      "id": "ginza_1954_coronation",
+      "name": "Puesta en Escena Suprema «La Caída de Ginza 1954»: Kimono Real de Mothra 1961 & Taiko en Vivo",
+      "city": "Korakuen Hall / Helipuerto de Tokio",
+      "region": "Kanto",
+      "month_num": 24,
+      "highlight": "あやめ luce el Kimono Kaga Yuzen, Obi Nishijin-ori y Kanzashi de plumas doradas/turquesas en los 70 segundos de entrada al ring antes del vuelo en helicóptero.",
+      "url": "https://ariair.arila.co.jp/cruising/tokyo"
+    }
+  ],
   "prefectures_47": [
     {
       "num": 1,
@@ -1093,6 +1312,14 @@
         "hotel_label": "🏡 Dormir en Casa (Ikebukuro)",
         "maps_url": "https://www.google.com/maps/dir/Ikebukuro+Station/Nippori+Station/Ginza+Wako"
       },
+      "id": "mes-01",
+      "title": "Mes 01 (Oct 2027) — Caza de Telas Kaiju en Nippori, Geishas de Shimbashi/Ginza & Torre Wako 1954",
+      "fight_sync": "79.0 kg Off-Camp · Inicio de base aeróbica y grappling en FIGHTER'S FLOW.",
+      "arrival_blueprint": "🚆 DESDE BAJAR DEL TREN: 1) En Ikebukuro Station abordan la línea JR Yamanote (Andén 6/7) → bajan en Nippori Station (12 min, Salida Norte / Textile Town Exit). 2) Caminan 3 min en plano hasta la avenida de 90 tiendas textiles (Tomato Arch Building). 3) A las 13:40 toman JR hasta Tokyo Station y transbordan a la línea Marunouchi hasta Ginza Station (Salida A9 directa al pie de la Torre del Reloj de Ginza Wako).",
+      "geisha_experience": "👘🏮 GEISHAS & CULTURA ÚNICA (Shimbashi Hanamachi / 新橋花街): Paseo vespertino por las calles laterales de Ginza 6-Chome y 7-Chome (distrito Shimbashi Hanamachi, sede del teatro Shinbashi Enbujo donde bailan las Geishas de Ginza) y visita privada a las galerías de seda de Ginza Motoji para comparar tejidos imperiales.",
+      "geisha_url": "https://www.ginza-motoji.com/",
+      "geisha_label": "👘 Galería Seda Ginza Motoji & Shimbashi Hanamachi",
+      "video_production_plan": "🎥🎬 YOUTUBE & KICK VLOG (Meta +$15K/mes): • Hook YouTube: «Me Mudé a Tokio para Pelear MMA 6-0: Diseñando Nuestra Entrada de Godzilla 1954 en Ginza». • Tomas clave: POV saliendo de Nippori Station, tocando las telas volcánicas en Tomato, plano contrapicado frente al reloj de Ginza Wako (exactamente como en 1954) y banquete Shabu-shabu proteico.",
       "total_jpy": 72200,
       "total_live_usd": 457
     },
@@ -1156,6 +1383,14 @@
         "hotel_label": "🏡 Excursiones de 1 Día (Dormir en Ikebukuro)",
         "maps_url": "https://www.google.com/maps/dir/Ikebukuro+Station/Kawagoe+Station/Haraoka+Pier"
       },
+      "id": "mes-02",
+      "title": "Mes 02 (Nov 2027) — Kimono Retro y Shamisen en Kawagoe («El Pequeño Edo») & Atardecer en el Muelle de Chiba",
+      "fight_sync": "79.0 kg Off-Camp · Excursiones de sábado sin dormir fuera para mantener rutina de fuerza.",
+      "arrival_blueprint": "🚆 DESDE BAJAR DEL TREN: • Día A (Saitama #02): En Ikebukuro Station (Tobu Tojo Line, Andén 1) abordan el TJ Liner / Kawagoe Express → bajan en Kawagoe Station (30 min exactos, Salida Este) y toman un taxi de 5 min directo al estudio de kimonos en Kurazukuri (cero caminata previa). • Día B (Chiba #03): Autobús expreso o auto privado cruzando el túnel submarino Tokyo Bay Aqua-Line (parada en el mirador en medio del mar Umihotaru PA) directo hasta el muelle de madera de Haraoka en Boso.",
+      "geisha_experience": "👘🏮 GEISHAS & CULTURA ÚNICA (Kawagoe Kuruwa-machi & Edo Chaya): Recorrido vestidos en kimono tradicional por los callejones de almacenes negros (Kurazukuri) y antiguas casas de té donde aún resuena el shamisen clásico del periodo Edo, cerrando con anguila al carbón en Ogakiku (restaurante histórico de 1807).",
+      "geisha_url": "https://koedo.or.jp/foreign/en/",
+      "geisha_label": "🏮 Distrito Edo de Kawagoe & Casas Históricas",
+      "video_production_plan": "🎥🎬 YOUTUBE & KICK VLOG (Meta +$15K/mes): • Hook YouTube: «Viajamos al Japón de 1807 a 30 Minutos de Tokio + El Muelle Secreto Frente al Monte Fuji». • Tomas clave: El sonido de la Campana del Tiempo (Toki no Kane), el maestro asando Unagi sobre carbón Binchotan de 200 años y la toma cinematográfica al atardecer en el muelle de madera de Haraoka sobre el mar.",
       "total_jpy": 52400,
       "total_live_usd": 332
     },
@@ -1228,6 +1463,14 @@
         "hotel_label": "🏯 Reservar Ryokan en Kinugawa & Kusatsu (Ikyu)",
         "maps_url": "https://www.google.com/maps/dir/Ikebukuro+Station/Oarai+Isosaki+Shrine/Nikko+Toshogu/Kusatsu+Onsen"
       },
+      "id": "mes-03",
+      "title": "Mes 03 (Dic 2027) — Cabina Privada «Spacia X» a Nikko, Vapor Esmeralda y Geigi de Kusatsu & Torii Marino de Ibaraki",
+      "fight_sync": "78.8 kg Off-Camp · Hidroterapia termal de invierno para articulaciones y columna.",
+      "arrival_blueprint": "🚆 DESDE BAJAR DEL TREN: 1) Salida hacia Ibaraki (#06) en el expreso JR Hitachi hasta Mito/Oarai Station → taxi de 6 min directo al acantilado del santuario Oarai Isosaki. 2) En Tochigi (#04) abordan la Cockpit Suite / Compartimento Privado del tren de lujo Tobu Spacia X; al bajar en Tobu-Nikko Station el chofer privado del ryokan los recoge en la puerta con sus maletas. 3) Cruce escénico en vehículo climatizado hasta el centro mismo del Yubatake en Kusatsu Onsen (#05 Gunma).",
+      "geisha_experience": "👘🏮 GEISHAS & CULTURA ÚNICA (Kusatsu Yumomi & Onsen Geigi en Netsu-no-Yu): Asientos VIP en primera fila en el pabellón Netsu-no-Yu frente al Yubatake para presenciar la danza y canto tradicional «Yumomi» (donde baten el agua termal mineral con grandes tablas de pino al ritmo de canciones folclóricas de Gunma) y paseo nocturno en yukata de gala entre el vapor iluminado.",
+      "geisha_url": "https://www.kusatsu-onsen.ne.jp/netsunoyu/",
+      "geisha_label": "♨️ Ceremonia Tradicional Yumomi en Netsu-no-Yu (Kusatsu)",
+      "video_production_plan": "🎥🎬 YOUTUBE & KICK VLOG (Meta +$15K/mes): • Hook YouTube: «Rentamos la Cabina Más Lujosa del Tren Spacia X hacia el Pueblo Termal Más Famoso de Japón». • Tomas clave: Interior de la cabina privada Spacia X, olas rompiendo contra el Torii marino de Oarai, oro puro de Nikko Toshogu y caminatas nocturnas entre nubes de vapor verde esmeralda en Kusatsu.",
       "total_jpy": 192000,
       "total_live_usd": 1215
     },
@@ -1304,6 +1547,14 @@
         "hotel_label": "♨️ Reservar Ryokan Histórico en Ginzan Onsen",
         "maps_url": "https://www.google.com/maps/dir/Omiya+Station/Ginzan+Onsen/Matsushima+Bay/Ouchijuku"
       },
+      "id": "mes-04",
+      "title": "Mes 04 (Ene 2028) — Lámparas de Gas bajo la Nieve en Ginzan Onsen, Crucero en Matsushima & Aldea Samurái Ouchijuku",
+      "fight_sync": "78.8 kg Off-Camp · Choque térmico frío/onsen para recuperación muscular profunda.",
+      "arrival_blueprint": "🚄 DESDE BAJAR DEL SHINKANSEN: 1) Atajo #1: JR Saikyo desde Ikebukuro a Omiya Station (24 min) → abordan en el Andén 17 el Yamagata Shinkansen Tsubasa en Green Car. 2) Al bajar en Oishida Station (Yamagata #07), el autobús privado del ryokan ya los espera afuera del torniquete con calefacción (35 min hasta la entrada peatonal de Ginzan Onsen). 3) Día 2: Conexión a Sendai/Matsushima Kaigan Station (Miyagi #08, a 5 min a pie del muelle privado). 4) Día 3: Shinkansen a Koriyama + taxi privado a la aldea nevada de Ouchijuku (Fukushima #09).",
+      "geisha_experience": "👘🏮 GEISHAS & CULTURA ÚNICA (Yamagata Maiko / Aizu Higashiyama Onsen Geigi): Arquitectura Taisho de madera de 4 pisos en Ginzan Onsen (inspiración de El Viaje de Chihiro) y tradición de las Geigi de nieve de Tohoku en Aizu/Yamagata, acompañado del taller artesanal donde pintan a mano su vaca roja de la suerte «Akabeko» para bendecir tu récord invicto.",
+      "geisha_url": "https://www.aizukanko.com/",
+      "geisha_label": "🏮 Tradición Aizu Higashiyama Geigi & Ginzan Taisho",
+      "video_production_plan": "🎥🎬 YOUTUBE & KICK VLOG (Meta +$15K/mes): • Hook YouTube: «Dormimos en el Pueblo Nevado Real de 'El Viaje de Chihiro' (Ginzan Onsen a -5°C)». • Tomas clave: La hora azul a las 17:00 cuando se encienden las lámparas de gas sobre la nieve en Ginzan, asando Gyutan grueso en Sendai y techos de paja cubiertos de nieve blanca en Ouchijuku.",
       "total_jpy": 259000,
       "total_live_usd": 1639
     },
@@ -1367,6 +1618,14 @@
         "hotel_label": "🌊 Reservar Ryokan Frente al Mar en Izu / Atami",
         "maps_url": "https://www.google.com/maps/dir/Ikebukuro+Station/Kawazu+Station/Arimatsu,+Nagoya/Nagoya+Castle"
       },
+      "id": "mes-05",
+      "title": "Mes 05 (Feb 2028) — Tren de Lujo «Saphir Odoriko», Geigi de Atami, Cerezos de Kawazu & Teñido Arimatsu en Nagoya",
+      "fight_sync": "78.5 kg Pre-Camp · Última escapada costera antes de iniciar el Campamento #1 el 1 de marzo.",
+      "arrival_blueprint": "🚄 DESDE BAJAR DEL TREN: 1) Directo en Ikebukuro/Shinjuku abordan el tren panorámico de ultra-lujo JR «Saphir Odoriko» (vagón Green o Compartimento Privado con tragaluces al mar y vagón cafetería). 2) Al bajar en Kawazu Station (Shizuoka #10), el túnel de 8,000 cerezos en flor empieza literalmente a 1 minuto a pie saliendo de la estación. 3) Día 2: En Atami Station toman el Shinkansen Hikari/Kodama a Nagoya Station (Aichi #11, 1h 15m) y línea Meitetsu (20 min) hasta Arimatsu Station (el pueblo histórico empieza al pie de la escalera).",
+      "geisha_experience": "👘🏮 GEISHAS & CULTURA ÚNICA (Atami Geigi Kenban / 熱海芸妓見番): Visita al histórico teatro Atami Geigi Kenban Kaburenjo en la costa de Shizuoka, donde las Geigi de Atami presentan el espectáculo «Hana no Mai» con danza clásica, shamisen y tambores tradicionales, seguido al día siguiente por la maestría textil de 400 años de «Arimatsu Shibori» en Nagoya.",
+      "geisha_url": "https://atami-geigi.jp/",
+      "geisha_label": "👘 Reservar Atami Geigi Kenban (Hana no Mai) & Arimatsu",
+      "video_production_plan": "🎥🎬 YOUTUBE & KICK VLOG (Meta +$15K/mes): • Hook YouTube: «El Tren de Primera Clase Más Increíble de Japón hacia los Primeros Cerezos del Año y las Geishas de Atami». • Tomas clave: Ventanales panorámicos del Saphir Odoriko bordeando el Pacífico, cerezos rosas junto al mar, espectáculo de Geigi en Atami y el salón de oro puro del Castillo de Nagoya.",
       "total_jpy": 158000,
       "total_live_usd": 1000
     },
@@ -1419,6 +1678,14 @@
         "hotel_label": "🏡 Descanso en Casa antes de las 22:00 hrs",
         "maps_url": "https://www.google.com/maps/search/Sunshine+Aquarium+Ikebukuro"
       },
+      "id": "mes-06",
+      "title": "Mes 06 (Mar 2028 · 🔴 Fight Camp #1) — Cita Local VIP en Sunshine City, Asientos Cama «Kumo» & Kagurazaka Hanamachi",
+      "fight_sync": "🔴 ZONA ROJA (77.5 → 77.0 kg) · En pleno corte de peso para tu Debut; cero fatiga ni viajes largos.",
+      "arrival_blueprint": "🚶🏍️ DESDE SALIR DE CASA: Cero aeropuertos ni trenes largos. Por la mañana vas al gimnasio en tu Honda CBR (9 min por la Regla del Conbini de あやめ). Por la tarde salen caminando juntos desde su hogar o en taxi de 5 min directo al elevador privado del piso 10 (Roof Garden) de Sunshine City Ikebukuro.",
+      "geisha_experience": "👘🏮 GEISHAS & CULTURA ÚNICA (Kagurazaka Hanamachi / 神楽坂花街 a 8 min): Además de los pingüinos voladores del Sunshine Aquarium y los asientos cama «Kumo» (Nube) en el Planetario Konica Minolta Manten, paseo vespertino opcional de 20 minutos en taxi por los callejones empedrados negros de Kagurazaka (Hyogo Yokocho), el legendario barrio de Geishas vecino a Ikebukuro.",
+      "geisha_url": "https://planetarium.konicaminolta.jp/manten/",
+      "geisha_label": "🌌 Asientos Cama Kumo (Manten) & Callejones Kagurazaka",
+      "video_production_plan": "🎥🎬 YOUTUBE & KICK VLOG (Meta +$15K/mes): • Hook YouTube: «Mi Rutina Real a 2 Semanas de Mi Debut MMA en Japón (Corte a 77 kg + Cita en un Planetario Cama)». • Tomas clave: Salida matutina en la Honda CBR, sparring con guantes Venum Pro Boxing tricolores, pingüinos sobre los rascacielos de Ikebukuro y sashimi magro de corte de peso.",
       "total_jpy": 26400,
       "total_live_usd": 167
     },
@@ -1463,6 +1730,14 @@
         "hotel_label": "🏡 Regreso Triunfal a Nuestro Hogar en Ikebukuro",
         "maps_url": "https://www.google.com/maps/search/Hinode+Pier+Symphony+Cruise+Tokyo"
       },
+      "id": "mes-07",
+      "title": "Mes 07 (Abr 2028 · 🥊 Pelea #1) — Victoria Debut 1-0 (77 kg), Asakusa/Mukojima Hanamachi & Crucero de Gala en la Bahía",
+      "fight_sync": "🟢 ZONA VERDE · Pesaje oficial 77.0 kg cumplido, Debut victorioso (1-0) y banquete post-pelea.",
+      "arrival_blueprint": "🚕🛳️ DESDE BAJAR DE LA JAULA AL MUELLE: Tras recibir tu primera medalla (1-0) junto a tu mánager あやめ, un taxi VIP reservado los recoge en la puerta de la arena y los lleva directo a la terminal de pasajeros de Hinode Pier (Bahía de Tokio, 18 min), donde abordan por alfombra roja el crucero restaurante Symphony Moderna.",
+      "geisha_experience": "👘🏮 GEISHAS & CULTURA ÚNICA (Tradición Asakusa / Mukojima & Gala Marítima): Inspirados en la elegancia de los salones junto al río Sumida y la Bahía de Tokio, celebran su primera victoria en el salón privado con ventanal panorámico del Symphony Moderna cruzando bajo el Rainbow Bridge iluminado.",
+      "geisha_url": "https://www.symphony-cruise.co.jp/en/",
+      "geisha_label": "🚢 Crucero de Gala Symphony Moderna (Bahía de Tokio)",
+      "video_production_plan": "🎥🎬 YOUTUBE & KICK VLOG (Meta +$15K/mes): • Hook YouTube: «MI DEBUT OFICIAL DE MMA EN TOKIO (77 KG): Pelea Completa, Camerino y Celebración en Crucero». • Tomas clave: Vendas y manoplas en el vestidor con shorts YOKKAO, salida a la jaula, brazo en alto 1-0 con あやめ y brindis sin alcohol frente al Rainbow Bridge.",
       "total_jpy": 65000,
       "total_live_usd": 411
     },
@@ -1526,6 +1801,14 @@
         "hotel_label": "🚢 Reservar Hotel Frente al Puerto en Kobe Meriken Park",
         "maps_url": "https://www.google.com/maps/dir/Shin-Kobe+Station/Himeji+Castle/Meriken+Park/Dotonbori"
       },
+      "id": "mes-08",
+      "title": "Mes 08 (May 2028) — Vacaciones Post-Pelea #1: Kobe Beef A5, Geigi de Arima Onsen, Castillo de Himeji & Dotonbori",
+      "fight_sync": "🟢 ZONA VERDE (79.5 kg libre) · Recarga total de glucógeno y hierro tras el Debut 1-0.",
+      "arrival_blueprint": "🚄 DESDE BAJAR DEL SHINKANSEN: 1) Atajo #2: Línea Marunouchi en Ikebukuro (origen de línea, sentados) hasta Tokyo Station (16 min) → abordan en Andén 16/17 el Shinkansen Nozomi en Green Car. 2) Al bajar en Shin-Kobe Station (Hyogo #12), están a solo 2 minutos en taxi del centro o toman la conexión directa a Himeji Station (donde el Castillo Blanco de Himeji se ve de frente al salir por la Puerta Norte). 3) Día 2: Tren JR Special Rapid de Sannomiya a Osaka Station (#13, 21 min exactos).",
+      "geisha_experience": "👘🏮 GEISHAS & CULTURA ÚNICA (Arima Onsen Geigi / 有馬芸妓 & Kita-Shinchi): Visita a las aguas termales imperiales de Arima en Kobe para conocer la tradición de las «Arima Geigi» en el Geigi Café Ichifuku (donde las Geigi sirven té y ejecutan danzas clásicas con abanicos y tambor tsuzumi), además de recorrer los canales iluminados de Osaka.",
+      "geisha_url": "https://arima-onsen.com/",
+      "geisha_label": "👘 Arima Onsen Geigi (Kobe) & Crucero Dotonbori",
+      "video_production_plan": "🎥🎬 YOUTUBE & KICK VLOG (Meta +$15K/mes): • Hook YouTube: «Gané Mi Primera Pelea en Japón y Fuimos a Kobe a Comer el Mejor Wagyu A5 del Mundo». • Tomas clave: El chef sellando el filete Kobe A5 con certificado de linaje en la plancha teppanyaki, el Castillo de Himeji reluciente, las Geigi de Arima y los neones de Dotonbori desde el bote.",
       "total_jpy": 246000,
       "total_live_usd": 1557
     },
@@ -1584,6 +1867,14 @@
         "hotel_label": "🏖️ Reservar Resort Frente al Mar en Chatan / Yomitan",
         "maps_url": "https://www.google.com/maps/dir/Naha+Airport/Chatan,+Okinawa/Yomitan,+Okinawa/Kouri+Bridge"
       },
+      "id": "mes-09",
+      "title": "Mes 09 (Jun 2028) — Expedición a Okinawa: Danza Real Ryukyu Buyo, Teñido Bingata & Reconocimiento Capitán O-3",
+      "fight_sync": "🟢 ZONA VERDE (79.0 kg) · Vitamina D marina y reconocimiento real de tu futura base militar.",
+      "arrival_blueprint": "✈️ DESDE BAJAR DEL AVIÓN: 1) Atajo #3: En Sunshine City / Hotel Metropolitan Ikebukuro toman el Airport Limousine Bus directo a la Terminal 1/2 de Haneda (45 min sin cargar maletas en escaleras). 2) Vuelo directo ANA/JAL a Naha Airport (OKA, 2h 35m). 3) Al cruzar la puerta de llegadas en Naha, recogen su vehículo privado reservado en recepción VIP (a 3 min de la terminal) para recorrer la costa de Chatan, Yomitan y el puente de Kouri con aire acondicionado puerta a puerta.",
+      "geisha_experience": "👘🏮 GEISHAS & CULTURA ÚNICA (Danza Real Ryukyu Buyo 琉球舞踊 & Taller Ryukyu Bingata): En lugar de las Geishas de Honshu, Okinawa conserva el arte cortesano del antiguo Reino de Ryukyu: asisten a una presentación privada de «Ryukyu Buyo» (danzas reales creadas para los enviados imperiales con vestuarios de seda amarilla y roja y música de Sanshin de tres cuerdas) y あやめ pinta su propia tela en un taller histórico de Ryukyu Bingata en Shuri.",
+      "geisha_url": "https://www.nt-okinawa.or.jp/",
+      "geisha_label": "🌺 Teatro Nacional Ryukyu Buyo & Taller Real Bingata",
+      "video_production_plan": "🎥🎬 YOUTUBE & KICK VLOG (Meta +$15K/mes): • Hook YouTube: «Explorando Okinawa: Aquí Viviremos Cuando Sea Capitán de la Fuerza Aérea (Kadena O-3)». • Tomas clave: Conduciendo sobre el agua turquesa cristalina del puente de la Isla Kouri, el tiburón ballena en Churaumi, la costa de Chatan/Yomitan y el taller real de teñido Bingata.",
       "total_jpy": 315000,
       "total_live_usd": 1994
     },
@@ -1660,6 +1951,14 @@
         "hotel_label": "♨️ Reservar Ryokan en Nyuto Onsen / Lago Towada",
         "maps_url": "https://www.google.com/maps/dir/Chuson-ji/Kakunodate/Oirase+Gorge/Nebuta+Museum+WA+RASSE"
       },
+      "id": "mes-10",
+      "title": "Mes 10 (Jul 2028) — Verano Fresco en Tohoku Norte: Las Maiko de Akita, Mansiones Samurái, Oro de Chuson-ji & Aomori",
+      "fight_sync": "🟡 ZONA AMARILLA (79.0 kg) · Escape estratégico del calor húmedo de Tokio antes del Campamento #2.",
+      "arrival_blueprint": "🚄 DESDE BAJAR DEL SHINKANSEN: 1) Atajo #1: JR desde Ikebukuro a Omiya Station (24 min) → abordan el Tohoku Shinkansen Hayabusa en «Gran Class» (asientos tipo avión primera clase de piel blanca reclinables con servicio a bordo). 2) Día 1 (Iwate #17): Bajan en Ichinoseki Station → taxi de 12 min directo al templo dorado de Chuson-ji en Hiraizumi. 3) Día 2 (Akita #16): Shinkansen Komachi directo a Kakunodate Station (las mansiones samurái están a 8 min en jinrikisha/taxi). 4) Día 3 (Aomori #15): Bajan en Shin-Aomori / Aomori Station (el museo Nebuta Wa Rasse está a 1 min a pie saliendo de la estación junto al mar).",
+      "geisha_experience": "👘🏮 GEISHAS & CULTURA ÚNICA (Akita Maiko en Salón Matsushita / 秋田舞妓): Visita exclusiva a «Akita Cultural Industry Facility Matsushita» (antigua casa de banquetes de la era Taisho frente al parque Senshu), donde las auténticas «Akita Maiko» reciben a Bruno y あやめ con té verde, conversación tradicional y la danza clásica «Akita Ondo», preservando el linaje del antiguo barrio de Geigi de Kawabata.",
+      "geisha_url": "https://www.akitamaiko.com/",
+      "geisha_label": "👘 Encuentro Privado con las Akita Maiko (Salón Matsushita)",
+      "video_production_plan": "🎥🎬 YOUTUBE & KICK VLOG (Meta +$15K/mes): • Hook YouTube: «Viajamos en la 'Gran Class' del Shinkansen al Extremo Norte de Japón (Samuráis, Oro Puro y Maiko de Akita)». • Tomas clave: El asiento Gran Class del Hayabusa, el salón Konjikido cubierto de oro en Iwate, las Akita Maiko bailando a 2 metros de ustedes, aguas termales blancas en Nyuto Onsen y los carros gigantes de Nebuta en Aomori.",
       "total_jpy": 267000,
       "total_live_usd": 1690
     },
@@ -1718,6 +2017,14 @@
         "hotel_label": "🏨 Reservar Hotel Frente al Canal en Otaru & Puerto de Hakodate",
         "maps_url": "https://www.google.com/maps/dir/Shikisai-no-oka/Otaru+Canal/Mount+Hakodate"
       },
+      "id": "mes-11",
+      "title": "Mes 11 (Ago 2028) — Hokkaido a 21°C: Cajas Musicales en el Canal de Otaru, Colinas de Flores en Furano & Puerto de Hakodate",
+      "fight_sync": "🟡 ZONA AMARILLA / PRE-CAMP #2 (78.5 kg) · Dieta marina limpia de cangrejo real y salmón salvaje.",
+      "arrival_blueprint": "✈️🚆 DESDE BAJAR DEL AVIÓN Y TREN: 1) Atajo #3: Limousine Bus desde Ikebukuro a Haneda → vuelo directo a Asahikawa Airport (AKJ, a solo 35 min de las colinas de flores de Biei y Furano sin tráfico). 2) Traslado cómodo a Sapporo y tren rápido JR Rapid Airport (32 min bordeando las olas del mar en el tramo Zenibako) hasta Otaru Station. 3) Cierre en Hakodate subiendo en el teleférico panorámico de cristal a la cima del Monte Hakodate y volando de regreso desde el aeropuerto de Hakodate (a solo 15 min de la bahía).",
+      "geisha_experience": "👘🏮 GEISHAS & CULTURA ÚNICA (Casas de Té Meiji de Otaru & Hakodate Motomachi): Paseo al anochecer por los almacenes de piedra y antiguos salones de banquetes portuarios de la era Meiji en el Canal de Otaru (donde floreció la cultura de las Geigi del norte para los comerciantes marítimos) y taller privado en Otaru Orgel Doh donde arman su propia caja musical de vidrio soplado.",
+      "geisha_url": "https://www.otaru-orgel.co.jp/en/",
+      "geisha_label": "🎵 Otaru Orgel Doh & Salones Históricos Meiji de Hokkaido",
+      "video_production_plan": "🎥🎬 YOUTUBE & KICK VLOG (Meta +$15K/mes): • Hook YouTube: «Escapamos del Verano de Tokio a Hokkaido: Cangrejo Real Gigante, el Estanque Azul y Hakodate». • Tomas clave: El tren corriendo literalmente pegado a las olas rumbo a Otaru, campos infinitos de flores en Shikisai-no-Oka, la vista nocturna de doble bahía en Hakodate y banquete proteico de Tarabagani.",
       "total_jpy": 330000,
       "total_live_usd": 2089
     },
@@ -1772,6 +2079,14 @@
         "hotel_label": "🏙️ Reservar Suite Panorámica en Minato Mirai (Ikyu)",
         "maps_url": "https://www.google.com/maps/dir/Ikebukuro+Station/Minatomirai+Station/Yokohama+Chinatown"
       },
+      "id": "mes-12",
+      "title": "Mes 12 (Sep 2028 · 🥊 Pelea #2) — Victoria 2-0 en Amateur Shooto, Yokohama Geigi & Cabina Aérea sobre el Mar en Minato Mirai",
+      "fight_sync": "🟢 ZONA VERDE · Victoria 2-0 en 77.0 kg y celebración inmediata a 38 minutos en tren directo.",
+      "arrival_blueprint": "🚆🚡 DESDE BAJAR DEL TREN A LAS ALTURAS: 1) Saliendo de Ikebukuro (o directo tras la pelea), toman la línea directa Fukutoshin / Tokyu Toyoko Express (F-Liner) sin hacer un solo transbordo hasta Sakuragicho / Minatomirai Station (Kanagawa #19, 38 min). 2) Al salir de Sakuragicho Station (Salida Este), a 10 pasos abordan la cabina aérea de cristal «YOKOHAMA AIR CABIN» que los lleva volando sobre el canal marítimo directo hacia el puerto y su suite en el piso 65 de Yokohama Royal Park Hotel.",
+      "geisha_experience": "👘🏮 GEISHAS & CULTURA ÚNICA (Yokohama Geigi / 横浜芸者): Descubren la fascinante historia de las Geigi del puerto de Yokohama (quienes desde 1859 combinaron el shamisen tradicional con los salones internacionales del puerto en Bashamichi y Yoshicho), complementado con un banquete imperial privado en Yokohama Chinatown y vista nocturna desde el piso 65.",
+      "geisha_url": "https://yokohama-air-cabin.jp/",
+      "geisha_label": "🚡 Yokohama Air Cabin & Historia Portuaria de Minato Mirai",
+      "video_production_plan": "🎥🎬 YOUTUBE & KICK VLOG (Meta +$15K/mes): • Hook YouTube: «2-0 INVICTO EN JAPÓN (Amateur Shooto): Así Celebramos en el Piso 65 Frente al Puerto de Yokohama». • Tomas clave: Sumisión/victoria en Shooto, cabina aérea flotando de noche sobre los barcos iluminados de Minato Mirai y banquete de pato asado y mariscos.",
       "total_jpy": 103200,
       "total_live_usd": 653
     },
@@ -1857,6 +2172,14 @@
         "hotel_label": "🏯 Reservar Ryokan de Lujo en Kanazawa (Ikyu)",
         "maps_url": "https://www.google.com/maps/dir/Toyama+Kansui+Park/Kanazawa+Station/Shirakawa-go/Tojinbo"
       },
+      "id": "mes-13",
+      "title": "Mes 13 (Oct 2028) — 🦋 Misión Kimono Mothra en Kanazawa: Las 3 Calles de Geishas (Higashi Chaya), Pan de Oro, Shirakawa-go & Tojinbo",
+      "fight_sync": "🟢 ZONA VERDE (79.0 kg) · Viaje cultural estrella tras ponerte 2-0 invicto.",
+      "arrival_blueprint": "🚄 DESDE BAJAR DEL SHINKANSEN: 1) Atajo #1: JR a Omiya Station (24 min) → Hokuriku Shinkansen «Kagayaki» en Green Car. 2) Día 1: Bajan en Toyama Station (#21, el parque Kansui con vista a los Alpes está a 9 min a pie por el paseo norte) y luego 20 min en Shinkansen a Kanazawa Station (#20 Ishikawa), saliendo bajo la monumental puerta de madera Tsuzumi-mon. 3) En la salida este de Kanazawa Station un taxi privado los lleva en 7 min a Higashi Chaya y al taller de Kaga Yuzen. 4) Día 3: Vehículo privado por autopista escénica a Shirakawa-go (#23 Gifu, 50 min) y acantilados de Tojinbo (#22 Fukui).",
+      "geisha_experience": "👘🏮 GEISHAS & CULTURA ÚNICA (¡LA CAPITAL DEL NORTE! Kanazawa San-Chayagai — Higashi Chaya, Kazuemachi y Nishi Chaya): Recorrido VIP por los 3 barrios oficiales de Geigi de Kanazawa. Entran a las casas de té históricas de 1820 «Ochaya Shima» y «Kaikaro» (con escaleras de laca roja y tatamis dorados), asisten a una velada de «Ozashiki» con shamisen, flauta y tambores recubiertos en pan de oro de Kanazawa, y tienen su cita privada con el maestro tintorero de «Kaga Yuzen» para encargar a medida el Kimono de Seda de Mothra 1961 de あやめ.",
+      "geisha_url": "https://www.chayagai.jp/",
+      "geisha_label": "🏮 Kanazawa San-Chayagai (Higashi Chaya) & Taller Kaga Yuzen",
+      "video_production_plan": "🎥🎬 YOUTUBE & KICK VLOG (Meta +$15K/mes): • Hook YouTube: «Encargamos un Kimono Imperial a Medida con un Maestro de Kanazawa + El Barrio Secreto de las Geishas de Oro». • Tomas clave: El maestro dibujando a mano el diseño de Mothra 1961 sobre seda blanca, calles de madera de Higashi Chaya al atardecer, helado con hoja de oro real, casas de techo de paja de Shirakawa-go y cangrejo Echizen en Fukui.",
       "total_jpy": 630000,
       "total_live_usd": 3987
     },
@@ -1901,6 +2224,14 @@
         "hotel_label": "♨️ Reservar Suite con Rotenburo Privado en Hakone",
         "maps_url": "https://www.google.com/maps/dir/Shinjuku+Station/Hakone-Yumoto+Station/Lake+Ashi"
       },
+      "id": "mes-14",
+      "title": "Mes 14 (Nov 2028 · 🔴 Fight Camp DEEP) — Descanso Pasivo en Rotenburo Privado de Hakone, Geigi de Yumoto & Lago Ashi",
+      "fight_sync": "🔴 ZONA ROJA (78.0 → 77.0 kg) · Campamento para pelear 2 veces en la misma noche en el torneo DEEP Future King.",
+      "arrival_blueprint": "🚄 DESDE BAJAR DEL TREN PANORÁMICO: 1) En Ikebukuro toman JR a Shinjuku (5 min) y abordan los asientos delanteros del Observatorio Panorámico del tren «Odakyu Romancecar GSE 70000» (ventanal completo de piso a techo). 2) En 85 min bajan en Hakone-Yumoto Station; usan el servicio «Hakone Carry Service» en el mismo andén para que envíen su bolso al ryokan mientras suben directo a su suite con baño termal privado al aire libre (rotenburo).",
+      "geisha_experience": "👘🏮 GEISHAS & CULTURA ÚNICA (Hakone Yumoto Geigi Kenban / 箱根湯本芸妓見番): A pocos pasos del río en Hakone-Yumoto se encuentra el histórico edificio de ensayos «Geigi Kenban», hogar de más de 150 Geigi de montaña de Hakone; pueden presenciar su ensayo/presentación en el salón tradicional o disfrutar de la serenidad absoluta desde la terraza termal privada viendo el bosque de otoño.",
+      "geisha_url": "https://www.geigi.jp/",
+      "geisha_label": "👘 Gremio Hakone Yumoto Geigi Kenban & Crucero Lago Ashi",
+      "video_production_plan": "🎥🎬 YOUTUBE & KICK VLOG (Meta +$15K/mes): • Hook YouTube: «Preparándome para Pelear 2 Veces en 1 Noche (Torneo DEEP): Recuperación en un Onsen Privado frente al Monte Fuji». • Tomas clave: Vista frontal desde la cabina de cristal del Romancecar GSE, vapor saliendo del rotenburo privado de madera en la terraza y el barco cruzando el Lago Ashi frente al Torii rojo y el Monte Fuji.",
       "total_jpy": 123600,
       "total_live_usd": 782
     },
@@ -1945,6 +2276,14 @@
         "hotel_label": "🏡 Regreso Temprano a Nuestro Hogar con los Gatitos",
         "maps_url": "https://www.google.com/maps/dir/Marunouchi+Naka-dori+Street/Roppongi+Keyakizaka+Dori"
       },
+      "id": "mes-15",
+      "title": "Mes 15 (Dic 2028 · 🏆 Peleas #3 y #4) — Campeón DEEP Future King (4-0 Invicto), Akasaka Hanamachi & Luces Doradas de Marunouchi",
+      "fight_sync": "🟢 ZONA VERDE · ¡Dos victorias en una sola noche (Semifinal y Final) para coronarte Campeón 4-0 en 77 kg!",
+      "arrival_blueprint": "🚇🚕 DESDE EL RING HASTA MARUNOUCHI: Noche del torneo en Tokio con traslado privado de regreso a casa para dormir con los gatitos. Al día siguiente, abordan la línea Tokyo Metro Marunouchi en Ikebukuro (sentados desde la estación inicial) y en 16 minutos exactos salen en Tokyo Station / Marunouchi Naka-dori bajo la bóveda de ladrillos rojos.",
+      "geisha_experience": "👘🏮 GEISHAS & CULTURA ÚNICA (Akasaka Hanamachi 赤坂花街 & Iluminación Imperial de Marunouchi): Celebración de campeón recorriendo la avenida arbolada de Marunouchi Naka-dori iluminada con 1.2 millones de luces color champán y cena privada estilo Ryotei / Steakhouse de gala en la zona imperial de Marunouchi y Akasaka (el histórico barrio de Geishas donde cenan los primeros ministros y campeones en Tokio).",
+      "geisha_url": "https://www.marunouchi.com/en/",
+      "geisha_label": "✨ Paseo Imperial Marunouchi Naka-dori & Cena de Campeón",
+      "video_production_plan": "🎥🎬 YOUTUBE & KICK VLOG (Meta +$15K/mes): • Hook YouTube: «GANÉ 2 PELEAS EN 1 NOCHE Y SOY CAMPEÓN EN JAPÓN (DEEP Future King 4-0) 🏆🇯🇵». • Tomas clave: Semifinal y Final del torneo, entrega del trofeo/cinturón junto a あやめ, corte Ribeye Wagyu A5 humeante y paseo nocturno bajo las luces doradas de Marunouchi y Roppongi Keyakizaka.",
       "total_jpy": 59000,
       "total_live_usd": 373
     },
@@ -2030,6 +2369,14 @@
         "hotel_label": "♨️ Reservar Ryokan de Lujo en Yufuin & Hotel en Nagasaki",
         "maps_url": "https://www.google.com/maps/dir/Sakurai+Futamigaura/Yufuin+Station/Arita,+Saga/Mount+Inasa"
       },
+      "id": "mes-16",
+      "title": "Mes 16 (Ene 2029) — Vacaciones de Invierno Parte 1 (Kyushu Norte): Geigi de Nagasaki en Kagetsu (1642), Tren Yufuin no Mori, Porcelana de Arita & Fukuoka",
+      "fight_sync": "🟢 ZONA VERDE (79.0 kg) · Gran gira de invierno en el sur cálido celebrando el campeonato 4-0.",
+      "arrival_blueprint": "✈️🚂 DESDE BAJAR DEL AVIÓN Y TRENES DE DISEÑO: 1) Atajo #3: Limousine Bus de Ikebukuro a Haneda → vuelo a Fukuoka Airport (FUK, el aeropuerto más céntrico de Japón: están a solo 5 minutos en metro/taxi de Hakata Station). 2) Día 1 (Fukuoka #24): Vehículo privado hacia la costa de Itoshima (Sakurai Futamigaura). 3) Día 2 (Oita #25): En Hakata Station (Andén 5) abordan el tren clásico de madera y terciopelo verde «Yufuin no Mori» directo a Yufuin y Beppu. 4) Día 3 (Saga #26 y Nagasaki #27): Expreso a Arita Station y tren bala blanco «Nishi-Kyushu Shinkansen Kamome» hasta Nagasaki Station, subiendo en el teleférico de cristal diseñado por Ken Okuyama al Monte Inasa.",
+      "geisha_experience": "👘🏮 GEISHAS & CULTURA ÚNICA (¡JOYA HISTÓRICA DE 1642! Nagasaki Maruyama Hanamachi — Casa «Kagetsu» 花月 & Hakata Kenban): En Nagasaki visitan el legendario barrio de Geishas de Maruyama y cenan en «Shiseki Ryotei Kagetsu» (fundado en 1642, donde los samuráis como Sakamoto Ryoma dejaron marcas de katana en los pilares y donde las «Nagasaki Kenban Geigi» interpretan canciones históricas de puerto), además de conocer la tradición de las Geigi de Hakata en Fukuoka.",
+      "geisha_url": "https://www.ryoutei-kagetsu.com/",
+      "geisha_label": "🏮 Ryotei Histórico Kagetsu (Nagasaki 1642) & Hakata Geigi",
+      "video_production_plan": "🎥🎬 YOUTUBE & KICK VLOG (Meta +$15K/mes): • Hook YouTube: «Cenamos en una Casa de Geishas y Samuráis de 1642 en Nagasaki + El Tren de Madera Más Bonito de Japón». • Tomas clave: El Torii blanco en el mar de Itoshima, el interior de madera del tren Yufuin no Mori, el manantial azul cobalto de Beppu, pintando tazas gemelas en Arita, el pilar con corte de katana en Kagetsu y la vista nocturna de los 10 millones de dólares en Nagasaki.",
       "total_jpy": 330000,
       "total_live_usd": 2089
     },
@@ -2106,6 +2453,14 @@
         "hotel_label": "♨️ Reservar Ryokan Frente al Mar en Ibusuki (Ikyu)",
         "maps_url": "https://www.google.com/maps/dir/Suizenji+Jojuen/Takachiho+Gorge/Udo+Jingu/Ibusuki+Hakusuikan"
       },
+      "id": "mes-17",
+      "title": "Mes 17 (Feb 2029) — Vacaciones de Invierno Parte 2 (Kyushu Sur): Ceremonia Imperial en Kumamoto, Barca en la Cascada de Takachiho & Arena Volcánica de Ibusuki",
+      "fight_sync": "🟢 ZONA VERDE (79.0 kg) · Baños geotérmicos de arena volcánica en la playa para regeneración total.",
+      "arrival_blueprint": "✈️🚣 DESDE BAJAR DEL AVIÓN HASTA LA PLAYA VOLCÁNICA: 1) Vuelo directo de Haneda a Kumamoto Airport (KMJ). En la terminal recogen vehículo privado VIP → 25 min hasta el jardín Suizenji y el Castillo de Kumamoto (#28), subiendo luego por la carretera panorámica Milk Road al cráter de Aso. 2) Día 2 (Miyazaki #29): Bajada de 70 min a la Garganta de Takachiho (estacionamiento #1 de Oshikoya justo al pie del embarcadero de botes para no caminar escaleras empinadas) y costa de Udo Jingu. 3) Día 3 (Kagoshima #30): Autopista al sur hasta el ryokan frente al mar en Ibusuki; vuelo de regreso desde Kagoshima Airport (KOJ) a Haneda.",
+      "geisha_experience": "👘🏮 GEISHAS & CULTURA ÚNICA (Salón Imperial Kokin-Denju-no-Ma en Suizenji & Danza Sagrada Takachiho Kagura): En Kumamoto toman té matcha y dulces tradicionales sentados en el tatami del salón de madera de 400 años «Kokin-Denju-no-Ma» (trasladado desde el Palacio Imperial de Kioto) frente al lago Suizenji, y por la noche en Miyazaki presencian la danza ancestral «Takachiho Yokagura» en el santuario de Takachiho.",
+      "geisha_url": "https://takachiho-kanko.info/en/",
+      "geisha_label": "⛩️ Danza Sagrada Takachiho Kagura & Salón Kokin-Denju-no-Ma",
+      "video_production_plan": "🎥🎬 YOUTUBE & KICK VLOG (Meta +$15K/mes): • Hook YouTube: «Nos Enterraron en Arena Volcánica Caliente frente al Mar en Kagoshima + Remando en la Garganta de los Dioses». • Tomas clave: Bruno remando junto a あやめ bajo la cascada de Manai entre columnas de basalto en Takachiho, el santuario Udo Jingu dentro de una cueva marina y ambos recostados en yukata en la playa de Ibusuki cubiertos de arena negra geotérmica frente al volcán Sakurajima.",
       "total_jpy": 320000,
       "total_live_usd": 2025
     },
@@ -2169,6 +2524,14 @@
         "hotel_label": "🌊 Reservar Ryokan Frente al Mar en Bahía Ago / Shirahama",
         "maps_url": "https://www.google.com/maps/dir/Ise+Jingu/Meoto+Iwa/Toba+Bay/Nachi+Falls/Shirahama+Beach"
       },
+      "id": "mes-18",
+      "title": "Mes 18 (Mar 2029) — Tren de Primera Clase «Shimakaze» a Ise Jingu, Buceadoras Ama, la Joya Azul de Mothra en Toba & Cascada de Nachi",
+      "fight_sync": "🟡 ZONA AMARILLA (79.0 kg) · Inicio de preparación de primavera y adquisición del broche azul de Mothra.",
+      "arrival_blueprint": "🚄💺 DESDE BAJAR DEL SHINKANSEN AL TREN SHIMAKAZE: 1) Atajo #2: Metro Marunouchi a Tokyo Station (16 min) → Shinkansen Nozomi a Nagoya Station (1h 40m). 2) En Nagoya cruzan en 3 min al andén de Kintetsu y abordan el tren turístico de ultra-lujo «Kintetsu Shimakaze» (asientos individuales de piel legítima con masaje lumbar eléctrico, cortinas automáticas y vagón comedor de dos pisos) directo a Iseshi y Toba Station (Mie #31). 3) Día 2 (Wakayama #32): Ruta costera en tren panorámico / auto privado hasta Nachi Falls y la playa blanca de Shirahama.",
+      "geisha_experience": "👘🏮 GEISHAS & CULTURA ÚNICA (Danza Tradicional Ise Ondo en Okage Yokocho & Cultura de las Buceadoras Ama en Toba): Frente al santuario sagrado de Ise Jingu recorren el barrio histórico de Okage Yokocho con tambores Taiko y danzas tradicionales «Ise Ondo», visitan la isla de perlas de Toba donde las mujeres buceadoras tradicionales «Ama» (海女) vestidas de blanco se sumergen en el mar, y eligen el broche central (Obidome) en turquesa y perla azul que representará los ojos azules de la Mothra de 1961 en el kimono de あやめ.",
+      "geisha_url": "https://www.mikimoto-pearl-island.jp/en",
+      "geisha_label": "🦪 Isla de Perlas Mikimoto (Toba) & Okage Yokocho Ise",
+      "video_production_plan": "🎥🎬 YOUTUBE & KICK VLOG (Meta +$15K/mes): • Hook YouTube: «El Tren con Asientos de Masaje hacia el Santuario Más Sagrado de Japón + La Joya Azul para el Kimono de Mothra». • Tomas clave: Los sillones de piel con masaje del tren Shimakaze, los cedros gigantes de Ise Jingu, las rocas de los esposos Meoto Iwa en el mar, la elección de la joya azul en Toba y la pagoda roja frente a la cascada de 133 metros en Nachi.",
       "total_jpy": 301000,
       "total_live_usd": 1905
     },
@@ -2241,6 +2604,14 @@
         "hotel_label": "🏯 Reservar Ryokan junto al Río en Arashiyama (Ikyu)",
         "maps_url": "https://www.google.com/maps/dir/Arashiyama,+Kyoto/Nishijin,+Kyoto/Kasuga+Taisha/Biwako+Terrace"
       },
+      "id": "mes-19",
+      "title": "Mes 19 (Abr 2029) — 🌸 Kioto Imperial en Cerezos: Los 5 Distritos de Geiko y Maiko (Gion & Pontocho), Entrega del Obi de Mothra en Nishijin, Nara & Lago Biwa",
+      "fight_sync": "🟡 ZONA AMARILLA (79.0 kg) · Entrega oficial del Kimono y Obi de Mothra 1961 terminados en Kioto.",
+      "arrival_blueprint": "🚄🚣 DESDE BAJAR DEL SHINKANSEN EN KIOTO: 1) Atajo #2: Línea Marunouchi a Tokyo Station (16 min) → Shinkansen Nozomi en Green Car hasta Kyoto Station (2h 13m). 2) En Kyoto Station entregan las maletas en el mostrador «Crosta Kyoto» (junto a la salida central del Shinkansen) para que las lleven directo a su ryokan mientras ustedes suben con las manos libres a un taxi privado rumbo a Arashiyama y al barrio tejedor de Nishijin (#33 Kioto). 3) Día 2: Tren expreso Kintetsu (35 min) a Nara (#34) y teleférico panorámico a Biwako Terrace frente al Lago Biwa (#35 Shiga).",
+      "geisha_experience": "👘🏮 GEISHAS & CULTURA ÚNICA (¡LA CÚSPIDE DE JAPÓN! Los 5 Distritos de Geiko y Maiko de Kioto — 五花街 Gokagai: Gion Kobu, Pontocho, Miyagawacho, Kamishichiken y Gion Higashi): Abril es el mes más mágico del año en Kioto porque se celebran los grandes bailes de primavera de las Geiko y Maiko («Miyako Odori» en Gion Kobu y «Kyo Odori» en Miyagawacho) bajo los cerezos en flor. Asisten a la gala teatral con ceremonia de té previa, pasean al anochecer por Hanami-koji y Pontocho junto al río Kamo, disfrutan una cena privada «Ozashiki» con una Maiko y una Geiko, y recogen en la casa tejedora de Nishijin el Obi negro y oro de Mothra 1961.",
+      "geisha_url": "https://miyako-odori.jp/english/",
+      "geisha_label": "🌸 Reservar Miyako Odori (Gion Kobu) & Velada Geiko/Maiko en Kioto",
+      "video_production_plan": "🎥🎬 YOUTUBE & KICK VLOG (Meta +$15K/mes): • Hook YouTube: «Recogimos el Obi Imperial de Seda en Kioto + Una Noche Real en el Barrio de las Geiko y Maiko (Gion)». • Tomas clave: Barca privada entre lluvia de pétalos de cerezo en Arashiyama, el maestro tejedor de Nishijin entregando el Obi negro y dorado de Mothra, calles empedradas de Gion y Pontocho con linternas rojas, ciervos haciendo reverencia bajo los cerezos en Nara y la vista desde las nubes en Biwako Terrace.",
       "total_jpy": 403000,
       "total_live_usd": 2551
     },
@@ -2335,6 +2706,14 @@
         "hotel_label": "🌊 Reservar Ryokan Frente al Mar en Miyajima / Izumo",
         "maps_url": "https://www.google.com/maps/dir/Izumo+Taisha/Tottori+Sand+Dunes/Kurashiki+Bikan+Historical+Quarter/Itsukushima+Shrine/Motonosumi+Shrine"
       },
+      "id": "mes-20",
+      "title": "Mes 20 (May 2029) — Conquista Completa de Chugoku (5 Prefecturas): Bendición Nupcial en Izumo Taisha, Dunas de Tottori, Canales de Kurashiki, Miyajima & Motonosumi",
+      "fight_sync": "🟡 ZONA AMARILLA (79.0 kg) · Caminatas costeras suaves y ostras ricas en zinc antes del verano.",
+      "arrival_blueprint": "✈️⛴️🚄 DESDE BAJAR DEL AVIÓN HASTA EL FERRY DE MIYAJIMA: 1) Atajo #3: Limousine Bus a Haneda → vuelo matutino JAL directo a Izumo Enmusubi Airport (IZO, Shimane #36, 1h 25m). 2) Chofer/vehículo privado en la puerta del aeropuerto → 25 min hasta el Gran Santuario de Izumo Taisha y recorrido costero hasta las Dunas de Tottori (#37, usando el telesilla panorámico para subir a la duna sin fatiga). 3) Día 2: Bajada al canal histórico de Kurashiki Bikan (#38 Okayama) y ferry directo de 10 minutos hasta la isla sagrada de Miyajima (#39 Hiroshima). 4) Día 3: Cruce al puente de 5 arcos Kintaikyo y los 123 Torii frente al mar en Motonosumi (#40 Yamaguchi), regresando en Shinkansen Nozomi desde Hiroshima.",
+      "geisha_experience": "👘🏮 GEISHAS & CULTURA ÚNICA (Matsue / Tamatsukuri Geigi, Botes de Kurashiki & Música Gagaku en Miyajima): En Shimane conocen la tradición musical del «Yasugi-bushi» y la elegancia de las casas de té junto al Lago Shinji, navegan en bote tradicional de madera manejado con pértiga entre los sauces llorones y casas blancas del siglo XVII en el canal de Kurashiki Bikan (Okayama), y al atardecer navegan en embarcación privada bajo el gran Torii flotante de Miyajima.",
+      "geisha_url": "https://www.kurashiki-tabi.jp/for/en/",
+      "geisha_label": "🛶 Botes Tradicionales de Kurashiki Bikan & Crucero Miyajima",
+      "video_production_plan": "🎥🎬 YOUTUBE & KICK VLOG (Meta +$15K/mes): • Hook YouTube: «5 Prefecturas en 1 Viaje: Del Santuario del Matrimonio Eterno en Izumo al Desierto de Tottori y Miyajima». • Tomas clave: La cuerda sagrada gigante (Shimenawa) de 5 toneladas en Izumo Taisha donde oran por su futuro juntos, puesta de sol sobre las dunas de arena frente al Mar de Japón, navegando bajo el Torii flotante de Miyajima y los 123 Torii rojos sobre el acantilado azul de Motonosumi.",
       "total_jpy": 338000,
       "total_live_usd": 2139
     },
@@ -2438,6 +2817,14 @@
         "hotel_label": "🏯 Reservar Ryokan en Dogo Onsen & Kamikochi",
         "maps_url": "https://www.google.com/maps/dir/Dogo+Onsen/Shimonada+Station/Katsurahama/Chichibugahama+Beach/Naruto+Whirlpools"
       },
+      "id": "mes-21",
+      "title": "Mes 21 (Jun 2029) — Las 4 Prefecturas de Shikoku (Dogo Onsen, Chichibugahama, Aizome, Kochi) + Las Legendarias Geigi de Furumachi en Niigata & Alpes de Nagano",
+      "fight_sync": "🟡 ZONA AMARILLA (78.8 kg) · Últimas grandes expediciones regionales antes de entrar al Campamento Final.",
+      "arrival_blueprint": "✈️🚂🚄 DESDE BAJAR DEL AVIÓN Y TRENES ESCÉNICOS: • Parte A (Shikoku #41–#44): Limousine Bus a Haneda → vuelo a Matsuyama Airport (MYJ, 1h 25m); autobús/taxi de 20 min directo a la puerta de Dogo Onsen Honkan (#41 Ehime). Abordan el tren costero de lujo «Iyonada Monogatari» deteniéndose 10 minutos en el famoso andén frente al mar de Shimonada, bajan a Katsurahama (#44 Kochi), suben al taller de índigo y remolinos de Naruto (#43 Tokushima) y cierran al atardecer en la playa espejo de Chichibugahama (#42 Kagawa), volando de regreso desde Takamatsu. • Parte B (Nagano #45 y Niigata #46): Expreso Azusa / Shinkansen a Matsumoto y Kamikochi, conectando a Niigata para abordar el tren gastronómico «Kairi» junto al Mar de Japón y el barrio de Geigi de Furumachi.",
+      "geisha_experience": "👘🏮 GEISHAS & CULTURA ÚNICA (¡UNA DE LAS 3 GRANDES DE JAPÓN! Niigata Furumachi Geigi 新潟古町芸妓 + Dogo Onsen Imperial & Awa Odori): En Niigata viven una velada inolvidable con las legendarias «Furumachi Geigi» (reconocidas oficialmente junto a Gion en Kioto y Shimbashi en Tokio como los 3 grandes linajes de Geishas de Japón) en un Ryotei histórico de madera como Ikinariya o Nabedyaya. Además, en Shikoku visitan el salón imperial exclusivo de la Familia Real (Yushinden) en Dogo Onsen y presencian la danza tradicional «Awa Odori» en Tokushima.",
+      "geisha_url": "https://www.nvcb.or.jp/special/geigi/",
+      "geisha_label": "👘 Reservar Velada con las Furumachi Geigi de Niigata & Dogo Onsen",
+      "video_production_plan": "🎥🎬 YOUTUBE & KICK VLOG (Meta +$15K/mes): • Hook YouTube: «Conquistamos la Isla de Shikoku y Conocimos a las Legendarias Geishas de Furumachi en Niigata (46/47 Prefecturas)». • Tomas clave: El andén solitario frente al mar en Shimonada Station, la foto reflejada en el 'Espejo del Cielo' de Chichibugahama al atardecer, flamas gigantes asando Katsuo no Tataki en Kochi, aguas turquesas de Kamikochi y la danza de las Furumachi Geigi en Niigata.",
       "total_jpy": 394000,
       "total_live_usd": 2494
     },
@@ -2492,6 +2879,14 @@
         "hotel_label": "♨️ Reservar Suite Frente al Monte Fuji en Kawaguchiko (Ikyu)",
         "maps_url": "https://www.google.com/maps/dir/Shinjuku+Station/Kawaguchiko+Station/Kawaguchiko+Music+Forest+Museum"
       },
+      "id": "mes-22",
+      "title": "Mes 22 (Jul 2029 · 🔴 Fight Camp Final) — 🎉 ¡PREFECTURA #47 YAMANASHI (100% DE JAPÓN CONQUISTADO / 全国制覇)! Lago Kawaguchiko & Ensayo General Godzilla y Mothra",
+      "fight_sync": "🔴 ZONA ROJA (77.8 → 77.0 kg) · Aire fresco de montaña al pie del Monte Fuji sin desgaste antes de la Pelea #5.",
+      "arrival_blueprint": "🚄🛥️ DESDE BAJAR DEL TREN AL LAGO DEL MONTE FUJI: 1) En Ikebukuro toman JR a Shinjuku (5 min) y abordan en el Andén 9/10 el tren expreso directo «JR Fuji Excursion» (sin hacer ningún transbordo en Otsuki) hasta Kawaguchiko Station (Yamanashi #47, 1h 50m). 2) Al bajar del tren y pisar el andén con el Monte Fuji gigante a sus espaldas, colocan oficialmente el Sello #47 completando el 100% de las prefecturas de Japón. 3) El Mercedes/shuttle privado de su ryokan (Ubuya / Kukuna / Fufu Kawaguchiko) los lleva en 8 minutos hasta su suite con vista frontal al lago y al volcán.",
+      "geisha_experience": "👘🏮 GEISHAS & CULTURA ÚNICA (Música Tradicional Frente al Fuji & El Ensayo General de Godzilla 1954 y Mothra 1961): Paseo en lancha privada por el Lago Kawaguchiko y jardines de Kawaguchiko Music Forest. Al caer la noche, en la intimidad de su suite frente al Monte Fuji, realizan el ensayo general completo de la entrada de tu 6ª pelea: あやめ se viste con su Kimono real de Kaga Yuzen de Mothra 1961, el Obi negro y oro de Nishijin, el broche azul de Toba y el tocado de plumas doradas y turquesas, y practican juntos el segundo exacto (0:55 de la pista de Taiko) en que ella despliega sus mangas aladas para retirarte la bata del Godzilla de 1954.",
+      "geisha_url": "https://kawaguchikomusicforest.jp/",
+      "geisha_label": "🗻 Suite Frente al Monte Fuji & Ensayo General Godzilla/Mothra",
+      "video_production_plan": "🎥🎬 YOUTUBE & KICK VLOG (Meta +$15K/mes): • Hook YouTube: «¡VISITAMOS LAS 47 PREFECTURAS DE JAPÓN (47/47 全国制覇)! Celebrando Frente al Monte Fuji Antes del Campeonato». • Tomas clave: El momento emotivo con あやめ sellando la prefectura #47 al bajar en Kawaguchiko, navegando en lancha privada frente al Monte Fuji y un teaser misterioso a contraluz de las placas dorsales de Godzilla y la manga dorada del kimono de Mothra.",
       "total_jpy": 164400,
       "total_live_usd": 1041
     },
@@ -2540,6 +2935,14 @@
         "hotel_label": "🏙️ Reservar Suite Frente a Tokyo Tower (Ikyu)",
         "maps_url": "https://www.google.com/maps/search/Azabudai+Hills+Tokyo+Tower+View"
       },
+      "id": "mes-23",
+      "title": "Mes 23 (Ago 2029 · 🏆 Pelea #5) — Doble Campeón (二冠王: 5-0 Invicto), Firma con Doble Llave del Contrato de Retiro & Gala frente a Tokyo Tower",
+      "fight_sync": "🟢 ZONA VERDE CORTA · Victoria en 77.0 kg por el segundo título (5-0) y activación del protocolo de retiro.",
+      "arrival_blueprint": "🚕🏙️ DESDE LA JAULA HASTA EL PISO 52 DE TOKIO: Tras coronarte Doble Campeón (5-0) en 77 kg y pasar limpio la revisión médica del ring, un vehículo ejecutivo privado los traslada desde la arena hasta Toranomon / Azabudai Hills en el corazón de Tokio, subiendo directo a su suite y restaurante privado frente a Tokyo Tower iluminada.",
+      "geisha_experience": "👘🏮 GEISHAS & CULTURA ÚNICA (Hospitalidad Imperial Edomae & La Ceremonia de la Doble Llave): En una cena privada de Sushi Omakase Edomae con vista directa a la Torre de Tokio, se celebra la «Reunión de la Doble Llave»: con tu salud intacta al 100%, tu entrenador en jefe y tu mánager あやめ dan su aprobación unánime y firmas el contrato especial de 1 sola pelea («Wan-Matchi Keiyaku» / ワンマッチ契約) para despedirte en septiembre con la producción de Ginza 1954.",
+      "geisha_url": "https://www.azabudai-hills.com/en/",
+      "geisha_label": "🗼 Gala Doble Campeón en Azabudai Hills / Tokyo Tower",
+      "video_production_plan": "🎥🎬 YOUTUBE & KICK VLOG (Meta +$15K/mes): • Hook YouTube: «DOBLE CAMPEÓN DE MMA EN JAPÓN (5-0): Firmamos el Contrato para Mi Última Pelea Antes de Ir a la Fuerza Aérea». • Tomas clave: El KO/sumisión de campeonato para el 5-0, las dos coronas en el camerino, la firma real del contrato Wan-Matchi Keiyaku con la aprobación de あやめ y la vista nocturna de Tokyo Tower.",
       "total_jpy": 160000,
       "total_live_usd": 1013
     },
@@ -2592,6 +2995,14 @@
         "hotel_label": "✈️🌺 Siguiente Parada: Octubre 2029 — Capitán O-3 en Okinawa",
         "maps_url": "https://www.google.com/maps/dir/Korakuen+Hall/Tokyo+Heliport"
       },
+      "id": "mes-24",
+      "title": "Mes 24 (Sep 2029 · 👑 Pelea #6 Final) — Retiro Invicto 6-0 «La Caída de Ginza 1954: Godzilla & Mothra» + Vuelo Privado en Helicóptero sobre Tokio",
+      "fight_sync": "👑 ZONA DORADA DEFINITIVA · 6ª Pelea Especial de Graduación (6-0 Invicto), Trono Vacante y Transición a Capitán O-3 en Okinawa.",
+      "arrival_blueprint": "🚐🚁 DESDE EL CAMERINO DE KORAKUEN HALL HASTA EL HELIPUERTO DE TOKIO: • Noche de la Pelea #6: Llegada en van privada a Shinjuku FACE / Korakuen Hall con las cajas selladas de la bata de Godzilla 1954 y el Kimono de Mothra 1961; calentamiento en el vestidor con tus shorts YOKKAO y guantes Venum Pro Boxing tricolores. • Día Siguiente (16:30 hrs): Traslado ejecutivo desde Ikebukuro hasta el Helipuerto de Tokio en Shin-Kiba (Puerta VIP de ARIAir), donde pasan directo a la pista para abordar su helicóptero privado al atardecer.",
+      "geisha_experience": "👘🏮 GEISHAS & CULTURA ÚNICA (¡LA OBRA MAESTRA EN VIVO! El Kimono Kaga Yuzen + Obi Nishijin-ori + Kanzashi Real de Mothra 1961 con Tambor Taiko en Vivo): Todas las tradiciones textiles y escénicas que recolectaron por las 47 prefecturas cobran vida durante los 70 segundos de tu última caminata al ring: humo bajo, campanadas de Ginza Wako de 1954, tambor O-Daiko en vivo, los 4 bailarines cayendo en efecto dominó a tu paso y あやめ en la escalera del ring luciendo como una verdadera deidad imperial en su Kimono de Seda de Mothra 1961 al desplegar sus mangas aladas para quitarte la bata.",
+      "geisha_url": "https://ariair.arila.co.jp/cruising/tokyo",
+      "geisha_label": "🚁 Reservar Helicóptero Privado ARIAir Tokio & Gala 6-0",
+      "video_production_plan": "🎥🎬 YOUTUBE & KICK VLOG (Meta +$15K/mes): • Hook YouTube: «MI ÚLTIMA PELEA EN JAPÓN (6-0 INVICTO): La Entrada de Godzilla 1954 y Mothra con Mi Prometida + Tokio en Helicóptero». • Tomas clave: Documental cinematográfico multicámara en 4K: preparación en el camerino, los 70 segundos épicos de «La Caída de Ginza 1954», la victoria 6-0 dejando los cinturones vacantes en el centro del ring, y el cierre sobrevolando Tokyo Tower, Ginza y la Bahía de Tokio en helicóptero privado rumbo a tu nueva vida como Capitán O-3 en Okinawa.",
       "total_jpy": 285000,
       "total_live_usd": 1804
     }
@@ -2610,7 +3021,7 @@
     okinawa: { name: "Naha / Isla Ishigaki", region: "Okinawa", lat: 26.2124, lon: 127.6809 }
   };
 
-  let liveRateJpy = INITIAL_FEED.usd_jpy_rate || 158.08;
+  let liveRateJpy = INITIAL_FEED.usd_jpy_rate || (INITIAL_47_FEED.meta && INITIAL_47_FEED.meta.fx_rates && INITIAL_47_FEED.meta.fx_rates.JPY) || 158.08;
   let weatherState = JSON.parse(JSON.stringify(INITIAL_FEED.cities_weather || {}));
   let holidaysState = JSON.parse(JSON.stringify(INITIAL_FEED.upcoming_jp_holidays || []));
   let pref47Data = JSON.parse(JSON.stringify(INITIAL_47_FEED));
@@ -2625,11 +3036,11 @@
   }
 
   function fmtJpy(n) {
-    return "¥" + Math.round(n).toLocaleString("en-US");
+    return "¥" + Math.round(n || 0).toLocaleString("en-US");
   }
 
   function fmtUsd(jpy) {
-    return "$" + Math.round(jpy / getActiveRate()).toLocaleString("en-US");
+    return "$" + Math.round((jpy || 0) / getActiveRate()).toLocaleString("en-US");
   }
 
   function evaluateAyameComfort(temp, rain, hum) {
@@ -2686,10 +3097,14 @@
 
     // 3. Open-Meteo Batch Weather for the 24 Monthly Expeditions (47 Prefectures)
     try {
-      const months = pref47Data.itinerary_24_months || [];
+      const months = pref47Data.months_24 || pref47Data.itinerary_24_months || [];
       if (months.length > 0) {
-        const lats = months.map((m) => m.lat).join(",");
-        const lons = months.map((m) => m.lon).join(",");
+        const lats = months
+          .map((m) => (m.prefectures && m.prefectures[0] ? m.prefectures[0].lat : 35.7295))
+          .join(",");
+        const lons = months
+          .map((m) => (m.prefectures && m.prefectures[0] ? m.prefectures[0].lon : 139.7109))
+          .join(",");
         const url24 = `https://api.open-meteo.com/v1/forecast?latitude=${lats}&longitude=${lons}&current=temperature_2m,relative_humidity_2m,precipitation&timezone=Asia%2FTokyo`;
         const res24 = await fetch(url24, { cache: "no-store" });
         if (res24.ok) {
@@ -2727,7 +3142,7 @@
   // MODULE 1: RADAR EN TIEMPO REAL DE IKEBUKURO, TOKIO Y JAPÓN (#ayame-radar-hub)
   // =========================================================================
   function initAyameRadar() {
-    const root = document.getElementById("ayame-radar-hub");
+    const root = document.getElementById("ayame-radar-hub") || document.getElementById("ayame-radar-container");
     if (!root) return;
 
     let activeZone = "all";
@@ -2901,7 +3316,7 @@
   }
 
   // =========================================================================
-  // MODULE 2: EL GRAN ITINERARIO DE 24 MESES Y LAS 47 PREFECTURAS (#ayame-24-expediciones)
+  // MODULE 2: EL GRAN ITINERARIO DE 24 MESES, 47 PREFECTURAS, GEISHAS & YOUTUBE/KICK (#ayame-24-expediciones)
   // =========================================================================
   function initZenkokuSeiha47Hub() {
     const sec = document.getElementById("ayame-24-expediciones");
@@ -2912,66 +3327,145 @@
     let activeZone = "all";
     let activeRegion = "all";
     let searchQuery = "";
-    let showAll47Pills = false;
+    let showAll47Pills = true;
+    let showGeishaAtlas = false;
 
-    // Collect all 47 prefectures in order #01 to #47 from the 24 months
-    const all47List = [];
-    (pref47Data.itinerary_24_months || []).forEach((m) => {
-      (m.prefectures_conquered || []).forEach((pStr) => {
-        const match = pStr.match(/#(\d+)\s+(.+)/);
-        if (match) {
-          all47List.push({
-            num: parseInt(match[1], 10),
-            code: "#" + match[1],
-            name: match[2],
-            label: pStr,
-            monthNum: m.month_num,
-            monthId: m.id,
-            dateLabel: m.date_label
-          });
-        }
+    const ZONE_MAP = {
+      AMARILLA: "yellow",
+      ROJA: "red",
+      VERDE: "green",
+      DORADA: "gold",
+      yellow: "yellow",
+      red: "red",
+      green: "green",
+      gold: "gold"
+    };
+
+    function normalizeMonth(m) {
+      const mId = m.id || "mes-" + String(m.month_num).padStart(2, "0");
+      const zColor = ZONE_MAP[m.zone_code] || ZONE_MAP[m.zone_color] || "yellow";
+      let phaseNum = "1";
+      if (m.month_num >= 1 && m.month_num <= 6) phaseNum = "1";
+      else if (m.month_num >= 7 && m.month_num <= 12) phaseNum = "2";
+      else if (m.month_num >= 13 && m.month_num <= 18) phaseNum = "3";
+      else phaseNum = "4";
+
+      const prefs = Array.isArray(m.prefectures) ? m.prefectures : [];
+      const regionsSet = new Set();
+      prefs.forEach((p) => {
+        const r = (p.region || "").toLowerCase();
+        if (r.includes("kanto")) regionsSet.add("kanto");
+        if (r.includes("tohoku")) regionsSet.add("tohoku");
+        if (r.includes("hokkaido")) regionsSet.add("hokkaido");
+        if (r.includes("chubu") || r.includes("hokuriku")) regionsSet.add("chubu");
+        if (r.includes("kansai")) regionsSet.add("kansai");
+        if (r.includes("chugoku")) regionsSet.add("chugoku");
+        if (r.includes("shikoku")) regionsSet.add("shikoku");
+        if (r.includes("kyushu") || r.includes("okinawa")) regionsSet.add("kyushu");
       });
-    });
+      if (regionsSet.size === 0) {
+        regionsSet.add("kanto");
+      }
+
+      return {
+        raw: m,
+        id: mId,
+        month_num: m.month_num,
+        date_label: m.date_label || "",
+        title: m.title || `Mes ${String(m.month_num).padStart(2, "0")} (${m.date_label})`,
+        phaseNum: phaseNum,
+        zone_color: zColor,
+        zone_badge: m.zone_badge || "",
+        duration: m.duration || "",
+        shortcut: m.shortcut || m.ikebukuro_shortcut || "",
+        cat_protocol: m.cat_protocol || "",
+        fight_sync: m.fight_sync || m.zone_badge || "",
+        arrival_blueprint: m.arrival_blueprint || "",
+        geisha_experience: m.geisha_experience || "",
+        geisha_url: m.geisha_url || "https://www.japan.travel/en/",
+        geisha_label: m.geisha_label || "🏮 Guía Hanamachi & Cultura",
+        video_production_plan: m.video_production_plan || "",
+        nutrition_bruno: m.nutrition_bruno || m.nutrition_77kg || "",
+        antojo_ayame: m.antojo_ayame || m.ayame_treat || "",
+        prefectures: prefs,
+        regions: Array.from(regionsSet),
+        schedule: Array.isArray(m.schedule) ? m.schedule : [],
+        costs_jpy: m.costs_jpy || {},
+        booking_angles: m.booking_angles || m.booking_links || {},
+        total_jpy: m.total_jpy || 0
+      };
+    }
+
+    // Collect all 47 prefectures in order #01 to #47
+    const all47List = (pref47Data.prefectures_47 || []).map((p) => ({
+      num: p.num,
+      code: "#" + String(p.num).padStart(2, "0"),
+      name: p.name,
+      kanji: p.kanji || "",
+      region: p.region || "",
+      activity: p.activity || "",
+      label: `#${String(p.num).padStart(2, "0")} ${p.name} (${p.kanji || ""})`,
+      monthNum: p.month_num,
+      monthId: "mes-" + String(p.month_num).padStart(2, "0"),
+      dateLabel: p.date_label || ""
+    }));
     all47List.sort((a, b) => a.num - b.num);
 
+    const geishaAtlas = pref47Data.geisha_districts_atlas || [];
+
     function renderHub() {
-      const months = pref47Data.itinerary_24_months || [];
-      const grandTotalJpy = (pref47Data.summary && pref47Data.summary.grand_total_jpy) || 5594200;
+      const rawMonths = pref47Data.months_24 || pref47Data.itinerary_24_months || [];
+      const months = rawMonths.map(normalizeMonth);
+      const grandTotalJpy =
+        (pref47Data.meta && pref47Data.meta.total_campaign_jpy) ||
+        (pref47Data.summary && pref47Data.summary.grand_total_jpy) ||
+        5594200;
 
       // Calculate conquered counts
       let conqueredMonthsCount = 0;
-      const conqueredPrefsSet = new Set();
+      const conqueredPrefsNums = new Set();
       let spentJpy = 0;
 
       months.forEach((m) => {
         if (savedMonths[m.id]) {
           conqueredMonthsCount++;
           spentJpy += m.total_jpy || 0;
-          (m.prefectures_conquered || []).forEach((p) => conqueredPrefsSet.add(p));
+          m.prefectures.forEach((p) => conqueredPrefsNums.add(p.num));
         }
       });
 
-      const conqueredPrefsCount = conqueredPrefsSet.size;
+      const conqueredPrefsCount = conqueredPrefsNums.size;
       const pct47 = Math.round((conqueredPrefsCount / 47) * 100);
 
       // Filter months
       const q = searchQuery.trim().toLowerCase();
       const filteredMonths = months.filter((m) => {
-        if (activePhase !== "all" && String(m.phase) !== activePhase) return false;
+        if (activePhase !== "all" && m.phaseNum !== activePhase) return false;
         if (activeZone !== "all" && m.zone_color !== activeZone) return false;
-        if (activeRegion !== "all" && m.region !== activeRegion) return false;
+        if (activeRegion !== "all" && !m.regions.includes(activeRegion)) return false;
         if (!q) return true;
+
+        const prefText = m.prefectures
+          .map((p) => `#${String(p.num).padStart(2, "0")} ${p.name} ${p.kanji} ${p.region} ${p.activity}`)
+          .join(" ");
+        const schedText = m.schedule
+          .map((s) => (typeof s === "string" ? s : `${s.time || ""} ${s.detail || ""}`))
+          .join(" ");
+
         const hay = [
           m.title,
           m.date_label,
-          m.region_label,
-          m.fight_sync,
-          m.ikebukuro_shortcut,
+          m.zone_badge,
+          m.shortcut,
           m.cat_protocol,
-          m.nutrition_77kg,
-          m.ayame_treat,
-          ...(m.prefectures_conquered || []),
-          ...(m.schedule || [])
+          m.fight_sync,
+          m.arrival_blueprint,
+          m.geisha_experience,
+          m.video_production_plan,
+          m.nutrition_bruno,
+          m.antojo_ayame,
+          prefText,
+          schedText
         ]
           .join(" ")
           .toLowerCase();
@@ -2981,19 +3475,41 @@
       // Build 47 Prefecture Stamp Rally badges
       const stampBadgesHtml = all47List
         .map((p) => {
-          const isConquered = conqueredPrefsSet.has(p.label);
+          const isConquered = conqueredPrefsNums.has(p.num);
           return `
             <span
               data-jump-month="${p.monthId}"
-              title="Conquistada en Mes ${String(p.monthNum).padStart(2, "0")} (${p.dateLabel}) — Clic para ir al itinerario"
-              style="cursor:pointer; padding:3px 9px; border-radius:999px; font-size:0.72rem; font-weight:700; transition:all 0.15s; border:1px solid ${
-                isConquered ? "#22c55e" : "rgba(255,255,255,0.14)"
+              title="Mes ${String(p.monthNum).padStart(2, "0")} (${p.dateLabel}): ${p.activity} — Clic para saltar a su tarjeta"
+              style="cursor:pointer; padding:4px 10px; border-radius:999px; font-size:0.72rem; font-weight:700; transition:all 0.15s; border:1px solid ${
+                isConquered ? "#22c55e" : "rgba(240,185,11,0.32)"
               }; background:${
-                isConquered ? "rgba(34,197,94,0.22)" : "rgba(255,255,255,0.04)"
-              }; color:${isConquered ? "#4ade80" : "#9ca3af"};"
+                isConquered ? "rgba(34,197,94,0.22)" : "rgba(15,23,42,0.85)"
+              }; color:${isConquered ? "#4ade80" : "#e2e8f0"};"
             >
-              ${isConquered ? "✅ " : "🗾 "}${p.label}
+              ${isConquered ? "✅ " : "🗾 "}<strong style="color:#f0b90b;">${p.code}</strong> ${p.name} <small style="color:#94a3b8;">(${p.kanji} · M${String(p.monthNum).padStart(2, "0")})</small>
             </span>
+          `;
+        })
+        .join("");
+
+      // Build Geisha Districts Atlas cards
+      const geishaAtlasHtml = geishaAtlas
+        .map((g) => {
+          const mId = "mes-" + String(g.month_num).padStart(2, "0");
+          return `
+            <div style="background:#111827; border:1px solid rgba(244,114,182,0.32); border-left:3px solid #f472b6; border-radius:9px; padding:10px 12px; display:flex; flex-direction:column; justify-content:space-between; gap:6px;">
+              <div>
+                <div style="display:flex; justify-content:space-between; align-items:center; gap:6px; margin-bottom:3px;">
+                  <span style="font-size:0.68rem; font-weight:800; color:#f9a8d4; text-transform:uppercase;">Mes ${String(g.month_num).padStart(2, "0")} · ${g.city}</span>
+                  <button data-jump-month="${mId}" style="background:rgba(240,185,11,0.16); border:1px solid #f0b90b; color:#fef08a; border-radius:5px; padding:1px 7px; font-size:0.67rem; font-weight:700; cursor:pointer;">Ir al Mes ↘</button>
+                </div>
+                <div style="font-size:0.8rem; font-weight:800; color:#fff; margin-bottom:4px;">👘 ${g.name}</div>
+                <div style="font-size:0.73rem; color:#cbd5e1; line-height:1.4;">${g.highlight}</div>
+              </div>
+              <div>
+                <a href="${g.url}" target="_blank" rel="noopener" style="font-size:0.7rem; color:#7dd3fc; text-decoration:none; font-weight:700;">🔗 Sitio Oficial / Reserva ↗</a>
+              </div>
+            </div>
           `;
         })
         .join("");
@@ -3005,164 +3521,210 @@
         gold: { border: "#f0b90b", bg: "rgba(240,185,11,0.18)", text: "#fef08a" }
       };
 
-      const cardsHtml = filteredMonths
-        .map((m) => {
-          const zc = zoneColors[m.zone_color] || zoneColors.yellow;
-          const isDone = !!savedMonths[m.id];
-          const w = monthWeatherMap[m.month_num];
-          const weatherPill = w
-            ? `<span style="background:rgba(56,189,248,0.14); border:1px solid rgba(56,189,248,0.35); color:#7dd3fc; padding:2px 8px; border-radius:999px; font-size:0.7rem; font-weight:700;">🌡️ Clima Hoy: ${w.temp_c}°C · 💧 ${w.humidity}%</span>`
-            : `<span style="background:rgba(56,189,248,0.1); border:1px solid rgba(56,189,248,0.25); color:#7dd3fc; padding:2px 8px; border-radius:999px; font-size:0.7rem;">🛰️ Open-Meteo Ready</span>`;
+      const cardsHtml =
+        filteredMonths.length === 0
+          ? `<div style="grid-column:1/-1; background:#0d1117; border:1px solid #30363d; border-radius:12px; padding:28px; text-align:center; color:#cbd5e1;">
+               No se encontraron meses con ese filtro. <button id="btn-reset-z47-filters" class="plan-tab active" style="margin-left:10px; cursor:pointer;">🔄 Mostrar los 24 Meses y 47 Prefecturas</button>
+             </div>`
+          : filteredMonths
+              .map((m) => {
+                const zc = zoneColors[m.zone_color] || zoneColors.yellow;
+                const isDone = !!savedMonths[m.id];
+                const w = monthWeatherMap[m.month_num];
+                const weatherPill = w
+                  ? `<span style="background:rgba(56,189,248,0.14); border:1px solid rgba(56,189,248,0.35); color:#7dd3fc; padding:2px 8px; border-radius:999px; font-size:0.7rem; font-weight:700;">🌡️ Clima Hoy: ${w.temp_c}°C · 💧 ${w.humidity}%</span>`
+                  : `<span style="background:rgba(56,189,248,0.1); border:1px solid rgba(56,189,248,0.25); color:#7dd3fc; padding:2px 8px; border-radius:999px; font-size:0.7rem;">🛰️ Open-Meteo Ready</span>`;
 
-          const prefsPills = (m.prefectures_conquered || [])
-            .map((p) => {
-              const isNew = !p.includes("Base");
-              return `<span style="background:${
-                isNew ? "rgba(240,185,11,0.16)" : "rgba(148,163,184,0.14)"
-              }; border:1px solid ${
-                isNew ? "#f0b90b" : "rgba(148,163,184,0.3)"
-              }; color:${
-                isNew ? "#fef08a" : "#cbd5e1"
-              }; padding:2px 8px; border-radius:6px; font-size:0.72rem; font-weight:700;">🗾 ${p}</span>`;
-            })
-            .join("");
+                const prefsPills =
+                  m.prefectures.length > 0
+                    ? m.prefectures
+                        .map(
+                          (p) =>
+                            `<span style="background:rgba(240,185,11,0.16); border:1px solid #f0b90b; color:#fef08a; padding:3px 9px; border-radius:6px; font-size:0.73rem; font-weight:800;" title="${p.activity}">🗾 #${String(p.num).padStart(2, "0")} ${p.name} (${p.kanji}) · ${p.region}</span>`
+                        )
+                        .join("")
+                    : `<span style="background:rgba(148,163,184,0.14); border:1px solid rgba(148,163,184,0.35); color:#e2e8f0; padding:3px 9px; border-radius:6px; font-size:0.72rem; font-weight:700;">🏟️ Sede Base Tokio (Ikebukuro / Ginza / Korakuen / Bahía)</span>`;
 
-          const scheduleHtml = (m.schedule || [])
-            .map(
-              (line) =>
-                `<li style="margin-bottom:5px; color:#e5e7eb; font-size:0.8rem; line-height:1.45;">${line}</li>`
-            )
-            .join("");
+                const prefActivitiesHtml =
+                  m.prefectures.length > 0
+                    ? `<div style="margin-bottom:10px; display:flex; flex-direction:column; gap:4px;">` +
+                      m.prefectures
+                        .map(
+                          (p) =>
+                            `<div style="font-size:0.75rem; color:#fde68a; background:rgba(240,185,11,0.07); border-left:3px solid #f0b90b; padding:4px 8px; border-radius:4px;">✨ <strong>#${String(p.num).padStart(2, "0")} ${p.name}:</strong> <span style="color:#f8fafc;">${p.activity}</span></div>`
+                        )
+                        .join("") +
+                      `</div>`
+                    : "";
 
-          const c = m.costs_jpy || {};
-          const b = m.booking_links || {};
-          const tot = Math.max(1, m.total_jpy || 1);
-          const pTr = (((c.transporte || 0) / tot) * 100).toFixed(1);
-          const pHo = (((c.hospedaje || 0) / tot) * 100).toFixed(1);
-          const pAc = (((c.actividades_telas || 0) / tot) * 100).toFixed(1);
-          const pGa = (((c.gastronomia || 0) / tot) * 100).toFixed(1);
-          const pCs = (((c.cat_sitter || 0) / tot) * 100).toFixed(1);
+                const scheduleHtml = m.schedule
+                  .map((s) => {
+                    if (typeof s === "string") {
+                      return `<li style="margin-bottom:6px; color:#e5e7eb; font-size:0.79rem; line-height:1.45;">${s}</li>`;
+                    }
+                    return `<li style="margin-bottom:6px; color:#e5e7eb; font-size:0.79rem; line-height:1.45;"><strong style="color:#f0b90b;">${s.time}:</strong> ${s.detail}</li>`;
+                  })
+                  .join("");
 
-          return `
-            <div id="card-${m.id}" class="exp-47-card" style="background:linear-gradient(180deg, #0f172a 0%, #090d16 100%); border:1px solid ${
-              isDone ? "#10b981" : "rgba(148,163,184,0.18)"
-            }; border-top:4px solid ${zc.border}; border-radius:14px; padding:18px; display:flex; flex-direction:column; justify-content:space-between; box-shadow:${
-              isDone ? "0 0 0 2px rgba(16,185,129,0.35), 0 12px 28px rgba(0,0,0,0.5)" : "0 10px 26px rgba(0,0,0,0.4)"
-            }; font-variant-numeric:tabular-nums;">
-              <div>
-                <!-- ENCABEZADO DEL MES -->
-                <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:8px; margin-bottom:8px;">
-                  <div style="display:flex; flex-wrap:wrap; align-items:center; gap:6px;">
-                    <span style="background:${zc.bg}; border:1px solid ${zc.border}; color:${zc.text}; padding:2px 9px; border-radius:6px; font-size:0.7rem; font-weight:800; font-family:ui-monospace,monospace;">
-                      API /mes-${String(m.month_num).padStart(2, "0")} • ${m.date_label.toUpperCase()}
-                    </span>
-                    <span style="font-size:0.72rem; color:#94a3b8; font-weight:700;">${m.zone_badge}</span>
-                    ${weatherPill}
-                  </div>
-                  <label style="display:inline-flex; align-items:center; gap:6px; background:${
-                    isDone ? "rgba(16,185,129,0.2)" : "rgba(255,255,255,0.05)"
-                  }; border:1px solid ${
-                    isDone ? "#10b981" : "rgba(148,163,184,0.25)"
-                  }; color:${
-                    isDone ? "#34d399" : "#cbd5e1"
-                  }; padding:3px 10px; border-radius:8px; font-size:0.73rem; font-weight:700; cursor:pointer;">
-                    <input type="checkbox" data-check-month="${m.id}" ${isDone ? "checked" : ""} style="cursor:pointer;">
-                    ${isDone ? "✅ Sellado" : "Sellar Mes"}
-                  </label>
-                </div>
+                const c = m.costs_jpy || {};
+                const b = m.booking_angles || {};
+                const tot = Math.max(1, m.total_jpy || 1);
+                const pTr = (((c.transporte || 0) / tot) * 100).toFixed(1);
+                const pHo = (((c.hospedaje || 0) / tot) * 100).toFixed(1);
+                const pAc = (((c.actividades_telas || 0) / tot) * 100).toFixed(1);
+                const pGa = (((c.gastronomia || 0) / tot) * 100).toFixed(1);
+                const pCs = (((c.cat_sitter || 0) / tot) * 100).toFixed(1);
 
-                <!-- TÍTULO Y PREFECTURAS -->
-                <h3 style="color:#f8fafc; font-size:1.06rem; font-weight:800; margin:6px 0 8px; line-height:1.35;">${m.title}</h3>
-                <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px;">
-                  ${prefsPills}
-                  <span style="background:rgba(167,139,250,0.12); border:1px solid rgba(167,139,250,0.32); color:#ddd6fe; padding:2px 8px; border-radius:6px; font-size:0.7rem; font-weight:600;">
-                    ⏱️ ${m.duration} · ${m.region_label}
-                  </span>
-                </div>
-
-                <!-- LOGÍSTICA TÁCTICA: ATAJO IKEBUKURO + GATITOS + MMA -->
-                <div style="background:rgba(15,23,42,0.75); border:1px solid rgba(148,163,184,0.14); border-radius:9px; padding:10px 12px; margin-bottom:10px; font-size:0.75rem;">
-                  <div style="margin-bottom:4px; color:#7dd3fc;">🚀 <strong>Atajo Ikebukuro:</strong> <span style="color:#e2e8f0;">${m.ikebukuro_shortcut}</span></div>
-                  <div style="margin-bottom:4px; color:#f9a8d4;">🐱 <strong>Protocolo Gatitos:</strong> <span style="color:#e2e8f0;">${m.cat_protocol}</span></div>
-                  <div style="color:#fde047;">🥊 <strong>Sincronía MMA (77 kg):</strong> <span style="color:#e2e8f0;">${m.fight_sync}</span></div>
-                </div>
-
-                <!-- ITINERARIO HORARIO POR HORARIO / DÍA POR DÍA -->
-                <div style="margin-bottom:10px;">
-                  <div style="font-size:0.71rem; font-weight:800; color:#f0b90b; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:5px;">
-                    📋 Cronograma Táctico Paso a Paso:
-                  </div>
-                  <ul style="margin:0; padding-left:18px;">
-                    ${scheduleHtml}
-                  </ul>
-                </div>
-
-                <!-- NUTRICIÓN 77 KG & MIMO PARA AYAME -->
-                <div style="background:rgba(16,185,129,0.06); border:1px solid rgba(16,185,129,0.22); border-radius:9px; padding:9px 11px; margin-bottom:12px; font-size:0.74rem;">
-                  <div style="margin-bottom:4px; color:#6ee7b7;">🥩 <strong>Nutrición 77 kg (0 Alcohol 🚫🍺):</strong> <span style="color:#ecfdf5;">${m.nutrition_77kg}</span></div>
-                  <div style="color:#fbcfe8;">🌸 <strong>Mimo &amp; Arte Textil de あやめ (0 Mango 🚫🥭):</strong> <span style="color:#fdf2f8;">${m.ayame_treat}</span></div>
-                </div>
-              </div>
-
-              <!-- DESGLOSE FINANCIERO MULTI-ÁNGULO + BARRA PROPORCIONAL + RESERVA 1-CLICK -->
-              <div>
-                <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(148,163,184,0.16); border-radius:10px; padding:11px; margin-bottom:10px;">
-                  <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px; margin-bottom:6px;">
-                    <span style="font-size:0.7rem; font-weight:700; color:#94a3b8; text-transform:uppercase; letter-spacing:0.04em;">💰 Telemetría de Costos (5 Rubros)</span>
+                return `
+                  <div id="card-${m.id}" class="exp-47-card" style="background:linear-gradient(180deg, #0f172a 0%, #090d16 100%); border:1px solid ${
+                    isDone ? "#10b981" : "rgba(148,163,184,0.22)"
+                  }; border-top:4px solid ${zc.border}; border-radius:14px; padding:18px; display:flex; flex-direction:column; justify-content:space-between; box-shadow:${
+                    isDone ? "0 0 0 2px rgba(16,185,129,0.35), 0 12px 28px rgba(0,0,0,0.5)" : "0 10px 26px rgba(0,0,0,0.4)"
+                  }; font-variant-numeric:tabular-nums;">
                     <div>
-                      <span style="font-size:0.98rem; font-weight:800; color:#f8fafc;">${fmtJpy(m.total_jpy)} JPY</span>
-                      <span style="font-size:0.78rem; font-weight:800; color:#34d399; background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.38); padding:2px 7px; border-radius:5px; margin-left:5px;">
-                        ⚡ ${fmtUsd(m.total_jpy)} USD
-                      </span>
+                      <!-- ENCABEZADO DEL MES -->
+                      <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:8px; margin-bottom:8px;">
+                        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:6px;">
+                          <span style="background:${zc.bg}; border:1px solid ${zc.border}; color:${zc.text}; padding:2px 9px; border-radius:6px; font-size:0.7rem; font-weight:800; font-family:ui-monospace,monospace;">
+                            API /mes-${String(m.month_num).padStart(2, "0")} • ${m.date_label.toUpperCase()}
+                          </span>
+                          <span style="font-size:0.72rem; color:#cbd5e1; font-weight:700;">${m.zone_badge}</span>
+                          ${weatherPill}
+                        </div>
+                        <label style="display:inline-flex; align-items:center; gap:6px; background:${
+                          isDone ? "rgba(16,185,129,0.2)" : "rgba(255,255,255,0.05)"
+                        }; border:1px solid ${
+                          isDone ? "#10b981" : "rgba(148,163,184,0.25)"
+                        }; color:${
+                          isDone ? "#34d399" : "#cbd5e1"
+                        }; padding:3px 10px; border-radius:8px; font-size:0.73rem; font-weight:700; cursor:pointer;">
+                          <input type="checkbox" data-check-month="${m.id}" ${isDone ? "checked" : ""} style="cursor:pointer;">
+                          ${isDone ? "✅ Sellado" : "Sellar Mes"}
+                        </label>
+                      </div>
+
+                      <!-- TÍTULO Y PREFECTURAS -->
+                      <h3 style="color:#f8fafc; font-size:1.05rem; font-weight:800; margin:6px 0 8px; line-height:1.35;">${m.title}</h3>
+                      <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:8px;">
+                        ${prefsPills}
+                        <span style="background:rgba(167,139,250,0.12); border:1px solid rgba(167,139,250,0.32); color:#ddd6fe; padding:3px 8px; border-radius:6px; font-size:0.7rem; font-weight:600;">
+                          ⏱️ ${m.duration}
+                        </span>
+                      </div>
+                      ${prefActivitiesHtml}
+
+                      <!-- 1. LOGÍSTICA DESDE IKEBUKURO + PROTOCOLO GATITOS + MMA -->
+                      <div style="background:rgba(15,23,42,0.82); border:1px solid rgba(148,163,184,0.18); border-radius:9px; padding:10px 12px; margin-bottom:10px; font-size:0.75rem; line-height:1.45;">
+                        <div style="margin-bottom:4px; color:#7dd3fc;">🚀 <strong>Atajo desde Ikebukuro:</strong> <span style="color:#f1f5f9;">${m.shortcut}</span></div>
+                        <div style="margin-bottom:4px; color:#f9a8d4;">🐱 <strong>Protocolo 2 Gatitos y 2 Chinchillas:</strong> <span style="color:#f1f5f9;">${m.cat_protocol}</span></div>
+                        <div style="color:#fde047;">🥊 <strong>Sincronía Campaña 6-0 (77 kg):</strong> <span style="color:#f1f5f9;">${m.fight_sync}</span></div>
+                      </div>
+
+                      <!-- 2. MAPEO REAL PASO A PASO DESDE BAJAR DEL TREN / SHINKANSEN / AEROPUERTO -->
+                      ${
+                        m.arrival_blueprint
+                          ? `<div style="background:rgba(56,189,248,0.08); border:1px solid rgba(56,189,248,0.3); border-left:3px solid #38bdf8; border-radius:8px; padding:9px 11px; margin-bottom:10px; font-size:0.75rem; color:#e0f2fe; line-height:1.45;">
+                               ${m.arrival_blueprint}
+                             </div>`
+                          : ""
+                      }
+
+                      <!-- 3. MAPEO DE GEISHAS (HANAMACHI / GEIGI / MAIKO) & CULTURA EXCLUSIVA -->
+                      ${
+                        m.geisha_experience
+                          ? `<div style="background:rgba(244,114,182,0.09); border:1px solid rgba(244,114,182,0.34); border-left:3px solid #f472b6; border-radius:8px; padding:9px 11px; margin-bottom:10px; font-size:0.75rem; color:#fce7f3; line-height:1.45;">
+                               ${m.geisha_experience}
+                             </div>`
+                          : ""
+                      }
+
+                      <!-- 4. ITINERARIO HORARIO POR HORARIO / DÍA POR DÍA -->
+                      <div style="margin-bottom:10px; background:rgba(0,0,0,0.28); border:1px solid rgba(255,255,255,0.07); border-radius:8px; padding:10px 12px;">
+                        <div style="font-size:0.71rem; font-weight:800; color:#f0b90b; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:6px;">
+                          📋 Itinerario Táctico Horario por Horario:
+                        </div>
+                        <ul style="margin:0; padding-left:18px;">
+                          ${scheduleHtml}
+                        </ul>
+                      </div>
+
+                      <!-- 5. ÁNGULO DE RODAJE YOUTUBE & KICK IRL (+15K USD/MES) -->
+                      ${
+                        m.video_production_plan
+                          ? `<div style="background:rgba(168,85,247,0.09); border:1px solid rgba(168,85,247,0.34); border-left:3px solid #a855f7; border-radius:8px; padding:9px 11px; margin-bottom:10px; font-size:0.74rem; color:#f3e8ff; line-height:1.45;">
+                               ${m.video_production_plan}
+                             </div>`
+                          : ""
+                      }
+
+                      <!-- 6. NUTRICIÓN 77 KG & MIMO PARA AYAME -->
+                      <div style="background:rgba(16,185,129,0.07); border:1px solid rgba(16,185,129,0.24); border-radius:9px; padding:9px 11px; margin-bottom:12px; font-size:0.74rem; line-height:1.45;">
+                        <div style="margin-bottom:4px; color:#6ee7b7;">🥩 <strong>Nutrición Hiper-Carnívora Bruno (0 Alcohol 🚫🍺):</strong> <span style="color:#ecfdf5;">${m.nutrition_bruno}</span></div>
+                        <div style="color:#fbcfe8;">🌸 <strong>Antojo &amp; Arte Textil de あやめ (0 Mango 🚫🥭):</strong> <span style="color:#fdf2f8;">${m.antojo_ayame}</span></div>
+                      </div>
+                    </div>
+
+                    <!-- DESGLOSE FINANCIERO MULTI-ÁNGULO + BARRA PROPORCIONAL + RESERVA 1-CLICK -->
+                    <div>
+                      <div style="background:rgba(15,23,42,0.9); border:1px solid rgba(148,163,184,0.18); border-radius:10px; padding:11px; margin-bottom:10px;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px; margin-bottom:6px;">
+                          <span style="font-size:0.7rem; font-weight:700; color:#94a3b8; text-transform:uppercase; letter-spacing:0.04em;">💰 Telemetría de Costos (5 Rubros)</span>
+                          <div>
+                            <span style="font-size:0.98rem; font-weight:800; color:#f8fafc;">${fmtJpy(m.total_jpy)} JPY</span>
+                            <span style="font-size:0.78rem; font-weight:800; color:#34d399; background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.38); padding:2px 7px; border-radius:5px; margin-left:5px;">
+                              ⚡ ${fmtUsd(m.total_jpy)} USD
+                            </span>
+                          </div>
+                        </div>
+                        <div style="display:flex; width:100%; height:6px; border-radius:999px; overflow:hidden; background:#090d16; margin-bottom:8px;">
+                          <div style="width:${pTr}%; background:#38bdf8;" title="Transporte: ${pTr}%"></div>
+                          <div style="width:${pHo}%; background:#a78bfa;" title="Hospedaje: ${pHo}%"></div>
+                          <div style="width:${pAc}%; background:#f472b6;" title="Actividades & Telas: ${pAc}%"></div>
+                          <div style="width:${pGa}%; background:#f59e0b;" title="Gastronomía: ${pGa}%"></div>
+                          <div style="width:${pCs}%; background:#22c55e;" title="Cat Sitter: ${pCs}%"></div>
+                        </div>
+                        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(115px, 1fr)); gap:6px; font-size:0.69rem; color:#cbd5e1;">
+                          <div><span style="color:#38bdf8;">●</span> Transp: <strong>${fmtJpy(c.transporte || 0)}</strong> (${fmtUsd(c.transporte || 0)})</div>
+                          <div><span style="color:#a78bfa;">●</span> Hotel: <strong>${fmtJpy(c.hospedaje || 0)}</strong> (${fmtUsd(c.hospedaje || 0)})</div>
+                          <div><span style="color:#f472b6;">●</span> Telas/Act: <strong>${fmtJpy(c.actividades_telas || 0)}</strong> (${fmtUsd(c.actividades_telas || 0)})</div>
+                          <div><span style="color:#f59e0b;">●</span> Comida: <strong>${fmtJpy(c.gastronomia || 0)}</strong> (${fmtUsd(c.gastronomia || 0)})</div>
+                          <div><span style="color:#22c55e;">●</span> Sitter: <strong>${fmtJpy(c.cat_sitter || 0)}</strong> (${fmtUsd(c.cat_sitter || 0)})</div>
+                        </div>
+                      </div>
+
+                      <!-- 6 BOTONES DE RESERVA E INVESTIGACIÓN DIRECTA -->
+                      <div style="display:flex; flex-wrap:wrap; gap:6px;">
+                        <a href="${b.transport_url || "#"}" target="_blank" rel="noopener" class="btn-link" style="font-size:0.71rem; padding:4px 9px; background:rgba(56,189,248,0.14); border:1px solid rgba(56,189,248,0.4); color:#7dd3fc; border-radius:6px; text-decoration:none;">
+                          ${b.transport_label || b.transport_name || "🚄 Agendar Tren/Vuelo"} ↗
+                        </a>
+                        <a href="${b.activity_url || "#"}" target="_blank" rel="noopener" class="btn-link" style="font-size:0.71rem; padding:4px 9px; background:rgba(244,114,182,0.14); border:1px solid rgba(244,114,182,0.4); color:#f9a8d4; border-radius:6px; text-decoration:none;">
+                          ${b.activity_label || b.activity_name || "🏯 Agendar Actividad"} ↗
+                        </a>
+                        <a href="${m.geisha_url || "#"}" target="_blank" rel="noopener" class="btn-link" style="font-size:0.71rem; padding:4px 9px; background:rgba(236,72,153,0.16); border:1px solid rgba(236,72,153,0.45); color:#fbcfe8; border-radius:6px; text-decoration:none;">
+                          ${m.geisha_label || "👘 Distrito Geishas / Cultura"} ↗
+                        </a>
+                        <a href="${b.dining_url || "#"}" target="_blank" rel="noopener" class="btn-link" style="font-size:0.71rem; padding:4px 9px; background:rgba(245,158,11,0.14); border:1px solid rgba(245,158,11,0.4); color:#fcd34d; border-radius:6px; text-decoration:none;">
+                          ${b.dining_label || b.dining_name || "🥩 Agendar Tabelog"} ↗
+                        </a>
+                        ${
+                          b.hotel_url
+                            ? `<a href="${b.hotel_url}" target="_blank" rel="noopener" class="btn-link" style="font-size:0.71rem; padding:4px 9px; background:rgba(167,139,250,0.14); border:1px solid rgba(167,139,250,0.4); color:#ddd6fe; border-radius:6px; text-decoration:none;">${b.hotel_label || "♨️ Agendar Ryokan/Hotel"} ↗</a>`
+                            : ""
+                        }
+                        <a href="${b.maps_url || "#"}" target="_blank" rel="noopener" class="btn-link" style="font-size:0.71rem; padding:4px 9px; background:rgba(34,197,94,0.14); border:1px solid rgba(34,197,94,0.4); color:#86efac; border-radius:6px; text-decoration:none;">
+                          🗺️ Ruta Google Maps ↗
+                        </a>
+                      </div>
                     </div>
                   </div>
-                  <!-- Barra proporcional de los 5 rubros -->
-                  <div style="display:flex; width:100%; height:6px; border-radius:999px; overflow:hidden; background:#090d16; margin-bottom:8px;">
-                    <div style="width:${pTr}%; background:#38bdf8;" title="Transporte: ${pTr}%"></div>
-                    <div style="width:${pHo}%; background:#a78bfa;" title="Hospedaje: ${pHo}%"></div>
-                    <div style="width:${pAc}%; background:#f472b6;" title="Actividades & Telas: ${pAc}%"></div>
-                    <div style="width:${pGa}%; background:#f59e0b;" title="Gastronomía: ${pGa}%"></div>
-                    <div style="width:${pCs}%; background:#22c55e;" title="Cat Sitter: ${pCs}%"></div>
-                  </div>
-                  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(115px, 1fr)); gap:6px; font-size:0.69rem; color:#cbd5e1;">
-                    <div><span style="color:#38bdf8;">●</span> Transp: <strong>${fmtJpy(c.transporte || 0)}</strong> (${fmtUsd(c.transporte || 0)})</div>
-                    <div><span style="color:#a78bfa;">●</span> Hotel: <strong>${fmtJpy(c.hospedaje || 0)}</strong> (${fmtUsd(c.hospedaje || 0)})</div>
-                    <div><span style="color:#f472b6;">●</span> Telas/Act: <strong>${fmtJpy(c.actividades_telas || 0)}</strong> (${fmtUsd(c.actividades_telas || 0)})</div>
-                    <div><span style="color:#f59e0b;">●</span> Comida: <strong>${fmtJpy(c.gastronomia || 0)}</strong> (${fmtUsd(c.gastronomia || 0)})</div>
-                    <div><span style="color:#22c55e;">●</span> Sitter: <strong>${fmtJpy(c.cat_sitter || 0)}</strong> (${fmtUsd(c.cat_sitter || 0)})</div>
-                  </div>
-                </div>
-
-                <!-- 5 BOTONES DE RESERVA E INVESTIGACIÓN DIRECTA -->
-                <div style="display:flex; flex-wrap:wrap; gap:6px;">
-                  <a href="${b.transport_url || "#"}" target="_blank" rel="noopener" class="btn-link" style="font-size:0.72rem; padding:4px 9px; background:rgba(56,189,248,0.14); border:1px solid rgba(56,189,248,0.4); color:#7dd3fc; border-radius:6px; text-decoration:none;">
-                    🚄 ${b.transport_name || "Agendar Tren/Vuelo"} ↗
-                  </a>
-                  <a href="${b.activity_url || "#"}" target="_blank" rel="noopener" class="btn-link" style="font-size:0.72rem; padding:4px 9px; background:rgba(244,114,182,0.14); border:1px solid rgba(244,114,182,0.4); color:#f9a8d4; border-radius:6px; text-decoration:none;">
-                    🏯 ${b.activity_name || "Agendar Actividad"} ↗
-                  </a>
-                  <a href="${b.dining_url || "#"}" target="_blank" rel="noopener" class="btn-link" style="font-size:0.72rem; padding:4px 9px; background:rgba(245,158,11,0.14); border:1px solid rgba(245,158,11,0.4); color:#fcd34d; border-radius:6px; text-decoration:none;">
-                    🥩 ${b.dining_name || "Agendar Tabelog"} ↗
-                  </a>
-                  ${
-                    b.hotel_url
-                      ? `<a href="${b.hotel_url}" target="_blank" rel="noopener" class="btn-link" style="font-size:0.72rem; padding:4px 9px; background:rgba(167,139,250,0.14); border:1px solid rgba(167,139,250,0.4); color:#ddd6fe; border-radius:6px; text-decoration:none;">♨️ Agendar Ryokan/Hotel ↗</a>`
-                      : ""
-                  }
-                  <a href="${b.maps_url || "#"}" target="_blank" rel="noopener" class="btn-link" style="font-size:0.72rem; padding:4px 9px; background:rgba(34,197,94,0.14); border:1px solid rgba(34,197,94,0.4); color:#86efac; border-radius:6px; text-decoration:none;">
-                    🗺️ Google Maps ↗
-                  </a>
-                </div>
-              </div>
-            </div>
-          `;
-        })
-        .join("");
+                `;
+              })
+              .join("");
 
       sec.innerHTML = `
-        <h2 class="section-title">🗾 Códice Maestro: Las 24 Expediciones Mensuales y las 47 Prefecturas con あやめ (全国制覇 2027–2029)</h2>
+        <h2 class="section-title">🗾 Códice Maestro API: Las 24 Expediciones Mensuales, 47 Prefecturas (全国制覇), Ruta de Geishas (花街) &amp; Rodaje YouTube/Kick</h2>
         <p style="color:var(--text-muted); margin-bottom:1.1rem;">
-          Itinerario completo mes a mes, horario por horario y ruta por ruta para conquistar las <strong>47 Prefecturas de Japón (<em>Zenkoku Seiha</em> / 全国制覇: #01 Tokio a #47 Yamanashi)</strong> en <strong>24 meses junto a あやめ</strong>, sincronizado con tu preparación en <strong>77 kg</strong>, tus <strong>6 combates invictos (6-0)</strong>, la creación artesanal de los atuendos de <strong>Godzilla 1954 &amp; Mothra 1961</strong> y tu transición a <strong>Capitán (O-3) en Okinawa</strong>.
+          Mapeo 100% real mes a mes, horario por horario y ruta por ruta desde que bajas del <strong>Shinkansen / Tren de Lujo / Aeropuerto</strong> para conquistar las <strong>47 Prefecturas de Japón (<em>Zenkoku Seiha</em> / 全国制覇: #01 Tokio a #47 Yamanashi)</strong> y los <strong>distritos históricos de Geishas (<em>Hanamachi</em> / <em>Geigi</em> / <em>Maiko</em>)</strong> junto a <strong>あやめ</strong>, diseñado para vivir actividades únicas y grabar contenido épico para tu meta de <strong>+$15,000+ USD/mes en YouTube y Kick</strong> sin chocar con tus <strong>6 combates (77 kg)</strong> ni su sueño sagrado de las <strong>22:30 hrs</strong>.
         </p>
 
         <!-- PARTE I: LOGÍSTICA BASE, 3 ATAJOS DESDE IKEBUKURO Y PROTOCOLO DE GATITOS -->
@@ -3183,31 +3745,31 @@
               🐱 Protocolo de 3 Niveles para los Gatitos de あやめ
             </div>
             <ul style="margin:0; padding-left:16px; font-size:0.78rem; color:#d1d5db; line-height:1.45;">
-              <li style="margin-bottom:4px;"><strong>🏠 Citas de 1 Día (M1, M2, M6, M12, M16):</strong> Alimentadores automáticos y regreso a dormir a casa en Ikebukuro con ellos (<strong>¥0 extra</strong>).</li>
-              <li style="margin-bottom:4px;"><strong>♨️ Escapadas de 1 Noche / 30h (M3, M4, M5, M9, M14, M22, M23):</strong> Fuentes continuas de agua y monitoreo por cámara Wi-Fi + visita preventiva.</li>
-              <li><strong>✈️ Viajes de 2 a 3 Noches (M7, M8, M10, M11, M13, M15, M17–M21, M24):</strong> <em>Cat Sitter</em> certificada en Tokio con reporte diario de fotos y videos por LINE para que あやめ viaje con cero preocupación.</li>
+              <li style="margin-bottom:4px;"><strong>🏠 Citas de 1 Día (M1, M2, M6, M7, M15):</strong> Alimentadores automáticos y regreso a dormir a casa en Ikebukuro con ellos (<strong>¥0 extra</strong>).</li>
+              <li style="margin-bottom:4px;"><strong>♨️ Escapadas de 1 Noche / 30h (M5, M12, M14, M22, M23):</strong> Fuentes continuas de agua y monitoreo en vivo por cámara Wi-Fi.</li>
+              <li><strong>✈️ Viajes de 2 a 3 Noches (M3, M4, M8–M11, M13, M16–M21):</strong> <em>Cat Sitter</em> certificada en Tokio con reporte diario de fotos y videos por LINE para que あやめ viaje con cero preocupación.</li>
             </ul>
           </div>
 
           <div style="background:#0d1117; border:1px solid #30363d; border-left:4px solid #f0b90b; border-radius:10px; padding:14px;">
             <div style="font-size:0.75rem; font-weight:800; color:#f0b90b; text-transform:uppercase; margin-bottom:6px;">
-              🥊 Regla del Conbini, Doble Llave y Presupuesto 47 Prefecturas
+              🎥 Motor YouTube + Kick (+$15K/mes) &amp; Campaña 6-0
             </div>
             <ul style="margin:0; padding-left:16px; font-size:0.78rem; color:#d1d5db; line-height:1.45;">
-              <li style="margin-bottom:4px;"><strong>🏍️ Honda CBR + YOKKAO &amp; Venum Tricolor:</strong> Traslado diario en minutos al gimnasio y equipo oficial en blanco, rojo y azul rey.</li>
+              <li style="margin-bottom:4px;"><strong>🎬 Cada Expedición = 1 Mega-Video YouTube + Streams IRL en Kick:</strong> Los viajes financian y multiplican tu canal hacia los <strong>+$15,000+ USD/mes</strong> mostrando el Japón imperial real (Geishas, Shinkansen Suite, Wagyu A5 y MMA).</li>
               <li style="margin-bottom:4px;"><strong>🔐 Doble Llave Antirretadores:</strong> Ningún combate extra se acepta sin aprobación unánime de tu <strong>Entrenador en Jefe</strong> y la <strong>Mánager あやめ</strong>.</li>
               <li><strong>💰 Inversión Total 24 Expediciones (47 Prefecturas):</strong> <strong>${fmtJpy(grandTotalJpy)} JPY</strong> (<strong style="color:#4ade80;">⚡ ${fmtUsd(grandTotalJpy)} USD hoy</strong> · Promedio ${fmtUsd(grandTotalJpy / 24)}/mes).</li>
             </ul>
           </div>
         </div>
 
-        <!-- TABLERO INTERACTIVO DE SELLOS DE LAS 47 PREFECTURAS (ZENKOKU SEIHA) -->
+        <!-- TABLERO INTERACTIVO DE SELLOS DE LAS 47 PREFECTURAS (ZENKOKU SEIHA) + ATLAS DE GEISHAS -->
         <div style="background:#0d1117; border:1px solid #30363d; border-radius:12px; padding:18px; margin-bottom:20px;">
           <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px; margin-bottom:10px;">
             <div>
-              <span style="color:#fff; font-weight:800; font-size:1rem;">🏆 Pasaporte Nacional de las 47 Prefecturas (全国制覇 47/47 Stamp Rally)</span>
+              <span style="color:#fff; font-weight:800; font-size:1rem;">🏆 Pasaporte Nacional de las 47 Prefecturas (全国制覇 47/47 Stamp Rally) &amp; Ruta de Geishas (花街)</span>
               <div style="font-size:0.78rem; color:#9ca3af; margin-top:2px;">
-                Marca cada mes como completado para iluminar las prefecturas conquistadas junto a あやめ (o haz clic en cualquier prefectura para saltar a su mes).
+                Haz clic en cualquier prefectura (<code>#01 Tokio</code> a <code>#47 Yamanashi</code>) para saltar directamente al itinerario de ese mes, o marca cada mes como sellado.
               </div>
             </div>
             <div style="text-align:right;">
@@ -3225,33 +3787,49 @@
           </div>
 
           <!-- 47 PÍLDORAS DE PREFECTURAS (#01 A #47) -->
-          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:14px; max-height:${showAll47Pills ? "none" : "115px"}; overflow:hidden;">
+          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:12px; max-height:${showAll47Pills ? "none" : "120px"}; overflow:hidden;">
             ${stampBadgesHtml}
           </div>
-          <div style="margin-bottom:12px;">
-            <button id="btn-toggle-47-pills" class="plan-tab" style="font-size:0.72rem; cursor:pointer;">
-              ${showAll47Pills ? "🔼 Compactar Lista de 47 Prefecturas" : "🔽 Ver / Expandir las 47 Prefecturas Completas (#01 Tokio → #47 Yamanashi)"}
+          <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px;">
+            <button id="btn-toggle-47-pills" class="plan-tab" style="font-size:0.73rem; cursor:pointer;">
+              ${showAll47Pills ? "🔼 Compactar Píldoras de 47 Prefecturas" : "🔽 Expandir las 47 Prefecturas Completas (#01 Tokio → #47 Yamanashi)"}
+            </button>
+            <button id="btn-toggle-geisha-atlas" class="plan-tab" style="font-size:0.73rem; cursor:pointer; border-color:#f472b6; color:#f9a8d4; background:rgba(244,114,182,0.12);">
+              ${showGeishaAtlas ? "👘 Ocultar Directorio de los 24 Distritos de Geishas (Hanamachi)" : "👘🏮 Abrir Directorio Completo de Geishas, Maiko y Casas de Té (24 Meses)"}
             </button>
           </div>
+
+          ${
+            showGeishaAtlas
+              ? `<div style="background:rgba(244,114,182,0.06); border:1px solid rgba(244,114,182,0.3); border-radius:10px; padding:14px; margin-bottom:14px;">
+                   <div style="font-size:0.84rem; font-weight:800; color:#f9a8d4; margin-bottom:8px;">
+                     👘🏮 Mapa Nacional de Geishas (Hanamachi / Geigi / Maiko / Ozashiki) y Artes Escénicas Reales en tus 24 Expediciones
+                   </div>
+                   <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(275px, 1fr)); gap:10px;">
+                     ${geishaAtlasHtml}
+                   </div>
+                 </div>`
+              : ""
+          }
 
           <!-- FILTROS POR FASE, SEMÁFORO, REGIÓN Y BUSCADOR -->
           <div style="display:flex; flex-direction:column; gap:10px; padding-top:12px; border-top:1px solid #21262d;">
             <div style="display:flex; flex-wrap:wrap; gap:6px; align-items:center;">
               <span style="font-size:0.74rem; color:#9ca3af; font-weight:700; margin-right:4px;">🍁 Fases:</span>
               <button class="plan-tab z47-phase-btn ${activePhase === "all" ? "active" : ""}" data-phase="all">Todas las 4 Fases (24 Meses)</button>
-              <button class="plan-tab z47-phase-btn ${activePhase === "1" ? "active" : ""}" data-phase="1">Fase 1: M01–M06 (Despertar &amp; Debut)</button>
+              <button class="plan-tab z47-phase-btn ${activePhase === "1" ? "active" : ""}" data-phase="1">Fase 1: M01–M06 (Despertar &amp; Camp #1)</button>
               <button class="plan-tab z47-phase-btn ${activePhase === "2" ? "active" : ""}" data-phase="2">Fase 2: M07–M12 (Peleas #1 y #2)</button>
-              <button class="plan-tab z47-phase-btn ${activePhase === "3" ? "active" : ""}" data-phase="3">Fase 3: M13–M18 (DEEP #3/#4 &amp; Kyushu)</button>
-              <button class="plan-tab z47-phase-btn ${activePhase === "4" ? "active" : ""}" data-phase="4">Fase 4: M19–M24 (Peleas #5/#6 &amp; Gala)</button>
+              <button class="plan-tab z47-phase-btn ${activePhase === "3" ? "active" : ""}" data-phase="3">Fase 3: M13–M18 (Kanazawa, DEEP #3/#4 &amp; Kyushu)</button>
+              <button class="plan-tab z47-phase-btn ${activePhase === "4" ? "active" : ""}" data-phase="4">Fase 4: M19–M24 (Kioto Gion, #47 Fuji &amp; Retiro 6-0)</button>
             </div>
 
             <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:8px;">
               <div style="display:flex; flex-wrap:wrap; gap:6px; align-items:center;">
                 <span style="font-size:0.74rem; color:#9ca3af; font-weight:700; margin-right:4px;">🚦 Semáforo:</span>
                 <button class="plan-tab z47-zone-btn ${activeZone === "all" ? "active" : ""}" data-zone="all">Todas (24)</button>
-                <button class="plan-tab z47-zone-btn ${activeZone === "yellow" ? "active" : ""}" data-zone="yellow" style="border-color:#d29922; color:#fde68a;">🟡 Off-Camp 79 kg (8)</button>
-                <button class="plan-tab z47-zone-btn ${activeZone === "red" ? "active" : ""}" data-zone="red" style="border-color:#f85149; color:#fca5a5;">🔴 Fight Camp 77 kg (4)</button>
-                <button class="plan-tab z47-zone-btn ${activeZone === "green" ? "active" : ""}" data-zone="green" style="border-color:#2ea043; color:#86efac;">🟢 Bono Post-Pelea (11)</button>
+                <button class="plan-tab z47-zone-btn ${activeZone === "yellow" ? "active" : ""}" data-zone="yellow" style="border-color:#d29922; color:#fde68a;">🟡 Off-Camp 79 kg (11)</button>
+                <button class="plan-tab z47-zone-btn ${activeZone === "red" ? "active" : ""}" data-zone="red" style="border-color:#f85149; color:#fca5a5;">🔴 Fight Camp 77 kg (3)</button>
+                <button class="plan-tab z47-zone-btn ${activeZone === "green" ? "active" : ""}" data-zone="green" style="border-color:#2ea043; color:#86efac;">🟢 Bono Post-Pelea (9)</button>
                 <button class="plan-tab z47-zone-btn ${activeZone === "gold" ? "active" : ""}" data-zone="gold" style="border-color:#f0b90b; color:#fef08a;">👑 Gala 6-0 (1)</button>
               </div>
 
@@ -3259,8 +3837,8 @@
                 id="z47-search-input"
                 type="search"
                 value="${searchQuery.replace(/"/g, "&quot;")}"
-                placeholder="🔍 Buscar prefectura (#01-#47), ciudad, Wagyu, tela, tren..."
-                style="background:#161b22; border:1px solid #30363d; color:#fff; padding:6px 12px; border-radius:8px; min-width:270px; font-size:0.8rem;"
+                placeholder="🔍 Buscar prefectura (ej. Kanagawa), Geisha, Gion, Shinkansen, Wagyu..."
+                style="background:#161b22; border:1px solid #30363d; color:#fff; padding:6px 12px; border-radius:8px; min-width:300px; font-size:0.8rem;"
               >
             </div>
 
@@ -3280,7 +3858,7 @@
         </div>
 
         <!-- GRID DE LAS 24 EXPEDICIONES MENSUALES DETALLADAS -->
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(440px, 1fr)); gap:18px;">
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(460px, 1fr)); gap:18px;">
           ${cardsHtml}
         </div>
       `;
@@ -3290,6 +3868,25 @@
       if (toggleBtn) {
         toggleBtn.onclick = () => {
           showAll47Pills = !showAll47Pills;
+          renderHub();
+        };
+      }
+
+      const geishaBtn = document.getElementById("btn-toggle-geisha-atlas");
+      if (geishaBtn) {
+        geishaBtn.onclick = () => {
+          showGeishaAtlas = !showGeishaAtlas;
+          renderHub();
+        };
+      }
+
+      const resetBtn = document.getElementById("btn-reset-z47-filters");
+      if (resetBtn) {
+        resetBtn.onclick = () => {
+          activePhase = "all";
+          activeZone = "all";
+          activeRegion = "all";
+          searchQuery = "";
           renderHub();
         };
       }

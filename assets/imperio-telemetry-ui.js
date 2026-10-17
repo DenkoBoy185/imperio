@@ -259,6 +259,16 @@
       </div>
 
       <div class="seg-kpi-strip">
+        <div class="seg-kpi-box" style="border-color:rgba(34,197,94,0.45);">
+          <div class="seg-kpi-lbl">🟢🔴 Meta YouTube + Kick</div>
+          <div class="seg-kpi-val" style="color:#4ade80;">+$15,000+ / mes</div>
+          <div class="seg-kpi-sub">${fmtJpy(15000 * rates.JPY)}/mes (Kick $8.5K + YT $6.5K)</div>
+        </div>
+        <div class="seg-kpi-box" style="border-color:rgba(56,189,248,0.45);">
+          <div class="seg-kpi-lbl">🏢 Dueño de Empresa + Stream</div>
+          <div class="seg-kpi-val" style="color:#7dd3fc;">$25,000+ / mes</div>
+          <div class="seg-kpi-sub">${fmtJpy(25000 * rates.JPY)}/mes (Empresa $10K + YT/Kick $15K)</div>
+        </div>
         <div class="seg-kpi-box">
           <div class="seg-kpi-lbl">🏦 Capital Total & Reserva</div>
           <div class="seg-kpi-val">$360,000 USD</div>
