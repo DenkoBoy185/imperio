@@ -91,7 +91,29 @@
     '⛽ Gasolina (Ida)': { en: '⛽ Fuel (1-Way)', ja: '⛽ ガソリン(片道)' },
     '🅿️ Parking Moto (駐輪場)': { en: '🅿️ Bike Parking (駐輪場)', ja: '🅿️ バイク駐輪場' },
     'Acción': { en: 'Action', ja: '操作' },
-    'Web ↗': { en: 'Web ↗', ja: '公式サイト ↗' }
+    'Web ↗': { en: 'Web ↗', ja: '公式サイト ↗' },
+
+    // Mobile Bottom Dock & Quick-Jump Sheet
+    'Finanzas': { en: 'Finance', ja: '財務' },
+    'Moto/168h': { en: 'CB250R/168h', ja: 'バイク/週間' },
+    'あやめ/47': { en: 'あやめ/47', ja: 'あやめ/47県' },
+    'Seúl/Bio': { en: 'Seoul/Bio', ja: '韓国/肉食' },
+    'Salto/Menú': { en: 'Jump/Menu', ja: '移動/目次' },
+    'Atlas Central': { en: 'Main Atlas', ja: 'メイン画面' },
+    'Plan Maestro': { en: 'Master Plan', ja: 'マスター計画' },
+    'Campamento': { en: 'Fight Camp', ja: '合宿計画' },
+    'Guardarropa': { en: 'Wardrobe', ja: '衣装・装備' },
+    'Vista Tablas': { en: 'Card Tables', ja: '表カード切替' },
+    '⚡ Centro de Control Móvil': { en: '⚡ Mobile Control Center', ja: '⚡ モバイル操作センター' },
+    'Salto Rápido & Opciones de Vista': { en: 'Quick Jump & View Options', ja: 'クイック移動＆表示設定' },
+    'Tablas: Modo Tarjetas Móvil': { en: 'Tables: Mobile Card Mode', ja: '表をスマホカード表示に切替' },
+    'Abrir Índice Completo': { en: 'Open Full Sidebar Index', ja: '全目次メニューを開く' },
+    '↔ Desliza la tabla o apílala en tarjetas': { en: '↔ Swipe table or stack as mobile cards', ja: '↔ 横スクロールまたはカード表示に切替' },
+    '📱 Vista Tarjetas': { en: '📱 Card View', ja: '📱 カード表示' },
+    '📊 Vista Tabla': { en: '📊 Table View', ja: '📊 テーブル表示' },
+    '⛶ Expandir Mapa': { en: '⛶ Expand Map', ja: '⛶ マップ拡大' },
+    '✕ Contraer Mapa': { en: '✕ Collapse Map', ja: '✕ マップ縮小' },
+    '▸ Expandir': { en: '▸ Expand', ja: '▸ 展開する' }
   };
 
   // Pre-seed memory cache with exact dictionary entries

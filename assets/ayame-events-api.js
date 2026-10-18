@@ -3264,22 +3264,22 @@
           <button id="btn-refresh-ayame-radar" class="plan-tab active" style="cursor:pointer; font-size:0.78rem;">🔄 Sincronizar Clima & Eventos API Ahora</button>
         </div>
 
-        <div id="ayame-live-weather-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:8px; margin-bottom:12px;"></div>
+        <div id="ayame-live-weather-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap:8px; margin-bottom:12px;"></div>
         <div id="ayame-live-holidays-strip" style="display:flex; flex-wrap:wrap; gap:6px; align-items:center; padding-top:8px; border-top:1px solid rgba(255,255,255,0.1);"></div>
       </div>
 
-      <div style="display:flex; flex-wrap:wrap; gap:8px; justify-content:space-between; align-items:center; margin-bottom:16px;">
-        <div style="display:flex; flex-wrap:wrap; gap:6px;">
+      <div class="imperio-filter-toolbar" style="display:flex; flex-wrap:wrap; gap:8px; justify-content:space-between; align-items:center; margin-bottom:16px;">
+        <div class="imperio-chip-scroll" style="display:flex; flex-wrap:wrap; gap:6px;">
           <button class="plan-tab radar-zone-btn active" data-zone="all">🌟 Todo el Radar (${INITIAL_FEED.events_and_places.length} Experiencias)</button>
           <button class="plan-tab radar-zone-btn" data-zone="ikebukuro" style="border-color:#f472b6; color:#f9a8d4;">🦉 Ikebukuro VIP & Otome Road (8)</button>
           <button class="plan-tab radar-zone-btn" data-zone="tokio" style="border-color:#38bdf8; color:#7dd3fc;">👘 Tokio: Costura, Cruceros & Gala (4)</button>
           <button class="plan-tab radar-zone-btn" data-zone="japon" style="border-color:#f0b90b; color:#fde68a;">🗾 Todo Japón: 8 Regiones & Trenes Suite (10)</button>
           <button class="plan-tab radar-zone-btn" data-zone="favs">💖 Guardados de あやめ</button>
         </div>
-        <input id="ayame-radar-search" type="search" placeholder="🔍 Buscar Ikebukuro, planetario, kimono, onsen, gatos, Wagyu..." style="background:rgba(0,0,0,0.5); border:1px solid rgba(255,255,255,0.22); color:#fff; padding:7px 12px; border-radius:6px; min-width:280px; font-size:0.82rem;">
+        <input id="ayame-radar-search" type="search" placeholder="🔍 Buscar Ikebukuro, planetario, kimono, onsen, gatos, Wagyu..." style="background:rgba(0,0,0,0.5); border:1px solid rgba(255,255,255,0.22); color:#fff; padding:8px 12px; border-radius:8px; flex:1; min-width:min(100%, 240px); font-size:0.85rem;">
       </div>
 
-      <div id="ayame-radar-places-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:16px;"></div>
+      <div id="ayame-radar-places-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 290px), 1fr)); gap:14px;"></div>
     `;
 
     renderWeatherAndHolidays();
@@ -3728,7 +3728,7 @@
         </p>
 
         <!-- PARTE I: LOGÍSTICA BASE, 3 ATAJOS DESDE IKEBUKURO Y PROTOCOLO DE GATITOS -->
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(310px, 1fr)); gap:14px; margin-bottom:18px;">
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap:14px; margin-bottom:18px;">
           <div style="background:#0d1117; border:1px solid #30363d; border-left:4px solid #38bdf8; border-radius:10px; padding:14px;">
             <div style="font-size:0.75rem; font-weight:800; color:#38bdf8; text-transform:uppercase; margin-bottom:6px;">
               🚄 Los 3 «Atajos» de Transporte desde Ikebukuro
@@ -3805,7 +3805,7 @@
                    <div style="font-size:0.84rem; font-weight:800; color:#f9a8d4; margin-bottom:8px;">
                      👘🏮 Mapa Nacional de Geishas (Hanamachi / Geigi / Maiko / Ozashiki) y Artes Escénicas Reales en tus 24 Expediciones
                    </div>
-                   <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(275px, 1fr)); gap:10px;">
+                   <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 255px), 1fr)); gap:10px;">
                      ${geishaAtlasHtml}
                    </div>
                  </div>`
@@ -3814,7 +3814,7 @@
 
           <!-- FILTROS POR FASE, SEMÁFORO, REGIÓN Y BUSCADOR -->
           <div style="display:flex; flex-direction:column; gap:10px; padding-top:12px; border-top:1px solid #21262d;">
-            <div style="display:flex; flex-wrap:wrap; gap:6px; align-items:center;">
+            <div class="imperio-chip-scroll" style="display:flex; flex-wrap:wrap; gap:6px; align-items:center;">
               <span style="font-size:0.74rem; color:#9ca3af; font-weight:700; margin-right:4px;">🍁 Fases:</span>
               <button class="plan-tab z47-phase-btn ${activePhase === "all" ? "active" : ""}" data-phase="all">Todas las 4 Fases (24 Meses)</button>
               <button class="plan-tab z47-phase-btn ${activePhase === "1" ? "active" : ""}" data-phase="1">Fase 1: M01–M06 (Despertar &amp; Camp #1)</button>
@@ -3824,7 +3824,7 @@
             </div>
 
             <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:8px;">
-              <div style="display:flex; flex-wrap:wrap; gap:6px; align-items:center;">
+              <div class="imperio-chip-scroll" style="display:flex; flex-wrap:wrap; gap:6px; align-items:center;">
                 <span style="font-size:0.74rem; color:#9ca3af; font-weight:700; margin-right:4px;">🚦 Semáforo:</span>
                 <button class="plan-tab z47-zone-btn ${activeZone === "all" ? "active" : ""}" data-zone="all">Todas (24)</button>
                 <button class="plan-tab z47-zone-btn ${activeZone === "yellow" ? "active" : ""}" data-zone="yellow" style="border-color:#d29922; color:#fde68a;">🟡 Off-Camp 79 kg (11)</button>
@@ -3838,11 +3838,11 @@
                 type="search"
                 value="${searchQuery.replace(/"/g, "&quot;")}"
                 placeholder="🔍 Buscar prefectura (ej. Kanagawa), Geisha, Gion, Shinkansen, Wagyu..."
-                style="background:#161b22; border:1px solid #30363d; color:#fff; padding:6px 12px; border-radius:8px; min-width:300px; font-size:0.8rem;"
+                style="background:#161b22; border:1px solid #30363d; color:#fff; padding:8px 12px; border-radius:8px; flex:1; min-width:min(100%, 240px); font-size:0.84rem;"
               >
             </div>
 
-            <div style="display:flex; flex-wrap:wrap; gap:6px; align-items:center;">
+            <div class="imperio-chip-scroll" style="display:flex; flex-wrap:wrap; gap:6px; align-items:center;">
               <span style="font-size:0.74rem; color:#9ca3af; font-weight:700; margin-right:4px;">🗾 Región:</span>
               <button class="plan-tab z47-reg-btn ${activeRegion === "all" ? "active" : ""}" data-reg="all">8 Regiones (47/47)</button>
               <button class="plan-tab z47-reg-btn ${activeRegion === "kanto" ? "active" : ""}" data-reg="kanto">1. Kanto (7)</button>
@@ -3858,7 +3858,7 @@
         </div>
 
         <!-- GRID DE LAS 24 EXPEDICIONES MENSUALES DETALLADAS -->
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(460px, 1fr)); gap:18px;">
+        <div class="z47-cards-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap:16px;">
           ${cardsHtml}
         </div>
       `;

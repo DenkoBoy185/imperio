@@ -155,7 +155,7 @@
         </div>
 
         <!-- KPIs PRINCIPALES DE LA HONDA CB250R -->
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(185px, 1fr)); gap:12px;">
+        <div class="cb250r-kpi-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 165px), 1fr)); gap:10px;">
           <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-left:3px solid #ef4444; border-radius:10px; padding:12px;">
             <div style="font-size:0.7rem; color:#9ca3af; text-transform:uppercase;">Precio Oficial Honda (10% IVA)</div>
             <div style="font-size:1.25rem; font-weight:900; color:#fff; margin-top:2px;">${fmtJPY(specs.pricing_japan.msrp_tax_included_jpy)} <span style="font-size:0.82rem; color:#f87171;">(${fmtUSD(specs.pricing_japan.msrp_tax_included_jpy)})</span></div>
@@ -189,11 +189,11 @@
       </div>
 
       <!-- SELECTOR INTERACTIVO DE LOS 3 COLORES OFICIALES + SONIDO DEL ESCAPE HONDA -->
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:16px; margin-bottom:20px;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 285px), 1fr)); gap:16px; margin-bottom:20px;">
         <!-- Tarjeta Visual del Color Oficial Seleccionado -->
         <div style="background:#0d131f; border:1px solid rgba(255,255,255,0.12); border-radius:14px; padding:18px; display:flex; flex-direction:column; justify-content:space-between;">
           <div>
-            <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:10px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:10px; flex-wrap:wrap;">
               <span style="font-size:0.73rem; font-weight:800; color:#f59e0b; text-transform:uppercase;">
                 🎨 Selector Oficial Honda Japón (/CB250R/type/)
               </span>
@@ -218,7 +218,7 @@
               ${specs.official_colors
                 .map(
                   (c) => `
-                <button type="button" class="cb250r-color-btn" data-color="${c.id}" style="flex:1; min-width:115px; cursor:pointer; padding:8px 10px; border-radius:8px; border:${
+                <button type="button" class="cb250r-color-btn" data-color="${c.id}" style="flex:1; min-width:105px; cursor:pointer; padding:8px 10px; border-radius:8px; border:${
                     c.id === STATE.selectedColorId
                       ? '2px solid #f59e0b'
                       : '1px solid rgba(255,255,255,0.15)'
@@ -240,7 +240,7 @@
                 <div style="font-size:0.73rem; font-weight:800; color:#38bdf8;">🔊 Audio Oficial Honda: Escape de 2 Cámaras (Motor MC52E)</div>
                 <div style="font-size:0.7rem; color:#9ca3af;">Archivo original de honda.co.jp/CB250R/powerunit/</div>
               </div>
-              <audio controls preload="none" style="height:32px; max-width:220px;">
+              <audio controls preload="none" style="height:32px; max-width:100%; width:220px;">
                 <source src="${specs.official_urls.exhaust_audio_mp3}" type="audio/mpeg">
               </audio>
             </div>
@@ -253,7 +253,7 @@
             <div style="font-size:0.74rem; font-weight:800; color:#38bdf8; text-transform:uppercase; margin-bottom:8px;">
               ⚙️ Ingeniería de Grado Supersport &amp; Por Qué la CB250R Domina Tokio
             </div>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; font-size:0.77rem; margin-bottom:12px;">
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap:8px; font-size:0.77rem; margin-bottom:12px;">
               <div style="background:rgba(255,255,255,0.03); padding:8px 10px; border-radius:8px; border:1px solid rgba(255,255,255,0.06);">
                 <strong style="color:#f59e0b;">Horquilla Showa SFF-BP φ41mm:</strong><br>
                 <span style="color:#d1d5db;">Invertida de pistón grande (misma tecnología de la serie CBR600RR/CB1000R) para absorber baches urbanos sin perder aplomo.</span>
@@ -307,7 +307,7 @@
           </div>
         </div>
 
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(245px, 1fr)); gap:12px;">
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 245px), 1fr)); gap:12px;">
           <!-- Etapa 1: MyStyleCustom -->
           <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(255,255,255,0.1); border-top:3px solid #22d3ee; border-radius:10px; padding:12px; display:flex; flex-direction:column; justify-content:space-between;">
             <div>
@@ -442,7 +442,7 @@
         </div>
 
         <!-- Filtros por Categoría de la Rutina 168H -->
-        <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px;">
+        <div class="imperio-chip-scroll" style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px;">
           ${Object.entries(CATEGORY_META)
             .map(([catKey, meta]) => {
               const active = STATE.categoryFilter === catKey;
@@ -458,9 +458,12 @@
         </div>
 
         <!-- Contenedor Grid: Mapa Leaflet (Izquierda) + Telemetría del Destino Activo (Derecha) -->
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(330px, 1fr)); gap:16px; align-items:stretch;">
-          <div style="position:relative; min-height:420px; border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,0.15);">
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 285px), 1fr)); gap:16px; align-items:stretch;">
+          <div id="cb250r-map-shell" style="position:relative; min-height:380px; border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,0.15);">
             <div id="cb250r-leaflet-map" style="width:100%; height:420px; background:#090d16;"></div>
+            <button type="button" id="cb250r-fullscreen-btn" onclick="window.toggleCb250rFullscreen && window.toggleCb250rFullscreen()" style="position:absolute; top:10px; right:10px; z-index:800; background:rgba(9,13,22,0.88); color:#38bdf8; border:1px solid rgba(56,189,248,0.45); border-radius:8px; padding:6px 10px; font-size:0.72rem; font-weight:800; cursor:pointer; backdrop-filter:blur(8px);">
+              ⛶ Expandir Mapa
+            </button>
           </div>
 
           <!-- Panel de Telemetría de la Ruta Seleccionada -->
@@ -480,7 +483,7 @@
               Haz clic en cualquier fila para trazar la ruta exacta en el mapa interactivo y calcular el consumo milimétrico.
             </div>
           </div>
-          <input type="search" id="cb250r-search-input" placeholder="🔍 Filtrar destino, dojo, clínica, cita..." value="${STATE.searchQuery}" style="background:#090d16; color:#fff; border:1px solid rgba(255,255,255,0.2); border-radius:8px; padding:7px 12px; font-size:0.78rem; min-width:250px;" />
+          <input type="search" id="cb250r-search-input" placeholder="🔍 Filtrar destino, dojo, clínica, cita..." value="${STATE.searchQuery}" style="background:#090d16; color:#fff; border:1px solid rgba(255,255,255,0.2); border-radius:8px; padding:8px 12px; font-size:0.84rem; flex:1; min-width:min(100%, 230px);" />
         </div>
 
         <div style="overflow-x:auto;">
@@ -509,7 +512,7 @@
         <summary style="cursor:pointer; font-weight:800; color:#f59e0b; font-size:0.95rem;">
           📋 Ver Ficha Técnica Oficial Completa Honda Japón (CB250R 主要諸元 · 型式 ホンダ・8BK-MC52) &amp; Desglose CAPEX/OPEX
         </summary>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:16px; margin-top:14px; font-size:0.78rem;">
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap:16px; margin-top:14px; font-size:0.78rem;">
           <div>
             <h5 style="margin:0 0 8px; color:#38bdf8; font-size:0.86rem;">Especificaciones Oficiales (/CB250R/spec/)</h5>
             <table style="width:100%; border-collapse:collapse;">
@@ -872,6 +875,24 @@
       }
     }
   }
+
+  window.toggleCb250rFullscreen = function () {
+    const shell = document.getElementById('cb250r-map-shell');
+    const mapEl = document.getElementById('cb250r-leaflet-map');
+    const btn = document.getElementById('cb250r-fullscreen-btn');
+    if (!shell || !mapEl) return;
+    const isExpanded = shell.classList.toggle('cb250r-map-expanded');
+    if (isExpanded) {
+      mapEl.style.height = '76vh';
+      if (btn) btn.innerHTML = '✕ Contraer Mapa';
+    } else {
+      mapEl.style.height = '420px';
+      if (btn) btn.innerHTML = '⛶ Expandir Mapa';
+    }
+    if (STATE.map) {
+      setTimeout(() => STATE.map.invalidateSize(), 200);
+    }
+  };
 
   async function boot() {
     const mount = document.getElementById('cb250r-api-mount');

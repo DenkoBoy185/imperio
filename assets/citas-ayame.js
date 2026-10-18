@@ -1731,7 +1731,7 @@
 
       <div class="item-card" style="margin-bottom:1.1rem; border-color:#38bdf8; background:rgba(56,189,248,0.05);">
         <h4 style="color:#7dd3fc; margin-bottom:0.4rem;">🏡 Protocolo de Hogar Compartido con あやめ &amp; Logística de Escapadas de 2–3 Días</h4>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:10px; font-size:0.8rem; color:var(--text-main);">
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap:10px; font-size:0.8rem; color:var(--text-main);">
           <div>
             <strong>🏠🐱🐹 1. Hogar Compartido (Regresar a Casa = Regresar Juntos):</strong><br>
             あやめ vive contigo en su departamento 2LDK en <strong>Urbanex Asakusabashi Front</strong> junto a nuestros <strong>2 gatitos y 2 chinchillas</strong>. En las citas locales regresan juntos a casa antes de las 21:00 hrs; y en los viajes de 2 o 3 días queda programado el comedero <strong>PETLIBRO</strong>, fuente inox, deshumidificador Sharp + <strong>SwitchBot</strong> y visita diaria de <strong>Pet-Sitter certificada en Taito-ku (Japan Pet Sitter Service / Sewakl, ¥3,500/visita — ya incluido)</strong> con video por LINE.
@@ -1747,8 +1747,8 @@
         </div>
       </div>
 
-      <div style="display:flex; flex-wrap:wrap; gap:8px; align-items:center; justify-content:space-between; margin-bottom:1.2rem; background:rgba(244,114,182,0.07); border:1px solid rgba(244,114,182,0.3); padding:12px 16px; border-radius:10px;">
-        <div style="display:flex; flex-wrap:wrap; gap:6px;">
+      <div class="imperio-filter-toolbar" style="display:flex; flex-wrap:wrap; gap:8px; align-items:center; justify-content:space-between; margin-bottom:1.2rem; background:rgba(244,114,182,0.07); border:1px solid rgba(244,114,182,0.3); padding:12px 16px; border-radius:10px;">
+        <div class="imperio-chip-scroll" style="display:flex; flex-wrap:wrap; gap:6px;">
           <button class="plan-tab ayame-filter-btn active" data-season="all">🌸🎆🍁❄️ Todas (96 Sem · 384 Citas)</button>
           <button class="plan-tab ayame-filter-btn" data-season="primavera">🌸 Primavera (春)</button>
           <button class="plan-tab ayame-filter-btn" data-season="verano">🎆 Verano (夏)</button>
@@ -1757,7 +1757,7 @@
           <button class="plan-tab ayame-filter-btn" data-season="campamento">🥊 Pausa Tailandia (90d)</button>
           <button class="plan-tab" id="btn-only-multiday" style="border-color:#fb923c; color:#fdba74;">🏨 Ver Solo Viajes de 2–3 Días (${MULTI_DAY_TRIPS})</button>
         </div>
-        <input id="ayame-date-search" type="search" placeholder="🔍 Buscar prefectura, onsen, juego (ej. Kioto, Hokkaido, Okinawa, Kingdom Hearts)..." style="background:rgba(0,0,0,0.45); border:1px solid rgba(255,255,255,0.2); color:#fff; padding:6px 12px; border-radius:6px; min-width:300px; font-size:0.82rem;">
+        <input id="ayame-date-search" type="search" placeholder="🔍 Buscar prefectura, onsen, juego (ej. Kioto, Hokkaido, Okinawa, Kingdom Hearts)..." style="background:rgba(0,0,0,0.45); border:1px solid rgba(255,255,255,0.2); color:#fff; padding:8px 12px; border-radius:8px; flex:1; min-width:min(100%, 240px); font-size:0.84rem;">
       </div>
       <div id="ayame-months-list"></div>
     `;
