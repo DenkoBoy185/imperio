@@ -1,18 +1,21 @@
 /**
- * AKIHABARA ROG «SIN LÍMITES» HARDWARE & KATABAN LIVE PRICE TRACKER API v3.0
- * Tracks exact Japanese retail Kataban (型番) codes, real store links (Kakaku.com,
- * TSUKUMO eX., PC Shop ARK, Yodobashi Camera Akiba, Amazon.co.jp), Yodobashi 10%
- * Gold Point hack, CPU/Switch toggles, and the Akihabara Counter Script.
+ * AKIHABARA ROG «SIN LÍMITES» + ASUS #DREAMPCLIST (UPGRADE WHAT MATTERS 2026)
+ * HARDWARE & KATABAN LIVE PRICE TRACKER API v4.0
+ *
+ * Includes 3 Complete Workstations:
+ * 1. Configuración «Sin Límites» (Nivel 3: Extreme Tope Absoluto · ¥2,809,059 JPY) -> Bed Room 2 (デンコボーイ司令室 4.0帖)
+ * 2. AI Starter (Versión AMD · #dreampclist · ¥334,400 JPY / ~$1,920–$2,230 USD) -> Sala (LDK 12.7帖)
+ * 3. Content Creator Extreme (ProArt + ROG RTX 5090 / 5080 · #dreampclist · ¥1,952,960 JPY + Monitores ProArt PA32UCDM / PA32KCX 8K) -> Sala / Estudio (LDK 12.7帖)
  */
 (function () {
   "use strict";
 
   const FALLBACK_DATA = {
     meta: {
-      api_name: "Akihabara ROG «Sin Límites» Hardware & Kataban Price Tracker API",
-      version: "3.0.0-extreme",
-      tier: "Nivel 3: Extreme Tope Absoluto (Sin Límites)",
-      updated_at: "2026-10-18T06:30:00Z",
+      api_name: "Akihabara ROG «Sin Límites» + ASUS #dreampclist (Upgrade What Matters 2026) Price Tracker API",
+      version: "4.0.0-dreampclist",
+      tier: "Nivel 3 ROG «Sin Límites» (Cuarto Bruno) + #dreampclist AI Starter AMD & Content Creator Extreme (Sala LDK 12.7帖)",
+      updated_at: "2026-10-18T07:05:00Z",
       location: "Akihabara Electric Town, Chiyoda-ku, Tokyo (a 4 min / 1.4 km de Urbanex Asakusabashi Front en tu Honda CB250R)"
     },
     tower_components: [
@@ -391,6 +394,477 @@
         }
       }
     ],
+    ai_starter_amd: [
+      {
+        id: "ai_cpu_9700x",
+        slot: "cpu",
+        category: "Procesador (CPU)",
+        name: "AMD Ryzen 7 9700X (o Ryzen 5 9600X · Zen 5 AVX-512 512-bit · 65W)",
+        kataban: "100-100001404WOF",
+        kataban_alt: "Ryzen 7 9700X BOX / Ryzen 5 9600X BOX",
+        why_included: "Arquitectura Zen 5 con soporte nativo de instrucciones AVX-512 de 512 bits para acelerar inferencia en CPU y bajo consumo energético (65W)",
+        usd_range: "$319 USD",
+        jpy_range: "¥53,800",
+        price_doc_jpy: 53800,
+        price_live_note: "$319 USD / ¥53,800 en TSUKUMO / PC Shop ARK (Opción Ryzen 5 9600X: ¥39,800)",
+        best_store: "TSUKUMO / PC Shop ARK",
+        store_tags: ["tsukumo", "ark", "kakaku"],
+        links: {
+          kakaku: "https://kakaku.com/search_results/100-100001404WOF/",
+          tsukumo: "https://shop.tsukumo.co.jp/search/?keyword=Ryzen+7+9700X",
+          ark: "https://www.ark-pc.co.jp/search/?key=100-100001404WOF",
+          amazon: "https://www.amazon.co.jp/s?k=Ryzen+7+9700X+BOX"
+        }
+      },
+      {
+        id: "ai_mb_prime_b850",
+        slot: "mb",
+        category: "Tarjeta Madre",
+        name: "ASUS Prime B850-PLUS WIFI (o TUF Gaming B850-PLUS WIFI)",
+        kataban: "PRIME B850-PLUS WIFI",
+        kataban_alt: "TUF GAMING B850-PLUS WIFI",
+        why_included: "Socket AM5, ranura PCIe 5.0 x16 para la GPU, 3 puertos M.2, Wi-Fi 6E/7, ASUS AI Advisor y AI Networking II",
+        usd_range: "$189 – $219 USD",
+        jpy_range: "¥34,800 – ¥39,800",
+        price_doc_jpy: 37800,
+        price_live_note: "$189–$219 USD / ¥34,800 (Prime B850) a ¥39,800 (TUF B850) en TSUKUMO / ARK",
+        best_store: "TSUKUMO / PC Shop ARK",
+        store_tags: ["tsukumo", "ark", "kakaku"],
+        links: {
+          kakaku: "https://kakaku.com/search_results/PRIME%20B850-PLUS%20WIFI/",
+          tsukumo: "https://shop.tsukumo.co.jp/search/?keyword=B850-PLUS+WIFI",
+          ark: "https://www.ark-pc.co.jp/search/?key=B850-PLUS+WIFI",
+          amazon: "https://www.amazon.co.jp/s?k=ASUS+PRIME+B850-PLUS+WIFI"
+        }
+      },
+      {
+        id: "ai_gpu_5060ti_16gb",
+        slot: "gpu",
+        category: "Tarjeta Gráfica (GPU)",
+        name: "ASUS Prime / TUF Gaming GeForce RTX 5060 Ti 16GB GDDR7 (o Prime RTX 5070 12GB)",
+        kataban: "PRIME-RTX5060TI-O16G",
+        kataban_alt: "TUF-RTX5060TI-O16G-GAMING / PRIME-RTX5070-O12G",
+        why_included: "Los 16 GB de VRAM GDDR7 y los núcleos Tensor de 5.ª generación (arquitectura Blackwell con soporte FP4) permiten cargar modelos de IA medianos (Llama / DeepSeek en Ollama/LM Studio) completos en memoria de video",
+        usd_range: "$479 – $599 USD",
+        jpy_range: "¥84,800 – ¥108,000",
+        price_doc_jpy: 96800,
+        price_live_note: "$479–$599 USD / ¥84,800 – ¥108,000 en TSUKUMO eX. / PC Shop ARK",
+        best_store: "TSUKUMO eX. / PC Shop ARK",
+        store_tags: ["tsukumo", "ark", "kakaku"],
+        links: {
+          kakaku: "https://kakaku.com/search_results/ASUS%20RTX%205060%20Ti%2016GB/",
+          tsukumo: "https://shop.tsukumo.co.jp/search/?keyword=RTX+5060+Ti+16GB",
+          ark: "https://www.ark-pc.co.jp/search/?key=RTX5060TI+16G",
+          amazon: "https://www.amazon.co.jp/s?k=ASUS+Prime+RTX+5060+Ti+16GB"
+        }
+      },
+      {
+        id: "ai_ram_32gb",
+        slot: "ram",
+        category: "Memoria RAM",
+        name: "32 GB (2 x 16 GB) DDR5-6000 CL30 (Corsair Vengeance / TeamGroup T-Force EXPO)",
+        kataban: "CMK32GX5M2B6000Z30",
+        kataban_alt: "FF3D532G6000HC30DC01 (T-Force Delta)",
+        why_included: "Capacidad base indispensable para manejar contenedores de IA, compilación de código y multitarea con perfiles AMD EXPO",
+        usd_range: "$480 – $520 USD",
+        jpy_range: "¥62,000",
+        price_doc_jpy: 62000,
+        price_live_note: "$480–$520 USD / ¥62,000 en PC Shop ARK / TSUKUMO",
+        best_store: "PC Shop ARK / TSUKUMO",
+        store_tags: ["ark", "tsukumo", "kakaku"],
+        links: {
+          kakaku: "https://kakaku.com/search_results/CMK32GX5M2B6000Z30/",
+          tsukumo: "https://shop.tsukumo.co.jp/search/?keyword=DDR5-6000+16GBx2+CL30",
+          ark: "https://www.ark-pc.co.jp/search/?key=CMK32GX5M2B6000Z30",
+          amazon: "https://www.amazon.co.jp/s?k=CMK32GX5M2B6000Z30"
+        }
+      },
+      {
+        id: "ai_aio_prime_lc360",
+        slot: "aio",
+        category: "Enfriamiento Líquido (AIO)",
+        name: "ASUS Prime LC 360 ARGB (Espejo infinito intercambiable)",
+        kataban: "PRIME LC 360 ARGB",
+        kataban_alt: "90RC0100-M0UAY0",
+        why_included: "Enfriamiento de 360 mm silencioso con lentes de espejo infinito intercambiables en el bloque de la CPU",
+        usd_range: "$129 USD",
+        jpy_range: "¥19,800",
+        price_doc_jpy: 19800,
+        price_live_note: "$129 USD / ¥19,800 en TSUKUMO / Amazon.co.jp",
+        best_store: "TSUKUMO / Amazon.co.jp",
+        store_tags: ["tsukumo", "kakaku"],
+        links: {
+          kakaku: "https://kakaku.com/search_results/PRIME%20LC%20360%20ARGB/",
+          tsukumo: "https://shop.tsukumo.co.jp/search/?keyword=PRIME+LC+360+ARGB",
+          ark: "https://www.ark-pc.co.jp/search/?key=PRIME+LC+360+ARGB",
+          amazon: "https://www.amazon.co.jp/s?k=ASUS+Prime+LC+360+ARGB"
+        }
+      },
+      {
+        id: "ai_ssd_gen4_2tb",
+        slot: "ssd",
+        category: "Almacenamiento",
+        name: "SSD NVMe PCIe 4.0 de 1 TB / 2 TB (WD_Black SN850X / Lexar NM790 ~7,000 MB/s)",
+        kataban: "WDS200T2X0E",
+        kataban_alt: "WDS100T2X0E (1TB: ¥18,500 / 2TB: ¥32,000)",
+        why_included: "Velocidad de lectura de ~7,000 MB/s para cargar checkpoints de Stable Diffusion y datasets de varios gigabytes en segundos",
+        usd_range: "$115 – $195 USD",
+        jpy_range: "¥18,500 – ¥32,000",
+        price_doc_jpy: 25800,
+        price_live_note: "$115–$195 USD / ¥18,500 (1TB) a ¥32,000 (2TB) en PC Shop ARK / TSUKUMO",
+        best_store: "PC Shop ARK / TSUKUMO",
+        store_tags: ["ark", "tsukumo", "kakaku"],
+        links: {
+          kakaku: "https://kakaku.com/search_results/WDS200T2X0E/",
+          tsukumo: "https://shop.tsukumo.co.jp/search/?keyword=WDS200T2X0E",
+          ark: "https://www.ark-pc.co.jp/search/?key=WDS200T2X0E",
+          amazon: "https://www.amazon.co.jp/s?k=WDS200T2X0E"
+        }
+      },
+      {
+        id: "ai_psu_prime_750g",
+        slot: "psu",
+        category: "Fuente de Poder (PSU)",
+        name: "ASUS Prime 750W Gold (Prime 750G) o Prime 850G (ATX 3.1 · PCIe 5.1 12V-2x6)",
+        kataban: "AP-750G",
+        kataban_alt: "AP-850G (Prime 850W Gold)",
+        why_included: "Certificación 80 Plus Gold, estándar ATX 3.1 y cable nativo PCIe 5.1 (12V-2x6) listo para tarjetas serie RTX 50",
+        usd_range: "$109 – $129 USD",
+        jpy_range: "¥18,900 – ¥21,800",
+        price_doc_jpy: 19800,
+        price_live_note: "$109–$129 USD / ¥18,900 (750G) a ¥21,800 (850G) en TSUKUMO / Kakaku",
+        best_store: "TSUKUMO / Amazon.co.jp",
+        store_tags: ["tsukumo", "kakaku"],
+        links: {
+          kakaku: "https://kakaku.com/search_results/ASUS%20AP-750G/",
+          tsukumo: "https://shop.tsukumo.co.jp/search/?keyword=ASUS+Prime+750W",
+          ark: "https://www.ark-pc.co.jp/search/?key=AP-750G",
+          amazon: "https://www.amazon.co.jp/s?k=ASUS+Prime+750W+Gold"
+        }
+      },
+      {
+        id: "ai_case_ap202",
+        slot: "case",
+        category: "Gabinete (Chassis)",
+        name: "ASUS Prime AP202 TG ARGB (o ASUS ProArt PA401)",
+        kataban: "PRIME AP202 TG ARGB",
+        kataban_alt: "PROART PA401 WOOD EDITION TG",
+        why_included: "Chasis de flujo de aire optimizado con panel de cristal templado y diseño limpio que ocupa poco espacio en el escritorio de la Sala (LDK 12.7帖)",
+        usd_range: "$99 – $129 USD",
+        jpy_range: "¥15,800 – ¥21,000",
+        price_doc_jpy: 18600,
+        price_live_note: "$99–$129 USD / ¥15,800 (Prime AP202) a ¥21,000 (ProArt PA401) en TSUKUMO",
+        best_store: "TSUKUMO / Yodobashi",
+        store_tags: ["tsukumo", "yodobashi", "kakaku"],
+        links: {
+          kakaku: "https://kakaku.com/search_results/PROART%20PA401/",
+          tsukumo: "https://shop.tsukumo.co.jp/search/?keyword=PROART+PA401",
+          ark: "https://www.ark-pc.co.jp/search/?key=PA401",
+          amazon: "https://www.amazon.co.jp/s?k=ASUS+ProArt+PA401"
+        }
+      }
+    ],
+    content_creator_extreme: [
+      {
+        id: "cc_cpu_9950x3d",
+        slot: "cpu",
+        option_group: "cc_platform",
+        option_key: "amd",
+        is_default: true,
+        category: "Procesador (Opción AMD)",
+        name: "AMD Ryzen 9 9950X3D (o Ryzen 9 9950X · 16 Núcleos / 32 Hilos)",
+        kataban: "Ryzen 9 9950X3D BOX",
+        kataban_alt: "100-100000719WOF / Ryzen 9 9950X BOX",
+        why_included: "16 núcleos y 32 hilos para tiempos de renderizado mínimos en Blender, Cinema 4D, Unreal Engine 5 y compilación pesada",
+        usd_range: "$699 USD",
+        jpy_range: "¥109,980",
+        price_doc_jpy: 109980,
+        price_live_note: "$699 USD / ¥109,980 en TSUKUMO / PC Shop ARK",
+        best_store: "TSUKUMO / PC Shop ARK",
+        store_tags: ["tsukumo", "ark", "kakaku"],
+        links: {
+          kakaku: "https://kakaku.com/search_results/100-100000719WOF/",
+          tsukumo: "https://shop.tsukumo.co.jp/search/?keyword=Ryzen+9+9950X3D",
+          ark: "https://www.ark-pc.co.jp/search/?key=100-100000719WOF",
+          amazon: "https://www.amazon.co.jp/s?k=100-100000719WOF"
+        }
+      },
+      {
+        id: "cc_cpu_285k",
+        slot: "cpu",
+        option_group: "cc_platform",
+        option_key: "intel",
+        is_default: false,
+        category: "Procesador (Opción Intel)",
+        name: "Intel Core Ultra 9 285K (24 Núcleos: 8P + 16E · Intel Quick Sync 8K)",
+        kataban: "BX80768285K",
+        kataban_alt: "Core Ultra 9 285K BOX",
+        why_included: "24 núcleos (8P + 16E) con codificador Intel Quick Sync para aceleración por hardware de líneas de tiempo 8K en Premiere Pro y DaVinci Resolve",
+        usd_range: "$515 USD",
+        jpy_range: "¥92,800",
+        price_doc_jpy: 92800,
+        price_live_note: "$515 USD / ¥92,800 en TSUKUMO / PC Shop ARK",
+        best_store: "TSUKUMO / PC Shop ARK",
+        store_tags: ["tsukumo", "ark", "kakaku"],
+        links: {
+          kakaku: "https://kakaku.com/search_results/BX80768285K/",
+          tsukumo: "https://shop.tsukumo.co.jp/search/?keyword=Core+Ultra+9+285K",
+          ark: "https://www.ark-pc.co.jp/search/?key=BX80768285K",
+          amazon: "https://www.amazon.co.jp/s?k=BX80768285K"
+        }
+      },
+      {
+        id: "cc_mb_x870e_proart",
+        slot: "mb",
+        option_group: "cc_platform",
+        option_key: "amd",
+        is_default: true,
+        category: "Tarjeta Madre (Opción AMD)",
+        name: "ASUS ProArt X870E-CREATOR WIFI (10GbE + 2.5GbE · Dual USB4 40Gbps · PCIe 5.0 x8/x8)",
+        kataban: "PROART X870E-CREATOR WIFI",
+        kataban_alt: "90MB1J40-M0EAY0",
+        why_included: "Doble ranura PCIe 5.0 (x8/x8 para 2 GPUs), 10Gb + 2.5Gb Ethernet para NAS, Dual USB4 (40 Gbps), Wi-Fi 7 y 4 ranuras M.2",
+        usd_range: "$499 USD",
+        jpy_range: "¥89,800",
+        price_doc_jpy: 89800,
+        price_live_note: "$499 USD / ¥89,800 en TSUKUMO / PC Shop ARK",
+        best_store: "TSUKUMO / PC Shop ARK",
+        store_tags: ["tsukumo", "ark", "kakaku"],
+        links: {
+          kakaku: "https://kakaku.com/search_results/PROART%20X870E-CREATOR%20WIFI/",
+          tsukumo: "https://shop.tsukumo.co.jp/search/?keyword=PROART+X870E-CREATOR+WIFI",
+          ark: "https://www.ark-pc.co.jp/search/?key=PROART+X870E-CREATOR+WIFI",
+          amazon: "https://www.amazon.co.jp/s?k=PROART+X870E-CREATOR+WIFI"
+        }
+      },
+      {
+        id: "cc_mb_z890_proart",
+        slot: "mb",
+        option_group: "cc_platform",
+        option_key: "intel",
+        is_default: false,
+        category: "Tarjeta Madre (Opción Intel)",
+        name: "ASUS ProArt Z890-CREATOR WIFI (Thunderbolt 5 80/120Gbps · 10GbE + 2.5GbE · 5x M.2)",
+        kataban: "PROART Z890-CREATOR WIFI",
+        kataban_alt: "90MB1J10-M0EAY0",
+        why_included: "Equipada con puertos Thunderbolt 5 (hasta 80/120 Gbps), 10Gb + 2.5Gb Ethernet, Wi-Fi 7 y 5 ranuras M.2",
+        usd_range: "$529 USD",
+        jpy_range: "¥94,800",
+        price_doc_jpy: 94800,
+        price_live_note: "$529 USD / ¥94,800 en TSUKUMO / PC Shop ARK",
+        best_store: "TSUKUMO / PC Shop ARK",
+        store_tags: ["tsukumo", "ark", "kakaku"],
+        links: {
+          kakaku: "https://kakaku.com/search_results/PROART%20Z890-CREATOR%20WIFI/",
+          tsukumo: "https://shop.tsukumo.co.jp/search/?keyword=PROART+Z890-CREATOR+WIFI",
+          ark: "https://www.ark-pc.co.jp/search/?key=PROART+Z890-CREATOR+WIFI",
+          amazon: "https://www.amazon.co.jp/s?k=PROART+Z890-CREATOR+WIFI"
+        }
+      },
+      {
+        id: "cc_gpu_5090",
+        slot: "gpu",
+        option_group: "cc_gpu",
+        option_key: "rtx5090",
+        is_default: true,
+        category: "Tarjeta Gráfica (GPU — Opción Tope RTX 5090)",
+        name: "ASUS ROG Astral GeForce RTX 5090 32GB GDDR7 OC (NVENC 9.ª Gen 4:2:2 10-bit)",
+        kataban: "ROG-ASTRAL-RTX5090-O32G-GAMING",
+        kataban_alt: "TUF-RTX5090-O32G-GAMING",
+        why_included: "32 GB de VRAM y codificadores NVENC de 9.ª generación con soporte nativo para video 4:2:2 de 10 bits y modelos de IA generativa pesados",
+        usd_range: "$4,829+ USD",
+        jpy_range: "¥1,199,800",
+        price_doc_jpy: 1199800,
+        price_live_note: "$4,829+ USD / ¥1,199,800 en TSUKUMO eX. / PC Shop ARK",
+        best_store: "TSUKUMO eX. / PC Shop ARK",
+        store_tags: ["tsukumo", "ark", "kakaku"],
+        links: {
+          kakaku: "https://kakaku.com/search_results/ROG-ASTRAL-RTX5090-O32G-GAMING/",
+          tsukumo: "https://shop.tsukumo.co.jp/search/?keyword=ROG-ASTRAL-RTX5090-O32G-GAMING",
+          ark: "https://www.ark-pc.co.jp/search/?key=ROG-ASTRAL-RTX5090-O32G-GAMING",
+          amazon: "https://www.amazon.co.jp/s?k=ROG-ASTRAL-RTX5090-O32G-GAMING"
+        }
+      },
+      {
+        id: "cc_gpu_proart_5080",
+        slot: "gpu",
+        option_group: "cc_gpu",
+        option_key: "rtx5080",
+        is_default: false,
+        category: "Tarjeta Gráfica (GPU — Opción ProArt RTX 5080)",
+        name: "ASUS ProArt GeForce RTX 5080 16GB GDDR7 OC (2.5-Slot Slim para Dual-GPU x8/x8)",
+        kataban: "PROART-RTX5080-O16G",
+        kataban_alt: "PROART-RTX5080-O16G (1x o 2x unidades)",
+        why_included: "Diseño compacto 2.5-slot sin RGB pensado para estaciones ProArt de estudio y configuraciones de simple o doble GPU",
+        usd_range: "$2,800 USD",
+        jpy_range: "¥480,000",
+        price_doc_jpy: 480000,
+        price_live_note: "$2,800 USD / ¥480,000 en TSUKUMO eX. / PC Shop ARK",
+        best_store: "TSUKUMO eX. / PC Shop ARK",
+        store_tags: ["tsukumo", "ark", "kakaku"],
+        links: {
+          kakaku: "https://kakaku.com/search_results/PROART%20RTX%205080/",
+          tsukumo: "https://shop.tsukumo.co.jp/search/?keyword=PROART+RTX+5080",
+          ark: "https://www.ark-pc.co.jp/search/?key=PROART+RTX5080",
+          amazon: "https://www.amazon.co.jp/s?k=ASUS+ProArt+RTX+5080"
+        }
+      },
+      {
+        id: "cc_ram_128gb",
+        slot: "ram",
+        category: "Memoria RAM",
+        name: "64 GB (2x32GB) o 128 GB / 192 GB (4x48GB) DDR5 (G.Skill / Corsair Workstation Kit)",
+        kataban: "F5-6000J3040G32GX2-TZ5NR",
+        kataban_alt: "CMK96GX5M2B6000C30 ×2 (192GB Kit: ¥240,000)",
+        why_included: "Para simulaciones de fluidos, caching de After Effects en tiempo real y escenas 3D con millones de polígonos",
+        usd_range: "$1,030 – $1,850 USD",
+        jpy_range: "¥123,800 – ¥240,000",
+        price_doc_jpy: 123800,
+        price_live_note: "$1,030–$1,850 USD / ¥123,800 (64GB) a ¥240,000 (192GB 4x48GB) en PC Shop ARK",
+        best_store: "PC Shop ARK",
+        store_tags: ["ark", "kakaku"],
+        links: {
+          kakaku: "https://kakaku.com/search_results/F5-6000J3040G32GX2-TZ5NR/",
+          tsukumo: "https://shop.tsukumo.co.jp/search/?keyword=DDR5+48GBx2",
+          ark: "https://www.ark-pc.co.jp/search/?key=F5-6000J3040G32GX2-TZ5NR",
+          amazon: "https://www.amazon.co.jp/s?k=F5-6000J3040G32GX2-TZ5NR"
+        }
+      },
+      {
+        id: "cc_aio_proart_lc420",
+        slot: "aio",
+        category: "Enfriamiento Líquido (AIO)",
+        name: "ASUS ProArt LC 420 (o ProArt LC 360 · Ventiladores Noctua NF-A14 industrialPPC-2000 PWM)",
+        kataban: "PROART LC 420",
+        kataban_alt: "90RC00N0-M0UAY0 / PROART LC 360",
+        why_included: "Radiador de 420 mm con ventiladores Noctua NF-A14 industrialPPC-2000 PWM e indicador luminoso minimalista de carga en la bomba",
+        usd_range: "$289 USD",
+        jpy_range: "¥46,800",
+        price_doc_jpy: 46800,
+        price_live_note: "$289 USD / ¥46,800 en TSUKUMO / PC Shop ARK / Amazon.co.jp",
+        best_store: "TSUKUMO / PC Shop ARK",
+        store_tags: ["tsukumo", "ark", "kakaku"],
+        links: {
+          kakaku: "https://kakaku.com/search_results/PROART%20LC%20420/",
+          tsukumo: "https://shop.tsukumo.co.jp/search/?keyword=PROART+LC+420",
+          ark: "https://www.ark-pc.co.jp/search/?key=PROART+LC+420",
+          amazon: "https://www.amazon.co.jp/s?k=ASUS+ProArt+LC+420"
+        }
+      },
+      {
+        id: "cc_ssd_8tb_dual",
+        slot: "ssd",
+        category: "Almacenamiento (8TB Total)",
+        name: "4 TB PCIe 5.0 NVMe (WD_Black SN8100 / Crucial T705) + 4 TB PCIe 4.0 (Samsung 990 PRO)",
+        kataban: "WDS400T1X0M + MZ-V9P4T0B-IT",
+        kataban_alt: "CT4000T705SSD3 + MZ-V9P4T0B-IT",
+        why_included: "Unidad principal Gen 5 (~14,500–14,900 MB/s) para scratch disk de video 8K RAW y secundaria de 4 TB para librería de proyectos",
+        usd_range: "$610 USD (8TB total)",
+        jpy_range: "¥267,980",
+        price_doc_jpy: 267980,
+        price_live_note: "¥139,980 (SN8100 4TB Gen5) + ¥128,000 (990 PRO 4TB Gen4) = ¥267,980 en ARK / TSUKUMO",
+        best_store: "PC Shop ARK / TSUKUMO",
+        store_tags: ["ark", "tsukumo", "kakaku"],
+        links: {
+          kakaku: "https://kakaku.com/search_results/WDS400T1X0M/",
+          tsukumo: "https://shop.tsukumo.co.jp/search/?keyword=MZ-V9P4T0B-IT",
+          ark: "https://www.ark-pc.co.jp/search/?key=WDS400T1X0M",
+          amazon: "https://www.amazon.co.jp/s?k=WDS400T1X0M"
+        }
+      },
+      {
+        id: "cc_psu_proart_1200w",
+        slot: "psu",
+        category: "Fuente de Poder (PSU)",
+        name: "ASUS ProArt 1200W Platinum (o ROG Thor 1200W Platinum III)",
+        kataban: "PROART-1200P",
+        kataban_alt: "ROG-THOR-1200P3-GAMING",
+        why_included: "Potencia estable de 1200W para soportar picos de renderizado con CPU y GPU al 100% durante horas",
+        usd_range: "$399 – $499 USD",
+        jpy_range: "¥68,000 – ¥80,524",
+        price_doc_jpy: 72000,
+        price_live_note: "$399–$499 USD / ¥68,000 (ProArt 1200W) a ¥80,524 (ROG Thor III 1200W) en TSUKUMO",
+        best_store: "TSUKUMO / Amazon.co.jp",
+        store_tags: ["tsukumo", "kakaku"],
+        links: {
+          kakaku: "https://kakaku.com/search_results/ROG-THOR-1200P3-GAMING/",
+          tsukumo: "https://shop.tsukumo.co.jp/search/?keyword=ASUS+1200W+Platinum",
+          ark: "https://www.ark-pc.co.jp/search/?key=ROG-THOR-1200P3-GAMING",
+          amazon: "https://www.amazon.co.jp/s?k=ASUS+ROG+Thor+1200W+Platinum+III"
+        }
+      },
+      {
+        id: "cc_case_pa602",
+        slot: "case",
+        category: "Gabinete (Chassis)",
+        name: "ASUS ProArt PA602 (Normal o Wood Edition con madera de fresno certificada FSC)",
+        kataban: "PROART PA602 WOOD EDITION TG",
+        kataban_alt: "PROART PA602 / 90DC00J0-B09000",
+        why_included: "Ventiladores frontales de 200 mm x 38 mm preinstalados, detector infrarrojo de polvo en el filtro frontal y ruedas integradas para mover la estación en la Sala (LDK 12.7帖)",
+        usd_range: "$229 – $269 USD",
+        jpy_range: "¥39,800 – ¥46,800",
+        price_doc_jpy: 42800,
+        price_live_note: "$229–$269 USD / ¥39,800 (PA602) a ¥46,800 (PA602 Wood Edition) en TSUKUMO / Yodobashi",
+        best_store: "TSUKUMO / Yodobashi",
+        store_tags: ["tsukumo", "yodobashi", "kakaku"],
+        links: {
+          kakaku: "https://kakaku.com/search_results/PROART%20PA602/",
+          tsukumo: "https://shop.tsukumo.co.jp/search/?keyword=PROART+PA602",
+          ark: "https://www.ark-pc.co.jp/search/?key=PROART+PA602",
+          amazon: "https://www.amazon.co.jp/s?k=ASUS+ProArt+PA602"
+        }
+      }
+    ],
+    proart_monitors: [
+      {
+        id: "mon_pa32ucdm",
+        slot: "monitor_proart",
+        option_group: "proart_mon_choice",
+        option_key: "pa32ucdm",
+        is_default: true,
+        category: "Monitor ProArt Opción 1 (31.5\" 4K QD-OLED 240Hz)",
+        name: "ASUS ProArt Display OLED PA32UCDM (31.5\" 4K QD-OLED a 240Hz, ΔE < 1, Thunderbolt 4 96W)",
+        kataban: "PA32UCDM",
+        kataban_alt: "ProArt Display OLED PA32UCDM",
+        why_included: "Precisión de color de estudio (ΔE < 1, 99% DCI-P3) combinada con 240Hz QD-OLED y puerto Thunderbolt 4 en cadena",
+        usd_range: "~$1,499 USD",
+        jpy_range: "¥238,000",
+        price_doc_jpy: 238000,
+        price_live_note: "~$1,499 USD / ¥238,000 en Yodobashi Camera (+10% Gold Points) / TSUKUMO",
+        best_store: "Yodobashi / TSUKUMO",
+        store_tags: ["yodobashi", "tsukumo", "kakaku"],
+        links: {
+          kakaku: "https://kakaku.com/search_results/PA32UCDM/",
+          yodobashi: "https://www.yodobashi.com/?word=PA32UCDM",
+          tsukumo: "https://shop.tsukumo.co.jp/search/?keyword=PA32UCDM",
+          amazon: "https://www.amazon.co.jp/s?k=ASUS+ProArt+PA32UCDM"
+        }
+      },
+      {
+        id: "mon_pa32kcx",
+        slot: "monitor_proart",
+        option_group: "proart_mon_choice",
+        option_key: "pa32kcx",
+        is_default: false,
+        category: "Monitor ProArt Opción 2 (32\" 8K Mini-LED Colorímetro Motorizado)",
+        name: "ASUS ProArt Display 8K PA32KCX (32\" 8K 7680×4320 Mini-LED, 4,096 zonas, 1,200 nits, Dual TB4)",
+        kataban: "PA32KCX",
+        kataban_alt: "ProArt Display 8K PA32KCX",
+        why_included: "Primer monitor profesional 8K Mini-LED de 4,096 zonas del mundo con colorímetro motorizado integrado y 1,200 nits para masterización HDR",
+        usd_range: "~$3,999+ USD",
+        jpy_range: "~¥650,000",
+        price_doc_jpy: 650000,
+        price_live_note: "~$3,999+ USD / ~¥650,000 en Yodobashi Camera (+10% Gold Points) / TSUKUMO",
+        best_store: "Yodobashi / TSUKUMO",
+        store_tags: ["yodobashi", "tsukumo", "kakaku"],
+        links: {
+          kakaku: "https://kakaku.com/search_results/PA32KCX/",
+          yodobashi: "https://www.yodobashi.com/?word=PA32KCX",
+          tsukumo: "https://shop.tsukumo.co.jp/search/?keyword=PA32KCX",
+          amazon: "https://www.amazon.co.jp/s?k=ASUS+ProArt+PA32KCX"
+        }
+      }
+    ],
     counter_script: {
       ja: "すみません、俺はこのリストのパーツでハイエンドPCを一式組みたいです。在庫の確認と、CPUとマザーボードのセット割引が使えるか教えてください。あと、キーボードは日本語配列ではなく、必ず英語配列（US配列）でお願いします。",
       romaji: "Sumimasen, ore wa kono risuto no pātsu de haiendo PC o isshiki kumitai desu. Zaiko no kakunin to, CPU to mazābōdo no setto waribiki ga tsukaeru ka oshiete kudasai. Ato, kībōdo wa nihongo hairetsu dewa naku, kanarazu eigo hairetsu (US hairetsu) de onegaishimasu.",
@@ -403,10 +877,15 @@
 
   const state = {
     data: FALLBACK_DATA,
-    cpuChoice: "9950x3d", // "9950x3d" | "9850x3d"
-    kbSwitch: "NXSW",     // "NXSW" (Snow) | "NXSM" (Storm)
+    activeBuildTab: "all",       // "all" | "sin_limites" | "creator_extreme" | "ai_starter"
+    cpuChoice: "9950x3d",        // "9950x3d" | "9850x3d" (Sin Límites)
+    kbSwitch: "NXSW",            // "NXSW" (Snow) | "NXSM" (Storm)
     yodobashiHack: false,
-    assemblyService: false, // false = DIY (¥0), true = 組立代行サービス (+¥22,000)
+    assemblyService: false,
+    ccPlatform: "amd",           // "amd" (9950X3D + X870E ProArt) | "intel" (Ultra 9 285K + Z890 ProArt)
+    ccGpu: "rtx5090",            // "rtx5090" (¥1,199,800) | "rtx5080" (¥480,000)
+    ccMonitor: "pa32ucdm",       // "pa32ucdm" (¥238,000) | "pa32kcx" (¥650,000) | "none" (¥0)
+    salaStationMode: "ai_starter", // "ai_starter" (¥334,400) | "creator_extreme" | "both"
     storeFilter: "all",
     searchQuery: "",
     jpyRate: 147.0
@@ -478,7 +957,8 @@
 
   function computeTotals() {
     const d = state.data;
-    const towerItems = d.tower_components.filter(it => {
+    // 1. Sin Límites (Bed Room 2: DenkoBoy Command Center)
+    const towerItems = (d.tower_components || []).filter(it => {
       if (it.option_group === "cpu_choice") {
         return it.option_key === state.cpuChoice;
       }
@@ -486,15 +966,40 @@
     });
 
     const towerSubtotal = towerItems.reduce((acc, it) => acc + it.price_doc_jpy, 0);
-    const displaySubtotal = d.display_system.reduce((acc, it) => acc + it.price_doc_jpy, 0);
-    const periphSubtotal = d.peripherals.reduce((acc, it) => acc + it.price_doc_jpy, 0);
+    const displaySubtotal = (d.display_system || []).reduce((acc, it) => acc + it.price_doc_jpy, 0);
+    const periphSubtotal = (d.peripherals || []).reduce((acc, it) => acc + it.price_doc_jpy, 0);
 
-    let grossTotal = towerSubtotal + displaySubtotal + periphSubtotal;
+    const grossTotal = towerSubtotal + displaySubtotal + periphSubtotal;
     const assemblyCost = state.assemblyService ? 22000 : 0;
     const hackMouseSavings = state.yodobashiHack ? 45800 : 0;
     const hackSetSavings = state.yodobashiHack ? 16500 : 0;
     const totalHackSavings = hackMouseSavings + hackSetSavings;
     const netTotal = grossTotal + assemblyCost - totalHackSavings;
+
+    // 2. AI Starter (AMD) — Sala LDK
+    const aiStarterSubtotal = (d.ai_starter_amd || []).reduce((acc, it) => acc + it.price_doc_jpy, 0);
+
+    // 3. Content Creator Extreme — Sala / Estudio LDK
+    const ccItems = (d.content_creator_extreme || []).filter(it => {
+      if (it.option_group === "cc_platform") return it.option_key === state.ccPlatform;
+      if (it.option_group === "cc_gpu") return it.option_key === state.ccGpu;
+      return true;
+    });
+    const ccTowerSubtotal = ccItems.reduce((acc, it) => acc + it.price_doc_jpy, 0);
+    const ccMonObj = (d.proart_monitors || []).find(m => m.option_key === state.ccMonitor);
+    const ccMonitorSubtotal = ccMonObj ? ccMonObj.price_doc_jpy : 0;
+    const ccTotal = ccTowerSubtotal + ccMonitorSubtotal;
+
+    // Active Living Room (Sala LDK 12.7帖) PC Budget
+    let salaActiveTotal = aiStarterSubtotal;
+    let salaActiveLabel = "AI Starter (Versión AMD · #dreampclist)";
+    if (state.salaStationMode === "creator_extreme") {
+      salaActiveTotal = ccTotal;
+      salaActiveLabel = `Content Creator Extreme (${state.ccPlatform.toUpperCase()} + ${state.ccGpu === "rtx5090" ? "RTX 5090" : "ProArt RTX 5080"})`;
+    } else if (state.salaStationMode === "both") {
+      salaActiveTotal = aiStarterSubtotal + ccTotal;
+      salaActiveLabel = "Dual Sala: AI Starter (AMD) + Content Creator Extreme";
+    }
 
     return {
       towerSubtotal,
@@ -503,7 +1008,14 @@
       grossTotal,
       assemblyCost,
       totalHackSavings,
-      netTotal
+      netTotal,
+      aiStarterSubtotal,
+      ccTowerSubtotal,
+      ccMonitorSubtotal,
+      ccTotal,
+      salaActiveTotal,
+      salaActiveLabel,
+      combinedEcosystemTotal: netTotal + salaActiveTotal
     };
   }
 
@@ -518,8 +1030,40 @@
       ? "\n【オプション】\n・組立代行サービス（配線整理・BIOS更新・動作チェック一式）"
       : "";
 
+    const salaSection = state.salaStationMode === "ai_starter"
+      ? [
+          "",
+          "【LDK（リビング 12.7帖）用サブ機：ASUS #dreampclist AI Starter (AMD)】",
+          "・CPU: AMD Ryzen 7 9700X BOX (100-100001404WOF)",
+          "・M/B: ASUS PRIME B850-PLUS WIFI (または TUF GAMING B850-PLUS WIFI)",
+          "・GPU: ASUS PRIME-RTX5060TI-O16G (16GB GDDR7)",
+          "・RAM: DDR5-6000 CL30 32GB (16GB×2 EXPO / CMK32GX5M2B6000Z30)",
+          "・AIO: ASUS PRIME LC 360 ARGB",
+          "・SSD: WD_Black SN850X 2TB (WDS200T2X0E)",
+          "・PSU: ASUS Prime 750W Gold (AP-750G)",
+          "・CASE: ASUS PRIME AP202 TG ARGB (または ProArt PA401)"
+        ].join("\n")
+      : [
+          "",
+          "【LDK（リビング 12.7帖）用スタジオ機：ASUS #dreampclist Content Creator Extreme】",
+          state.ccPlatform === "amd"
+            ? "・CPU: AMD Ryzen 9 9950X3D BOX (100-100000719WOF)\n・M/B: ASUS PROART X870E-CREATOR WIFI (10GbE + Dual USB4)"
+            : "・CPU: Intel Core Ultra 9 285K (BX80768285K)\n・M/B: ASUS PROART Z890-CREATOR WIFI (Thunderbolt 5 + 10GbE)",
+          state.ccGpu === "rtx5090"
+            ? "・GPU: ASUS ROG-ASTRAL-RTX5090-O32G-GAMING"
+            : "・GPU: ASUS PROART-RTX5080-O16G",
+          "・RAM: G.Skill F5-6000J3040G32GX2-TZ5NR (64GB / または 128GB-192GB DDR5)",
+          "・AIO: ASUS PROART LC 420 (Noctua NF-A14 industrialPPC-2000 PWM)",
+          "・SSD: WD_Black SN8100 4TB (WDS400T1X0M) + Samsung 990 PRO 4TB (MZ-V9P4T0B-IT)",
+          "・PSU: ASUS PROART-1200P (1200W Platinum)",
+          "・CASE: ASUS PROART PA602 WOOD EDITION TG",
+          state.ccMonitor === "pa32kcx"
+            ? "・Monitor ProArt: ASUS ProArt Display 8K PA32KCX (32\" 8K Mini-LED)"
+            : (state.ccMonitor === "pa32ucdm" ? "・Monitor ProArt: ASUS ProArt Display OLED PA32UCDM (31.5\" 4K 240Hz)" : "")
+        ].filter(Boolean).join("\n");
+
     return [
-      "【PC本体パーツ】",
+      "【メイン機（Bed Room 2 司令室）：ROG「Sin Límites」Extreme 構成】",
       cpuLine,
       "・M/B: ASUS ROG CROSSHAIR X870E DARK HERO",
       "・GPU: ASUS ROG-ASTRAL-RTX5090-O32G-GAMING",
@@ -539,7 +1083,7 @@
       "・Mousepad (Glass): ASUS NH04 ROG MOONSTONE ACE L/BLK",
       "・Mousepad (Desk XXL): ASUS ROG Hone Ace XXL (90MP0390-BPUA00)",
       "・Headset: ASUS ROGDELTA2",
-      "・Mic: ASUS ROG CARNYX/BLK" + assemblyLine
+      "・Mic: ASUS ROG CARNYX/BLK" + salaSection + assemblyLine
     ].join("\n");
   }
 
@@ -558,6 +1102,7 @@
         item.name,
         item.kataban,
         item.kataban_alt,
+        item.why_included || "",
         item.best_store
       ].join(" ").toLowerCase();
       if (!hay.includes(q)) return false;
@@ -587,7 +1132,17 @@
   }
 
   function renderItemRow(item, opts = {}) {
-    const isAltCpu = item.option_group === "cpu_choice" && item.option_key !== state.cpuChoice;
+    let isInactiveOption = false;
+    if (item.option_group === "cpu_choice") {
+      isInactiveOption = item.option_key !== state.cpuChoice;
+    } else if (item.option_group === "cc_platform") {
+      isInactiveOption = item.option_key !== state.ccPlatform;
+    } else if (item.option_group === "cc_gpu") {
+      isInactiveOption = item.option_key !== state.ccGpu;
+    } else if (item.option_group === "proart_mon_choice") {
+      isInactiveOption = item.option_key !== state.ccMonitor;
+    }
+
     let displayKataban = item.kataban;
     if (item.id === "kb_azoth_extreme_us") {
       displayKataban = state.kbSwitch === "NXSW"
@@ -599,18 +1154,19 @@
     const usdShort = "$" + Math.round(effectivePrice / (state.jpyRate || 147)).toLocaleString("en-US");
 
     return `
-      <tr class="rog-item-row ${isAltCpu ? "rog-row-inactive-cpu" : ""}" data-item-id="${item.id}">
+      <tr class="rog-item-row ${isInactiveOption ? "rog-row-inactive-cpu" : ""}" data-item-id="${item.id}">
         <td>
           <div style="font-weight:700; color:#f8fafc;">${item.category}</div>
-          ${item.option_group === "cpu_choice" ? `
-            <span class="rog-cpu-badge ${isAltCpu ? "inactive" : "active"}">
-              ${isAltCpu ? "Opción Alternativa (No sumada al subtotal activo)" : "✅ Seleccionado en tu Build"}
+          ${item.option_group ? `
+            <span class="rog-cpu-badge ${isInactiveOption ? "inactive" : "active"}">
+              ${isInactiveOption ? "Opción Alternativa (No sumada al subtotal activo)" : "✅ Seleccionado en tu Build"}
             </span>
           ` : ""}
         </td>
         <td>
           <div style="font-weight:700; color:#e2e8f0;">${item.name}</div>
-          <div style="font-size:0.75rem; color:#94a3b8; margin-top:3px;">📊 ${item.price_live_note || ""}</div>
+          ${item.why_included ? `<div style="font-size:0.76rem; color:#cbd5e1; margin-top:4px; line-height:1.4;">🎯 <strong>Por qué se incluye:</strong> ${item.why_included}</div>` : ""}
+          <div style="font-size:0.73rem; color:#94a3b8; margin-top:3px;">📊 ${item.price_live_note || ""}</div>
         </td>
         <td>
           <div class="rog-kataban-box">
@@ -626,9 +1182,10 @@
             <div style="font-size:0.7rem; color:#4ade80;">Canjeado con Gold Points</div>
           ` : `
             <div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap;">
-              <span style="font-weight:800; color:${isAltCpu ? "#94a3b8" : "#f8fafc"}; font-size:0.95rem;">${fmtYen(effectivePrice)}</span>
+              <span style="font-weight:800; color:${isInactiveOption ? "#94a3b8" : "#f8fafc"}; font-size:0.95rem;">${fmtYen(effectivePrice)}</span>
               <span class="imperio-inline-usd">${usdShort}</span>
             </div>
+            ${item.usd_range ? `<div style="font-size:0.7rem; color:#38bdf8; margin-top:2px;">Ref. #dreampclist: ${item.usd_range} / ${item.jpy_range}</div>` : ""}
           `}
         </td>
         <td>
@@ -652,6 +1209,50 @@
         margin-top: 8px;
         box-shadow: 0 14px 36px rgba(0, 0, 0, 0.55);
       }
+      .rog-build-tabs {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 8px;
+        margin-bottom: 14px;
+      }
+      .rog-build-tab {
+        background: rgba(18, 24, 38, 0.9);
+        border: 1px solid rgba(148, 163, 184, 0.25);
+        border-radius: 10px;
+        padding: 10px 12px;
+        text-align: left;
+        cursor: pointer;
+        color: #e2e8f0;
+        transition: all 0.18s ease;
+      }
+      .rog-build-tab:hover {
+        border-color: rgba(212, 168, 83, 0.65);
+        transform: translateY(-1px);
+      }
+      .rog-build-tab.active {
+        background: linear-gradient(135deg, rgba(239, 68, 68, 0.22), rgba(212, 168, 83, 0.16));
+        border-color: #ef4444;
+        box-shadow: 0 0 16px rgba(239, 68, 68, 0.25);
+      }
+      .rog-build-tab .tab-eyebrow {
+        font-size: 0.66rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: #f59e0b;
+        font-weight: 800;
+      }
+      .rog-build-tab .tab-title {
+        font-size: 0.86rem;
+        font-weight: 800;
+        color: #ffffff;
+        margin: 2px 0;
+      }
+      .rog-build-tab .tab-price {
+        font-family: 'Orbitron', monospace;
+        font-size: 0.82rem;
+        color: #4ade80;
+        font-weight: 700;
+      }
       .rog-kpi-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(205px, 1fr));
@@ -668,6 +1269,10 @@
         border-color: rgba(239, 68, 68, 0.65);
         background: linear-gradient(135deg, rgba(239, 68, 68, 0.14), rgba(212, 168, 83, 0.1));
       }
+      .rog-kpi-card.sala-highlight {
+        border-color: rgba(56, 189, 248, 0.65);
+        background: linear-gradient(135deg, rgba(56, 189, 248, 0.14), rgba(168, 85, 247, 0.1));
+      }
       .rog-kpi-lbl {
         font-size: 0.7rem;
         text-transform: uppercase;
@@ -677,13 +1282,13 @@
       }
       .rog-kpi-val {
         font-family: 'Orbitron', monospace;
-        font-size: 1.22rem;
+        font-size: 1.18rem;
         font-weight: 900;
         color: #f8fafc;
         margin-top: 4px;
       }
       .rog-kpi-sub {
-        font-size: 0.75rem;
+        font-size: 0.74rem;
         color: #38bdf8;
         margin-top: 3px;
       }
@@ -711,7 +1316,7 @@
         border: 1px solid rgba(148, 163, 184, 0.28);
         border-radius: 8px;
         padding: 7px 11px;
-        font-size: 0.76rem;
+        font-size: 0.75rem;
         font-weight: 700;
         cursor: pointer;
         transition: all 0.18s ease;
@@ -725,6 +1330,11 @@
         border-color: #ef4444;
         color: #fff;
         box-shadow: 0 0 12px rgba(239, 68, 68, 0.3);
+      }
+      .rog-toggle-btn.proart-active {
+        background: linear-gradient(135deg, rgba(212, 168, 83, 0.28), rgba(56, 189, 248, 0.22));
+        border-color: #d4a853;
+        color: #fde047;
       }
       .rog-toggle-btn.hack-active {
         background: linear-gradient(135deg, rgba(34, 197, 94, 0.26), rgba(16, 185, 129, 0.18));
@@ -751,6 +1361,14 @@
         background: rgba(239, 68, 68, 0.1);
         border-left: 4px solid #ef4444;
         border-radius: 6px;
+      }
+      .rog-section-hdr.proart {
+        background: rgba(212, 168, 83, 0.12);
+        border-left-color: #d4a853;
+      }
+      .rog-section-hdr.aistarter {
+        background: rgba(56, 189, 248, 0.12);
+        border-left-color: #38bdf8;
       }
       .rog-section-hdr h4 {
         margin: 0;
@@ -857,21 +1475,44 @@
     document.head.appendChild(st);
   }
 
+  function notifyFloorplanSync(totals) {
+    window.__IMPERIO_ASUS_STATE__ = {
+      salaStationMode: state.salaStationMode,
+      ccPlatform: state.ccPlatform,
+      ccGpu: state.ccGpu,
+      ccMonitor: state.ccMonitor,
+      cpuChoice: state.cpuChoice,
+      totals: totals
+    };
+    window.dispatchEvent(new CustomEvent("imperio:asus-station-updated", {
+      detail: window.__IMPERIO_ASUS_STATE__
+    }));
+  }
+
   function renderApp() {
     const mount = document.getElementById("rog-sin-limites-api-mount");
     if (!mount) return;
     injectStyles();
 
     const totals = computeTotals();
+    notifyFloorplanSync(totals);
+
     const headerSub = document.getElementById("rog-tech-room-subtotal");
     if (headerSub) {
       headerSub.innerHTML = `${fmtYen(totals.netTotal)} <span class="imperio-inline-usd">⚡ ${fmtUsd(totals.netTotal)}</span>`;
     }
+    const salaSubEl = document.getElementById("sala-pc-room-subtotal");
+    if (salaSubEl) {
+      salaSubEl.innerHTML = `${fmtYen(totals.salaActiveTotal)} <span class="imperio-inline-usd">⚡ ${fmtUsd(totals.salaActiveTotal)}</span>`;
+    }
 
     const d = state.data;
-    const towerRows = d.tower_components.filter(matchesFilter).map(it => renderItemRow(it)).join("");
-    const displayRows = d.display_system.filter(matchesFilter).map(it => renderItemRow(it)).join("");
-    const periphRows = d.peripherals.filter(matchesFilter).map(it => renderItemRow(it)).join("");
+    const towerRows = (d.tower_components || []).filter(matchesFilter).map(it => renderItemRow(it)).join("");
+    const displayRows = (d.display_system || []).filter(matchesFilter).map(it => renderItemRow(it)).join("");
+    const periphRows = (d.peripherals || []).filter(matchesFilter).map(it => renderItemRow(it)).join("");
+    const aiStarterRows = (d.ai_starter_amd || []).filter(matchesFilter).map(it => renderItemRow(it)).join("");
+    const ccExtremeRows = (d.content_creator_extreme || []).filter(matchesFilter).map(it => renderItemRow(it)).join("");
+    const proartMonRows = (d.proart_monitors || []).filter(matchesFilter).map(it => renderItemRow(it)).join("");
 
     const fullJaScript = state.assemblyService
       ? `${d.counter_script.ja} ${d.counter_script.assembly_addon_ja}`
@@ -885,71 +1526,131 @@
 
     const katabanListText = buildKatabanCounterList();
 
+    const showSinLimites = state.activeBuildTab === "all" || state.activeBuildTab === "sin_limites";
+    const showAiStarter = state.activeBuildTab === "all" || state.activeBuildTab === "ai_starter";
+    const showCreatorExtreme = state.activeBuildTab === "all" || state.activeBuildTab === "creator_extreme";
+
     mount.innerHTML = `
       <div class="rog-api-shell">
         <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
           <div>
             <span style="display:inline-block; background:rgba(239,68,68,0.2); border:1px solid #ef4444; color:#fca5a5; font-size:0.7rem; font-weight:800; padding:3px 9px; border-radius:999px; letter-spacing:0.06em;">
-              🔴 API EN VIVO · AKIHABARA KATABAN (型番) PRICE TRACKER v3.0
+              🔴 API EN VIVO v4.0 · ROG «SIN LÍMITES» + CAMPAÑA ASUS #DREAMPCLIST (UPGRADE WHAT MATTERS 2026)
             </span>
-            <h3 style="margin:6px 0 2px 0; color:#f8fafc; font-size:1.1rem;">
-              🔥 Configuración «Sin Límites» (Nivel 3: Extreme Tope Absoluto · Full ASUS ROG + RTX 5090 + Dual OLED 240Hz)
+            <h3 style="margin:6px 0 2px 0; color:#f8fafc; font-size:1.08rem;">
+              🔥 Ecosistema Completo ASUS Japón: 1) «Sin Límites» ROG Extreme (Cuarto Bruno 4.0帖) + 2) AI Starter AMD &amp; 3) Content Creator Extreme ProArt (Sala LDK 12.7帖)
             </h3>
             <p style="margin:0; font-size:0.8rem; color:#94a3b8;">
-              Códigos exactos del mercado japonés (<strong>型番 / Kataban</strong>) verificados en <strong>Kakaku.com</strong>, <strong>TSUKUMO eX.</strong>, <strong>PC Shop ARK</strong> y <strong>Yodobashi Camera Multimedia Akiba</strong> (a 4 min en tu Honda CB250R desde Asakusabashi).
+              Todos los códigos oficiales <strong>型番 (Kataban)</strong> verificados en <strong>Kakaku.com</strong>, <strong>TSUKUMO eX.</strong>, <strong>PC Shop ARK</strong> y <strong>Yodobashi Camera Multimedia Akiba</strong>, sincronizados en tiempo real con el <strong>Mapa CAD de la Sala (LDK 12.7帖)</strong>.
             </p>
           </div>
           <div style="text-align:right; font-size:0.75rem; color:#94a3b8;">
             <div>Tipo de Cambio Activo: <strong style="color:#4ade80;">1 USD = ¥${state.jpyRate.toFixed(2)} JPY</strong></div>
-            <div>19 Códigos Oficiales (型番) · Impuestos Incluidos (税込)</div>
+            <div>3 Estaciones ASUS · Impuestos Incluidos (税込)</div>
           </div>
         </div>
 
-        <!-- 4 KPI CARDS (RESUMEN DE PRESUPUESTO SIN LÍMITES) -->
+        <!-- PESTAÑAS DE LAS 3 CONFIGURACIONES ASUS -->
+        <div class="rog-build-tabs">
+          <button type="button" class="rog-build-tab ${state.activeBuildTab === "all" ? "active" : ""}" data-build-tab="all">
+            <div class="tab-eyebrow">🌐 VISTA COMPLETA (3 ESTACIONES)</div>
+            <div class="tab-title">Ver Todas las Configuraciones ASUS</div>
+            <div class="tab-price">Cuarto Bruno (4.0帖) + Sala (LDK 12.7帖)</div>
+          </button>
+          <button type="button" class="rog-build-tab ${state.activeBuildTab === "sin_limites" ? "active" : ""}" data-build-tab="sin_limites">
+            <div class="tab-eyebrow">💻 BED ROOM 2 (デンコボーイ司令室 4.0帖)</div>
+            <div class="tab-title">1. «Sin Límites» (ROG Nivel 3 Extreme)</div>
+            <div class="tab-price">${fmtYen(totals.netTotal)} (${fmtUsd(totals.netTotal)})</div>
+          </button>
+          <button type="button" class="rog-build-tab ${state.activeBuildTab === "ai_starter" ? "active" : ""}" data-build-tab="ai_starter">
+            <div class="tab-eyebrow">🛋️ SALA LDK (12.7帖) · #DREAMPCLIST</div>
+            <div class="tab-title">2. AI Starter (Versión AMD · IA Local)</div>
+            <div class="tab-price">${fmtYen(totals.aiStarterSubtotal)} (~$1,920–$2,230 USD)</div>
+          </button>
+          <button type="button" class="rog-build-tab ${state.activeBuildTab === "creator_extreme" ? "active" : ""}" data-build-tab="creator_extreme">
+            <div class="tab-eyebrow">🎬 SALA / ESTUDIO LDK (12.7帖) · #DREAMPCLIST</div>
+            <div class="tab-title">3. Content Creator Extreme (ProArt 8K)</div>
+            <div class="tab-price">${fmtYen(totals.ccTowerSubtotal)} (+ Monitor ProArt)</div>
+          </button>
+        </div>
+
+        <!-- 4 KPI CARDS (RESUMEN DE PRESUPUESTO MULTIZONA) -->
         <div class="rog-kpi-grid">
-          <div class="rog-kpi-card">
-            <div class="rog-kpi-lbl">1. Subtotal Torre Completa</div>
-            <div class="rog-kpi-val">${fmtYen(totals.towerSubtotal)}</div>
-            <div class="rog-kpi-sub">${fmtUsd(totals.towerSubtotal)} · ${state.cpuChoice === "9950x3d" ? "Ryzen 9 9950X3D + RTX 5090 + 8TB" : "Ryzen 7 9850X3D + RTX 5090 + 8TB"}</div>
-          </div>
-          <div class="rog-kpi-card">
-            <div class="rog-kpi-lbl">2. 2x OLED 4K 240Hz + 2x Brazos ROG</div>
-            <div class="rog-kpi-val">${fmtYen(totals.displaySubtotal)}</div>
-            <div class="rog-kpi-sub">${fmtUsd(totals.displaySubtotal)} · Genera <strong>+¥48,684 pts</strong> (10%) en Yodobashi</div>
-          </div>
-          <div class="rog-kpi-card">
-            <div class="rog-kpi-lbl">3. Periféricos ROG Extreme (US Layout)</div>
-            <div class="rog-kpi-val">${fmtYen(totals.periphSubtotal)}</div>
-            <div class="rog-kpi-sub">${fmtUsd(totals.periphSubtotal)} · Azoth Extreme (${state.kbSwitch}) + Harpe Carbon</div>
-          </div>
           <div class="rog-kpi-card highlight">
-            <div class="rog-kpi-lbl">4. TOTAL GENERAL «SIN LÍMITES» (税込)</div>
+            <div class="rog-kpi-lbl">💻 Cuarto Bruno (4.0帖): «Sin Límites» ROG</div>
             <div class="rog-kpi-val" style="color:#fde047;">${fmtYen(totals.netTotal)}</div>
-            <div class="rog-kpi-sub" style="color:#4ade80; font-weight:700;">
-              ${fmtUsd(totals.netTotal)} ${state.yodobashiHack ? `(Ahorro Hack: -${fmtYen(totals.totalHackSavings)})` : "(Todo incluido con impuestos)"}
-            </div>
+            <div class="rog-kpi-sub">${fmtUsd(totals.netTotal)} · Torre ¥2.10M + 2x OLED ¥486.8K + Perif. ¥215.5K</div>
+          </div>
+          <div class="rog-kpi-card">
+            <div class="rog-kpi-lbl">🤖 #dreampclist 1: AI Starter (AMD)</div>
+            <div class="rog-kpi-val">${fmtYen(totals.aiStarterSubtotal)}</div>
+            <div class="rog-kpi-sub">~$1,920–$2,230 USD (~¥308K–¥358K) · Ryzen 7 9700X + RTX 5060 Ti 16GB</div>
+          </div>
+          <div class="rog-kpi-card">
+            <div class="rog-kpi-lbl">🎬 #dreampclist 2: Content Creator Extreme</div>
+            <div class="rog-kpi-val">${fmtYen(totals.ccTowerSubtotal)}</div>
+            <div class="rog-kpi-sub">${fmtUsd(totals.ccTowerSubtotal)} (Torre ProArt) · + Monitor ProArt: ${fmtYen(totals.ccTotal)}</div>
+          </div>
+          <div class="rog-kpi-card sala-highlight">
+            <div class="rog-kpi-lbl">🛋️ Estación Activa en Mapeo de Sala (LDK 12.7帖)</div>
+            <div class="rog-kpi-val" style="color:#38bdf8;">${fmtYen(totals.salaActiveTotal)}</div>
+            <div class="rog-kpi-sub" style="color:#e2e8f0;">${totals.salaActiveLabel} · <a href="#floor-plan" style="color:#4ade80; text-decoration:underline;">Ver en Mapa CAD LDK ↗</a></div>
           </div>
         </div>
 
-        <!-- BARRA INTERACTIVA DE CONFIGURACIÓN Y FILTROS -->
+        <!-- BARRA INTERACTIVA DE CONFIGURACIÓN Y SINCRONIZACIÓN CON LA SALA (LDK 12.7帖) -->
         <div class="rog-controls-bar">
           <div class="rog-btn-group">
-            <span style="font-size:0.74rem; color:#94a3b8; font-weight:700;">CPU:</span>
-            <button type="button" class="rog-toggle-btn ${state.cpuChoice === "9950x3d" ? "active" : ""}" id="rog-btn-9950">
-              🔥 Opción 1: Ryzen 9 9950X3D (16C · ¥109,980)
+            <span style="font-size:0.74rem; color:#38bdf8; font-weight:800;">🛋️ PC asignada a la Sala (LDK 12.7帖):</span>
+            <button type="button" class="rog-toggle-btn ${state.salaStationMode === "ai_starter" ? "proart-active" : ""}" id="rog-sala-ai">
+              🤖 AI Starter AMD (${fmtYen(totals.aiStarterSubtotal)})
             </button>
-            <button type="button" class="rog-toggle-btn ${state.cpuChoice === "9850x3d" ? "active" : ""}" id="rog-btn-9850">
-              ⚡ Opción 2: Ryzen 7 9850X3D (8C · ¥69,940)
+            <button type="button" class="rog-toggle-btn ${state.salaStationMode === "creator_extreme" ? "proart-active" : ""}" id="rog-sala-cc">
+              🎬 Content Creator Extreme (${fmtYen(totals.ccTotal)})
+            </button>
+            <button type="button" class="rog-toggle-btn ${state.salaStationMode === "both" ? "proart-active" : ""}" id="rog-sala-both">
+              ⚡ Ambas en Sala (${fmtYen(totals.aiStarterSubtotal + totals.ccTotal)})
             </button>
           </div>
 
           <div class="rog-btn-group">
-            <span style="font-size:0.74rem; color:#94a3b8; font-weight:700;">Switch US:</span>
+            <span style="font-size:0.74rem; color:#d4a853; font-weight:800;">Opciones Content Creator:</span>
+            <button type="button" class="rog-toggle-btn ${state.ccPlatform === "amd" ? "active" : ""}" id="rog-cc-amd">
+              AMD 9950X3D + X870E ProArt
+            </button>
+            <button type="button" class="rog-toggle-btn ${state.ccPlatform === "intel" ? "active" : ""}" id="rog-cc-intel">
+              Intel Ultra 9 285K + Z890 TB5
+            </button>
+            <button type="button" class="rog-toggle-btn ${state.ccGpu === "rtx5090" ? "active" : ""}" id="rog-cc-5090">
+              GPU: RTX 5090 32GB (¥1.19M)
+            </button>
+            <button type="button" class="rog-toggle-btn ${state.ccGpu === "rtx5080" ? "active" : ""}" id="rog-cc-5080">
+              GPU: ProArt RTX 5080 (¥480K)
+            </button>
+            <button type="button" class="rog-toggle-btn ${state.ccMonitor === "pa32ucdm" ? "proart-active" : ""}" id="rog-cc-mon4k">
+              🖥️ +PA32UCDM 4K OLED (¥238K)
+            </button>
+            <button type="button" class="rog-toggle-btn ${state.ccMonitor === "pa32kcx" ? "proart-active" : ""}" id="rog-cc-mon8k">
+              🖥️ +PA32KCX 8K Mini-LED (¥650K)
+            </button>
+          </div>
+        </div>
+
+        <!-- CONTROLES DE LA TORRE PRINCIPAL SIN LÍMITES Y FILTRO DE TIENDAS -->
+        <div class="rog-controls-bar" style="border-color:rgba(239,68,68,0.28);">
+          <div class="rog-btn-group">
+            <span style="font-size:0.74rem; color:#94a3b8; font-weight:700;">CPU «Sin Límites»:</span>
+            <button type="button" class="rog-toggle-btn ${state.cpuChoice === "9950x3d" ? "active" : ""}" id="rog-btn-9950">
+              🔥 Ryzen 9 9950X3D (¥109,980)
+            </button>
+            <button type="button" class="rog-toggle-btn ${state.cpuChoice === "9850x3d" ? "active" : ""}" id="rog-btn-9850">
+              ⚡ Ryzen 7 9850X3D (¥69,940)
+            </button>
             <button type="button" class="rog-toggle-btn ${state.kbSwitch === "NXSW" ? "active" : ""}" id="rog-btn-nxsw">
-              ❄️ NX Snow (/NXSW/US)
+              ❄️ Switch NX Snow (/US)
             </button>
             <button type="button" class="rog-toggle-btn ${state.kbSwitch === "NXSM" ? "active" : ""}" id="rog-btn-nxsm">
-              🌩️ NX Storm (/NXSM/US)
+              🌩️ Switch NX Storm (/US)
             </button>
           </div>
 
@@ -958,7 +1659,7 @@
               💡 ${state.yodobashiHack ? "Hack Yodobashi Activo (-¥62,300)" : "Aplicar Truco Yodobashi Gold Points (~¥65,000 Ahorro)"}
             </button>
             <button type="button" class="rog-toggle-btn ${state.assemblyService ? "active" : ""}" id="rog-btn-assembly">
-              🛠️ ${state.assemblyService ? "Con 組立代行サービス (+¥22,000)" : "Armado en Casa (¥0) / Ver 組立代行"}
+              🛠️ ${state.assemblyService ? "Con 組立代行サービス (+¥22,000)" : "Armado DIY (¥0)"}
             </button>
           </div>
         </div>
@@ -967,95 +1668,184 @@
         <div style="display:flex; flex-wrap:wrap; gap:8px; align-items:center; justify-content:space-between; margin-bottom:12px;">
           <div class="rog-btn-group">
             <span style="font-size:0.74rem; color:#94a3b8; font-weight:700;">Filtrar Tienda:</span>
-            <button type="button" class="rog-toggle-btn ${state.storeFilter === "all" ? "active" : ""}" data-store-filter="all">Todas (19)</button>
+            <button type="button" class="rog-toggle-btn ${state.storeFilter === "all" ? "active" : ""}" data-store-filter="all">Todas (39 códigos)</button>
             <button type="button" class="rog-toggle-btn ${state.storeFilter === "tsukumo" ? "active" : ""}" data-store-filter="tsukumo">🏬 TSUKUMO eX.</button>
             <button type="button" class="rog-toggle-btn ${state.storeFilter === "ark" ? "active" : ""}" data-store-filter="ark">🛡️ PC Shop ARK</button>
             <button type="button" class="rog-toggle-btn ${state.storeFilter === "yodobashi" ? "active" : ""}" data-store-filter="yodobashi">⚡ Yodobashi (10% Pts)</button>
           </div>
-          <input type="search" class="rog-search-input" id="rog-kataban-search" placeholder="🔎 Filtrar por pieza o código 型番 (ej. 5090, WDS400)..." value="${state.searchQuery}">
+          <input type="search" class="rog-search-input" id="rog-kataban-search" placeholder="🔎 Filtrar pieza o 型番 (ej. ProArt, B850, 5090, PA32KCX)..." value="${state.searchQuery}">
         </div>
 
-        <!-- TRUCO YODOBASHI GOLD POINTS BANNER -->
-        <div style="background:rgba(34,197,94,0.09); border:1px solid rgba(34,197,94,0.38); border-radius:10px; padding:11px 14px; margin-bottom:14px; font-size:0.82rem; color:#e2e8f0;">
-          <strong style="color:#4ade80;">💎 Truco para ahorrarte ~¥65,000 JPY el mismo día en Akihabara:</strong>
-          Compra primero los dos monitores <code>PG32UCDM3</code> y los dos brazos <code>AAS01</code> en <strong>Yodobashi Camera (Multimedia Akiba)</strong> o <strong>Bic Camera</strong>. Como ambos dan el <strong>10% en puntos Gold Point</strong>, recibirás al instante <strong>~¥48,680 en puntos</strong>. Con esos puntos en la tarjeta, sube al piso de periféricos de la misma tienda y llévate el <strong>ROG Harpe Ace Extreme (<code>P718 ROG HARPE ACE EXTREME</code> · ¥45,800)</strong> <strong>completamente gratis (¥0)</strong>. Luego camina 5 minutos hasta <strong>TSUKUMO eX.</strong> o <strong>PC Shop ARK</strong> para comprar las piezas de la torre con el descuento de paquete CPU + Motherboard (<code>セット割引</code>).
-        </div>
+        ${showAiStarter ? `
+          <!-- ===================================================================
+               SECCIÓN A: AI STARTER (VERSIÓN AMD) — #DREAMPCLIST (SALA LDK 12.7帖)
+               =================================================================== -->
+          <div class="rog-section-hdr aistarter">
+            <div>
+              <h4>🤖 Estación de Sala Opción A: AI Starter (Versión AMD · #dreampclist Upgrade What Matters 2026) — IA Local, LLMs (Llama/DeepSeek en Ollama/LM Studio), Stable Diffusion &amp; Productividad</h4>
+              <div style="font-size:0.75rem; color:#bae6fd; margin-top:2px;">
+                📍 Ubicación en el Mapa CAD: <strong>Living Dining Kitchen (LDK 12.7帖 · Esquina Noreste junto a toma 10GbE LAN)</strong> · Prioriza <strong>16 GB de VRAM GDDR7 (FP4 Blackwell)</strong> + <strong>32 GB DDR5-6000 CL30</strong> + <strong>Zen 5 AVX-512 (65W)</strong>.
+              </div>
+            </div>
+            <span style="font-weight:800; color:#38bdf8; white-space:nowrap;">
+              Total AI Starter: ${fmtYen(totals.aiStarterSubtotal)} (~$1,920 – $2,230 USD / ~¥308K – ¥358K)
+            </span>
+          </div>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>Categoría</th>
+                  <th>Componente de la Muestra (AMD) &amp; Por qué se incluye en este nivel</th>
+                  <th>Código Exacto en Japón (型番)</th>
+                  <th>Precio Aprox. (USD / JPY)</th>
+                  <th>Mejor Tienda &amp; Links</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${aiStarterRows || `<tr><td colspan="5" style="text-align:center; color:#94a3b8;">Sin coincidencias para el filtro actual.</td></tr>`}
+              </tbody>
+            </table>
+          </div>
+        ` : ""}
 
-        <!-- TABLA 1: LA TORRE SIN LÍMITES -->
-        <div class="rog-section-hdr">
-          <h4>1. La Torre «Sin Límites» (Códigos Exactos en Japón / 型番)</h4>
-          <span style="font-weight:800; color:#fde047;">Subtotal Torre: ${fmtYen(totals.towerSubtotal)} (${fmtUsd(totals.towerSubtotal)})</span>
-        </div>
-        <div class="table-responsive">
-          <table>
-            <thead>
-              <tr>
-                <th>Componente</th>
-                <th>Nombre Comercial &amp; Verificación en Tienda</th>
-                <th>Código Exacto en Japón (型番) para Copiar/Pegar</th>
-                <th>Precio Aprox. (税込)</th>
-                <th>Mejor Tienda en Japón &amp; Links Reales</th>
-              </tr>
-            </thead>
-            <tbody>
-              ${towerRows || `<tr><td colspan="5" style="text-align:center; color:#94a3b8;">Sin coincidencias para el filtro actual.</td></tr>`}
-            </tbody>
-          </table>
-        </div>
+        ${showCreatorExtreme ? `
+          <!-- ===================================================================
+               SECCIÓN B: CONTENT CREATOR EXTREME — #DREAMPCLIST (SALA / ESTUDIO LDK 12.7帖)
+               =================================================================== -->
+          <div class="rog-section-hdr proart">
+            <div>
+              <h4>🎬 Estación de Sala Opción B: Content Creator Extreme (#dreampclist ASUS ProArt + ROG) — Estación de Trabajo 8K, 3D, VFX e IA Avanzada</h4>
+              <div style="font-size:0.75rem; color:#fde68a; margin-top:2px;">
+                📍 Ubicación en el Mapa CAD: <strong>Living Dining Kitchen (LDK 12.7帖 · Estudio Creativo Compartido Bruno &amp; あやめ)</strong> · Conectividad <strong>10GbE + Dual USB4 (40Gbps) / Thunderbolt 5 (80/120Gbps)</strong>, NVENC 9.ª Gen 4:2:2 10-bit y chasis <strong>ProArt PA602 con ruedas integradas</strong>.
+              </div>
+            </div>
+            <span style="font-weight:800; color:#fde047; white-space:nowrap;">
+              Torre: ${fmtYen(totals.ccTowerSubtotal)} · Con Monitor ProArt: ${fmtYen(totals.ccTotal)} (${fmtUsd(totals.ccTotal)})
+            </span>
+          </div>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>Categoría</th>
+                  <th>Componente de la Muestra (Extreme) &amp; Por qué es el estándar para creación pesada</th>
+                  <th>Código Exacto en Japón (型番)</th>
+                  <th>Precio Aprox. (USD / JPY)</th>
+                  <th>Mejor Tienda &amp; Links</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${ccExtremeRows || `<tr><td colspan="5" style="text-align:center; color:#94a3b8;">Sin coincidencias para el filtro actual.</td></tr>`}
+              </tbody>
+            </table>
+          </div>
 
-        <!-- TABLA 2: SISTEMA DE DOBLE PANTALLA OLED 4K 240HZ -->
-        <div class="rog-section-hdr">
-          <h4>2. Sistema de Doble Pantalla OLED 4K 240Hz (Gen 3 Tandem OLED · DP 2.1a UHBR20 80Gbps + BlackShield)</h4>
-          <span style="font-weight:800; color:#fde047;">Subtotal Pantallas + Brazos: ${fmtYen(totals.displaySubtotal)} (${fmtUsd(totals.displaySubtotal)})</span>
-        </div>
-        <div class="table-responsive">
-          <table>
-            <thead>
-              <tr>
-                <th>Equipo</th>
-                <th>Modelo Exacto &amp; Puntos Gold Point</th>
-                <th>Código Exacto en Japón (型番)</th>
-                <th>Precio por el Par (税込)</th>
-                <th>Mejor Tienda &amp; Links Reales</th>
-              </tr>
-            </thead>
-            <tbody>
-              ${displayRows || `<tr><td colspan="5" style="text-align:center; color:#94a3b8;">Sin coincidencias para el filtro actual.</td></tr>`}
-            </tbody>
-          </table>
-        </div>
+          <!-- MONITORES PROART RECOMENDADOS -->
+          <div class="rog-section-hdr proart" style="margin-top:10px;">
+            <h4>🖥️ Monitores ASUS ProArt que acompañan al Content Creator Extreme en la Sala (Calibración ΔE &lt; 1)</h4>
+            <span style="font-weight:800; color:#fde047;">Activo: ${state.ccMonitor === "pa32kcx" ? "PA32KCX 8K Mini-LED (¥650,000)" : "PA32UCDM 4K QD-OLED 240Hz (¥238,000)"}</span>
+          </div>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>Monitor ProArt</th>
+                  <th>Especificaciones de Estudio &amp; Colorimetría</th>
+                  <th>Código Exacto en Japón (型番)</th>
+                  <th>Precio Aprox. (USD / JPY)</th>
+                  <th>Mejor Tienda &amp; Links</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${proartMonRows || `<tr><td colspan="5" style="text-align:center; color:#94a3b8;">Sin coincidencias para el filtro actual.</td></tr>`}
+              </tbody>
+            </table>
+          </div>
+        ` : ""}
 
-        <!-- TABLA 3: PERIFÉRICOS TOPE DE GAMA (US LAYOUT) -->
-        <div class="rog-section-hdr">
-          <h4>3. Periféricos Tope de Gama (con Teclado en Inglés / 英語配列 US Layout)</h4>
-          <span style="font-weight:800; color:#fde047;">Subtotal Periféricos: ${fmtYen(totals.periphSubtotal)} (${fmtUsd(totals.periphSubtotal)})</span>
-        </div>
-        <div class="table-responsive">
-          <table>
-            <thead>
-              <tr>
-                <th>Periférico</th>
-                <th>Modelo Insignia</th>
-                <th>Código Exacto en Japón (型番)</th>
-                <th>Precio Aprox. (税込)</th>
-                <th>Mejor Tienda &amp; Links Reales</th>
-              </tr>
-            </thead>
-            <tbody>
-              ${periphRows || `<tr><td colspan="5" style="text-align:center; color:#94a3b8;">Sin coincidencias para el filtro actual.</td></tr>`}
-            </tbody>
-          </table>
-        </div>
+        ${showSinLimites ? `
+          <!-- ===================================================================
+               SECCIÓN C: CONFIGURACIÓN «SIN LÍMITES» (NIVEL 3: EXTREME TOPE ABSOLUTO · CUARTO BRUNO 4.0帖)
+               =================================================================== -->
+          <div style="background:rgba(34,197,94,0.09); border:1px solid rgba(34,197,94,0.38); border-radius:10px; padding:11px 14px; margin:16px 0 12px 0; font-size:0.82rem; color:#e2e8f0;">
+            <strong style="color:#4ade80;">💎 Truco para ahorrarte ~¥65,000 JPY el mismo día en Akihabara (Torre «Sin Límites»):</strong>
+            Compra primero los dos monitores <code>PG32UCDM3</code> y los dos brazos <code>AAS01</code> en <strong>Yodobashi Camera (Multimedia Akiba)</strong> o <strong>Bic Camera</strong>. Como ambos dan el <strong>10% en puntos Gold Point</strong>, recibirás al instante <strong>~¥48,680 en puntos</strong>. Con esos puntos en la tarjeta, sube al piso de periféricos de la misma tienda y llévate el <strong>ROG Harpe Ace Extreme (<code>P718 ROG HARPE ACE EXTREME</code> · ¥45,800)</strong> <strong>completamente gratis (¥0)</strong>. Luego camina 5 minutos hasta <strong>TSUKUMO eX.</strong> o <strong>PC Shop ARK</strong> para comprar las piezas de la torre con el descuento de paquete CPU + Motherboard (<code>セット割引</code>).
+          </div>
+
+          <div class="rog-section-hdr">
+            <h4>1. La Torre Principal «Sin Límites» en Bed Room 2 (デンコボーイ司令室 4.0帖 · Códigos Exactos 型番)</h4>
+            <span style="font-weight:800; color:#fde047;">Subtotal Torre: ${fmtYen(totals.towerSubtotal)} (${fmtUsd(totals.towerSubtotal)})</span>
+          </div>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>Componente</th>
+                  <th>Nombre Comercial &amp; Verificación en Tienda</th>
+                  <th>Código Exacto en Japón (型番) para Copiar/Pegar</th>
+                  <th>Precio Aprox. (税込)</th>
+                  <th>Mejor Tienda en Japón &amp; Links Reales</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${towerRows || `<tr><td colspan="5" style="text-align:center; color:#94a3b8;">Sin coincidencias para el filtro actual.</td></tr>`}
+              </tbody>
+            </table>
+          </div>
+
+          <div class="rog-section-hdr">
+            <h4>2. Sistema de Doble Pantalla OLED 4K 240Hz (Gen 3 Tandem OLED · DP 2.1a UHBR20 80Gbps + BlackShield)</h4>
+            <span style="font-weight:800; color:#fde047;">Subtotal Pantallas + Brazos: ${fmtYen(totals.displaySubtotal)} (${fmtUsd(totals.displaySubtotal)})</span>
+          </div>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>Equipo</th>
+                  <th>Modelo Exacto &amp; Puntos Gold Point</th>
+                  <th>Código Exacto en Japón (型番)</th>
+                  <th>Precio por el Par (税込)</th>
+                  <th>Mejor Tienda &amp; Links Reales</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${displayRows || `<tr><td colspan="5" style="text-align:center; color:#94a3b8;">Sin coincidencias para el filtro actual.</td></tr>`}
+              </tbody>
+            </table>
+          </div>
+
+          <div class="rog-section-hdr">
+            <h4>3. Periféricos Tope de Gama (con Teclado en Inglés / 英語配列 US Layout)</h4>
+            <span style="font-weight:800; color:#fde047;">Subtotal Periféricos: ${fmtYen(totals.periphSubtotal)} (${fmtUsd(totals.periphSubtotal)})</span>
+          </div>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>Periférico</th>
+                  <th>Modelo Insignia</th>
+                  <th>Código Exacto en Japón (型番)</th>
+                  <th>Precio Aprox. (税込)</th>
+                  <th>Mejor Tienda &amp; Links Reales</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${periphRows || `<tr><td colspan="5" style="text-align:center; color:#94a3b8;">Sin coincidencias para el filtro actual.</td></tr>`}
+              </tbody>
+            </table>
+          </div>
+        ` : ""}
 
         <!-- SECCIÓN 5: NOTA LISTA PARA MOSTRAR EN EL MOSTRADOR (TSUKUMO eX. / PC SHOP ARK) -->
         <div class="rog-counter-card">
           <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:10px;">
             <div>
               <h4 style="margin:0; color:#fde047; font-size:0.98rem;">
-                🗣️ 5. Nota Lista para Mostrar en el Mostrador (TSUKUMO eX. Pisos 4F/5F/6F &amp; PC Shop ARK)
+                🗣️ Nota Lista para Mostrar en el Mostrador (TSUKUMO eX. Pisos 4F/5F/6F &amp; PC Shop ARK) — Incluye Torre Principal + PC de Sala
               </h4>
               <div style="font-size:0.76rem; color:#94a3b8;">
-                Muestra esta tarjeta en tu celular en Akihabara para que el encargado reúna todas las cajas, aplique el descuento CPU+M/B y verifique el teclado en inglés (US Layout).
+                Muestra esta tarjeta en tu celular en Akihabara para que el encargado reúna todas las cajas (Cuarto Bruno + Estación de Sala), aplique el descuento CPU+M/B y verifique el teclado US Layout.
               </div>
             </div>
             <div style="display:flex; gap:6px; flex-wrap:wrap;">
@@ -1082,14 +1872,51 @@
           </div>
 
           <div style="font-size:0.76rem; font-weight:700; color:#94a3b8; margin-top:6px;">
-            📋 Lista limpia de códigos (型番) sincronizada con tu selección actual:
+            📋 Lista limpia de códigos (型番) sincronizada con tu selección actual (Bed Room 2 + Sala LDK):
           </div>
           <pre class="rog-pre-list" id="rog-kataban-pre">${katabanListText}</pre>
         </div>
       </div>
     `;
 
-    // Bind events
+    // Bind Build Tabs
+    mount.querySelectorAll("[data-build-tab]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        state.activeBuildTab = btn.getAttribute("data-build-tab") || "all";
+        renderApp();
+      });
+    });
+
+    // Bind Sala Mode buttons
+    const bSalaAi = document.getElementById("rog-sala-ai");
+    if (bSalaAi) bSalaAi.addEventListener("click", () => { state.salaStationMode = "ai_starter"; renderApp(); });
+
+    const bSalaCc = document.getElementById("rog-sala-cc");
+    if (bSalaCc) bSalaCc.addEventListener("click", () => { state.salaStationMode = "creator_extreme"; renderApp(); });
+
+    const bSalaBoth = document.getElementById("rog-sala-both");
+    if (bSalaBoth) bSalaBoth.addEventListener("click", () => { state.salaStationMode = "both"; renderApp(); });
+
+    // Bind Content Creator toggles
+    const bCcAmd = document.getElementById("rog-cc-amd");
+    if (bCcAmd) bCcAmd.addEventListener("click", () => { state.ccPlatform = "amd"; renderApp(); });
+
+    const bCcIntel = document.getElementById("rog-cc-intel");
+    if (bCcIntel) bCcIntel.addEventListener("click", () => { state.ccPlatform = "intel"; renderApp(); });
+
+    const bCc5090 = document.getElementById("rog-cc-5090");
+    if (bCc5090) bCc5090.addEventListener("click", () => { state.ccGpu = "rtx5090"; renderApp(); });
+
+    const bCc5080 = document.getElementById("rog-cc-5080");
+    if (bCc5080) bCc5080.addEventListener("click", () => { state.ccGpu = "rtx5080"; renderApp(); });
+
+    const bCcMon4k = document.getElementById("rog-cc-mon4k");
+    if (bCcMon4k) bCcMon4k.addEventListener("click", () => { state.ccMonitor = "pa32ucdm"; renderApp(); });
+
+    const bCcMon8k = document.getElementById("rog-cc-mon8k");
+    if (bCcMon8k) bCcMon8k.addEventListener("click", () => { state.ccMonitor = "pa32kcx"; renderApp(); });
+
+    // Bind Sin Límites buttons
     const b9950 = document.getElementById("rog-btn-9950");
     if (b9950) b9950.addEventListener("click", () => { state.cpuChoice = "9950x3d"; renderApp(); });
 
@@ -1151,14 +1978,22 @@
     }
   }
 
+  // Expose helper so the Floor Plan CAD API can switch the Living Room station directly
+  window.setImperioSalaStationMode = function (mode) {
+    if (["ai_starter", "creator_extreme", "both"].includes(mode)) {
+      state.salaStationMode = mode;
+      renderApp();
+    }
+  };
+
   function init() {
     detectLiveJpyRate();
     renderApp();
-    fetch("assets/rog-sin-limites-feed.json?v=1")
+    fetch("assets/rog-sin-limites-feed.json?v=4")
       .then(r => r.ok ? r.json() : null)
       .then(json => {
         if (json && json.tower_components) {
-          state.data = json;
+          state.data = Object.assign({}, FALLBACK_DATA, json);
           renderApp();
         }
       })

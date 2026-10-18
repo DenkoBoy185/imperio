@@ -226,13 +226,14 @@
     if (!el || !FEED || !FEED.segment_1_finanzas) return;
     const s1 = FEED.segment_1_finanzas;
 
-    const capexTotalJpy = 4184089;
+    const capexRoomsList = s1.capex_rooms || [];
+    const capexTotalJpy = capexRoomsList.reduce((acc, r) => acc + (Number(r.jpy) || 0), 0) || 4518489;
     const capexLiveUsd = Math.round(capexTotalJpy / rates.JPY);
     const capexBaseUsd = Math.round(capexTotalJpy / 147.0);
     const opexOroUsd = Math.round(s1.opex_modes.oro_effective_jpy / rates.JPY);
     const opexSuzukiUsd = Math.round(s1.opex_modes.suzuki_1on1_jpy / rates.JPY);
 
-    const rowsHtml = (s1.capex_rooms || [])
+    const rowsHtml = capexRoomsList
       .map((r) => {
         const usdLive = Math.round(r.jpy / rates.JPY);
         const pct = ((r.jpy / capexTotalJpy) * 100).toFixed(1);
@@ -275,7 +276,7 @@
           <div class="seg-kpi-sub">Fondo Intocable: $48,000 USD (10m OPEX)</div>
         </div>
         <div class="seg-kpi-box">
-          <div class="seg-kpi-lbl">🛋️ CAPEX Funcional (5 Áreas)</div>
+          <div class="seg-kpi-lbl">🛋️ CAPEX Funcional (${capexRoomsList.length} Áreas)</div>
           <div class="seg-kpi-val">${fmtUsd(capexLiveUsd)} USD</div>
           <div class="seg-kpi-sub">${fmtJpy(capexTotalJpy)} (Ahorro FX: ${fmtUsd(Math.max(0, capexBaseUsd - capexLiveUsd))})</div>
         </div>
@@ -770,6 +771,21 @@
       if (typeof prevHook === "function") prevHook(newRates);
       renderAllTerminals();
     };
+
+    // Synchronize with ASUS #dreampclist Sala PC station selector
+    window.addEventListener("imperio:asus-station-updated", function (ev) {
+      if (!FEED || !FEED.segment_1_finanzas || !Array.isArray(FEED.segment_1_finanzas.capex_rooms)) return;
+      const d = (ev && ev.detail) || {};
+      const room = FEED.segment_1_finanzas.capex_rooms.find((r) => r.id === "ldk_sala_pc_dreampclist");
+      if (room && d.salaTotalJpy) {
+        room.jpy = d.salaTotalJpy;
+        room.name =
+          d.salaStationMode === "creator_extreme"
+            ? "Estación PC de Sala (LDK 12.7帖 · ASUS #dreampclist Content Creator Extreme ProArt + Monitor ProArt)"
+            : "Estación PC de Sala (LDK 12.7帖 · ASUS #dreampclist AI Starter AMD Ryzen 7 9700X + RTX 5060 Ti 16GB)";
+        renderSegment1(getRates());
+      }
+    });
   }
 
   if (document.readyState === "loading") {
