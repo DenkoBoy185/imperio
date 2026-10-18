@@ -569,19 +569,19 @@
     if (!links) return "";
     const btns = [];
     if (links.kakaku) {
-      btns.push(`<a href="${links.kakaku}" target="_blank" rel="noopener" class="rog-store-pill rog-pill-kakaku" title="Buscar el precio más bajo en Kakaku.com">🔍 Kakaku</a>`);
+      btns.push(`<a href="${links.kakaku}" target="_blank" rel="noopener" class="rog-store-pill rog-pill-kakaku" title="Buscar el precio más bajo en Kakaku.com">🔍 Kakaku 購入 🔗</a>`);
     }
     if (links.tsukumo) {
-      btns.push(`<a href="${links.tsukumo}" target="_blank" rel="noopener" class="rog-store-pill rog-pill-tsukumo" title="Buscar en TSUKUMO Akihabara">🏬 TSUKUMO</a>`);
+      btns.push(`<a href="${links.tsukumo}" target="_blank" rel="noopener" class="rog-store-pill rog-pill-tsukumo" title="Buscar en TSUKUMO Akihabara">🏬 TSUKUMO 購入 🔗</a>`);
     }
     if (links.ark) {
-      btns.push(`<a href="${links.ark}" target="_blank" rel="noopener" class="rog-store-pill rog-pill-ark" title="Buscar en PC Shop ARK Akihabara">🛡️ ARK</a>`);
+      btns.push(`<a href="${links.ark}" target="_blank" rel="noopener" class="rog-store-pill rog-pill-ark" title="Buscar en PC Shop ARK Akihabara">🛡️ ARK 購入 🔗</a>`);
     }
     if (links.yodobashi) {
-      btns.push(`<a href="${links.yodobashi}" target="_blank" rel="noopener" class="rog-store-pill rog-pill-yodobashi" title="Buscar en Yodobashi Camera (10% Gold Points)">⚡ Yodobashi</a>`);
+      btns.push(`<a href="${links.yodobashi}" target="_blank" rel="noopener" class="rog-store-pill rog-pill-yodobashi" title="Buscar en Yodobashi Camera (10% Gold Points)">⚡ Yodobashi 購入 🔗</a>`);
     }
     if (links.amazon) {
-      btns.push(`<a href="${links.amazon}" target="_blank" rel="noopener" class="rog-store-pill rog-pill-amazon" title="Buscar en Amazon.co.jp">📦 Amazon JP</a>`);
+      btns.push(`<a href="${links.amazon}" target="_blank" rel="noopener" class="rog-store-pill rog-pill-amazon" title="Buscar en Amazon.co.jp">📦 Amazon 購入 🔗</a>`);
     }
     return `<div class="rog-store-links">${btns.join("")}</div>`;
   }
@@ -596,6 +596,7 @@
     }
     const isFreeMouse = item.id === "mouse_harpe_extreme" && state.yodobashiHack;
     const effectivePrice = isFreeMouse ? 0 : item.price_doc_jpy;
+    const usdShort = "$" + Math.round(effectivePrice / (state.jpyRate || 147)).toLocaleString("en-US");
 
     return `
       <tr class="rog-item-row ${isAltCpu ? "rog-row-inactive-cpu" : ""}" data-item-id="${item.id}">
@@ -624,8 +625,10 @@
             <div style="font-weight:900; color:#4ade80; font-size:1rem;">¥0 GRATIS 🎁</div>
             <div style="font-size:0.7rem; color:#4ade80;">Canjeado con Gold Points</div>
           ` : `
-            <div style="font-weight:800; color:${isAltCpu ? "#94a3b8" : "#f59e0b"}; font-size:0.98rem;">${fmtYen(effectivePrice)}</div>
-            <div style="font-size:0.73rem; color:#38bdf8;">${fmtUsd(effectivePrice)}</div>
+            <div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap;">
+              <span style="font-weight:800; color:${isAltCpu ? "#94a3b8" : "#f8fafc"}; font-size:0.95rem;">${fmtYen(effectivePrice)}</span>
+              <span class="imperio-inline-usd">${usdShort}</span>
+            </div>
           `}
         </td>
         <td>
@@ -862,7 +865,7 @@
     const totals = computeTotals();
     const headerSub = document.getElementById("rog-tech-room-subtotal");
     if (headerSub) {
-      headerSub.textContent = fmtYen(totals.netTotal);
+      headerSub.innerHTML = `${fmtYen(totals.netTotal)} <span class="imperio-inline-usd">⚡ ${fmtUsd(totals.netTotal)}</span>`;
     }
 
     const d = state.data;

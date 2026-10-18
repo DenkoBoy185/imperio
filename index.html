@@ -713,8 +713,8 @@
 
         .room-content.open {
             padding: 1.15rem 1.25rem;
-            max-height: 6000px;
-            overflow: auto;
+            max-height: none !important;
+            overflow: visible !important;
         }
 
         /* Tables */
@@ -738,8 +738,6 @@
             text-transform: uppercase;
             letter-spacing: 0.6px;
             background: rgba(0,0,0,0.28);
-            position: sticky;
-            top: 0;
         }
 
         tr:hover td {
@@ -1810,14 +1808,37 @@
                 </div>
             </div>
 
-            <!-- TECH: CONFIGURACIÓN «SIN LÍMITES» (NIVEL 3: EXTREME TOPE ABSOLUTO) -->
+            <!-- TECH: SETUP INGENIERÍA & STREAM / PC環境 — CONFIGURACIÓN «SIN LÍMITES» (NIVEL 3: EXTREME TOPE ABSOLUTO) -->
             <div class="room-card" id="rog-sin-limites-card" style="border-color: rgba(239, 68, 68, 0.55);">
                 <div class="room-header" onclick="toggleRoom(this)">
-                    <div class="room-title">🖥️ Configuración «Sin Límites» (Nivel 3: Extreme Tope Absoluto · Códigos 型番 Japón + API Precios Reales) / PC環境</div>
+                    <div class="room-title">🖥️ Setup Ingeniería &amp; Stream / PC環境 — Configuración «Sin Límites» (Nivel 3: Extreme Tope Absoluto · API Tiendas Japón)</div>
                     <div class="room-subtotal" id="rog-tech-room-subtotal">¥2,809,059</div>
                 </div>
                 <div class="room-content open" style="max-height: none;">
-                    <div id="rog-sin-limites-api-mount"></div>
+                    <div id="rog-sin-limites-api-mount">
+                        <table>
+                            <tr><th>Componente / コンポーネント</th><th>Producto Comercial / 製品</th><th>Código Exacto en Japón (型番)</th><th>Precio (税込) / 価格</th><th>Mejor Tienda &amp; Link / 購入</th></tr>
+                            <tr><td><strong>1. Procesador (Opción 1: Tope Absoluto 16 Núcleos)</strong></td><td>AMD Ryzen 9 9950X3D</td><td><code>Ryzen 9 9950X3D BOX</code> / <code>100-100000719WOF</code></td><td>¥109,980</td><td><a href="https://kakaku.com/search_results/100-100000719WOF/" class="btn-link" target="_blank">TSUKUMO / ARK 購入 🔗</a></td></tr>
+                            <tr><td><strong>Procesador (Opción 2: Puro Gaming 8 Núcleos)</strong></td><td>AMD Ryzen 7 9850X3D *(Alternativa)*</td><td><code>Ryzen 7 9850X3D BOX</code></td><td>¥69,940</td><td><a href="https://shop.tsukumo.co.jp/search/?keyword=Ryzen+7+9800X3D" class="btn-link" target="_blank">TSUKUMO / ARK 購入 🔗</a></td></tr>
+                            <tr><td><strong>2. Tarjeta Madre</strong></td><td>ASUS ROG Crosshair X870E Dark Hero *(o Edition 20)*</td><td><code>ROG CROSSHAIR X870E DARK HERO</code></td><td>¥138,000</td><td><a href="https://kakaku.com/search_results/ROG%20CROSSHAIR%20X870E/" class="btn-link" target="_blank">ARK / TSUKUMO 購入 🔗</a></td></tr>
+                            <tr><td><strong>3. Tarjeta Gráfica (GPU)</strong></td><td>ASUS ROG Astral GeForce RTX 5090 32GB GDDR7 OC</td><td><code>ROG-ASTRAL-RTX5090-O32G-GAMING</code></td><td>¥1,199,800</td><td><a href="https://kakaku.com/search_results/ROG-ASTRAL-RTX5090-O32G-GAMING/" class="btn-link" target="_blank">TSUKUMO eX. / ARK 購入 🔗</a></td></tr>
+                            <tr><td><strong>4. Enfriamiento Líquido (AIO)</strong></td><td>ASUS ROG Ryuo IV SLC 360 ARGB (Pantalla AMOLED 2K curva)</td><td><code>ROG RYUO IV SLC 360 ARGB</code></td><td>¥52,980</td><td><a href="https://kakaku.com/search_results/ROG%20RYUO%20IV%20SLC%20360%20ARGB/" class="btn-link" target="_blank">TSUKUMO / Dospara 購入 🔗</a></td></tr>
+                            <tr><td><strong>5. Memoria RAM (64GB EXPO)</strong></td><td>G.Skill Trident Z5 Neo RGB DDR5-6000 CL30 (2x32GB)</td><td><code>F5-6000J3040G32GX2-TZ5NR</code></td><td>¥123,800</td><td><a href="https://www.ark-pc.co.jp/search/?key=F5-6000J3040G32GX2-TZ5NR" class="btn-link" target="_blank">PC Shop ARK 購入 🔗</a></td></tr>
+                            <tr><td><strong>6. SSD Principal (PCIe 5.0)</strong></td><td>WD_Black SN8100 4TB NVMe M.2 PCIe Gen 5 (14,900 MB/s)</td><td><code>WDS400T1X0M</code></td><td>¥139,980</td><td><a href="https://www.ark-pc.co.jp/search/?key=WDS400T1X0M" class="btn-link" target="_blank">ARK / Amazon JP 購入 🔗</a></td></tr>
+                            <tr><td><strong>7. SSD Secundario (Juegos)</strong></td><td>Samsung 990 PRO 4TB PCIe Gen 4</td><td><code>MZ-V9P4T0B-IT</code></td><td>¥128,000</td><td><a href="https://kakaku.com/search_results/MZ-V9P4T0B-IT/" class="btn-link" target="_blank">TSUKUMO / Yodobashi 購入 🔗</a></td></tr>
+                            <tr><td><strong>8. Fuente de Poder (PSU)</strong></td><td>ASUS ROG Thor 1200W Platinum III (GaN + OLED)</td><td><code>ROG-THOR-1200P3-GAMING</code></td><td>¥80,524</td><td><a href="https://kakaku.com/search_results/ROG-THOR-1200P3-GAMING/" class="btn-link" target="_blank">TSUKUMO / Amazon 購入 🔗</a></td></tr>
+                            <tr><td><strong>9. Gabinete (Chassis)</strong></td><td>ASUS ROG Cronox Full-Tower (Cristal Curvo + LCD 9.2")</td><td><code>ROG CRONOX GR801 CURVE TG SCREEN ARGB BLACK</code></td><td>¥105,980</td><td><a href="https://kakaku.com/search_results/ROG%20CRONOX/" class="btn-link" target="_blank">TSUKUMO / Koubou 購入 🔗</a></td></tr>
+                            <tr><td><strong>10. Ventiladores Extra (x2 packs)</strong></td><td>ASUS ROG Eurux GR120 ARGB (Conexión magnética en cadena)</td><td><code>ROG EURUX GR120 ARGB 3PK</code></td><td>¥27,600</td><td><a href="https://shop.tsukumo.co.jp/search/?keyword=ROG+EURUX+GR120" class="btn-link" target="_blank">TSUKUMO 購入 🔗</a></td></tr>
+                            <tr><td><strong>11. 2x Monitores 31.5" 4K 240Hz</strong></td><td>2x ASUS ROG Swift OLED PG32UCDM3 (Gen 3 Tandem QD-OLED)</td><td><code>PG32UCDM3</code> *(x2 unidades)*</td><td>¥429,840</td><td><a href="https://www.yodobashi.com/?word=PG32UCDM3" class="btn-link" target="_blank">Yodobashi (10% Pts) 購入 🔗</a></td></tr>
+                            <tr><td><strong>12. 2x Brazos de Monitor ROG</strong></td><td>2x ASUS ROG Ergo Monitor Arm (Soporte mecánico con Aura Sync)</td><td><code>ROG ERGO MONITOR ARM AAS01</code> *(x2)*</td><td>¥57,000</td><td><a href="https://www.yodobashi.com/?word=ROG+ERGO+MONITOR+ARM+AAS01" class="btn-link" target="_blank">Yodobashi / Amazon 購入 🔗</a></td></tr>
+                            <tr><td><strong>13. Teclado (US Layout / 英語配列)</strong></td><td>ASUS ROG Azoth Extreme (Aluminio CNC + Fibra de Carbono + OLED táctil)</td><td><code>M702 AZOTH EXTREME/NXSW/US/PBT</code> *(o NXSM)*</td><td>¥89,800</td><td><a href="https://kakaku.com/search_results/M702%20AZOTH%20EXTREME/" class="btn-link" target="_blank">ARK / TSUKUMO 購入 🔗</a></td></tr>
+                            <tr><td><strong>14. Mouse (Fibra de Carbono)</strong></td><td>ASUS ROG Harpe Ace Extreme (47g, Fibra de Carbono, 8000Hz Wireless)</td><td><code>P718 ROG HARPE ACE EXTREME</code></td><td>¥45,800</td><td><a href="https://www.yodobashi.com/?word=P718+ROG+HARPE+ACE+EXTREME" class="btn-link" target="_blank">Yodobashi (¥0 c/Pts) 購入 🔗</a></td></tr>
+                            <tr><td><strong>15. Mousepad de Cristal</strong></td><td>ASUS ROG Moonstone Ace L (Cristal templado 9H negro)</td><td><code>NH04 ROG MOONSTONE ACE L/BLK</code></td><td>¥13,800</td><td><a href="https://www.yodobashi.com/?word=NH04+ROG+MOONSTONE+ACE+L" class="btn-link" target="_blank">Yodobashi / ARK 購入 🔗</a></td></tr>
+                            <tr><td><strong>16. Mousepad de Escritorio XXL</strong></td><td>ASUS ROG Hone Ace XXL (Para debajo del teclado y el cristal)</td><td><code>90MP0390-BPUA00</code></td><td>¥6,480</td><td><a href="https://www.amazon.co.jp/s?k=90MP0390-BPUA00" class="btn-link" target="_blank">Amazon JP / TSUKUMO 購入 🔗</a></td></tr>
+                            <tr><td><strong>17. Audífonos Wireless</strong></td><td>ASUS ROG Delta II (DualFlow Audio 2.4GHz + Bluetooth simultáneo)</td><td><code>ROGDELTA2</code></td><td>¥32,895</td><td><a href="https://kakaku.com/search_results/ROG%20Delta%20II/" class="btn-link" target="_blank">Amazon / TSUKUMO 購入 🔗</a></td></tr>
+                            <tr><td><strong>18. Micrófono de Estudio</strong></td><td>ASUS ROG Carnyx (Condensador 25mm, 192kHz/24-bit, Negro)</td><td><code>ROG CARNYX/BLK</code></td><td>¥26,800</td><td><a href="https://www.yodobashi.com/?word=ROG+CARNYX" class="btn-link" target="_blank">Yodobashi / TSUKUMO 購入 🔗</a></td></tr>
+                        </table>
+                    </div>
                 </div>
             </div>
 
@@ -3724,7 +3745,7 @@
                 content.style.maxHeight = '0';
             } else {
                 content.classList.add('open');
-                content.style.maxHeight = content.scrollHeight + 'px';
+                content.style.maxHeight = 'none';
             }
         }
 
@@ -3755,7 +3776,7 @@
     <script src="assets/cb250r-telemetry-api.js?v=3"></script>
     <script src="assets/ayame-events-api.js?v=7"></script>
     <script src="assets/citas-ayame.js?v=7"></script>
-    <script src="assets/rog-sin-limites-api.js?v=1"></script>
+    <script src="assets/rog-sin-limites-api.js?v=2"></script>
     <script src="assets/imperio-telemetry-ui.js?v=9"></script>
     <script src="assets/live-prices.js?v=7"></script>
     <script src="assets/imperio-mobile-ux.js?v=3"></script>
