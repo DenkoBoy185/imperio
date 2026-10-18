@@ -1,0 +1,445 @@
+{
+  "meta": {
+    "api_name": "Akihabara ROG «Sin Límites» Hardware & Kataban Price Tracker API",
+    "version": "3.0.0-extreme",
+    "tier": "Nivel 3: Extreme Tope Absoluto (Sin Límites)",
+    "updated_at": "2026-10-18T06:30:00Z",
+    "location": "Akihabara Electric Town, Chiyoda-ku, Tokyo (a 2 min / 1.4 km de Urbanex Asakusabashi Front en tu Honda CB250R)",
+    "fx_endpoint": "https://open.er-api.com/v6/latest/USD",
+    "fallback_jpy_per_usd": 147.0,
+    "stores": [
+      {
+        "id": "tsukumo",
+        "name": "TSUKUMO eX. (ツクモeX. パソコン本店)",
+        "floors": "Pisos 4F / 5F / 6F (Componentes DIY, GPU & ROG Zone)",
+        "address": "東京都千代田区外神田4-4-1",
+        "perk": "Descuento de Set CPU + Motherboard (最大¥11,000〜¥16,500引) + Servicio 組立代行",
+        "url": "https://shop.tsukumo.co.jp/"
+      },
+      {
+        "id": "ark",
+        "name": "PC Shop ARK (パソコンSHOPアーク)",
+        "floors": "1F Tsūun Kaikan (Especialistas en Memorias OC EXPO, Gen5 SSD & Teclados US Layout)",
+        "address": "東京都千代田区外神田3-16-18 通運会館 1F",
+        "perk": "Mayor stock real de RAM G.Skill DDR5-6000 CL30, WD_Black SN8100 Gen5 y periféricos US Layout",
+        "url": "https://www.ark-pc.co.jp/"
+      },
+      {
+        "id": "yodobashi",
+        "name": "Yodobashi Camera Multimedia Akiba (ヨドバシAkiba)",
+        "floors": "Piso 2F (Monitores OLED, Brazos ROG & Periféricos Gaming)",
+        "address": "東京都千代田区神田花岡町1-1",
+        "perk": "10% Gold Points al instante (~¥48,680 pts en monitores + brazos = Mouse ROG Harpe Ace Extreme GRATIS)",
+        "url": "https://www.yodobashi.com/"
+      },
+      {
+        "id": "kakaku",
+        "name": "Kakaku.com (価格.com 最安値トラッカー)",
+        "floors": "Agregador Nacional en Tiempo Real (Japón)",
+        "address": "Online · Comparador Oficial de 型番",
+        "perk": "Verificación instantánea del precio más bajo (最安値) con impuestos incluidos (税込)",
+        "url": "https://kakaku.com/pc/"
+      }
+    ]
+  },
+  "summary": {
+    "subtotal_tower_9950x3d_jpy": 2106644,
+    "subtotal_tower_9850x3d_jpy": 2066604,
+    "subtotal_monitors_arms_jpy": 486840,
+    "subtotal_peripherals_jpy": 215575,
+    "total_general_9950x3d_jpy": 2809059,
+    "total_general_9850x3d_jpy": 2769019,
+    "yodobashi_hack_points_earned_jpy": 48684,
+    "yodobashi_free_mouse_value_jpy": 45800,
+    "cpu_mb_set_discount_est_jpy": 16500,
+    "total_estimated_savings_hack_jpy": 65184
+  },
+  "tower_components": [
+    {
+      "id": "cpu_9950x3d",
+      "slot": "cpu",
+      "option_group": "cpu_choice",
+      "option_key": "9950x3d",
+      "is_default": true,
+      "category": "Procesador (Opción 1: Tope Absoluto 16 Núcleos)",
+      "name": "AMD Ryzen 9 9950X3D (16 Núcleos / 32 Hilos · 144MB 3D V-Cache · 5.7 GHz)",
+      "kataban": "Ryzen 9 9950X3D BOX",
+      "kataban_alt": "100-100000719WOF",
+      "price_doc_jpy": 109980,
+      "price_live_jpy": 126764,
+      "price_live_note": "¥109,980 (Precio Base/Promo Set) · ¥126,764–¥132,800 en ARK/Tsukumo",
+      "best_store": "TSUKUMO / PC Shop ARK",
+      "stock_status": "En Stock (Set M/B Elegible)",
+      "links": {
+        "kakaku": "https://kakaku.com/search_results/100-100000719WOF/",
+        "tsukumo": "https://shop.tsukumo.co.jp/search/?keyword=Ryzen+9+9950X3D",
+        "ark": "https://www.ark-pc.co.jp/search/?key=100-100000719WOF",
+        "amazon": "https://www.amazon.co.jp/s?k=100-100000719WOF"
+      }
+    },
+    {
+      "id": "cpu_9850x3d",
+      "slot": "cpu",
+      "option_group": "cpu_choice",
+      "option_key": "9850x3d",
+      "is_default": false,
+      "category": "Procesador (Opción 2: Puro Gaming 8 Núcleos)",
+      "name": "AMD Ryzen 7 9850X3D (8 Núcleos / 16 Hilos · 3D V-Cache Gaming Puro)",
+      "kataban": "Ryzen 7 9850X3D BOX",
+      "kataban_alt": "Ryzen 7 9800X3D BOX",
+      "price_doc_jpy": 69940,
+      "price_live_jpy": 69940,
+      "price_live_note": "¥69,940 (TSUKUMO / PC Shop ARK)",
+      "best_store": "TSUKUMO / PC Shop ARK",
+      "stock_status": "En Stock (Alternativa Gaming 8C)",
+      "links": {
+        "kakaku": "https://kakaku.com/search_results/Ryzen%207%209800X3D%20BOX/",
+        "tsukumo": "https://shop.tsukumo.co.jp/search/?keyword=Ryzen+7+9800X3D",
+        "ark": "https://www.ark-pc.co.jp/search/?key=9800X3D",
+        "amazon": "https://www.amazon.co.jp/s?k=Ryzen+7+9800X3D+BOX"
+      }
+    },
+    {
+      "id": "motherboard",
+      "slot": "mb",
+      "category": "Tarjeta Madre",
+      "name": "ASUS ROG Crosshair X870E Dark Hero (o Edition 20 · Wi-Fi 7 · USB4 · PCIe 5.0)",
+      "kataban": "ROG CROSSHAIR X870E DARK HERO",
+      "kataban_alt": "ROG CROSSHAIR X870E HERO",
+      "price_doc_jpy": 138000,
+      "price_live_jpy": 135900,
+      "price_live_note": "¥135,900 en Kakaku.com / ¥138,000 en ARK & Tsukumo",
+      "best_store": "Pasokon Koubou / ARK / TSUKUMO",
+      "stock_status": "En Stock (Elegible Set CPU)",
+      "links": {
+        "kakaku": "https://kakaku.com/search_results/ROG%20CROSSHAIR%20X870E/",
+        "tsukumo": "https://shop.tsukumo.co.jp/search/?keyword=ROG+CROSSHAIR+X870E",
+        "ark": "https://www.ark-pc.co.jp/search/?key=ROG+CROSSHAIR+X870E",
+        "amazon": "https://www.amazon.co.jp/s?k=ROG+CROSSHAIR+X870E+HERO"
+      }
+    },
+    {
+      "id": "gpu_rtx5090",
+      "slot": "gpu",
+      "category": "Tarjeta Gráfica (GPU)",
+      "name": "ASUS ROG Astral GeForce RTX 5090 32GB GDDR7 OC (Quad-Fan · Vapor Chamber)",
+      "kataban": "ROG-ASTRAL-RTX5090-O32G-GAMING",
+      "kataban_alt": "90YV0LW0-M0NA00",
+      "price_doc_jpy": 1199800,
+      "price_live_jpy": 1234330,
+      "price_live_note": "¥1,199,800 (TSUKUMO eX. / ARK) · ¥1,234,330 en Kakaku.com",
+      "best_store": "TSUKUMO eX. / PC Shop ARK",
+      "stock_status": "Stock Limitado Vitrina VIP 6F",
+      "links": {
+        "kakaku": "https://kakaku.com/search_results/ROG-ASTRAL-RTX5090-O32G-GAMING/",
+        "tsukumo": "https://shop.tsukumo.co.jp/search/?keyword=ROG-ASTRAL-RTX5090-O32G-GAMING",
+        "ark": "https://www.ark-pc.co.jp/search/?key=ROG-ASTRAL-RTX5090-O32G-GAMING",
+        "amazon": "https://www.amazon.co.jp/s?k=ROG-ASTRAL-RTX5090-O32G-GAMING"
+      }
+    },
+    {
+      "id": "aio_ryuo4",
+      "slot": "aio",
+      "category": "Enfriamiento Líquido (AIO)",
+      "name": "ASUS ROG Ryuo IV SLC 360 ARGB (Pantalla AMOLED 6.7\" 2K Curva Deslizante)",
+      "kataban": "ROG RYUO IV SLC 360 ARGB",
+      "kataban_alt": "90RC0161-M0UAY0",
+      "price_doc_jpy": 52980,
+      "price_live_jpy": 52980,
+      "price_live_note": "¥52,980 en TSUKUMO / PC Shop ARK / Dospara",
+      "best_store": "TSUKUMO / Dospara / ARK",
+      "stock_status": "En Stock",
+      "links": {
+        "kakaku": "https://kakaku.com/search_results/ROG%20RYUO%20IV%20SLC%20360%20ARGB/",
+        "tsukumo": "https://shop.tsukumo.co.jp/search/?keyword=ROG+RYUO+IV+SLC+360",
+        "ark": "https://www.ark-pc.co.jp/search/?key=ROG+RYUO+IV+SLC+360+ARGB",
+        "amazon": "https://www.amazon.co.jp/s?k=ROG+RYUO+IV+SLC+360+ARGB"
+      }
+    },
+    {
+      "id": "ram_gskill_64gb",
+      "slot": "ram",
+      "category": "Memoria RAM (64GB EXPO)",
+      "name": "G.Skill Trident Z5 Neo RGB DDR5-6000 CL30 (2x32GB · AMD EXPO)",
+      "kataban": "F5-6000J3040G32GX2-TZ5NR",
+      "kataban_alt": "DDR5-6000 32GB×2 CL30-40-40",
+      "price_doc_jpy": 123800,
+      "price_live_jpy": 123800,
+      "price_live_note": "¥123,800 en PC Shop ARK (Especialista oficial G.Skill en Japón)",
+      "best_store": "PC Shop ARK",
+      "stock_status": "En Stock en ARK 1F",
+      "links": {
+        "kakaku": "https://kakaku.com/search_results/F5-6000J3040G32GX2-TZ5NR/",
+        "tsukumo": "https://shop.tsukumo.co.jp/search/?keyword=F5-6000J3040G32GX2-TZ5NR",
+        "ark": "https://www.ark-pc.co.jp/search/?key=F5-6000J3040G32GX2-TZ5NR",
+        "amazon": "https://www.amazon.co.jp/s?k=F5-6000J3040G32GX2-TZ5NR"
+      }
+    },
+    {
+      "id": "ssd1_sn8100_4tb",
+      "slot": "ssd1",
+      "category": "SSD Principal (PCIe 5.0)",
+      "name": "WD_Black SN8100 4TB NVMe M.2 PCIe Gen 5 (14,900 MB/s Lectura)",
+      "kataban": "WDS400T1X0M",
+      "kataban_alt": "WD_BLACK SN8100 4TB Gen5",
+      "price_doc_jpy": 139980,
+      "price_live_jpy": 139980,
+      "price_live_note": "¥139,980 en PC Shop ARK / Amazon.co.jp",
+      "best_store": "PC Shop ARK / Amazon.co.jp",
+      "stock_status": "En Stock",
+      "links": {
+        "kakaku": "https://kakaku.com/search_results/WDS400T1X0M/",
+        "tsukumo": "https://shop.tsukumo.co.jp/search/?keyword=WDS400T1X0M",
+        "ark": "https://www.ark-pc.co.jp/search/?key=WDS400T1X0M",
+        "amazon": "https://www.amazon.co.jp/s?k=WDS400T1X0M"
+      }
+    },
+    {
+      "id": "ssd2_990pro_4tb",
+      "slot": "ssd2",
+      "category": "SSD Secundario (Juegos & B-Roll 4K)",
+      "name": "Samsung 990 PRO 4TB PCIe Gen 4 NVMe M.2 (7,450 MB/s)",
+      "kataban": "MZ-V9P4T0B-IT",
+      "kataban_alt": "990 PRO 4TB 国内正規保証品",
+      "price_doc_jpy": 128000,
+      "price_live_jpy": 128000,
+      "price_live_note": "¥128,000 (TSUKUMO / Promo) · ¥165,000–¥166,980 en Kakaku/ARK",
+      "best_store": "TSUKUMO / Yodobashi",
+      "stock_status": "En Stock",
+      "links": {
+        "kakaku": "https://kakaku.com/search_results/MZ-V9P4T0B-IT/",
+        "tsukumo": "https://shop.tsukumo.co.jp/search/?keyword=MZ-V9P4T0B-IT",
+        "ark": "https://www.ark-pc.co.jp/search/?key=MZ-V9P4T0B-IT",
+        "amazon": "https://www.amazon.co.jp/s?k=MZ-V9P4T0B-IT"
+      }
+    },
+    {
+      "id": "psu_thor3_1200w",
+      "slot": "psu",
+      "category": "Fuente de Poder (PSU)",
+      "name": "ASUS ROG Thor 1200W Platinum III (GaN MOSFET + Pantalla OLED Magnética + ATX 3.1)",
+      "kataban": "ROG-THOR-1200P3-GAMING",
+      "kataban_alt": "90YE00W0-B0NA00",
+      "price_doc_jpy": 80524,
+      "price_live_jpy": 80524,
+      "price_live_note": "¥80,524 exacto verificado en Kakaku.com / TSUKUMO / Amazon.co.jp",
+      "best_store": "TSUKUMO / Amazon.co.jp",
+      "stock_status": "En Stock (Precio Exacto Verificado)",
+      "links": {
+        "kakaku": "https://kakaku.com/search_results/ROG-THOR-1200P3-GAMING/",
+        "tsukumo": "https://shop.tsukumo.co.jp/search/?keyword=ROG-THOR-1200P3-GAMING",
+        "ark": "https://www.ark-pc.co.jp/search/?key=ROG-THOR-1200P3-GAMING",
+        "amazon": "https://www.amazon.co.jp/s?k=ROG-THOR-1200P3-GAMING"
+      }
+    },
+    {
+      "id": "case_cronox_gr801",
+      "slot": "case",
+      "category": "Gabinete (Chassis)",
+      "name": "ASUS ROG Cronox Full-Tower (Cristal Templado Curvo Panorámico + Pantalla LCD 9.2\")",
+      "kataban": "ROG CRONOX GR801 CURVE TG SCREEN ARGB BLACK",
+      "kataban_alt": "ROG CRONOX ARGB BLACK",
+      "price_doc_jpy": 105980,
+      "price_live_jpy": 105980,
+      "price_live_note": "¥105,980 exacto verificado en Kakaku.com / TSUKUMO / Pasokon Koubou",
+      "best_store": "TSUKUMO / Pasokon Koubou",
+      "stock_status": "En Stock (Precio Exacto Verificado)",
+      "links": {
+        "kakaku": "https://kakaku.com/search_results/ROG%20CRONOX/",
+        "tsukumo": "https://shop.tsukumo.co.jp/search/?keyword=ROG+CRONOX",
+        "ark": "https://www.ark-pc.co.jp/search/?key=ROG+CRONOX",
+        "amazon": "https://www.amazon.co.jp/s?k=ASUS+ROG+CRONOX"
+      }
+    },
+    {
+      "id": "fans_eurux_gr120",
+      "slot": "fans",
+      "category": "Ventiladores Extra (x2 packs)",
+      "name": "ASUS ROG Eurux GR120 ARGB (30mm LCP · Conexión Magnética en Cadena · 2x 3-Pack)",
+      "kataban": "ROG EURUX GR120 ARGB 3PK",
+      "kataban_alt": "ROG EURUX GR120 ARGB 3IN1 (×2)",
+      "price_doc_jpy": 27600,
+      "price_live_jpy": 27600,
+      "price_live_note": "¥27,600 por 2 packs en promo bundle (¥19,980 c/u precio lista individual)",
+      "best_store": "TSUKUMO",
+      "stock_status": "En Stock",
+      "links": {
+        "kakaku": "https://kakaku.com/search_results/ROG%20EURUX%20GR120/",
+        "tsukumo": "https://shop.tsukumo.co.jp/search/?keyword=ROG+EURUX+GR120",
+        "ark": "https://www.ark-pc.co.jp/search/?key=ROG+EURUX+GR120",
+        "amazon": "https://www.amazon.co.jp/s?k=ROG+EURUX+GR120+ARGB"
+      }
+    }
+  ],
+  "display_system": [
+    {
+      "id": "monitors_pg32ucdm3",
+      "slot": "monitors",
+      "category": "2x Monitores 31.5\" 4K 240Hz",
+      "name": "2x ASUS ROG Swift OLED PG32UCDM3 (Gen 3 Tandem QD-OLED · DP 2.1a UHBR20 80Gbps + BlackShield)",
+      "kataban": "PG32UCDM3",
+      "kataban_alt": "PG32UCDM3 × 2台",
+      "qty": 2,
+      "unit_price_doc_jpy": 214920,
+      "price_doc_jpy": 429840,
+      "price_live_jpy": 339600,
+      "gold_points_10pct": 42984,
+      "price_live_note": "¥429,840 lista (¥214,920 c/u) · ¡En Yodobashi.com hoy bajó a ¥169,800 c/u (¥339,600 el par) + 10% Gold Points!",
+      "best_store": "Yodobashi / Bic Camera (dan 10% en puntos)",
+      "stock_status": "En Stock en Yodobashi Akiba 2F",
+      "links": {
+        "kakaku": "https://kakaku.com/search_results/PG32UCDM3/",
+        "yodobashi": "https://www.yodobashi.com/?word=PG32UCDM3",
+        "tsukumo": "https://shop.tsukumo.co.jp/search/?keyword=PG32UCDM",
+        "amazon": "https://www.amazon.co.jp/s?k=ASUS+ROG+Swift+OLED+PG32UCDM"
+      }
+    },
+    {
+      "id": "arms_aas01",
+      "slot": "arms",
+      "category": "2x Brazos de Monitor ROG",
+      "name": "2x ASUS ROG Ergo Monitor Arm (Soporte Mecánico con resorte y Aura Sync)",
+      "kataban": "ROG ERGO MONITOR ARM AAS01",
+      "kataban_alt": "AAS01 × 2台",
+      "qty": 2,
+      "unit_price_doc_jpy": 28500,
+      "price_doc_jpy": 57000,
+      "price_live_jpy": 57000,
+      "gold_points_10pct": 5700,
+      "price_live_note": "¥57,000 el par (¥28,500 c/u) + ¥5,700 en puntos Gold Point en Yodobashi",
+      "best_store": "Amazon.co.jp / Yodobashi",
+      "stock_status": "En Stock",
+      "links": {
+        "kakaku": "https://kakaku.com/search_results/ROG%20ERGO%20MONITOR%20ARM%20AAS01/",
+        "yodobashi": "https://www.yodobashi.com/?word=ROG+ERGO+MONITOR+ARM+AAS01",
+        "tsukumo": "https://shop.tsukumo.co.jp/search/?keyword=AAS01",
+        "amazon": "https://www.amazon.co.jp/s?k=ASUS+ROG+Ergo+Monitor+Arm+AAS01"
+      }
+    }
+  ],
+  "peripherals": [
+    {
+      "id": "kb_azoth_extreme_us",
+      "slot": "keyboard",
+      "category": "Teclado (US Layout / 英語配列)",
+      "name": "ASUS ROG Azoth Extreme (Aluminio CNC + Fibra de Carbono + OLED Táctil a Color · Distribución Inglés US)",
+      "kataban": "M702 AZOTH EXTREME/NXSW/US/PBT",
+      "kataban_alt": "M702 AZOTH EXTREME/NXSM/US/PBT",
+      "price_doc_jpy": 89800,
+      "price_live_jpy": 89800,
+      "price_live_note": "¥89,800 (Promo) · ¥106,033 en Kakaku.com / ¥116,960 en Yodobashi (+10% pts). ¡Pedir versión US!",
+      "best_store": "PC Shop ARK / TSUKUMO / Yodobashi",
+      "stock_status": "Verificar sufijo /US/PBT en caja",
+      "links": {
+        "kakaku": "https://kakaku.com/search_results/M702%20AZOTH%20EXTREME/",
+        "yodobashi": "https://www.yodobashi.com/?word=M702+AZOTH+EXTREME",
+        "ark": "https://www.ark-pc.co.jp/search/?key=AZOTH+EXTREME",
+        "amazon": "https://www.amazon.co.jp/s?k=ASUS+ROG+Azoth+Extreme+US"
+      }
+    },
+    {
+      "id": "mouse_harpe_extreme",
+      "slot": "mouse",
+      "category": "Mouse (Fibra de Carbono)",
+      "name": "ASUS ROG Harpe Ace Extreme (47g · Carcasa Real de Fibra de Carbono · Polling Rate 8000Hz Wireless)",
+      "kataban": "P718 ROG HARPE ACE EXTREME",
+      "kataban_alt": "ROG/HARPE/ACE/EX",
+      "price_doc_jpy": 45800,
+      "price_live_jpy": 45800,
+      "free_with_yodobashi_points": true,
+      "price_live_note": "¥45,800 exacto en ARK & Kakaku / ¥46,100 en Yodobashi — ¡Te sale en ¥0 GRATIS canjeando los ~¥48,680 puntos de los 2 monitores!",
+      "best_store": "Yodobashi (¥0 con Puntos) / ARK",
+      "stock_status": "En Stock (Canjeable Gratis con Puntos)",
+      "links": {
+        "kakaku": "https://kakaku.com/search_results/P718%20ROG%20HARPE%20ACE%20EXTREME/",
+        "yodobashi": "https://www.yodobashi.com/?word=P718+ROG+HARPE+ACE+EXTREME",
+        "ark": "https://www.ark-pc.co.jp/search/?key=P718+ROG+HARPE+ACE+EXTREME",
+        "amazon": "https://www.amazon.co.jp/s?k=P718+ROG+HARPE+ACE+EXTREME"
+      }
+    },
+    {
+      "id": "pad_moonstone_glass",
+      "slot": "pad_glass",
+      "category": "Mousepad de Cristal",
+      "name": "ASUS ROG Moonstone Ace L (Cristal Templado 9H Negro · 500×400mm Deslizamiento Ultra-Rápido)",
+      "kataban": "NH04 ROG MOONSTONE ACE L/BLK",
+      "kataban_alt": "ROG-MOONSTONE/ACE/L",
+      "price_doc_jpy": 13800,
+      "price_live_jpy": 13800,
+      "price_live_note": "¥13,800 en Kakaku/TSUKUMO · ¥17,600 en Yodobashi (+1,760 pts)",
+      "best_store": "TSUKUMO / PC Shop ARK / Yodobashi",
+      "stock_status": "En Stock",
+      "links": {
+        "kakaku": "https://kakaku.com/search_results/NH04%20ROG%20MOONSTONE%20ACE%20L/",
+        "yodobashi": "https://www.yodobashi.com/?word=NH04+ROG+MOONSTONE+ACE+L",
+        "ark": "https://www.ark-pc.co.jp/search/?key=MOONSTONE+ACE+L",
+        "amazon": "https://www.amazon.co.jp/s?k=ROG+Moonstone+Ace+L"
+      }
+    },
+    {
+      "id": "pad_hone_xxl",
+      "slot": "pad_xxl",
+      "category": "Mousepad de Escritorio XXL",
+      "name": "ASUS ROG Hone Ace XXL (900×400mm · Base amortiguada para debajo del teclado y el cristal)",
+      "kataban": "90MP0390-BPUA00",
+      "kataban_alt": "ROG HONE ACE XXL",
+      "price_doc_jpy": 6480,
+      "price_live_jpy": 6480,
+      "price_live_note": "¥6,480 exacto en Amazon.co.jp / TSUKUMO / ARK",
+      "best_store": "Amazon.co.jp / TSUKUMO",
+      "stock_status": "En Stock (Precio Exacto Verificado)",
+      "links": {
+        "kakaku": "https://kakaku.com/search_results/90MP0390-BPUA00/",
+        "yodobashi": "https://www.yodobashi.com/?word=ROG+Hone+Ace+XXL",
+        "ark": "https://www.ark-pc.co.jp/search/?key=90MP0390-BPUA00",
+        "amazon": "https://www.amazon.co.jp/s?k=90MP0390-BPUA00"
+      }
+    },
+    {
+      "id": "headset_delta2",
+      "slot": "headset",
+      "category": "Audífonos Wireless",
+      "name": "ASUS ROG Delta II (DualFlow Audio 2.4GHz SpeedNova + Bluetooth simultáneo · Drivers Titanio 50mm)",
+      "kataban": "ROGDELTA2",
+      "kataban_alt": "ROG DELTA II",
+      "price_doc_jpy": 32895,
+      "price_live_jpy": 32895,
+      "price_live_note": "¥32,895 exacto en Amazon.co.jp / Kakaku.com",
+      "best_store": "Amazon.co.jp / TSUKUMO / Yodobashi",
+      "stock_status": "En Stock (Precio Exacto Verificado)",
+      "links": {
+        "kakaku": "https://kakaku.com/search_results/ROG%20Delta%20II/",
+        "yodobashi": "https://www.yodobashi.com/?word=ROG+Delta+II",
+        "ark": "https://www.ark-pc.co.jp/search/?key=ROGDELTA2",
+        "amazon": "https://www.amazon.co.jp/s?k=ASUS+ROG+Delta+II"
+      }
+    },
+    {
+      "id": "mic_carnyx_blk",
+      "slot": "mic",
+      "category": "Micrófono de Estudio (Kick & YouTube)",
+      "name": "ASUS ROG Carnyx (Cápsula Condensador 25mm · 192kHz / 24-bit · Filtro Pop Integrado · Negro)",
+      "kataban": "ROG CARNYX/BLK",
+      "kataban_alt": "C501 ROG CARNYX",
+      "price_doc_jpy": 26800,
+      "price_live_jpy": 24980,
+      "price_live_note": "¥26,800 lista · ¡En Yodobashi.com hoy está en ¥24,980 + 2,498 pts!",
+      "best_store": "Yodobashi / TSUKUMO / Amazon.co.jp",
+      "stock_status": "En Stock en Yodobashi Akiba",
+      "links": {
+        "kakaku": "https://kakaku.com/search_results/ROG%20CARNYX/",
+        "yodobashi": "https://www.yodobashi.com/?word=ROG+CARNYX",
+        "ark": "https://www.ark-pc.co.jp/search/?key=ROG+CARNYX",
+        "amazon": "https://www.amazon.co.jp/s?k=ASUS+ROG+Carnyx"
+      }
+    }
+  ],
+  "counter_script": {
+    "ja": "すみません、俺はこのリストのパーツでハイエンドPCを一式組みたいです。在庫の確認と、CPUとマザーボードのセット割引が使えるか教えてください。あと、キーボードは日本語配列ではなく、必ず英語配列（US配列）でお願いします。",
+    "romaji": "Sumimasen, ore wa kono risuto no pātsu de haiendo PC o isshiki kumitai desu. Zaiko no kakunin to, CPU to mazābōdo no setto waribiki ga tsukaeru ka oshiete kudasai. Ato, kībōdo wa nihongo hairetsu dewa naku, kanarazu eigo hairetsu (US hairetsu) de onegaishimasu.",
+    "es": "«Disculpe, quiero armar una PC de gama alta completa con las piezas de esta lista. Por favor, confirme la disponibilidad de stock y dígame si se puede aplicar el descuento por paquete de CPU y tarjeta madre. Además, el teclado no lo quiero con distribución japonesa, sino estrictamente con distribución en inglés (US layout), por favor.»",
+    "assembly_addon_ja": "また、店舗の「組立代行サービス（配線整理・動作チェック込み）」をお願いした場合の工賃と納期も教えてください。",
+    "assembly_addon_romaji": "Mata, tenpo no 'kumitate daikō sābisu (haisen seiri・dōsa chekku komi)' o onegai shita baai no kōchin to nōki mo oshiete kudasai.",
+    "assembly_addon_es": "«Además, por favor dígame el costo de mano de obra y el tiempo de entrega si solicito el servicio de ensamblaje profesional de la tienda (incluyendo gestión limpia de cables y prueba de funcionamiento).»"
+  }
+}

@@ -57,14 +57,14 @@
   "capex_rooms_jpy": {
     "ayame_room": 114440,
     "denkoboy_room": 104570,
-    "tech_pc_stream": 985160,
+    "tech_pc_stream": 2809059,
     "ayame_gaming": 586440,
     "chinchillas": 66420,
     "cats_functional": 75980,
     "ldk_shared_washer": 294080,
     "kitchen_carnivore_fridge": 133100,
-    "total_jpy": 2360190,
-    "live_total_usd": 14938
+    "total_jpy": 4184089,
+    "live_total_usd": 26482
   },
   "phases": [
     {
@@ -165,15 +165,15 @@
     },
     {
       "id": 8,
-      "name": "CAPEX Casa Urbanex Asakusabashi Front (Muebles Funcionales Nitori + Setups PC/Gaming Intactos + Refri 282L + Lavadora 8kg)",
+      "name": "CAPEX Casa Urbanex Asakusabashi Front (Muebles Funcionales Nitori + PC «Sin Límites» ROG Extreme ¥2.81M + Setup あやめ + Refri 282L)",
       "components": [
         {
-          "amount": 2360190,
+          "amount": 4184089,
           "currency": "JPY"
         }
       ],
-      "ref_usd": 16056,
-      "live_usd": 14938
+      "ref_usd": 28463,
+      "live_usd": 26482
     },
     {
       "id": 9,

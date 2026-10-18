@@ -32,12 +32,12 @@
     "capex_rooms": [
       {
         "id": "bruno_room",
-        "name": "Cuarto Bruno (Setup Dev/Stream + Cama Nitori)",
-        "items": 14,
-        "jpy": 1084140,
-        "usd_live": 6862,
-        "store": "Nitori / Amazon.co.jp",
-        "url": "https://www.nitori-net.jp/ec/"
+        "name": "Cuarto Bruno (PC «Sin Límites» ROG Extreme ¥2,809,059 + Cama Nitori)",
+        "items": 25,
+        "jpy": 2908039,
+        "usd_live": 18406,
+        "store": "TSUKUMO eX. / ARK / Yodobashi / Kakaku",
+        "url": "https://kakaku.com/pc/"
       },
       {
         "id": "ayame_room",

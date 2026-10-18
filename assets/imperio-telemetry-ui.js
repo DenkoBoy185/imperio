@@ -226,7 +226,7 @@
     if (!el || !FEED || !FEED.segment_1_finanzas) return;
     const s1 = FEED.segment_1_finanzas;
 
-    const capexTotalJpy = 2360190;
+    const capexTotalJpy = 4184089;
     const capexLiveUsd = Math.round(capexTotalJpy / rates.JPY);
     const capexBaseUsd = Math.round(capexTotalJpy / 147.0);
     const opexOroUsd = Math.round(s1.opex_modes.oro_effective_jpy / rates.JPY);

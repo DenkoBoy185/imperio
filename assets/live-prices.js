@@ -26,7 +26,7 @@
     },
     capitalTotal: 360000,
     emergencyFund: 48000,
-    capexJpy: 2360190,
+    capexJpy: 4184089,
     opexBaseJpy: 736880,
     opexSuzukiJpy: 796880,
     expeditions47Jpy: 5594200,
@@ -41,7 +41,7 @@
       { id: 5, name: "5. Campamento Bangtao 90d (469,300 THB) + Filetotes Mamma Mia 90d (83,829 THB) + Extras", components: [{ amount: 565519, currency: "THB" }], refUsd: 16856 },
       { id: 6, name: "6. Tokio Camp + YOKKAO/Venum Tricolor + Campaña 6-0", components: [{ amount: 334900, currency: "JPY" }, { amount: 1713, currency: "USD" }], refUsd: 3992 },
       { id: 7, name: "7. Corea Viaje 2 (Cantoplastia + 5 Carillas + Blanqueamiento · Cero Lipo)", components: [{ amount: 12100000, currency: "KRW" }], refUsd: 8768 },
-      { id: 8, name: "8. CAPEX Casa Tokio (Muebles Funcionales Nitori + Setups Intactos)", components: [{ amount: 2360190, currency: "JPY" }], refUsd: 16056 },
+      { id: 8, name: "8. CAPEX Casa Tokio (Muebles Funcionales Nitori + PC «Sin Límites» ROG Extreme ¥2.81M + Setup あやめ)", components: [{ amount: 4184089, currency: "JPY" }], refUsd: 28463 },
       { id: 9, name: "9. Guardarropa Imperio V8 + Ecosistema Samsung (58 Piezas)", components: [{ amount: 11686, currency: "USD" }, { amount: 7500, currency: "JPY" }, { amount: 3225020, currency: "KRW" }], refUsd: 15226 },
       { id: 10, name: "10. Visas y Trámites Matrimonio Japón", components: [{ amount: 165000, currency: "JPY" }, { amount: 330, currency: "USD" }], refUsd: 1452 }
     ]
