@@ -1409,6 +1409,13 @@
                     <span class="sidebar-sub">Bruno &amp; あやめ • 2027–2029+</span>
                 </div>
             </div>
+            <div id="sidebar-lang-mount" style="margin-top:10px; display:flex; justify-content:center;">
+                <div class="imperio-lang-switcher" role="group" aria-label="Selector de Idioma / Language / 言語選択">
+                    <button type="button" class="imperio-lang-btn active" data-lang="es" onclick="window.setImperioLanguage && window.setImperioLanguage('es')" title="Español (Original)">🇪🇸 ES</button>
+                    <button type="button" class="imperio-lang-btn" data-lang="en" onclick="window.setImperioLanguage && window.setImperioLanguage('en')" title="Translate everything to English">🇺🇸 EN</button>
+                    <button type="button" class="imperio-lang-btn" data-lang="ja" onclick="window.setImperioLanguage && window.setImperioLanguage('ja')" title="すべて日本語に翻訳 (あやめ用)">🇯🇵 日本語</button>
+                </div>
+            </div>
         </div>
 
         <ul class="nav-links">
@@ -1475,10 +1482,21 @@
                 </nav>
             </div>
 
-            <div class="external-dossiers">
-                <a href="plan/" class="dossier-chip">🇹🇭 Plan Maestro ↗</a>
-                <a href="campamento/" class="dossier-chip">🥊 Campamento ↗</a>
-                <a href="guardarropa/" class="dossier-chip">👕 Guardarropa ↗</a>
+            <div style="display:flex; align-items:center; gap:8px; flex-shrink:0;">
+                <div id="topbar-lang-mount" style="display:flex; align-items:center;">
+                    <div class="imperio-lang-switcher" role="group" aria-label="Selector de Idioma / Language / 言語選択">
+                        <button type="button" class="imperio-lang-btn active" data-lang="es" onclick="window.setImperioLanguage && window.setImperioLanguage('es')" title="Español (Original)">🇪🇸 ES</button>
+                        <button type="button" class="imperio-lang-btn" data-lang="en" onclick="window.setImperioLanguage && window.setImperioLanguage('en')" title="Translate everything to English">🇺🇸 EN</button>
+                        <button type="button" class="imperio-lang-btn" data-lang="ja" onclick="window.setImperioLanguage && window.setImperioLanguage('ja')" title="すべて日本語に翻訳 (あやめ用)">🇯🇵 日本語</button>
+                        <span class="imperio-lang-status" id="imperio-lang-status">⚡...</span>
+                    </div>
+                </div>
+
+                <div class="external-dossiers">
+                    <a href="plan/" class="dossier-chip">🇹🇭 Plan Maestro ↗</a>
+                    <a href="campamento/" class="dossier-chip">🥊 Campamento ↗</a>
+                    <a href="guardarropa/" class="dossier-chip">👕 Guardarropa ↗</a>
+                </div>
             </div>
         </header>
 
@@ -3740,5 +3758,6 @@
     <script src="assets/citas-ayame.js?v=6"></script>
     <script src="assets/imperio-telemetry-ui.js?v=7"></script>
     <script src="assets/live-prices.js?v=6"></script>
+    <script src="assets/imperio-i18n.js?v=1"></script>
 </body>
 </html>
