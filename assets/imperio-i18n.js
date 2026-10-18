@@ -219,16 +219,16 @@
       document.body.appendChild(floatWrap);
     }
 
-    // 2. Also mount in sidebar-header for convenience
-    const sidebarHeader = document.querySelector('.sidebar-header');
-    if (sidebarHeader && !document.getElementById('sidebar-lang-mount')) {
+    // 2. Also mount in sidebar-footer if not already present
+    const sidebarFooter = document.querySelector('.sidebar-footer');
+    if (sidebarFooter && !document.getElementById('sidebar-lang-mount')) {
       const sideWrap = document.createElement('div');
       sideWrap.id = 'sidebar-lang-mount';
-      sideWrap.style.marginTop = '10px';
+      sideWrap.style.marginBottom = '6px';
       sideWrap.style.display = 'flex';
       sideWrap.style.justifyContent = 'center';
       sideWrap.innerHTML = switcherHTML;
-      sidebarHeader.appendChild(sideWrap);
+      sidebarFooter.insertBefore(sideWrap, sidebarFooter.firstChild);
     }
 
     document.querySelectorAll('.imperio-lang-btn').forEach((btn) => {

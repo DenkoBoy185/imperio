@@ -22,24 +22,28 @@
     const sidebar = document.getElementById('sidebar');
     if (!sidebar) return;
 
-    // Organize sidebar-header so brand + close button sit on top row, language switcher below
+    // Remove any stray #sidebar-lang-mount inside .sidebar-header so it never collides with brand
     const header = sidebar.querySelector('.sidebar-header');
-    const brand = sidebar.querySelector('.sidebar-brand');
-    if (header && brand && !header.querySelector('.sidebar-header-top')) {
-      const topRow = document.createElement('div');
-      topRow.className = 'sidebar-header-top';
-      header.insertBefore(topRow, brand);
-      topRow.appendChild(brand);
+    if (header) {
+      const strayLang = header.querySelector('#sidebar-lang-mount');
+      const footer = sidebar.querySelector('.sidebar-footer');
+      if (strayLang && footer) {
+        footer.insertBefore(strayLang, footer.firstChild);
+      } else if (strayLang) {
+        strayLang.remove();
+      }
 
-      const closeBtn = document.createElement('button');
-      closeBtn.type = 'button';
-      closeBtn.className = 'sidebar-close-btn';
-      closeBtn.setAttribute('aria-label', 'Cerrar menú lateral');
-      closeBtn.innerHTML = '✕';
-      closeBtn.addEventListener('click', () => {
-        document.body.classList.remove('sidebar-open');
-      });
-      topRow.appendChild(closeBtn);
+      if (!header.querySelector('.sidebar-close-btn')) {
+        const closeBtn = document.createElement('button');
+        closeBtn.type = 'button';
+        closeBtn.className = 'sidebar-close-btn';
+        closeBtn.setAttribute('aria-label', 'Cerrar menú lateral');
+        closeBtn.innerHTML = '✕';
+        closeBtn.addEventListener('click', () => {
+          document.body.classList.remove('sidebar-open');
+        });
+        header.appendChild(closeBtn);
+      }
     }
 
     // Create backdrop if missing
@@ -63,54 +67,14 @@
   }
 
   // ==========================================================================
-  // 2. RESTRUCTURE TOP COMMAND BAR FOR ZERO-OVERLAP MOBILE LAYOUT
+  // 2. TOP COMMAND BAR ENHANCEMENT (ZERO DOM REPARENTING)
   // ==========================================================================
   function initTopbarMobileUX() {
     const topbar = document.querySelector('.top-command-bar');
     if (!topbar) return;
-
-    const topbarLeft = topbar.querySelector('.topbar-left');
-    const toggleBtn = topbar.querySelector('.sidebar-toggle-btn');
-    const pillsNav = topbar.querySelector('.domain-pills-nav');
-    const langMount = document.getElementById('topbar-lang-mount');
-
-    if (topbarLeft && toggleBtn && pillsNav && !topbar.querySelector('.imperio-mobile-topbar-row1')) {
-      const row1 = document.createElement('div');
-      row1.className = 'imperio-mobile-topbar-row1';
-
-      // Left cluster: toggle button + live JST mini badge
-      const leftCluster = document.createElement('div');
-      leftCluster.style.cssText = 'display:flex;align-items:center;gap:8px;min-width:0;';
-      leftCluster.appendChild(toggleBtn);
-
-      const jstBadge = document.createElement('span');
-      jstBadge.id = 'imperio-topbar-jst-clock';
-      jstBadge.style.cssText =
-        'display:inline-flex;align-items:center;gap:4px;padding:4px 8px;border-radius:6px;background:rgba(212,168,83,0.12);border:1px solid rgba(212,168,83,0.35);color:#f5c451;font-size:0.7rem;font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap;';
-      jstBadge.textContent = '🇯🇵 --:-- JST';
-      leftCluster.appendChild(jstBadge);
-
-      row1.appendChild(leftCluster);
-
-      // Right cluster on Row 1: Language Switcher + Desktop External Dossiers
-      const rightContainer = langMount ? langMount.parentElement : null;
-      if (rightContainer) {
-        row1.appendChild(rightContainer);
-      }
-
-      topbarLeft.insertBefore(row1, pillsNav);
-
-      // Live Tokyo JST Clock updater
-      const updateJstClock = () => {
-        const now = new Date();
-        const utcMs = now.getTime() + now.getTimezoneOffset() * 60000;
-        const jst = new Date(utcMs + 9 * 3600000);
-        const hh = String(jst.getHours()).padStart(2, '0');
-        const mm = String(jst.getMinutes()).padStart(2, '0');
-        jstBadge.textContent = `🇯🇵 ${hh}:${mm} JST`;
-      };
-      updateJstClock();
-      setInterval(updateJstClock, 15000);
+    const rightCol = topbar.querySelector('.topbar-right') || topbar.lastElementChild;
+    if (rightCol && !rightCol.classList.contains('topbar-right')) {
+      rightCol.classList.add('topbar-right');
     }
   }
 
