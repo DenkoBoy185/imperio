@@ -1,33 +1,36 @@
 {
   "meta": {
-    "title": "Guardarropa Imperio V8 + Samsung Tech Korea — Live Multi-Currency Price API",
-    "last_updated_utc": "2026-10-17T22:04:23Z",
+    "title": "Guardarropa Imperio V8 (100% Air Jordan 1 High OG · Selección con あやめ) + Samsung Tech Korea — Live Multi-Currency Price API",
+    "last_updated_utc": "2026-10-26T09:00:00Z",
     "fx_rates": {
       "JPY": 157.994,
       "KRW": 1334.892,
       "THB": 33.43,
-      "USD": 1.0,
+      "USD": 1,
       "source": "https://open.er-api.com/v6/latest/USD"
     },
     "grand_total_live_usd": 14872,
     "grand_total_live_jpy": 2349752,
-    "grand_total_live_krw": 19853062
+    "grand_total_live_krw": 19853062,
+    "goat_catalog_url": "https://www.goat.com/search?query=Jordan+1+high&pageNumber=28&sortType=price_low_high&genders=men&brands=Air+Jordan&sizes=US_sneakers_men_13"
   },
   "categories": [
     {
       "id": "kicks",
-      "name": "👟 13 Sneakers (GOAT · US 14)",
+      "name": "👟 13 Air Jordan 1 High OG (GOAT · US 13 · Selección con あやめ)",
       "color": "#22c55e",
       "items": [
         {
           "code": "S01",
           "name": "Air Jordan 1 High OG 'Chicago Lost & Found'",
           "sku": "DZ5485-612",
-          "size": "US 14",
+          "size": "US 13",
+          "family": "red",
+          "ayame_note": "Favorito #1 de あやめ: El clásico de 1985 con cuello craquelado vintage",
           "currency": "USD",
           "price": 340,
           "url": "https://www.goat.com/sneakers/air-jordan-1-retro-high-og-dz5485-612",
-          "live_usd": 340.0,
+          "live_usd": 340,
           "live_jpy": 53718,
           "live_krw": 453863
         },
@@ -35,11 +38,13 @@
           "code": "S02",
           "name": "Air Jordan 1 High OG 'Black Toe Reimagined'",
           "sku": "DZ5485-061",
-          "size": "US 14",
+          "size": "US 13",
+          "family": "red",
+          "ayame_note": "Puntera negra ultra limpia que estiliza cualquier Levi's 501 oscuro",
           "currency": "USD",
           "price": 148,
           "url": "https://www.goat.com/sneakers/air-jordan-1-retro-high-og-black-toe-reimagined-dz5485-061",
-          "live_usd": 148.0,
+          "live_usd": 148,
           "live_jpy": 23383,
           "live_krw": 197564
         },
@@ -47,23 +52,27 @@
           "code": "S03",
           "name": "Air Jordan 1 High OG 'Shadow 2.0'",
           "sku": "555088-035",
-          "size": "US 14",
+          "size": "US 13",
+          "family": "mono",
+          "ayame_note": "Gamuza gris humo + piel negra; match total con tu CB250R ShodaiGoji",
           "currency": "USD",
           "price": 165,
           "url": "https://www.goat.com/sneakers/air-jordan-1-retro-high-og-shadow-2-0-555088-035",
-          "live_usd": 165.0,
+          "live_usd": 165,
           "live_jpy": 26069,
           "live_krw": 220257
         },
         {
           "code": "S04",
-          "name": "Air Jordan 1 High '85 'Neutral Grey'",
+          "name": "Air Jordan 1 High '85 OG 'Neutral Grey'",
           "sku": "BQ4422-100",
-          "size": "US 14",
+          "size": "US 13",
+          "family": "mono",
+          "ayame_note": "Minimalismo japonés puro en corte '85 para citas de café y museos",
           "currency": "USD",
           "price": 140,
           "url": "https://www.goat.com/sneakers/air-jordan-1-retro-high-85-og-neutral-grey-bq4422-100",
-          "live_usd": 140.0,
+          "live_usd": 140,
           "live_jpy": 22119,
           "live_krw": 186885
         },
@@ -71,11 +80,13 @@
           "code": "S05",
           "name": "Marvel × Air Jordan 1 High OG 'Spider-Verse'",
           "sku": "DV1748-601",
-          "size": "US 14",
+          "size": "US 13",
+          "family": "red",
+          "ayame_note": "Paneles gráficos estilo cómic/anime y suela glow-in-the-dark",
           "currency": "USD",
           "price": 212,
           "url": "https://www.goat.com/sneakers/marvel-x-air-jordan-1-retro-high-og-spider-man-across-the-spider-verse-dv1748-601",
-          "live_usd": 212.0,
+          "live_usd": 212,
           "live_jpy": 33495,
           "live_krw": 282997
         },
@@ -83,102 +94,119 @@
           "code": "S06",
           "name": "Air Jordan 1 High OG 'Turbo Green'",
           "sku": "555088-311",
-          "size": "US 14",
+          "size": "US 13",
+          "family": "special",
+          "ayame_note": "Verde menta deslavado + crema Sail que a あやめ le recuerda a Mothra 1961",
           "currency": "USD",
           "price": 220,
           "url": "https://www.goat.com/sneakers/air-jordan-1-retro-high-og-turbo-green-555088-311",
-          "live_usd": 220.0,
+          "live_usd": 220,
           "live_jpy": 34759,
           "live_krw": 293676
         },
         {
           "code": "S07",
-          "name": "Air Jordan 4 Retro 'Military Blue' (2024)",
-          "sku": "FV5029-141",
-          "size": "US 14",
+          "name": "Air Jordan 1 High OG 'UNC Toe'",
+          "sku": "DZ5485-400",
+          "size": "US 13",
+          "family": "blue",
+          "ayame_note": "University Blue + negro + blanco; combinación estelar con tus hoodies Navy",
           "currency": "USD",
-          "price": 220,
-          "url": "https://www.goat.com/sneakers/air-jordan-4-retro-military-blue-2024-fv5029-141",
-          "live_usd": 220.0,
-          "live_jpy": 34759,
-          "live_krw": 293676
+          "price": 195,
+          "url": "https://www.goat.com/sneakers/air-jordan-1-retro-high-og-unc-toe-dz5485-400",
+          "live_usd": 195,
+          "live_jpy": 30809,
+          "live_krw": 260304
         },
         {
           "code": "S08",
-          "name": "Air Jordan 4 Retro 'Bred Reimagined'",
-          "sku": "FV5029-006",
-          "size": "US 14",
+          "name": "Air Jordan 1 High OG 'Bred Toe'",
+          "sku": "555088-610",
+          "size": "US 13",
+          "family": "red",
+          "ayame_note": "Puntera roja enmarcada en cuero negro; el par oficial de Fighter Mode",
           "currency": "USD",
-          "price": 280,
-          "url": "https://www.goat.com/sneakers/air-jordan-4-retro-bred-reimagined-fv5029-006",
-          "live_usd": 280.0,
-          "live_jpy": 44238,
-          "live_krw": 373770
+          "price": 285,
+          "url": "https://www.goat.com/sneakers/air-jordan-1-retro-high-og-bred-toe-555088-610",
+          "live_usd": 285,
+          "live_jpy": 45028,
+          "live_krw": 380444
         },
         {
           "code": "S09",
-          "name": "Air Jordan 4 Retro OG 'White Cement' (2025)",
-          "sku": "FV5029-100",
-          "size": "US 14",
+          "name": "Air Jordan 1 High OG 'Stage Haze (Bleached Coral)'",
+          "sku": "555088-108",
+          "size": "US 13",
+          "family": "mono",
+          "ayame_note": "Blanco limpio, negro craquelado y talón gris para lucir los Box Logo blancos",
           "currency": "USD",
-          "price": 270,
-          "url": "https://www.goat.com/sneakers/air-jordan-4-retro-og-white-cement-2025-fv5029-100",
-          "live_usd": 270.0,
-          "live_jpy": 42658,
-          "live_krw": 360421
+          "price": 175,
+          "url": "https://www.goat.com/sneakers/air-jordan-1-retro-high-og-stage-haze-555088-108",
+          "live_usd": 175,
+          "live_jpy": 27649,
+          "live_krw": 233606
         },
         {
           "code": "S10",
-          "name": "Air Jordan 7 Retro 'Cardinal'",
-          "sku": "CU9307-106",
-          "size": "US 14",
+          "name": "Air Jordan 1 High OG 'Palomino'",
+          "sku": "DZ5485-020",
+          "size": "US 13",
+          "family": "special",
+          "ayame_note": "Nubuck café espresso + cuero negro y oro; perfecto para otoño en Kioto/Asakusa",
           "currency": "USD",
-          "price": 140,
-          "url": "https://www.goat.com/sneakers/air-jordan-7-retro-cardinal-2022-cu9307-106",
-          "live_usd": 140.0,
-          "live_jpy": 22119,
-          "live_krw": 186885
+          "price": 180,
+          "url": "https://www.goat.com/sneakers/air-jordan-1-retro-high-og-palomino-dz5485-020",
+          "live_usd": 180,
+          "live_jpy": 28439,
+          "live_krw": 240281
         },
         {
           "code": "S11",
-          "name": "Trophy Room × Air Jordan 7 Retro 'Olympic'",
-          "sku": "DM1195-474",
-          "size": "US 14",
+          "name": "Air Jordan 1 High OG 'Obsidian'",
+          "sku": "555088-140",
+          "size": "US 13",
+          "family": "blue",
+          "ayame_note": "Piel Sail mantequilla + Obsidian Navy; elegido por あやめ para citas nocturnas",
           "currency": "USD",
-          "price": 290,
-          "url": "https://www.goat.com/sneakers/trophy-room-x-air-jordan-7-retro-olympic-dm1195-474",
-          "live_usd": 290.0,
-          "live_jpy": 45818,
-          "live_krw": 387119
+          "price": 275,
+          "url": "https://www.goat.com/sneakers/air-jordan-1-retro-high-og-obsidian-555088-140",
+          "live_usd": 275,
+          "live_jpy": 43448,
+          "live_krw": 367095
         },
         {
           "code": "S12",
           "name": "Air Jordan 1 High OG 'Origin Story' (GRAIL)",
           "sku": "555088-602",
-          "size": "US 14",
+          "size": "US 13",
+          "family": "red",
+          "ayame_note": "El Santo Grial de la colección con puntos reflectantes 3M y suela icy blue",
           "currency": "USD",
           "price": 650,
           "url": "https://www.goat.com/sneakers/spider-verse-x-air-jordan-1-retro-high-og-origin-story",
-          "live_usd": 650.0,
+          "live_usd": 650,
           "live_jpy": 102696,
           "live_krw": 867680
         },
         {
           "code": "S13",
-          "name": "Air Jordan 13 Retro 'French Blue'",
-          "sku": "414571-164",
-          "size": "US 14",
+          "name": "Air Jordan 1 High OG 'Royal Toe'",
+          "sku": "555088-041",
+          "size": "US 13",
+          "family": "blue",
+          "ayame_note": "Game Royal eléctrico + negro + blanco; cierra la tetralogía de los Toe",
           "currency": "USD",
-          "price": 170,
-          "url": "https://www.goat.com/sneakers/air-jordan-13-retro-french-blue-414571-164",
-          "live_usd": 170.0,
-          "live_jpy": 26859,
-          "live_krw": 226932
+          "price": 210,
+          "url": "https://www.goat.com/sneakers/air-jordan-1-retro-high-og-royal-toe-555088-041",
+          "live_usd": 210,
+          "live_jpy": 33179,
+          "live_krw": 280327
         }
       ],
-      "subtotal_live_usd": 3245,
-      "subtotal_live_jpy": 512691,
-      "subtotal_live_krw": 4331725
+      "subtotal_live_usd": 3195,
+      "subtotal_live_jpy": 504791,
+      "subtotal_live_krw": 4264979,
+      "goat_catalog_url": "https://www.goat.com/search?query=Jordan+1+high&pageNumber=28&sortType=price_low_high&genders=men&brands=Air+Jordan&sizes=US_sneakers_men_13"
     },
     {
       "id": "levis",
@@ -307,7 +335,7 @@
           "currency": "USD",
           "price": 330,
           "url": "https://www.goat.com/apparel/supreme-box-logo-hooded-sweatshirt-navy-fw24sw11-navy",
-          "live_usd": 330.0,
+          "live_usd": 330,
           "live_jpy": 52138,
           "live_krw": 440514
         },
@@ -319,7 +347,7 @@
           "currency": "USD",
           "price": 370,
           "url": "https://www.goat.com/apparel/supreme-box-logo-hooded-sweatshirt-ash-grey-fw23sw56-ash-grey",
-          "live_usd": 370.0,
+          "live_usd": 370,
           "live_jpy": 58458,
           "live_krw": 493910
         },
@@ -331,7 +359,7 @@
           "currency": "USD",
           "price": 350,
           "url": "https://www.goat.com/apparel/supreme-swarovski-motion-logo-hooded-sweatshirt-navy-fw25sw62-navy",
-          "live_usd": 350.0,
+          "live_usd": 350,
           "live_jpy": 55298,
           "live_krw": 467212
         },
@@ -343,7 +371,7 @@
           "currency": "USD",
           "price": 250,
           "url": "https://www.goat.com/search?query=supreme+small+box+hooded+sweatshirt+black+xl",
-          "live_usd": 250.0,
+          "live_usd": 250,
           "live_jpy": 39498,
           "live_krw": 333723
         },
@@ -355,7 +383,7 @@
           "currency": "USD",
           "price": 250,
           "url": "https://www.goat.com/search?query=supreme+small+box+hooded+sweatshirt+black+xl",
-          "live_usd": 250.0,
+          "live_usd": 250,
           "live_jpy": 39498,
           "live_krw": 333723
         },
@@ -367,7 +395,7 @@
           "currency": "USD",
           "price": 250,
           "url": "https://www.goat.com/search?query=supreme+small+box+hooded+sweatshirt+navy+xl",
-          "live_usd": 250.0,
+          "live_usd": 250,
           "live_jpy": 39498,
           "live_krw": 333723
         },
@@ -379,7 +407,7 @@
           "currency": "USD",
           "price": 250,
           "url": "https://www.goat.com/search?query=supreme+small+box+hooded+sweatshirt+grey+xl",
-          "live_usd": 250.0,
+          "live_usd": 250,
           "live_jpy": 39498,
           "live_krw": 333723
         },
@@ -391,7 +419,7 @@
           "currency": "USD",
           "price": 250,
           "url": "https://www.goat.com/search?query=supreme+small+box+hooded+sweatshirt+natural+xl",
-          "live_usd": 250.0,
+          "live_usd": 250,
           "live_jpy": 39498,
           "live_krw": 333723
         },
@@ -403,7 +431,7 @@
           "currency": "USD",
           "price": 354,
           "url": "https://www.goat.com/apparel/supreme-small-box-zip-up-hooded-sweatshirt-burnt-red-ss21sw52-burnt-red",
-          "live_usd": 354.0,
+          "live_usd": 354,
           "live_jpy": 55930,
           "live_krw": 472552
         },
@@ -415,7 +443,7 @@
           "currency": "USD",
           "price": 220,
           "url": "https://www.goat.com/apparel/supreme-small-box-drawcord-zip-up-hooded-sweatshirt-washed-navy-fw22sw52-washed-navy",
-          "live_usd": 220.0,
+          "live_usd": 220,
           "live_jpy": 34759,
           "live_krw": 293676
         },
@@ -427,7 +455,7 @@
           "currency": "USD",
           "price": 249,
           "url": "https://www.goat.com/apparel/supreme-windstopper-zip-up-hooded-sweatshirt-black-fw21sw16-black",
-          "live_usd": 249.0,
+          "live_usd": 249,
           "live_jpy": 39341,
           "live_krw": 332388
         },
@@ -439,7 +467,7 @@
           "currency": "USD",
           "price": 250,
           "url": "https://www.goat.com/apparel/supreme-small-box-zip-up-hooded-sweatshirt-navy-ss21sw52-navy",
-          "live_usd": 250.0,
+          "live_usd": 250,
           "live_jpy": 39498,
           "live_krw": 333723
         }
@@ -461,7 +489,7 @@
           "currency": "USD",
           "price": 270,
           "url": "https://www.goat.com/apparel/supreme-small-box-tee-white-fw22kn12-white",
-          "live_usd": 270.0,
+          "live_usd": 270,
           "live_jpy": 42658,
           "live_krw": 360421
         },
@@ -473,7 +501,7 @@
           "currency": "USD",
           "price": 180,
           "url": "https://www.goat.com/apparel/supreme-small-box-tee-white-fw20kn5-white",
-          "live_usd": 180.0,
+          "live_usd": 180,
           "live_jpy": 28439,
           "live_krw": 240281
         },
@@ -485,7 +513,7 @@
           "currency": "USD",
           "price": 299,
           "url": "https://www.goat.com/apparel/supreme-x-burberry-box-logo-tee-white-burberryt1-white",
-          "live_usd": 299.0,
+          "live_usd": 299,
           "live_jpy": 47240,
           "live_krw": 399133
         },
@@ -497,7 +525,7 @@
           "currency": "USD",
           "price": 391,
           "url": "https://www.goat.com/apparel/supreme-x-tiffany-co-box-logo-tee-white-fw21t37-white",
-          "live_usd": 391.0,
+          "live_usd": 391,
           "live_jpy": 61776,
           "live_krw": 521943
         },
@@ -509,7 +537,7 @@
           "currency": "USD",
           "price": 453,
           "url": "https://www.goat.com/apparel/supreme-bandana-box-logo-tee-white-fw19t55-white",
-          "live_usd": 453.0,
+          "live_usd": 453,
           "live_jpy": 71571,
           "live_krw": 604706
         },
@@ -521,7 +549,7 @@
           "currency": "USD",
           "price": 428,
           "url": "https://www.goat.com/apparel/supreme-la-box-logo-tee-white-ss23t57-white",
-          "live_usd": 428.0,
+          "live_usd": 428,
           "live_jpy": 67621,
           "live_krw": 571334
         },
@@ -533,7 +561,7 @@
           "currency": "USD",
           "price": 678,
           "url": "https://www.goat.com/apparel/supreme-milan-box-logo-tee-white-0052-1ss210103mblt-whit",
-          "live_usd": 678.0,
+          "live_usd": 678,
           "live_jpy": 107120,
           "live_krw": 905057
         },
@@ -567,7 +595,7 @@
           "currency": "USD",
           "price": 156,
           "url": "https://www.goat.com/apparel/supreme-x-hanes-boxer-brief-4-pack-black-99haa36-black",
-          "live_usd": 156.0,
+          "live_usd": 156,
           "live_jpy": 24647,
           "live_krw": 208243
         },
@@ -579,7 +607,7 @@
           "currency": "USD",
           "price": 90,
           "url": "https://www.goat.com/apparel/supreme-x-hanes-crew-socks-4-pack-black-99haa26-black",
-          "live_usd": 90.0,
+          "live_usd": 90,
           "live_jpy": 14219,
           "live_krw": 120140
         },
@@ -591,7 +619,7 @@
           "currency": "USD",
           "price": 60,
           "url": "https://www.goat.com/apparel/supreme-authorized-mesh-back-5-panel-royal-ss25h125-royal",
-          "live_usd": 60.0,
+          "live_usd": 60,
           "live_jpy": 9480,
           "live_krw": 80094
         },
@@ -603,7 +631,7 @@
           "currency": "USD",
           "price": 69,
           "url": "https://www.goat.com/apparel/supreme-world-famous-s-logo-6-panel-navy-ss25h23-navy",
-          "live_usd": 69.0,
+          "live_usd": 69,
           "live_jpy": 10902,
           "live_krw": 92108
         },
@@ -615,7 +643,7 @@
           "currency": "USD",
           "price": 117,
           "url": "https://www.goat.com/apparel/supreme-x-new-era-box-logo-beanie-black-fw24bn13-black",
-          "live_usd": 117.0,
+          "live_usd": 117,
           "live_jpy": 18485,
           "live_krw": 156182
         },
@@ -627,7 +655,7 @@
           "currency": "USD",
           "price": 150,
           "url": "https://www.goat.com/apparel/supreme-backpack-black-ss18b7-black",
-          "live_usd": 150.0,
+          "live_usd": 150,
           "live_jpy": 23699,
           "live_krw": 200234
         },
@@ -639,7 +667,7 @@
           "currency": "USD",
           "price": 175,
           "url": "https://www.goat.com/apparel/supreme-shoulder-bag-black-ss18b10-black",
-          "live_usd": 175.0,
+          "live_usd": 175,
           "live_jpy": 27649,
           "live_krw": 233606
         },
@@ -651,7 +679,7 @@
           "currency": "USD",
           "price": 350,
           "url": "https://www.goat.com/apparel/supreme-waist-bag-black-ss20b5-black",
-          "live_usd": 350.0,
+          "live_usd": 350,
           "live_jpy": 55298,
           "live_krw": 467212
         },
@@ -663,7 +691,7 @@
           "currency": "USD",
           "price": 75,
           "url": "https://www.goat.com/apparel/supreme-x-the-north-face-expedition-travel-wallet-black-fw18b4-black",
-          "live_usd": 75.0,
+          "live_usd": 75,
           "live_jpy": 11850,
           "live_krw": 100117
         },
@@ -675,7 +703,7 @@
           "currency": "USD",
           "price": 191,
           "url": "https://www.ray-ban.com/us/sunglasses/RB2140%20UNISEX%20original%20wayfarer%20classic-black/805289126577",
-          "live_usd": 191.0,
+          "live_usd": 191,
           "live_jpy": 30177,
           "live_krw": 254964
         },
@@ -687,7 +715,7 @@
           "currency": "USD",
           "price": 190,
           "url": "https://www.samsung.com/us/watches/galaxy-watch7/",
-          "live_usd": 190.0,
+          "live_usd": 190,
           "live_jpy": 30019,
           "live_krw": 253629
         },
@@ -699,7 +727,7 @@
           "currency": "USD",
           "price": 75,
           "url": "https://www.levi.com/US/en_US/accessories/men/belts/c/levi_accessories_men_belts",
-          "live_usd": 75.0,
+          "live_usd": 75,
           "live_jpy": 11850,
           "live_krw": 100117
         },
@@ -711,7 +739,7 @@
           "currency": "USD",
           "price": 138,
           "url": "https://www.davekny.com",
-          "live_usd": 138.0,
+          "live_usd": 138,
           "live_jpy": 21803,
           "live_krw": 184215
         }
@@ -799,7 +827,7 @@
           "currency": "USD",
           "price": 375,
           "url": "https://www.wolverine.com/US/en/1000-mile/",
-          "live_usd": 375.0,
+          "live_usd": 375,
           "live_jpy": 59248,
           "live_krw": 500584
         },
@@ -811,7 +839,7 @@
           "currency": "USD",
           "price": 325,
           "url": "https://www.schottnyc.com/store/men/jackets",
-          "live_usd": 325.0,
+          "live_usd": 325,
           "live_jpy": 51348,
           "live_krw": 433840
         },
@@ -823,7 +851,7 @@
           "currency": "USD",
           "price": 25,
           "url": "https://www.amazon.com/s?k=hanes+premium+white+tank+top+men+xl",
-          "live_usd": 25.0,
+          "live_usd": 25,
           "live_jpy": 3950,
           "live_krw": 33372
         },
@@ -835,7 +863,7 @@
           "currency": "USD",
           "price": 65,
           "url": "https://www.goat.com/search?query=supreme+flannel+xl",
-          "live_usd": 65.0,
+          "live_usd": 65,
           "live_jpy": 10270,
           "live_krw": 86768
         }

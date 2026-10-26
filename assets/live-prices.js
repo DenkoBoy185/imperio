@@ -379,24 +379,30 @@
     let wardrobeBreakdownHtml = "";
     if (isWardrobePage() && state.wardrobeFeed && state.wardrobeFeed.categories) {
       const catMeta = [
-        { key: "sneakers", tab: "kicks", icon: "👟", label: "13 Sneakers (GOAT)" },
-        { key: "levis", tab: "levis", icon: "👖", label: "8 Levi's (Promo)" },
-        { key: "hoodies", tab: "hoodies", icon: "🧥", label: "12 Supreme Hoodies" },
-        { key: "tees", tab: "tees", icon: "👕", label: "15 Tees (Sup+Uniqlo)" },
-        { key: "accessories", tab: "acc", icon: "🎒", label: "13 Accesorios" },
-        { key: "samsung_kr", tab: "acc", icon: "📱", label: "4 Samsung Corea (₩)" },
-        { key: "wolverine", tab: "wolf", icon: "🐺", label: "4 Modo Wolverine" }
+        { key: "kicks", legacyKey: "sneakers", tab: "kicks", icon: "👟", label: "13 Air Jordan 1 High" },
+        { key: "levis", legacyKey: "levis", tab: "levis", icon: "👖", label: "8 Levi's (Promo)" },
+        { key: "hoodies", legacyKey: "hoodies", tab: "hoodies", icon: "🧥", label: "12 Supreme Hoodies" },
+        { key: "tees", legacyKey: "tees", tab: "tees", icon: "👕", label: "15 Tees (Sup+Uniqlo)" },
+        { key: "acc", legacyKey: "accessories", tab: "acc", icon: "🎒", label: "13 Accesorios" },
+        { key: "samsung_kr", legacyKey: "samsung_kr", tab: "acc", icon: "📱", label: "4 Samsung Corea (₩)" },
+        { key: "wolf", legacyKey: "wolverine", tab: "wolf", icon: "🐺", label: "4 Modo Wolverine" }
       ];
 
       const cardsHtml = catMeta
         .map((c) => {
-          const items = (state.wardrobeFeed.items || []).filter((i) => i.category === c.key);
+          const catObj = (state.wardrobeFeed.categories || []).find(
+            (cat) => cat.id === c.key || cat.id === c.legacyKey
+          );
+          const items = catObj && Array.isArray(catObj.items)
+            ? catObj.items
+            : (state.wardrobeFeed.items || []).filter((i) => i.category === c.key || i.category === c.legacyKey);
           let sumUsd = 0;
           items.forEach((it) => {
-            const p = it.promo_price !== undefined ? it.promo_price : it.base_price;
-            if (it.base_currency === "USD") sumUsd += p;
-            else if (it.base_currency === "JPY") sumUsd += p / activeRates.JPY;
-            else if (it.base_currency === "KRW") sumUsd += p / activeRates.KRW;
+            const p = it.promo_price !== undefined ? it.promo_price : (it.price !== undefined ? it.price : it.base_price);
+            const curr = it.currency || it.base_currency || "USD";
+            if (curr === "USD") sumUsd += Number(p) || 0;
+            else if (curr === "JPY") sumUsd += (Number(p) || 0) / activeRates.JPY;
+            else if (curr === "KRW") sumUsd += (Number(p) || 0) / activeRates.KRW;
           });
           const sumJpy = Math.round(sumUsd * activeRates.JPY);
           return `
@@ -413,7 +419,7 @@
         <div class="imperio-wardrobe-hub">
           <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
             <span style="font-size:0.78rem;font-weight:700;color:#fca5a5;">
-              👕 RASTREADOR EN VIVO DE LAS 58 PIEZAS DEL GUARDARROPA V8 + SAMSUNG TECH COREA
+              👕 RASTREADOR EN VIVO DEL GUARDARROPA V8 (100% AIR JORDAN 1 HIGH OG · SELECCIÓN CON あやめ) + SAMSUNG COREA
             </span>
             <span style="font-size:0.73rem;color:#86efac;">
               Total API Hoy: <strong>${fmtUsd(wardrobeUsd)} USD</strong> (${fmtJpy(wardrobeJpy)}) · Con Tax-Free Corea (-10%): <strong>${fmtUsd(wardrobeTaxFreeUsd)} USD</strong>

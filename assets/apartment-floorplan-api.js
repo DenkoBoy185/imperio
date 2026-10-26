@@ -296,7 +296,7 @@
           "Lavandería Diaria MMA: Lavadora Automática 8kg Hisense / Iris Ohyama (¥49,800) con toma de agua e impermeabilización",
           "Ritual Nocturno 21:15 JST: Baño 1317 con tina profunda Ofuro y secador de ropa en techo (浴室乾燥機)",
           "Sanitario Independiente: WC con Washlet térmico + Lavabo independiente (独立洗面台) con espacio para 2 areneros Kao Nyantomo",
-          "Genkan + SIC: Shoes-In Closet para tus 6 pares de Air Jordan 1 US 13, casco Shoei/Arai de la CB250R y barrera Noboren Nyan 3"
+          "Genkan + SIC: Shoes-In Closet para tus 13 pares de Air Jordan 1 High US 13, casco Shoei/Arai de la CB250R y barrera Noboren Nyan 3"
         ]
       }
     };
@@ -366,7 +366,7 @@
           <rect x="36" y="76" width="90" height="62" fill="#111827" stroke="#475569" stroke-width="1.5" rx="4"/>
           <text x="81" y="96" fill="#f8fafc" font-size="10" font-weight="700" text-anchor="middle">玄関 Genkan</text>
           <text x="81" y="111" fill="#94a3b8" font-size="8.5" text-anchor="middle">+ SIC (Casco CB250R</text>
-          <text x="81" y="123" fill="#94a3b8" font-size="8.5" text-anchor="middle">&amp; 6 Jordan 1 US13)</text>
+          <text x="81" y="123" fill="#94a3b8" font-size="8.5" text-anchor="middle">&amp; 13 Jordan 1 US13)</text>
           <!-- Washer 8kg -->
           <rect x="134" y="76" width="96" height="62" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5" rx="4"/>
           <text x="182" y="96" fill="#38bdf8" font-size="10" font-weight="800" text-anchor="middle">🧺 Lavadora 8kg</text>
@@ -765,7 +765,7 @@
         <rect x="42" y="60" width="250" height="330" fill="#111827" stroke="#14b8a6" stroke-width="2" rx="8"/>
         <text x="167" y="88" fill="#5eead4" font-size="11.5" font-weight="900" text-anchor="middle">🚪 1. 玄関 Genkan + SIC + Barrera</text>
         <text x="56" y="114" fill="#f8fafc" font-size="9.2" font-weight="700">• Shoes-In Closet (SIC):</text>
-        <text x="56" y="132" fill="#cbd5e1" font-size="8.6">  Espacio cerrado para tus 6 pares de</text>
+        <text x="56" y="132" fill="#cbd5e1" font-size="8.6">  Espacio cerrado para tus 13 pares de</text>
         <text x="56" y="147" fill="#cbd5e1" font-size="8.6">  Air Jordan 1 High OG (Talla US 13),</text>
         <text x="56" y="162" fill="#cbd5e1" font-size="8.6">  casco integral y chamarra de tu</text>
         <text x="56" y="177" fill="#cbd5e1" font-size="8.6">  Honda CB250R ShodaiGoji.</text>

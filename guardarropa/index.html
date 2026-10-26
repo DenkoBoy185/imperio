@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0b0b10">
-  <title>Guardarropa — Imperio</title>
+  <title>Guardarropa Imperio V8 — 100% Air Jordan 1 High (Selección con あやめ)</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../assets/imperio-mobile-ux.css?v=2">
   <style>
@@ -12,116 +12,332 @@
     body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans JP","Noto Sans KR",sans-serif}
     .back-link{display:inline-block;margin-bottom:12px;font-size:12px;color:#9ca3af;text-decoration:none}
     .back-link:hover{color:#e5e7eb}
-  </style>
-  <style>
     .tab-btn.active{border-color:var(--primary);color:var(--primary);background:var(--card)}
     .tab-content{display:none}.tab-content.active{display:block}
     .buy-btn{text-decoration:none!important;display:inline-block}
     .pc:hover{transform:translateY(-2px)}.pc{transition:transform .15s}
-    .oc{border-left:4px solid var(--primary)}
+    .oc{border-left:4px solid var(--primary);transition:all .2s}
+    .oc.highlight-fit{background:rgba(239,68,68,0.14)!important;border-left-width:6px;box-shadow:0 0 0 1px rgba(239,68,68,0.45)}
+    .aj1-filter-btn.active{background:#ef4444;color:#fff;border-color:#ef4444}
+    .size-pill-btn.active{background:#22c55e;color:#052e16;border-color:#22c55e;font-weight:800}
   </style>
 </head>
-<body class="bg-[var(--background)] text-[var(--foreground)] antialiased p-4">
+<body class="bg-[var(--background)] text-[var(--foreground)] antialiased p-4 max-w-6xl mx-auto">
 <a class="back-link" href="../">← Volver al Atlas del Imperio</a>
 
 <div class="text-center mb-6">
+  <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/15 border border-red-500/40 text-red-300 text-xs font-bold mb-2">
+    <span>🌸 Curaduría Especial con あやめ</span>
+    <span>·</span>
+    <span>Rotación 100% Air Jordan 1 High OG (13 Pares)</span>
+  </div>
   <h1 class="text-3xl font-bold mb-1">👟 GUARDARROPA IMPERIO V8</h1>
-  <p class="text-[var(--muted-foreground)] text-sm">Supreme × Jordan × Levi's × Wolverine × Accesorios</p>
-  <p class="text-xs text-[var(--muted-foreground)] mt-1">Zapatos <strong>US 14</strong> · Jeans <strong>36×32</strong> · Ropa <strong>XL</strong></p>
+  <p class="text-[var(--muted-foreground)] text-sm">Supreme × 100% Air Jordan 1 High OG × Levi's × Wolverine × Samsung Tech</p>
+  <p class="text-xs text-[var(--muted-foreground)] mt-1">
+    Sneakers <strong id="hero-size-lbl" class="text-green-400">US 13</strong> · Jeans <strong>36×32</strong> · Ropa <strong>XL</strong>
+  </p>
   <div class="mt-3 inline-block bg-[var(--card)] border border-[var(--border)] rounded-lg px-4 py-2">
     <span class="text-lg font-bold text-red-500">💰 ~$15,226 USD</span>
     <span class="text-[var(--muted-foreground)] text-xs ml-1">(~¥2.24M · ₩21.1M)</span>
   </div>
+  <div class="mt-3 flex flex-wrap justify-center gap-2">
+    <a id="goat-master-search-link" href="https://www.goat.com/search?query=Jordan+1+high&pageNumber=28&sortType=price_low_high&genders=men&brands=Air+Jordan&sizes=US_sneakers_men_13" target="_blank" rel="noopener" class="buy-btn bg-emerald-600 hover:bg-emerald-500 text-white px-3.5 py-1.5 rounded-lg text-xs font-bold shadow">
+      🐐 Abrir Catálogo GOAT Air Jordan 1 High (Men · US 13 · Low → High) ↗
+    </a>
+    <button onclick="setSneakerSize('13')" id="size-btn-13" class="size-pill-btn active px-3 py-1.5 rounded-lg border border-[var(--border)] bg-[var(--card)] text-xs">
+      👟 Talla US 13 (GOAT Link)
+    </button>
+    <button onclick="setSneakerSize('14')" id="size-btn-14" class="size-pill-btn px-3 py-1.5 rounded-lg border border-[var(--border)] bg-[var(--card)] text-xs">
+      👟 Talla US 14 (Holgado)
+    </button>
+  </div>
 </div>
 
 <div class="flex flex-wrap gap-1.5 mb-4 border-b border-[var(--border)] pb-2">
-  <button onclick="showTab('kicks')" class="tab-btn active px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-kicks">👟 Sneakers (13)</button>
+  <button onclick="showTab('kicks')" class="tab-btn active px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-kicks">👟 13 Air Jordan 1 High</button>
   <button onclick="showTab('levis')" class="tab-btn px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-levis">👖 Levi's (8)</button>
   <button onclick="showTab('hoodies')" class="tab-btn px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-hoodies">🧥 Supreme Hoodies (12)</button>
   <button onclick="showTab('tees')" class="tab-btn px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-tees">👕 Tees (15)</button>
-  <button onclick="showTab('acc')" class="tab-btn px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-acc">🎒 Accesorios</button>
+  <button onclick="showTab('acc')" class="tab-btn px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-acc">🎒 Accesorios + Samsung</button>
   <button onclick="showTab('wolf')" class="tab-btn px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-wolf">🐺 Wolverine</button>
-  <button onclick="showTab('fits')" class="tab-btn px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-fits">🔥 Outfits (35)</button>
+  <button onclick="showTab('fits')" class="tab-btn px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-fits">🔥 Outfits AJ1 High (35)</button>
   <button onclick="showTab('deals')" class="tab-btn px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-semibold text-xs" id="btn-deals">🏷️ Resumen</button>
 </div>
 
-<!-- ========== SNEAKERS ========== -->
+<!-- ========== SNEAKERS (100% AIR JORDAN 1 HIGH OG) ========== -->
 <div id="tab-kicks" class="tab-content active">
-<div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 mb-4">
-  <h2 class="text-lg font-bold">👟 13 Pares — Size US 14 — GOAT</h2>
-  <p class="font-bold mt-1">💰 ~$3,195</p>
-</div>
+  <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 mb-4">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <div>
+        <h2 class="text-lg font-bold">👟 13 Pares — 100% Air Jordan 1 High OG / '85 — GOAT (<span class="js-size-tag">US 13</span>)</h2>
+        <p class="text-xs text-[var(--muted-foreground)] mt-0.5">
+          Re-armado exclusivamente con silueta <strong>Air Jordan 1 High</strong> porque a <strong>あやめ</strong> le encantó cómo estilizan tus jeans Levi's 36×32 y hoodies Supreme XL. Cero AJ4, cero AJ7, cero AJ13: <strong>puro linaje clásico 1985</strong>.
+        </p>
+      </div>
+      <div class="text-right">
+        <p class="font-bold text-lg text-green-400">💰 ~$3,195 USD</p>
+        <p class="text-[11px] text-[var(--muted-foreground)]">13 pares verificados en GOAT</p>
+      </div>
+    </div>
 
-<h3 class="font-bold text-sm mb-2">AIR JORDAN 1 HIGH — 6 Pares</h3>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-2 mb-3">
-  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
-    <div class="flex items-center gap-2 mb-1"><span>🔴⚪</span><div class="flex-1"><p class="font-bold text-sm">1. "Chicago Lost & Found"</p></div><span class="font-bold">$340</span></div>
-    <a href="https://www.goat.com/sneakers/air-jordan-1-retro-high-og-dz5485-612" target="_blank" class="buy-btn bg-green-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-green-700">🛒 GOAT</a>
+    <!-- Filter buttons by Colorway Family -->
+    <div class="flex flex-wrap gap-1.5 mt-3 pt-3 border-t border-[var(--border)]">
+      <button onclick="filterAJ1('all', this)" class="aj1-filter-btn active px-2.5 py-1 rounded-md border border-[var(--border)] text-xs font-semibold">
+        Todos los 13 AJ1 High
+      </button>
+      <button onclick="filterAJ1('red', this)" class="aj1-filter-btn px-2.5 py-1 rounded-md border border-[var(--border)] text-xs font-semibold">
+        🔴 Chicago / Bred / Spider (5)
+      </button>
+      <button onclick="filterAJ1('blue', this)" class="aj1-filter-btn px-2.5 py-1 rounded-md border border-[var(--border)] text-xs font-semibold">
+        🔵 UNC / Obsidian / Royal (3)
+      </button>
+      <button onclick="filterAJ1('mono', this)" class="aj1-filter-btn px-2.5 py-1 rounded-md border border-[var(--border)] text-xs font-semibold">
+        ⚫⚪ Shadow / Neutral / Stage Haze (3)
+      </button>
+      <button onclick="filterAJ1('special', this)" class="aj1-filter-btn px-2.5 py-1 rounded-md border border-[var(--border)] text-xs font-semibold">
+        🟢🟤 Turbo Mothra &amp; Palomino (2)
+      </button>
+    </div>
   </div>
-  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
-    <div class="flex items-center gap-2 mb-1"><span>⚫⚪</span><div class="flex-1"><p class="font-bold text-sm">2. "Black Toe Reimagined"</p></div><span class="font-bold text-green-500">$148</span></div>
-    <a href="https://www.goat.com/sneakers/air-jordan-1-retro-high-og-black-toe-reimagined-dz5485-061" target="_blank" class="buy-btn bg-green-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-green-700">🛒 GOAT</a>
-  </div>
-  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
-    <div class="flex items-center gap-2 mb-1"><span>🩶⚫</span><div class="flex-1"><p class="font-bold text-sm">3. "Shadow 2.0"</p></div><span class="font-bold">~$165</span></div>
-    <a href="https://www.goat.com/sneakers/air-jordan-1-retro-high-og-shadow-2-0-555088-035" target="_blank" class="buy-btn bg-green-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-green-700">🛒 GOAT</a>
-  </div>
-  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
-    <div class="flex items-center gap-2 mb-1"><span>⚪🩶</span><div class="flex-1"><p class="font-bold text-sm">4. '85 "Neutral Grey"</p></div><span class="font-bold">~$140</span></div>
-    <a href="https://www.goat.com/sneakers/air-jordan-1-retro-high-85-og-neutral-grey-bq4422-100" target="_blank" class="buy-btn bg-green-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-green-700">🛒 GOAT</a>
-  </div>
-  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
-    <div class="flex items-center gap-2 mb-1"><span>🕷️🔴</span><div class="flex-1"><p class="font-bold text-sm">5. Marvel × "Spider-Verse"</p></div><span class="font-bold">$212</span></div>
-    <a href="https://www.goat.com/sneakers/marvel-x-air-jordan-1-retro-high-og-spider-man-across-the-spider-verse-dv1748-601" target="_blank" class="buy-btn bg-green-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-green-700">🛒 GOAT</a>
-  </div>
-  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
-    <div class="flex items-center gap-2 mb-1"><span>🟢⚪</span><div class="flex-1"><p class="font-bold text-sm">6. "Turbo Green"</p></div><span class="font-bold">~$220</span></div>
-    <a href="https://www.goat.com/sneakers/air-jordan-1-retro-high-og-turbo-green-555088-311" target="_blank" class="buy-btn bg-green-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-green-700">🛒 GOAT</a>
-  </div>
-</div>
 
-<h3 class="font-bold text-sm mb-2">AIR JORDAN 4 — 3 Pares</h3>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-2 mb-3">
-  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
-    <div class="flex items-center gap-2 mb-1"><span>🔵⚪</span><div class="flex-1"><p class="font-bold text-sm">7. AJ4 "Military Blue"</p></div><span class="font-bold">~$220</span></div>
-    <a href="https://www.goat.com/sneakers/air-jordan-4-retro-military-blue-2024-fv5029-141" target="_blank" class="buy-btn bg-green-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-green-700">🛒 GOAT</a>
-  </div>
-  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
-    <div class="flex items-center gap-2 mb-1"><span>⚫🔴</span><div class="flex-1"><p class="font-bold text-sm">8. AJ4 "Bred Reimagined"</p></div><span class="font-bold">~$280</span></div>
-    <a href="https://www.goat.com/sneakers/air-jordan-4-retro-bred-reimagined-fv5029-006" target="_blank" class="buy-btn bg-green-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-green-700">🛒 GOAT</a>
-  </div>
-  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
-    <div class="flex items-center gap-2 mb-1"><span>⚪🩶</span><div class="flex-1"><p class="font-bold text-sm">9. AJ4 "White Cement" 2025</p></div><span class="font-bold">~$270</span></div>
-    <a href="https://www.goat.com/sneakers/air-jordan-4-retro-og-white-cement-2025-fv5029-100" target="_blank" class="buy-btn bg-green-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-green-700">🛒 GOAT</a>
-  </div>
-</div>
+  <!-- BLOQUE 1: LINAJE ROJO, CHICAGO, BLACK TOE, BRED TOE & SPIDER-VERSE (5 PARES) -->
+  <h3 class="font-bold text-sm mb-2 text-red-400">🔴 LINAJE ROJO &amp; SPIDER-VERSE — 5 Pares Air Jordan 1 High OG</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-2.5 mb-4">
 
-<h3 class="font-bold text-sm mb-2">AJ7 + SPECIALS — 4 Pares</h3>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-2">
-  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
-    <div class="flex items-center gap-2 mb-1"><span>🔴⚪</span><div class="flex-1"><p class="font-bold text-sm">10. AJ7 "Cardinal"</p></div><span class="font-bold">~$140</span></div>
-    <a href="https://www.goat.com/sneakers/air-jordan-7-retro-cardinal-2022-cu9307-106" target="_blank" class="buy-btn bg-green-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-green-700">🛒 GOAT</a>
+    <div class="pc aj1-card bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 border-l-4 border-l-red-500" data-family="red">
+      <div class="flex items-center gap-2 mb-1">
+        <span>🔴⚪</span>
+        <div class="flex-1">
+          <p class="font-bold text-sm">1. AJ1 High OG "Chicago Lost &amp; Found"</p>
+          <p class="text-[11px] text-[var(--muted-foreground)]">SKU: <code>DZ5485-612</code> · Talla <span class="js-size-tag">US 13</span> · Outfits #01–#03</p>
+        </div>
+        <span class="font-bold text-base">$340</span>
+      </div>
+      <p class="text-xs text-pink-300/90 mb-2">🌸 <strong>Nota de あやめ:</strong> Su favorito #1 absoluto; el rojo Chicago 1985 con cuero craquelado vintage resalta increíble con tu Box Logo Navy.</p>
+      <div class="flex flex-wrap gap-1.5">
+        <a href="https://www.goat.com/sneakers/air-jordan-1-retro-high-og-dz5485-612" target="_blank" rel="noopener" class="buy-btn bg-green-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-green-700">🛒 GOAT</a>
+        <button onclick="jumpToFitsForShoe('s01')" class="bg-zinc-800 hover:bg-zinc-700 text-zinc-200 px-2.5 py-1 rounded text-xs font-semibold">🔥 Outfits #01–#03</button>
+      </div>
+    </div>
+
+    <div class="pc aj1-card bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 border-l-4 border-l-red-500" data-family="red">
+      <div class="flex items-center gap-2 mb-1">
+        <span>⚫⚪</span>
+        <div class="flex-1">
+          <p class="font-bold text-sm">2. AJ1 High OG "Black Toe Reimagined"</p>
+          <p class="text-[11px] text-[var(--muted-foreground)]">SKU: <code>DZ5485-061</code> · Talla <span class="js-size-tag">US 13</span> · Outfits #04–#05</p>
+        </div>
+        <span class="font-bold text-base text-green-400">$148</span>
+      </div>
+      <p class="text-xs text-pink-300/90 mb-2">🌸 <strong>Nota de あやめ:</strong> El guardabarros negro estiliza tus Levi's 501 oscuros y deja que brille la Burberry Box Logo Tee.</p>
+      <div class="flex flex-wrap gap-1.5">
+        <a href="https://www.goat.com/sneakers/air-jordan-1-retro-high-og-black-toe-reimagined-dz5485-061" target="_blank" rel="noopener" class="buy-btn bg-green-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-green-700">🛒 GOAT</a>
+        <button onclick="jumpToFitsForShoe('s02')" class="bg-zinc-800 hover:bg-zinc-700 text-zinc-200 px-2.5 py-1 rounded text-xs font-semibold">🔥 Outfits #04–#05</button>
+      </div>
+    </div>
+
+    <div class="pc aj1-card bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 border-l-4 border-l-red-500" data-family="red">
+      <div class="flex items-center gap-2 mb-1">
+        <span>🕷️🔴</span>
+        <div class="flex-1">
+          <p class="font-bold text-sm">5. Marvel × AJ1 High OG "Spider-Verse"</p>
+          <p class="text-[11px] text-[var(--muted-foreground)]">SKU: <code>DV1748-601</code> · Talla <span class="js-size-tag">US 13</span> · Outfits #10–#11</p>
+        </div>
+        <span class="font-bold text-base">$212</span>
+      </div>
+      <p class="text-xs text-pink-300/90 mb-2">🌸 <strong>Nota de あやめ:</strong> Le fascinan los paneles gráficos tipo manga/cómic y la suela que brilla en la oscuridad cuando caminan de noche.</p>
+      <div class="flex flex-wrap gap-1.5">
+        <a href="https://www.goat.com/sneakers/marvel-x-air-jordan-1-retro-high-og-spider-man-across-the-spider-verse-dv1748-601" target="_blank" rel="noopener" class="buy-btn bg-green-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-green-700">🛒 GOAT</a>
+        <button onclick="jumpToFitsForShoe('s05')" class="bg-zinc-800 hover:bg-zinc-700 text-zinc-200 px-2.5 py-1 rounded text-xs font-semibold">🔥 Outfits #10–#11</button>
+      </div>
+    </div>
+
+    <div class="pc aj1-card bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 border-l-4 border-l-red-500" data-family="red">
+      <div class="flex items-center gap-2 mb-1">
+        <span>⚫🔴</span>
+        <div class="flex-1">
+          <p class="font-bold text-sm">8. AJ1 High OG "Bred Toe"</p>
+          <p class="text-[11px] text-[var(--muted-foreground)]">SKU: <code>555088-610</code> · Talla <span class="js-size-tag">US 13</span> · Outfits #17–#18</p>
+        </div>
+        <span class="font-bold text-base">~$285</span>
+      </div>
+      <p class="text-xs text-pink-300/90 mb-2">🌸 <strong>Nota de あやめ:</strong> Reemplaza al AJ4 Bred: puntera roja intensa enmarcada en cuero negro; tu par de "Fighter Mode" tras ganar en el ring.</p>
+      <div class="flex flex-wrap gap-1.5">
+        <a href="https://www.goat.com/sneakers/air-jordan-1-retro-high-og-bred-toe-555088-610" target="_blank" rel="noopener" class="buy-btn bg-green-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-green-700">🛒 GOAT</a>
+        <button onclick="jumpToFitsForShoe('s08')" class="bg-zinc-800 hover:bg-zinc-700 text-zinc-200 px-2.5 py-1 rounded text-xs font-semibold">🔥 Outfits #17–#18</button>
+      </div>
+    </div>
+
+    <div class="pc aj1-card bg-[var(--card)] border border-yellow-500/60 rounded-xl p-3 border-l-4 border-l-yellow-400 md:col-span-2" data-family="red">
+      <div class="flex items-center gap-2 mb-1">
+        <span>🕷️🔵</span>
+        <div class="flex-1">
+          <p class="font-bold text-sm text-yellow-300">12. Spider-Verse × AJ1 High OG "Origin Story" (SANTO GRIAL)</p>
+          <p class="text-[11px] text-[var(--muted-foreground)]">SKU: <code>555088-602</code> · Talla <span class="js-size-tag">US 13</span> · Outfits #25–#26</p>
+        </div>
+        <span class="font-bold text-base text-yellow-300">~$650</span>
+      </div>
+      <p class="text-xs text-pink-300/90 mb-2">🌸 <strong>Nota de あやめ:</strong> El Grial de la colección con puntos reflectantes 3M y suela translúcida azul hielo; reservado para aniversarios y celebraciones grandes.</p>
+      <div class="flex flex-wrap gap-1.5">
+        <a href="https://www.goat.com/sneakers/spider-verse-x-air-jordan-1-retro-high-og-origin-story" target="_blank" rel="noopener" class="buy-btn bg-green-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-green-700">🛒 GOAT</a>
+        <button onclick="jumpToFitsForShoe('s12')" class="bg-zinc-800 hover:bg-zinc-700 text-zinc-200 px-2.5 py-1 rounded text-xs font-semibold">🔥 Outfits #25–#26</button>
+      </div>
+    </div>
+
   </div>
-  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
-    <div class="flex items-center gap-2 mb-1"><span>🏆🔵</span><div class="flex-1"><p class="font-bold text-sm">11. Trophy Room × AJ7</p></div><span class="font-bold">~$290</span></div>
-    <a href="https://www.goat.com/sneakers/trophy-room-x-air-jordan-7-retro-olympic-dm1195-474" target="_blank" class="buy-btn bg-green-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-green-700">🛒 GOAT</a>
+
+  <!-- BLOQUE 2: LINAJE AZUL (UNC TOE, OBSIDIAN & ROYAL TOE) — 3 PARES -->
+  <h3 class="font-bold text-sm mb-2 text-sky-400">🔵 LINAJE AZUL (UNC / OBSIDIAN / ROYAL) — 3 Pares Air Jordan 1 High OG</h3>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-2.5 mb-4">
+
+    <div class="pc aj1-card bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 border-l-4 border-l-sky-400" data-family="blue">
+      <div class="flex items-center gap-2 mb-1">
+        <span>🩵⚫</span>
+        <div class="flex-1">
+          <p class="font-bold text-sm">7. AJ1 High OG "UNC Toe"</p>
+          <p class="text-[11px] text-[var(--muted-foreground)]">SKU: <code>DZ5485-400</code> · <span class="js-size-tag">US 13</span></p>
+        </div>
+        <span class="font-bold text-base">~$195</span>
+      </div>
+      <p class="text-xs text-pink-300/90 mb-2">🌸 <strong>Nota de あやめ:</strong> Reemplaza al AJ4 Military: azul cielo University Blue con negro que ilumina todos tus hoodies Navy.</p>
+      <div class="flex flex-wrap gap-1.5">
+        <a href="https://www.goat.com/sneakers/air-jordan-1-retro-high-og-unc-toe-dz5485-400" target="_blank" rel="noopener" class="buy-btn bg-green-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-green-700">🛒 GOAT</a>
+        <button onclick="jumpToFitsForShoe('s07')" class="bg-zinc-800 hover:bg-zinc-700 text-zinc-200 px-2 py-1 rounded text-xs font-semibold">🔥 #15–#16</button>
+      </div>
+    </div>
+
+    <div class="pc aj1-card bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 border-l-4 border-l-indigo-400" data-family="blue">
+      <div class="flex items-center gap-2 mb-1">
+        <span>💙🤍</span>
+        <div class="flex-1">
+          <p class="font-bold text-sm">11. AJ1 High OG "Obsidian"</p>
+          <p class="text-[11px] text-[var(--muted-foreground)]">SKU: <code>555088-140</code> · <span class="js-size-tag">US 13</span></p>
+        </div>
+        <span class="font-bold text-base">~$275</span>
+      </div>
+      <p class="text-xs text-pink-300/90 mb-2">🌸 <strong>Nota de あやめ:</strong> Reemplaza al AJ7 Trophy: piel Sail mantequilla + azul marino Obsidian; elegido por ella para citas nocturnas con tu Swarovski Navy.</p>
+      <div class="flex flex-wrap gap-1.5">
+        <a href="https://www.goat.com/sneakers/air-jordan-1-retro-high-og-obsidian-555088-140" target="_blank" rel="noopener" class="buy-btn bg-green-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-green-700">🛒 GOAT</a>
+        <button onclick="jumpToFitsForShoe('s11')" class="bg-zinc-800 hover:bg-zinc-700 text-zinc-200 px-2 py-1 rounded text-xs font-semibold">🔥 #23–#24</button>
+      </div>
+    </div>
+
+    <div class="pc aj1-card bg-[var(--card)] border border-blue-500 rounded-xl p-3 border-l-4 border-l-blue-500" data-family="blue">
+      <div class="flex items-center gap-2 mb-1">
+        <span>🔷⚫</span>
+        <div class="flex-1">
+          <p class="font-bold text-sm">13. AJ1 High OG "Royal Toe"</p>
+          <p class="text-[11px] text-[var(--muted-foreground)]">SKU: <code>555088-041</code> · <span class="js-size-tag">US 13</span></p>
+        </div>
+        <span class="font-bold text-base">~$210</span>
+      </div>
+      <p class="text-xs text-pink-300/90 mb-2">🌸 <strong>Nota de あやめ:</strong> Reemplaza al AJ13 French Blue: Game Royal profundo + negro y blanco; ideal para Akihabara y Shibuya.</p>
+      <div class="flex flex-wrap gap-1.5">
+        <a href="https://www.goat.com/sneakers/air-jordan-1-retro-high-og-royal-toe-555088-041" target="_blank" rel="noopener" class="buy-btn bg-green-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-green-700">🛒 GOAT</a>
+        <button onclick="jumpToFitsForShoe('s13')" class="bg-zinc-800 hover:bg-zinc-700 text-zinc-200 px-2 py-1 rounded text-xs font-semibold">🔥 #27–#30</button>
+      </div>
+    </div>
+
   </div>
-  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
-    <div class="flex items-center gap-2 mb-1"><span>🕷️🔵</span><div class="flex-1"><p class="font-bold text-sm">12. AJ1 "Origin Story" GRAIL</p></div><span class="font-bold">~$650</span></div>
-    <a href="https://www.goat.com/sneakers/spider-verse-x-air-jordan-1-retro-high-og-origin-story" target="_blank" class="buy-btn bg-green-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-green-700">🛒 GOAT</a>
+
+  <!-- BLOQUE 3: MONOCROMO & NEUTROS TOKIO (SHADOW 2.0, NEUTRAL GREY '85, STAGE HAZE) — 3 PARES -->
+  <h3 class="font-bold text-sm mb-2 text-zinc-300">⚫⚪ MONOCROMO &amp; ESTÉTICA SHODAIGOJI — 3 Pares Air Jordan 1 High OG / '85</h3>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-2.5 mb-4">
+
+    <div class="pc aj1-card bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 border-l-4 border-l-zinc-400" data-family="mono">
+      <div class="flex items-center gap-2 mb-1">
+        <span>🩶⚫</span>
+        <div class="flex-1">
+          <p class="font-bold text-sm">3. AJ1 High OG "Shadow 2.0"</p>
+          <p class="text-[11px] text-[var(--muted-foreground)]">SKU: <code>555088-035</code> · <span class="js-size-tag">US 13</span></p>
+        </div>
+        <span class="font-bold text-base">~$165</span>
+      </div>
+      <p class="text-xs text-pink-300/90 mb-2">🌸 <strong>Nota de あやめ:</strong> Gamuza gris humo + negro mate; los mismos tonos que tu Honda CB250R ShodaiGoji 1954.</p>
+      <div class="flex flex-wrap gap-1.5">
+        <a href="https://www.goat.com/sneakers/air-jordan-1-retro-high-og-shadow-2-0-555088-035" target="_blank" rel="noopener" class="buy-btn bg-green-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-green-700">🛒 GOAT</a>
+        <button onclick="jumpToFitsForShoe('s03')" class="bg-zinc-800 hover:bg-zinc-700 text-zinc-200 px-2 py-1 rounded text-xs font-semibold">🔥 #06–#07</button>
+      </div>
+    </div>
+
+    <div class="pc aj1-card bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 border-l-4 border-l-zinc-200" data-family="mono">
+      <div class="flex items-center gap-2 mb-1">
+        <span>⚪🩶</span>
+        <div class="flex-1">
+          <p class="font-bold text-sm">4. AJ1 High '85 "Neutral Grey"</p>
+          <p class="text-[11px] text-[var(--muted-foreground)]">SKU: <code>BQ4422-100</code> · <span class="js-size-tag">US 13</span></p>
+        </div>
+        <span class="font-bold text-base">~$140</span>
+      </div>
+      <p class="text-xs text-pink-300/90 mb-2">🌸 <strong>Nota de あやめ:</strong> Corte original '85 blanco con Swoosh gris suave; su favorito para ir de compras por Ginza o museos.</p>
+      <div class="flex flex-wrap gap-1.5">
+        <a href="https://www.goat.com/sneakers/air-jordan-1-retro-high-85-og-neutral-grey-bq4422-100" target="_blank" rel="noopener" class="buy-btn bg-green-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-green-700">🛒 GOAT</a>
+        <button onclick="jumpToFitsForShoe('s04')" class="bg-zinc-800 hover:bg-zinc-700 text-zinc-200 px-2 py-1 rounded text-xs font-semibold">🔥 #08–#09</button>
+      </div>
+    </div>
+
+    <div class="pc aj1-card bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 border-l-4 border-l-slate-400" data-family="mono">
+      <div class="flex items-center gap-2 mb-1">
+        <span>⚪🖤</span>
+        <div class="flex-1">
+          <p class="font-bold text-sm">9. AJ1 High OG "Stage Haze"</p>
+          <p class="text-[11px] text-[var(--muted-foreground)]">SKU: <code>555088-108</code> · <span class="js-size-tag">US 13</span></p>
+        </div>
+        <span class="font-bold text-base">~$175</span>
+      </div>
+      <p class="text-xs text-pink-300/90 mb-2">🌸 <strong>Nota de あやめ:</strong> Reemplaza al AJ4 White Cement: cuero blanco, puntera negra craquelada y talón en gamuza gris ceniza.</p>
+      <div class="flex flex-wrap gap-1.5">
+        <a href="https://www.goat.com/sneakers/air-jordan-1-retro-high-og-stage-haze-555088-108" target="_blank" rel="noopener" class="buy-btn bg-green-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-green-700">🛒 GOAT</a>
+        <button onclick="jumpToFitsForShoe('s09')" class="bg-zinc-800 hover:bg-zinc-700 text-zinc-200 px-2 py-1 rounded text-xs font-semibold">🔥 #19–#20</button>
+      </div>
+    </div>
+
   </div>
-  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 border-2 border-blue-500">
-    <div class="flex items-center gap-2 mb-1"><span>🇺🇸</span><div class="flex-1"><p class="font-bold text-sm">13. AJ13 "French Blue"</p></div><span class="font-bold">~$170</span></div>
-    <a href="https://www.goat.com/sneakers/air-jordan-13-retro-french-blue-414571-164" target="_blank" class="buy-btn bg-green-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-green-700">🛒 GOAT</a>
+
+  <!-- BLOQUE 4: TEXTURAS ESPECIALES (TURBO GREEN MOTHRA & PALOMINO ESPRESSO) — 2 PARES -->
+  <h3 class="font-bold text-sm mb-2 text-emerald-400">🟢🟤 EDICIONES ESPECIALES DE TEXTURA (MOTHRA MINT &amp; PALOMINO ESPRESSO) — 2 Pares</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-2.5">
+
+    <div class="pc aj1-card bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 border-l-4 border-l-emerald-400" data-family="special">
+      <div class="flex items-center gap-2 mb-1">
+        <span>🟢⚪</span>
+        <div class="flex-1">
+          <p class="font-bold text-sm">6. AJ1 High OG "Turbo Green"</p>
+          <p class="text-[11px] text-[var(--muted-foreground)]">SKU: <code>555088-311</code> · Talla <span class="js-size-tag">US 13</span> · Outfits #12–#14</p>
+        </div>
+        <span class="font-bold text-base">~$220</span>
+      </div>
+      <p class="text-xs text-pink-300/90 mb-2">🌸 <strong>Nota de あやめ:</strong> El verde jade/menta deslavado con media suela Sail le recuerda los tonos de <em>Mothra 1961</em>; perfecto con tu hoodie Natural crema.</p>
+      <div class="flex flex-wrap gap-1.5">
+        <a href="https://www.goat.com/sneakers/air-jordan-1-retro-high-og-turbo-green-555088-311" target="_blank" rel="noopener" class="buy-btn bg-green-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-green-700">🛒 GOAT</a>
+        <button onclick="jumpToFitsForShoe('s06')" class="bg-zinc-800 hover:bg-zinc-700 text-zinc-200 px-2.5 py-1 rounded text-xs font-semibold">🔥 Outfits #12–#14</button>
+      </div>
+    </div>
+
+    <div class="pc aj1-card bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 border-l-4 border-l-amber-600" data-family="special">
+      <div class="flex items-center gap-2 mb-1">
+        <span>🤎⚫</span>
+        <div class="flex-1">
+          <p class="font-bold text-sm">10. AJ1 High OG "Palomino"</p>
+          <p class="text-[11px] text-[var(--muted-foreground)]">SKU: <code>DZ5485-020</code> · Talla <span class="js-size-tag">US 13</span> · Outfits #21–#22</p>
+        </div>
+        <span class="font-bold text-base">~$180</span>
+      </div>
+      <p class="text-xs text-pink-300/90 mb-2">🌸 <strong>Nota de あやめ:</strong> Reemplaza al AJ7 Cardinal: nubuck café espresso + cuero negro y Nike Air dorado; combina increíble con tus cinturones de piel y citas de otoño en Kioto/Asakusa.</p>
+      <div class="flex flex-wrap gap-1.5">
+        <a href="https://www.goat.com/sneakers/air-jordan-1-retro-high-og-palomino-dz5485-020" target="_blank" rel="noopener" class="buy-btn bg-green-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-green-700">🛒 GOAT</a>
+        <button onclick="jumpToFitsForShoe('s10')" class="bg-zinc-800 hover:bg-zinc-700 text-zinc-200 px-2.5 py-1 rounded text-xs font-semibold">🔥 Outfits #21–#22</button>
+      </div>
+    </div>
+
   </div>
-</div>
 </div>
 
 <!-- ========== LEVI'S ========== -->
 <div id="tab-levis" class="tab-content">
 <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 mb-4">
-  <h2 class="text-lg font-bold">👖 8 Levi's — 36W × 32L — Todos azules</h2>
-  <p class="text-xs text-green-500 font-bold mt-1">⚡ $75 OFF en $200+ (hasta Sep 27) · Newsletter = 15% OFF</p>
+  <h2 class="text-lg font-bold">👖 8 Levi's — 36W × 32L — Todos azules (Corte perfecto sobre la lengüeta del Air Jordan 1 High)</h2>
+  <p class="text-xs text-green-500 font-bold mt-1">⚡ $75 OFF en $200+ · Newsletter = 15% OFF</p>
   <p class="font-bold mt-1">💰 ~$616 → ~$466 con promos</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
@@ -140,8 +356,8 @@
 <div id="tab-hoodies" class="tab-content">
 <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 mb-4">
   <h2 class="text-lg font-bold">🧥 12 Supreme Hoodies — XL — 70/30 Pull/Zip</h2>
-  <p class="text-[var(--muted-foreground)] text-xs">De tu wishlist de GOAT + piezas que combinan. Small Box logo = discreto.</p>
-  <p class="font-bold mt-1 text-red-500">💰 ~$3,200 - $3,800</p>
+  <p class="text-[var(--muted-foreground)] text-xs">De tu wishlist de GOAT + piezas que combinan con los 13 Air Jordan 1 High. Small Box logo = discreto.</p>
+  <p class="font-bold mt-1 text-red-500">💰 ~$3,373</p>
 </div>
 
 <h3 class="font-bold text-sm mb-2">PULLOVER — 8 unidades</h3>
@@ -242,7 +458,7 @@
 <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 mb-4">
   <h2 class="text-lg font-bold">👕 15 Tees — XL — Supreme + Uniqlo</h2>
   <p class="text-[var(--muted-foreground)] text-xs">Mix: Supreme Small Box diarias + Box Logo collabs especiales + Uniqlo para Japón</p>
-  <p class="font-bold mt-1 text-red-500">💰 ~$1,200 - $1,800</p>
+  <p class="font-bold mt-1 text-red-500">💰 ~$2,800</p>
 </div>
 
 <h3 class="font-bold text-sm mb-2">SUPREME SMALL BOX TEE — Diarias (×5)</h3>
@@ -267,7 +483,7 @@
     <a href="https://www.goat.com/apparel/supreme-x-burberry-box-logo-tee-white-burberryt1-white" target="_blank" class="buy-btn bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-red-700 mt-1">🛒 GOAT XL</a>
   </div>
   <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 border-l-4 border-l-yellow-500">
-    <p class="font-bold text-sm">T7 · Supreme × Tiffany & Co Box Logo — White</p>
+    <p class="font-bold text-sm">T7 · Supreme × Tiffany &amp; Co Box Logo — White</p>
     <p class="text-xs text-[var(--muted-foreground)]">Tiffany blue box logo · De tu wishlist</p>
     <p class="font-bold mt-1">~$391</p>
     <a href="https://www.goat.com/apparel/supreme-x-tiffany-co-box-logo-tee-white-fw21t37-white" target="_blank" class="buy-btn bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-red-700 mt-1">🛒 GOAT XL</a>
@@ -302,8 +518,8 @@
 <!-- ========== ACCESORIOS ========== -->
 <div id="tab-acc" class="tab-content">
 <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 mb-4">
-  <h2 class="text-lg font-bold">🎒 Accesorios — Supreme + Essentials</h2>
-  <p class="font-bold mt-1 text-red-500">💰 ~$2,250 - $2,500</p>
+  <h2 class="text-lg font-bold">🎒 Accesorios — Supreme + Essentials + Samsung Tech</h2>
+  <p class="font-bold mt-1 text-red-500">💰 ~$2,277 (Accesorios) + ~$2,325 (Samsung Corea)</p>
 </div>
 
 <h3 class="font-bold text-sm mb-2">🩲 ROPA INTERIOR — Supreme × Hanes</h3>
@@ -320,7 +536,7 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mb-3">
   <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
     <p class="font-bold text-sm">Crew Socks 4-pack Black × 3 paquetes = 12 pares</p>
-    <p class="text-[var(--muted-foreground)] text-xs">Solo negros con logo rojo Supreme. ~$30 × 3</p>
+    <p class="text-[var(--muted-foreground)] text-xs">Solo negros con logo rojo Supreme (combinan con tus 13 Air Jordan 1 High). ~$30 × 3</p>
     <p class="font-bold mt-1">~$90</p>
     <a href="https://www.goat.com/apparel/supreme-x-hanes-crew-socks-4-pack-black-99haa26-black" target="_blank" class="buy-btn bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-red-700 mt-1">🛒 GOAT</a>
   </div>
@@ -330,13 +546,13 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mb-3">
   <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
     <p class="font-bold text-sm">Authorized Mesh Back 5-Panel — Royal</p>
-    <p class="text-[var(--muted-foreground)] text-xs">Azul royal · De tu wishlist</p>
+    <p class="text-[var(--muted-foreground)] text-xs">Azul royal · Match directo con el AJ1 High Royal Toe</p>
     <p class="font-bold mt-1">~$60</p>
     <a href="https://www.goat.com/apparel/supreme-authorized-mesh-back-5-panel-royal-ss25h125-royal" target="_blank" class="buy-btn bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-red-700 mt-1">🛒 GOAT</a>
   </div>
   <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
     <p class="font-bold text-sm">World Famous S Logo 6-Panel — Navy</p>
-    <p class="text-[var(--muted-foreground)] text-xs">Azul marino · De tu wishlist</p>
+    <p class="text-[var(--muted-foreground)] text-xs">Azul marino · Match directo con el AJ1 High Obsidian &amp; UNC Toe</p>
     <p class="font-bold mt-1">~$69</p>
     <a href="https://www.goat.com/apparel/supreme-world-famous-s-logo-6-panel-navy-ss25h23-navy" target="_blank" class="buy-btn bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-red-700 mt-1">🛒 GOAT</a>
   </div>
@@ -409,7 +625,7 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mb-3">
   <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3">
     <p class="font-bold text-sm">Levi's Harness Buckle Belt — Brown Leather</p>
-    <p class="text-[var(--muted-foreground)] text-xs">Cuero · Talla 36 · Va con los jeans y las botas</p>
+    <p class="text-[var(--muted-foreground)] text-xs">Cuero · Talla 36 · Va con el AJ1 High Palomino y las botas</p>
     <p class="font-bold mt-1">~$40</p>
     <a href="https://www.levi.com/US/en_US/accessories/men/belts/c/levi_accessories_men_belts" target="_blank" class="buy-btn bg-blue-600 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-blue-700 mt-1">🛒 Levi.com</a>
   </div>
@@ -487,91 +703,125 @@
   <p class="font-bold mt-1">💰 ~$685 - $895</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
-  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3"><p class="font-bold text-sm">🥾 Wolverine 1000 Mile · Size 14 · ~$350-400</p><a href="https://www.wolverine.com/US/en/1000-mile/" target="_blank" class="buy-btn bg-amber-700 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-amber-800 mt-1">🛒 Wolverine.com</a></div>
+  <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3"><p class="font-bold text-sm">🥾 Wolverine 1000 Mile · Size <span class="js-size-tag">US 13</span> · ~$350-400</p><a href="https://www.wolverine.com/US/en/1000-mile/" target="_blank" class="buy-btn bg-amber-700 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-amber-800 mt-1">🛒 Wolverine.com</a></div>
   <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3"><p class="font-bold text-sm">🧥 Schott NYC Cuero · XL · ~$250-400</p><a href="https://www.schottnyc.com/store/men/jackets" target="_blank" class="buy-btn bg-amber-700 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-amber-800 mt-1">🛒 Schott NYC</a></div>
   <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3"><p class="font-bold text-sm">🩳 Hanes Tank 5-pack · XL · ~$25</p><a href="https://www.amazon.com/s?k=hanes+premium+white+tank+top+men+xl" target="_blank" class="buy-btn bg-amber-700 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-amber-800 mt-1">🛒 Amazon</a></div>
   <div class="pc bg-[var(--card)] border border-[var(--border)] rounded-xl p-3"><p class="font-bold text-sm">🪵 Flannel Roja · XL · ~$60-70</p><a href="https://www.goat.com/search?query=supreme+flannel+xl" target="_blank" class="buy-btn bg-amber-700 text-white px-2 py-1 rounded text-xs font-semibold hover:bg-amber-800 mt-1">🛒 GOAT Supreme Flannel</a></div>
 </div>
 </div>
 
-<!-- ========== OUTFITS ========== -->
+<!-- ========== OUTFITS (30 STREET 100% AJ1 HIGH + 5 WOLVERINE) ========== -->
 <div id="tab-fits" class="tab-content">
 <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-3 mb-3">
-  <h2 class="text-lg font-bold">🔥 30 Street + 5 Wolverine</h2>
-  <p class="text-[var(--muted-foreground)] text-xs">Sneaker + Levi's + Supreme tee blanca + Supreme hoodie con capucha</p>
+  <div class="flex flex-wrap items-center justify-between gap-2">
+    <div>
+      <h2 class="text-lg font-bold">🔥 30 Outfits Street (100% Air Jordan 1 High OG) + 5 Wolverine</h2>
+      <p class="text-[var(--muted-foreground)] text-xs">Fórmula aprobada por あやめ: Air Jordan 1 High OG + Levi's 36×32 + Supreme Tee blanca + Supreme Hoodie XL</p>
+    </div>
+    <button onclick="clearFitFilter()" class="bg-zinc-800 hover:bg-zinc-700 text-xs px-3 py-1 rounded-lg font-semibold">🔄 Mostrar Todos (35)</button>
+  </div>
 </div>
-<div class="space-y-1">
-<p class="font-bold text-xs mt-2 mb-1">🔴⚪ CHICAGO (1)</p>
-<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#01</strong> Chicago + 501 Medium + Small Box Tee + Box Logo Navy pullover — 🔥 El más poderoso</p></div>
-<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#02</strong> Chicago + 512 Dark + Small Box Tee + WINDSTOPPER Black zip — Stealth mode</p></div>
-<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#03</strong> Chicago + 501 Light + Small Box Tee + Small Box Grey pullover — Casual limpio</p></div>
 
-<p class="font-bold text-xs mt-2 mb-1">⚫⚪ BLACK TOE (2)</p>
-<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#04</strong> Black Toe + 501 Dark + Burberry Bogo Tee + Small Box Black pullover — Flex sutil</p></div>
-<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#05</strong> Black Toe + 511 Medium + Small Box Tee + Drawcord Navy zip — Azul flow</p></div>
+<div class="space-y-1" id="fits-container">
+<div class="fit-group" data-shoe="s01">
+  <p class="font-bold text-xs mt-2 mb-1 text-red-400">🔴⚪ 1. AJ1 HIGH "CHICAGO LOST &amp; FOUND" (DZ5485-612)</p>
+  <div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2 mb-1"><p class="text-xs"><strong>#01</strong> AJ1 High Chicago + Levi's 501 Medium + Small Box Tee + Box Logo Navy pullover — 🔥 El favorito #1 de あやめ</p></div>
+  <div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2 mb-1"><p class="text-xs"><strong>#02</strong> AJ1 High Chicago + Levi's 512 Dark + Small Box Tee + WINDSTOPPER Black zip — Stealth Chicago</p></div>
+  <div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2 mb-1"><p class="text-xs"><strong>#03</strong> AJ1 High Chicago + Levi's 501 Light + Small Box Tee + Small Box Grey pullover — Casual limpio de domingo</p></div>
+</div>
 
-<p class="font-bold text-xs mt-2 mb-1">🩶⚫ SHADOW (3)</p>
-<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#06</strong> Shadow + 511 Dark + Small Box Tee + Box Logo Ash Grey — Gris total</p></div>
-<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#07</strong> Shadow + 512 Clean Blue + Small Box Tee + Small Box Grey pullover — Neutro limpio</p></div>
+<div class="fit-group" data-shoe="s02">
+  <p class="font-bold text-xs mt-2 mb-1 text-red-300">⚫⚪ 2. AJ1 HIGH "BLACK TOE REIMAGINED" (DZ5485-061)</p>
+  <div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2 mb-1"><p class="text-xs"><strong>#04</strong> AJ1 High Black Toe + Levi's 501 Dark + Burberry Bogo Tee + Small Box Black pullover — Flex sutil en Ginza</p></div>
+  <div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2 mb-1"><p class="text-xs"><strong>#05</strong> AJ1 High Black Toe + Levi's 511 Medium + Small Box Tee + Drawcord Navy zip — Puntera negra + flujo azul</p></div>
+</div>
 
-<p class="font-bold text-xs mt-2 mb-1">⚪🩶 NEUTRAL GREY (4)</p>
-<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#08</strong> Neutral Grey + 501 Medium + Tiffany Bogo Tee + Small Box Natural — Vintage '85</p></div>
-<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#09</strong> Neutral Grey + 512 Clean Blue + Small Box Tee + Small Box Navy — Suave y limpio</p></div>
+<div class="fit-group" data-shoe="s03">
+  <p class="font-bold text-xs mt-2 mb-1 text-zinc-300">🩶⚫ 3. AJ1 HIGH "SHADOW 2.0" (555088-035)</p>
+  <div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2 mb-1"><p class="text-xs"><strong>#06</strong> AJ1 High Shadow 2.0 + Levi's 511 Dark + Small Box Tee + Box Logo Ash Grey — Monocromo ShodaiGoji 1954</p></div>
+  <div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2 mb-1"><p class="text-xs"><strong>#07</strong> AJ1 High Shadow 2.0 + Levi's 512 Clean Blue + Small Box Tee + Small Box Grey pullover — Neutro urbano Tokio</p></div>
+</div>
 
-<p class="font-bold text-xs mt-2 mb-1">🕷️🔴 SPIDER-VERSE (5)</p>
-<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#10</strong> Spider-Verse + 501 Dark + Small Box Tee + Small Box Black ×2 — Miles Morales mode</p></div>
-<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#11</strong> Spider-Verse + 501 Light + Bandana Bogo Tee + Burnt Red zip — Rojo Spider stack</p></div>
+<div class="fit-group" data-shoe="s04">
+  <p class="font-bold text-xs mt-2 mb-1 text-zinc-200">⚪🩶 4. AJ1 HIGH '85 "NEUTRAL GREY" (BQ4422-100)</p>
+  <div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2 mb-1"><p class="text-xs"><strong>#08</strong> AJ1 High '85 Neutral Grey + Levi's 501 Medium + Tiffany Bogo Tee + Small Box Natural — Minimalismo vintage '85</p></div>
+  <div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2 mb-1"><p class="text-xs"><strong>#09</strong> AJ1 High '85 Neutral Grey + Levi's 512 Clean Blue + Small Box Tee + Small Box Navy — Cita de café con あやめ</p></div>
+</div>
 
-<p class="font-bold text-xs mt-2 mb-1">🟢⚪ TURBO GREEN (6)</p>
-<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#12</strong> Turbo + 501 Medium + Small Box Tee + Small Box Natural — Menta + crema = perfecto</p></div>
-<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#13</strong> Turbo + 512 Dark + Small Box Tee + Small Box Black — Pop de color verde</p></div>
-<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#14</strong> Turbo + 501 Light + Small Box Tee + Swarovski Navy — Premium turbo</p></div>
+<div class="fit-group" data-shoe="s05">
+  <p class="font-bold text-xs mt-2 mb-1 text-rose-400">🕷️🔴 5. MARVEL × AJ1 HIGH "SPIDER-VERSE" (DV1748-601)</p>
+  <div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2 mb-1"><p class="text-xs"><strong>#10</strong> AJ1 High Spider-Verse + Levi's 501 Dark + Small Box Tee + Small Box Black ×2 — Miles Morales en Akihabara</p></div>
+  <div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2 mb-1"><p class="text-xs"><strong>#11</strong> AJ1 High Spider-Verse + Levi's 501 Light + Bandana Bogo Tee + Burnt Red zip — Multiverso carmesí</p></div>
+</div>
 
-<p class="font-bold text-xs mt-2 mb-1">🔵⚪ AJ4 MILITARY (7)</p>
-<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#15</strong> AJ4 Military + 511 Dark + Small Box Tee + Box Logo Navy — Triple azul militar</p></div>
-<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#16</strong> AJ4 Military + 501 Medium + Small Box Tee + Small Box Navy zip — Azul cohesivo</p></div>
+<div class="fit-group" data-shoe="s06">
+  <p class="font-bold text-xs mt-2 mb-1 text-emerald-400">🟢⚪ 6. AJ1 HIGH "TURBO GREEN" (555088-311)</p>
+  <div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2 mb-1"><p class="text-xs"><strong>#12</strong> AJ1 High Turbo Green + Levi's 501 Medium + Small Box Tee + Small Box Natural — Menta Mothra + crema = favorito de あやめ</p></div>
+  <div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2 mb-1"><p class="text-xs"><strong>#13</strong> AJ1 High Turbo Green + Levi's 512 Dark + Small Box Tee + Small Box Black — Pop de color verde jade</p></div>
+  <div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2 mb-1"><p class="text-xs"><strong>#14</strong> AJ1 High Turbo Green + Levi's 501 Light + Small Box Tee + Swarovski Navy — Paseo primaveral por Ueno</p></div>
+</div>
 
-<p class="font-bold text-xs mt-2 mb-1">⚫🔴 AJ4 BRED (8)</p>
-<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#17</strong> AJ4 Bred + 501 Dark + Small Box Tee + Small Box Black — Fighter mode</p></div>
-<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#18</strong> AJ4 Bred + 512 Dark + LA Bogo Tee + Burnt Red zip — Rojo fuego</p></div>
+<div class="fit-group" data-shoe="s07">
+  <p class="font-bold text-xs mt-2 mb-1 text-sky-400">🩵⚫ 7. AJ1 HIGH "UNC TOE" (DZ5485-400)</p>
+  <div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2 mb-1"><p class="text-xs"><strong>#15</strong> AJ1 High UNC Toe + Levi's 511 Dark + Small Box Tee + Box Logo Navy — Doble azul (University Blue + Navy)</p></div>
+  <div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2 mb-1"><p class="text-xs"><strong>#16</strong> AJ1 High UNC Toe + Levi's 501 Medium + Small Box Tee + Small Box Navy zip — Color-blocking universitario</p></div>
+</div>
 
-<p class="font-bold text-xs mt-2 mb-1">⚪🩶 AJ4 WHITE CEMENT (9)</p>
-<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#19</strong> AJ4 Cement + 501 Medium + Milan Bogo Tee + Small Box Natural — El outfit más caro</p></div>
-<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#20</strong> AJ4 Cement + 512 Clean Blue + Small Box Tee + Small Box Grey — Ultra limpio</p></div>
+<div class="fit-group" data-shoe="s08">
+  <p class="font-bold text-xs mt-2 mb-1 text-red-500">⚫🔴 8. AJ1 HIGH "BRED TOE" (555088-610)</p>
+  <div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2 mb-1"><p class="text-xs"><strong>#17</strong> AJ1 High Bred Toe + Levi's 501 Dark + Small Box Tee + Small Box Black — Fighter Mode post-combate</p></div>
+  <div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2 mb-1"><p class="text-xs"><strong>#18</strong> AJ1 High Bred Toe + Levi's 512 Dark + LA Bogo Tee + Burnt Red zip — Fuego carmesí y cuero negro</p></div>
+</div>
 
-<p class="font-bold text-xs mt-2 mb-1">🔴⚪ AJ7 CARDINAL (10)</p>
-<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#21</strong> Cardinal + 501 Dark + Small Box Tee + Small Box Black — Cardinal + negro</p></div>
-<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#22</strong> Cardinal + 501 Vintage + Small Box Tee + Small Box Natural — Earth warm</p></div>
+<div class="fit-group" data-shoe="s09">
+  <p class="font-bold text-xs mt-2 mb-1 text-slate-300">⚪🖤 9. AJ1 HIGH "STAGE HAZE / BLEACHED CORAL" (555088-108)</p>
+  <div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2 mb-1"><p class="text-xs"><strong>#19</strong> AJ1 High Stage Haze + Levi's 501 Medium + Milan Bogo Tee + Small Box Natural — El outfit de galería más caro y limpio</p></div>
+  <div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2 mb-1"><p class="text-xs"><strong>#20</strong> AJ1 High Stage Haze + Levi's 512 Clean Blue + Small Box Tee + Small Box Grey — Blanco, negro craquelado y gris ceniza</p></div>
+</div>
 
-<p class="font-bold text-xs mt-2 mb-1">🏆🔵 TROPHY ROOM (11)</p>
-<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#23</strong> Trophy + 511 Dark + Tiffany Bogo Tee + Swarovski Navy — Premium night flex</p></div>
-<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#24</strong> Trophy + 512 Clean Blue + Small Box Tee + Drawcord Navy zip — Blue trophy</p></div>
+<div class="fit-group" data-shoe="s10">
+  <p class="font-bold text-xs mt-2 mb-1 text-amber-400">🤎⚫ 10. AJ1 HIGH "PALOMINO" (DZ5485-020)</p>
+  <div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2 mb-1"><p class="text-xs"><strong>#21</strong> AJ1 High Palomino + Levi's 501 Dark + Small Box Tee + Small Box Black — Nubuck espresso + negro nocturno</p></div>
+  <div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2 mb-1"><p class="text-xs"><strong>#22</strong> AJ1 High Palomino + Levi's 501 Vintage + Small Box Tee + Small Box Natural — Tonos cálidos de otoño con あやめ en Asakusa</p></div>
+</div>
 
-<p class="font-bold text-xs mt-2 mb-1">🕷️🔵 ORIGIN STORY (12)</p>
-<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#25</strong> Origin + 501 Dark + Bandana Bogo Tee + Small Box Black — El grail outfit</p></div>
-<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#26</strong> Origin + 512 Clean Blue + Small Box Tee + Box Logo Navy — Spider blue</p></div>
+<div class="fit-group" data-shoe="s11">
+  <p class="font-bold text-xs mt-2 mb-1 text-indigo-300">💙🤍 11. AJ1 HIGH "OBSIDIAN" (555088-140)</p>
+  <div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2 mb-1"><p class="text-xs"><strong>#23</strong> AJ1 High Obsidian + Levi's 511 Dark + Tiffany Bogo Tee + Swarovski Navy — Cita nocturna de lujo con あやめ (Sail + Obsidian)</p></div>
+  <div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2 mb-1"><p class="text-xs"><strong>#24</strong> AJ1 High Obsidian + Levi's 512 Clean Blue + Small Box Tee + Drawcord Navy zip — Armonía de azules y crema</p></div>
+</div>
 
-<p class="font-bold text-xs mt-2 mb-1">🇺🇸 AJ13 FRENCH BLUE (13)</p>
-<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#27</strong> French Blue + 501 Medium + Small Box Tee + Small Box Black — Patriot stealth</p></div>
-<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#28</strong> French Blue + 511 Dark + Small Box Tee + Box Logo Navy — USA night</p></div>
-<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#29</strong> French Blue + 501 Light + Small Box Tee + Small Box Natural — Casual flag</p></div>
-<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2"><p class="text-xs"><strong>#30</strong> French Blue + 512 Dark + Small Box Tee + WINDSTOPPER Black zip — USA stealth</p></div>
+<div class="fit-group" data-shoe="s12">
+  <p class="font-bold text-xs mt-2 mb-1 text-yellow-300">🕷️🔵 12. AJ1 HIGH "ORIGIN STORY" GRAIL (555088-602)</p>
+  <div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2 mb-1"><p class="text-xs"><strong>#25</strong> AJ1 High Origin Story + Levi's 501 Dark + Bandana Bogo Tee + Small Box Black — El Grail Outfit con suela azul hielo y puntos 3M</p></div>
+  <div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2 mb-1"><p class="text-xs"><strong>#26</strong> AJ1 High Origin Story + Levi's 512 Clean Blue + Small Box Tee + Box Logo Navy — Suela icy blue + Bogo Navy</p></div>
+</div>
 
-<p class="font-bold text-xs mt-3 mb-1">🐺 WOLVERINE — 5 Bonus</p>
-<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2" style="border-left-color:#92400e"><p class="text-xs"><strong>W1 Full Logan</strong> — 🥾Boots + 501 Dark + Tank + Cuero · Intimidante</p></div>
-<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2" style="border-left-color:#92400e"><p class="text-xs"><strong>W2 Leñador</strong> — 🥾Boots + 501 Medium + Small Box Tee + Flannel roja · Rudo casual</p></div>
-<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2" style="border-left-color:#92400e"><p class="text-xs"><strong>W3 Vintage</strong> — 🥾Boots + 501 Vintage + Tank + Cuero · De película</p></div>
-<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2" style="border-left-color:#92400e"><p class="text-xs"><strong>W4 Casual</strong> — 🥾Boots + 501 Light + Small Box Tee + Flannel · Domingo</p></div>
-<div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2" style="border-left-color:#92400e"><p class="text-xs"><strong>W5 Winter</strong> — 🥾Boots + 501 Dark + Small Box Black hoodie + Cuero encima · Tokio invierno</p></div>
+<div class="fit-group" data-shoe="s13">
+  <p class="font-bold text-xs mt-2 mb-1 text-blue-400">🔷⚫ 13. AJ1 HIGH "ROYAL TOE" (555088-041)</p>
+  <div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2 mb-1"><p class="text-xs"><strong>#27</strong> AJ1 High Royal Toe + Levi's 501 Medium + Small Box Tee + Small Box Black — Game Royal eléctrico sobre negro</p></div>
+  <div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2 mb-1"><p class="text-xs"><strong>#28</strong> AJ1 High Royal Toe + Levi's 511 Dark + Small Box Tee + Box Logo Navy — Noche en Shibuya / Shinjuku</p></div>
+  <div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2 mb-1"><p class="text-xs"><strong>#29</strong> AJ1 High Royal Toe + Levi's 501 Light + Small Box Tee + Small Box Natural — Contraste fresco de fin de semana</p></div>
+  <div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2 mb-1"><p class="text-xs"><strong>#30</strong> AJ1 High Royal Toe + Levi's 512 Dark + Small Box Tee + WINDSTOPPER Black zip — Blindaje urbano Tokio</p></div>
+</div>
+
+<div class="fit-group" data-shoe="wolf">
+  <p class="font-bold text-xs mt-3 mb-1 text-amber-500">🐺 WOLVERINE — 5 Bonus</p>
+  <div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2 mb-1" style="border-left-color:#92400e"><p class="text-xs"><strong>W1 Full Logan</strong> — 🥾Boots + 501 Dark + Tank + Cuero · Intimidante</p></div>
+  <div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2 mb-1" style="border-left-color:#92400e"><p class="text-xs"><strong>W2 Leñador</strong> — 🥾Boots + 501 Medium + Small Box Tee + Flannel roja · Rudo casual</p></div>
+  <div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2 mb-1" style="border-left-color:#92400e"><p class="text-xs"><strong>W3 Vintage</strong> — 🥾Boots + 501 Vintage + Tank + Cuero · De película</p></div>
+  <div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2 mb-1" style="border-left-color:#92400e"><p class="text-xs"><strong>W4 Casual</strong> — 🥾Boots + 501 Light + Small Box Tee + Flannel · Domingo</p></div>
+  <div class="oc bg-[var(--card)] border border-[var(--border)] rounded-r-lg p-2 mb-1" style="border-left-color:#92400e"><p class="text-xs"><strong>W5 Winter</strong> — 🥾Boots + 501 Dark + Small Box Black hoodie + Cuero encima · Tokio invierno</p></div>
+</div>
 </div>
 </div>
 
 <!-- ========== RESUMEN ========== -->
 <div id="tab-deals" class="tab-content">
 <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 mb-3">
-  <h2 class="text-lg font-bold mb-3">💰 RESUMEN TOTAL</h2>
+  <h2 class="text-lg font-bold mb-3">💰 RESUMEN TOTAL (ROTACIÓN 100% AIR JORDAN 1 HIGH OG)</h2>
   <div class="space-y-2">
-    <div class="flex justify-between border-b border-[var(--border)] pb-1"><span class="text-sm">👟 13 Sneakers (GOAT, US 14)</span><span class="font-bold text-sm">~$3,195</span></div>
+    <div class="flex justify-between border-b border-[var(--border)] pb-1"><span class="text-sm text-green-400 font-semibold">👟 13 Air Jordan 1 High OG (GOAT, <span class="js-size-tag">US 13</span> · Selección con あやめ)</span><span class="font-bold text-sm text-green-400">~$3,195</span></div>
     <div class="flex justify-between border-b border-[var(--border)] pb-1"><span class="text-sm">👖 8 Levi's (levi.com, 36×32)</span><span class="font-bold text-sm">~$466</span></div>
     <div class="flex justify-between border-b border-[var(--border)] pb-1"><span class="text-sm text-red-500 font-semibold">🧥 12 Supreme Hoodies (GOAT, XL)</span><span class="font-bold text-sm text-red-500">~$3,373</span></div>
     <div class="flex justify-between border-b border-[var(--border)] pb-1"><span class="text-sm text-red-500 font-semibold">👕 15 Tees (Supreme + Uniqlo, XL)</span><span class="font-bold text-sm text-red-500">~$2,800</span></div>
@@ -587,7 +837,7 @@
 <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4">
   <h3 class="font-bold text-sm mb-2">📊 Dónde se va el dinero</h3>
   <div class="space-y-1">
-    <div class="flex items-center gap-2"><div class="h-3 bg-green-600 rounded" style="width:25%"></div><span class="text-xs">Sneakers 25%</span></div>
+    <div class="flex items-center gap-2"><div class="h-3 bg-green-600 rounded" style="width:25%"></div><span class="text-xs">13 Air Jordan 1 High OG 25%</span></div>
     <div class="flex items-center gap-2"><div class="h-3 bg-red-600 rounded" style="width:26%"></div><span class="text-xs">Supreme Hoodies 26%</span></div>
     <div class="flex items-center gap-2"><div class="h-3 bg-red-400 rounded" style="width:22%"></div><span class="text-xs">Supreme Tees 22%</span></div>
     <div class="flex items-center gap-2"><div class="h-3 bg-purple-500 rounded" style="width:18%"></div><span class="text-xs">Accesorios 18%</span></div>
@@ -597,17 +847,73 @@
 </div>
 
 <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 mt-3">
-  <h3 class="font-bold text-sm mb-2">🏷️ Promos Activas</h3>
-  <p class="text-xs">👖 <strong>Levi's:</strong> $75 OFF en $200+ (hasta Sep 27) · 15% newsletter · <a href="https://www.levi.com/US/en_US/account/register" target="_blank">Registrarse</a></p>
-  <p class="text-xs mt-1">🥾 <strong>Wolverine:</strong> 15% OFF email · <a href="https://www.wolverine.com" target="_blank">Wolverine.com</a></p>
-  <p class="text-xs mt-1 text-[var(--muted-foreground)]">⚠️ Supreme en GOAT no tiene promos — son precios de resale del mercado</p>
+  <h3 class="font-bold text-sm mb-2">🏷️ Promos Activas &amp; Búsqueda Directa GOAT</h3>
+  <p class="text-xs">🐐 <strong>GOAT Air Jordan 1 High:</strong> <a id="deals-goat-link" href="https://www.goat.com/search?query=Jordan+1+high&pageNumber=28&sortType=price_low_high&genders=men&brands=Air+Jordan&sizes=US_sneakers_men_13" target="_blank" class="text-green-400 underline">Catálogo Jordan 1 High Hombre · Ordenado de Menor a Mayor Precio</a></p>
+  <p class="text-xs mt-1">👖 <strong>Levi's:</strong> $75 OFF en $200+ · 15% newsletter · <a href="https://www.levi.com/US/en_US/account/register" target="_blank" class="text-blue-400 underline">Registrarse</a></p>
+  <p class="text-xs mt-1">🥾 <strong>Wolverine:</strong> 15% OFF email · <a href="https://www.wolverine.com" target="_blank" class="text-amber-400 underline">Wolverine.com</a></p>
+  <p class="text-xs mt-1 text-[var(--muted-foreground)]">⚠️ Supreme y Air Jordan 1 High OG en GOAT son precios de mercado en tiempo real</p>
 </div>
 </div>
 
 <script>
-function showTab(n){document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById('tab-'+n).classList.add('active');document.getElementById('btn-'+n).classList.add('active')}
+function showTab(n){
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+n).classList.add('active');
+  document.getElementById('btn-'+n).classList.add('active');
+}
+
+function filterAJ1(family, btnEl){
+  document.querySelectorAll('.aj1-filter-btn').forEach(b=>b.classList.remove('active'));
+  if(btnEl) btnEl.classList.add('active');
+  document.querySelectorAll('.aj1-card').forEach(card=>{
+    if(family === 'all' || card.getAttribute('data-family') === family){
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+function setSneakerSize(sz){
+  const label = 'US ' + sz;
+  document.querySelectorAll('.js-size-tag').forEach(el=>{ el.textContent = label; });
+  const heroLbl = document.getElementById('hero-size-lbl');
+  if(heroLbl) heroLbl.textContent = label;
+  document.querySelectorAll('.size-pill-btn').forEach(b=>b.classList.remove('active'));
+  const activeBtn = document.getElementById('size-btn-' + sz);
+  if(activeBtn) activeBtn.classList.add('active');
+
+  const goatUrl = 'https://www.goat.com/search?query=Jordan+1+high&pageNumber=28&sortType=price_low_high&genders=men&brands=Air+Jordan&sizes=US_sneakers_men_' + sz;
+  const masterLink = document.getElementById('goat-master-search-link');
+  if(masterLink){
+    masterLink.href = goatUrl;
+    masterLink.textContent = '🐐 Abrir Catálogo GOAT Air Jordan 1 High (Men · ' + label + ' · Low → High) ↗';
+  }
+  const dealsLink = document.getElementById('deals-goat-link');
+  if(dealsLink) dealsLink.href = goatUrl;
+}
+
+function jumpToFitsForShoe(shoeCode){
+  showTab('fits');
+  document.querySelectorAll('.fit-group').forEach(g=>{
+    const isMatch = g.getAttribute('data-shoe') === shoeCode;
+    g.style.display = isMatch ? '' : 'none';
+    g.querySelectorAll('.oc').forEach(oc=>{
+      if(isMatch) oc.classList.add('highlight-fit');
+      else oc.classList.remove('highlight-fit');
+    });
+  });
+}
+
+function clearFitFilter(){
+  document.querySelectorAll('.fit-group').forEach(g=>{
+    g.style.display = '';
+    g.querySelectorAll('.oc').forEach(oc=>oc.classList.remove('highlight-fit'));
+  });
+}
 </script>
-<script src="../assets/live-prices.js?v=5"></script>
+<script src="../assets/live-prices.js?v=6"></script>
 <script src="../assets/imperio-mobile-ux.js?v=2"></script>
 <script src="../assets/imperio-i18n.js?v=2"></script>
 </body>
